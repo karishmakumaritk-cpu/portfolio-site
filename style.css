@@ -1,0 +1,222 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeInDown 1s ease;
+}
+
+header p {
+    color: #ccc;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 4px;
+    transform: scale(1.05);
+}
+
+/* Section Styles */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease;
+}
+
+/* Profile Image */
+.about img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px 0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    animation: zoomIn 1.2s ease;
+}
+
+/* Card Styles */
+.card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    cursor: pointer;
+    padding: 1rem;
+    margin: -1.5rem;
+    margin-bottom: 0;
+    background: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.3s;
+}
+
+.card h3:hover {
+    background: #e0e0e0;
+}
+
+.assignment {
+    display: none;
+    padding-top: 1.5rem;
+}
+
+.assignment.show {
+    display: block;
+}
+
+.card ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Project Cards */
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-image img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+/* Resume Block Styles */
+.resume-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease;
+}
+
+.resume-block h3 {
+    color: #333;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.resume-block h3:first-child {
+    margin-top: 0;
+}
+
+.resume-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-block li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resume-block li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+/* Contact Section */
+#contact a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+    color: #cc3366;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    animation: fadeInUp 1s ease;
+}
+
+/* Buttons / Links Animation */
+a, button {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a:hover, button:hover {
+  background: #b32d5c;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

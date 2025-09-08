@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karishma Kumari - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #cc3366;
+            --secondary: #ffe6f0;
+            --text: #444;
+            --light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        .name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            color: var(--light);
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .contact-info i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h3 {
+            font-size: 15px;
+            color: var(--light);
+            margin-bottom: 8px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+        }
+        
+        .course {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .course:last-child {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .course h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        
+        .course p {
+            font-size: 13px;
+            color: var(--light);
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-title {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            font-size: 15px;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+        
+        .experience-duration {
+            font-size: 14px;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        li::before {
+            content: "►";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+        
+        .education {
+            margin-bottom: 20px;
+        }
+        
+        .education h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .education p {
+            font-size: 14px;
+            color: var(--light);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">KARISHMA KUMARI</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i>karishmakumaritk@gmail.com</span>
+                <span><i class="fas fa-phone"></i>+91 9818691915</span>
+                <span><i class="fas fa-map-marker-alt"></i>Delhi</span>
+            </div>
+        </header>
+
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-cogs"></i>Skills</h2>
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills">
+                        <span class="skill-tag">MS Excel</span>
+                        <span class="skill-tag">Google Sheets</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Email Marketing</span>
+                        <span class="skill-tag">Google Analytics</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skills">
+                        <span class="skill-tag">Email Management</span>
+                        <span class="skill-tag">Lead Generation</span>
+                        <span class="skill-tag">CRM</span>
+                        <span class="skill-tag">Client Relations</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills">
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Teamwork</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skills">
+                        <span class="skill-tag">Hindi (Spoken)</span>
+                        <span class="skill-tag">English (Written)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-certificate"></i>Courses & Training</h2>
+                <div class="course">
+                    <h3>Email Marketing Basics</h3>
+                    <p>HubSpot Academy</p>
+                </div>
+                <div class="course">
+                    <h3>MS Excel for Beginners</h3>
+                    <p>Udemy</p>
+                </div>
+                <div class="course">
+                    <h3>Digital Marketing</h3>
+                    <p>YouTube Learning</p>
+                </div>
+                <div class="course">
+                    <h3>HTML & CSS</h3>
+                    <p>Great Learning Academy</p>
+                </div>
+                <div class="course">
+                    <h3>Google Analytics</h3>
+                    <p>Great Learning Academy</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-star"></i>Extra-Curricular</h2>
+                <ul>
+                    <li>Blogging & YouTube content creation</li>
+                    <li>School play actor (Christmas Day)</li>
+                    <li>Started bakery stall during school function</li>
+                    <li>Basic computer training from Open Schooling</li>
+                    <li>Swimming (8 Step Studio, Rajasthan)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-bullseye"></i>Career Objective</h2>
+                <p>A detail-oriented and tech-savvy graduate with hands-on experience in data entry, email communication, lead generation, and MS Excel. Eager to contribute to operational efficiency, marketing efforts, and data management in a fast-paced organization.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i>Work Experience</h2>
+                <div class="experience-item">
+                    <h3 class="experience-title">Email & Booking Executive – Healthcare</h3>
+                    <p class="experience-company">Estrellite Business Solution Pvt. Ltd., Delhi</p>
+                    <p class="experience-duration">Sep 2022 - Apr 2025 (2 years 7 months)</p>
+                    <ul>
+                        <li>Handled inbound/outbound calls for diagnostic bookings across certified healthcare platforms</li>
+                        <li>Drafted professional emails to confirm bookings, send reports, and follow-up with clients</li>
+                        <li>Maintained daily booking records, payment status & customer info using MS Excel</li>
+                        <li>Reduced booking drop-off by 20% through reminders & follow-ups</li>
+                        <li>Supported backend operations and reported to Floor Supervisor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h2>
+                <div class="education">
+                    <h3>B.A, Sociology, English Literature & Journalism</h3>
+                    <p>Swami Shraddhanand College, 2022 - 2025</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-project-diagram"></i>Projects</h2>
+                <div class="experience-item">
+                    <h3 class="experience-title">Job Search Strategy Plan</h3>
+                    <ul>
+                        <li>Created step-by-step job search plan with resume optimization, LinkedIn keyword targeting, and HR outreach</li>
+                        <li>Tools/Skills: Excel, Analytics, LinkedIn, Email Communication</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="experience-title">Excel Dashboard – Mahadev Store</h3>
+                    <ul>
+                        <li>Designed attendance & sales tracking dashboard using pivot tables & charts</li>
+                        <li>Tools/Skills: Excel, Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="experience-title">Clothing & Lifestyle E-Commerce Plan</h3>
+                    <ul>
+                        <li>Built ₹1 Lakh budget plan for online store, defined product categories, costing & profit margins</li>
+                        <li>Tools/Skills: Market Research, Excel, Analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i>Accomplishments</h2>
+                <ul>
+                    <li>Reduced booking drop-off by 20% at Estrellite Business Solution</li>
+                    <li>Completed multiple online certifications in Excel, Digital Marketing, HTML/CSS</li>
+                    <li>Strong command over Hindi language</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
