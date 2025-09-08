@@ -1,65 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karishma Kumari | Portfolio</title>
+
+  <!-- Consent Defaults (sab denied by default) -->
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  // Default: sab deny (jab tak user allow na kare)
-  gtag('consent', 'default', {
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KD9V1VSQ98"></script>
-<script>
-  gtag('js', new Date());
-  gtag('config', 'G-KD9V1VSQ98');
-</script>
-<button id="grantButton">Allow Tracking</button>
-<button id="denyButton">Deny Tracking</button>
-
-<script>
-  document.getElementById("grantButton").addEventListener("click", function() {
-    gtag('consent', 'update', {
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'ad_storage': 'granted',
-      'analytics_storage': 'granted'
-    });
-  });
-
-  document.getElementById("denyButton").addEventListener("click", function() {
-    gtag('consent', 'update', {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
       'ad_storage': 'denied',
-      'analytics_storage': 'denied'
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
     });
-  });
-</script>
+  </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karishma Kumari - Portfolio</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KD9V1VSQ98"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KD9V1VSQ98"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-KD9V1VSQ98');
+  </script>
 
-  gtag('config', 'G-KD9V1VSQ98');
-</script>
+  <!-- Preload Images & Fonts -->
   <link rel="preload" as="image" href="images/IMG_20250421_122837_097.jpg">
   <link rel="preload" as="image" href="images/Karishma_Home_Banner_2025.jpg">
   <link rel="preload" as="image" href="images/Logon (1).png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset & Variables */
     :root {
       --primary: #ffb6c1;
       --secondary: #ffe6f0;
@@ -70,37 +42,13 @@
       --bg-hover: rgba(255,153,170,0.2);
     }
 
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Open Sans', sans-serif;
       line-height: 1.6;
       color: var(--text);
       background: #fff;
-      min-height: 100vh;
-      position: relative;
-    }
-
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 { 
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    header p { 
-      font-size: 1.1rem;
-      opacity: 0.9;
     }
 
     /* Navigation */
@@ -113,7 +61,7 @@
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
-    nav h1 { font-size: 1.2rem; font-weight: 600; }
+    nav h1 { font-size: 1.2rem; font-weight: 600; color:#fff; }
     nav a {
       color: #fff; text-decoration: none; margin: 0 15px; font-weight: 500;
     }
@@ -124,11 +72,7 @@
       height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      background-image: url('images/karishma-profile-new.jpg');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background: url('images/karishma-profile-new.jpg') center/cover no-repeat;
       position: relative;
     }
     .hero::before {
@@ -138,227 +82,58 @@
       background: rgba(0,0,0,0.5);
     }
     .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      margin-bottom: 2rem;
-      object-fit: cover;
+      width: 200px; height: 200px;
+      border-radius: 50%; border: 4px solid #fff;
+      margin-bottom: 2rem; object-fit: cover;
+      position: relative; z-index:2;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2; color:#fff;
     }
     .hero h2 { font-size: 3rem; margin-bottom: 15px; }
     .hero p { font-size: 1.2rem; margin-bottom: 20px; }
     .btn {
       padding: 12px 25px;
-      background: #ffd700;
-      color: #000;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-      display: inline-block;
+      background: #ffd700; color: #000;
+      border-radius: 25px; font-weight: bold; text-decoration: none;
+      transition: 0.3s; display: inline-block;
     }
     .btn:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
-    h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-    }
-
-    .resume-block {
-      display: grid;
-      gap: 2rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-      overflow: hidden;
-    }
-
-    .card h3 {
-      padding: 1.5rem;
-      margin: 0;
-      cursor: pointer;
-      background: var(--bg);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .assignment {
-      padding: 1.5rem;
-      display: none;
-    }
-
-    .assignment.show {
-      display: block;
-    }
-
-    ul {
-      list-style-position: inside;
-      margin: 1rem 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Section Styling */
-    section { 
-      padding: 80px 50px; 
-      max-width: 1200px; 
-      margin: auto; 
-    }
-    section:nth-child(even) {
-      background-color: var(--secondary);
-    }
-    section h2 { 
+    /* Sections */
+    section { padding: 80px 50px; max-width: 1200px; margin: auto; }
+    section:nth-child(even) { background-color: var(--secondary); }
+    section h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem; 
-      margin-bottom: 20px; 
-      text-align: center;
-      color: var(--heading);
+      font-size: 2.2rem; margin-bottom: 20px;
+      text-align: center; color: var(--heading);
     }
 
-    /* Skills Section */
-    .skills-content {
-      background: var(--bg-dark);
-      padding: 2rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-    }
-    
-    .skills-content h3 {
-      color: #ffd700;
-      font-size: 1.4rem;
-      margin: 1.5rem 0 1rem;
-    }
-    
-    .skills-content h3:first-child {
-      margin-top: 0;
-    }
-    
-    .skill-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .skill-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    
-    .skill-list li {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .skill-detail {
-      display: block;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
-      margin-top: 0.3rem;
-      font-weight: normal;
-    }
-
-    .interests li {
-      display: inline-block;
-      margin-right: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .skill-description {
-      line-height: 1.8;
-      margin: 1.5rem 0;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.95rem;
-    }
-
-    /* Projects Grid */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 30px; }
     .project-card {
-      background: var(--bg-light);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      position: relative;
-      z-index: 1;
+      background: var(--bg-light); border-radius: 12px;
+      overflow: hidden; transition: all 0.3s ease;
+      backdrop-filter: blur(10px); position: relative;
     }
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       background: var(--bg-hover);
     }
-    .project-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .project-content {
-      padding: 20px;
-      background: var(--bg-dark);
-    }
-    .project-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    .project-card p {
-      margin-bottom: 15px;
-      opacity: 0.9;
-    }
-    .view-btn {
-      display: inline-block;
-      padding: 8px 20px;
-      background: #ffd700;
-      color: #000;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-    .view-btn:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
+    .project-img { width: 100%; height: 180px; object-fit: cover; }
+    .project-content { padding: 20px; }
 
     /* Footer */
     footer {
       text-align: center; padding: 30px;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.6); color:#fff;
     }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 20px;
-      }
-      section {
-        padding: 60px 20px;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
+      nav { padding: 20px; }
+      section { padding: 60px 20px; }
+      .hero h2 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -390,199 +165,43 @@
   </section>
 
   <!-- About -->
-  <section id="about" style="background-color:#fff; padding:60px 20px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:32px; color:#cc3366; margin-bottom:40px; font-family:'Segoe UI', sans-serif;">
-        👋 About Me
-      </h2>
-      
-      <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px;">
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:25px; text-align:justify;">
-          Hello! I'm Karishma Kumari, a final-year graduate with a strong passion for e-commerce, wellness, and digital business development. I enjoy exploring innovative ways to combine technology, analytics, and creativity to drive business growth. Over the past few years, I have honed my skills in data management, content creation, digital marketing, and operational efficiency through internships and personal projects.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:25px; text-align:justify;">
-          I approach work with attention to detail and a problem-solving mindset, ensuring tasks are completed accurately and efficiently. I am highly organized and skilled at managing multiple priorities, whether it is analyzing data in Excel, coordinating with clients via email, or developing strategic business plans. Communication is one of my key strengths—I actively engage with team members and stakeholders, provide clear updates, and present insights in an understandable manner.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; text-align:justify;">
-          I thrive in collaborative environments, enjoy taking ownership of projects, and constantly seek opportunities to learn and implement new strategies. My goal is to contribute to meaningful projects in e-commerce and business development, where I can apply my skills to create measurable impact while continuously growing as a professional.
-        </p>
-      </div>
-    </div>
+  <section id="about">
+    <h2>👋 About Me</h2>
+    <p>Hello! I'm Karishma Kumari, a final-year graduate with a strong passion for e-commerce, wellness, and digital business development...</p>
   </section>
 
   <!-- Experience -->
-  <section id="experience" style="background-color:#ffe6f0; padding:60px 20px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:32px; color:#cc3366; margin-bottom:40px; font-family:'Segoe UI', sans-serif;">
-        💼 Work Experience
-      </h2>
-      
-      <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px; transition:all 0.3s ease;">
-        <div style="border-left:4px solid #cc3366; padding-left:20px;">
-          <h3 style="color:#cc3366; font-size:24px; margin-bottom:10px; font-family:'Segoe UI', sans-serif;">
-            Email & Booking Executive – Healthcare
-          </h3>
-          <div style="color:#666; margin-bottom:25px;">
-            <p style="font-size:18px; margin-bottom:8px;">Estrellite Business Solution Pvt. Ltd., Delhi</p>
-            <p style="font-size:16px; color:#888;">Sep 2022 - Apr 2025 (2 years 7 months)</p>
-          </div>
-        </div>
-        
-        <ul style="list-style-type:none; padding:0; margin-top:20px;">
-          <li style="margin-bottom:15px; padding-left:25px; position:relative; font-size:16px; line-height:1.6; color:#444;">
-            <span style="position:absolute; left:0; color:#cc3366;">►</span>
-            Handled inbound and outbound calls to assist with blood test and diagnostic bookings
-          </li>
-          <li style="margin-bottom:15px; padding-left:25px; position:relative; font-size:16px; line-height:1.6; color:#444;">
-            <span style="position:absolute; left:0; color:#cc3366;">►</span>
-            Drafted professional emails to confirm bookings, send reports, and follow up with clients
-          </li>
-          <li style="margin-bottom:15px; padding-left:25px; position:relative; font-size:16px; line-height:1.6; color:#444;">
-            <span style="position:absolute; left:0; color:#cc3366;">►</span>
-            Used MS Excel to maintain daily booking records, payment status, and customer information
-          </li>
-          <li style="margin-bottom:15px; padding-left:25px; position:relative; font-size:16px; line-height:1.6; color:#444;">
-            <span style="position:absolute; left:0; color:#cc3366;">►</span>
-            Sent regular reminders and follow-up messages to reduce booking drop-off by 20%
-          </li>
-          <li style="margin-bottom:15px; padding-left:25px; position:relative; font-size:16px; line-height:1.6; color:#444;">
-            <span style="position:absolute; left:0; color:#cc3366;">►</span>
-            Supported backend operations and reported to the Floor Supervisor during shifts
-          </li>
-        </ul>
-      </div>
-    </div>
+  <section id="experience">
+    <h2>💼 Work Experience</h2>
+    <p>Email & Booking Executive – Estrellite Business Solution Pvt. Ltd. (Sep 2022 – Apr 2025)</p>
   </section>
 
   <!-- Skills -->
-  <section id="skills" style="background-color:#fff; padding:60px 20px;">
-    <div style="max-width:800px; margin:0 auto;">
-      <h2 style="text-align:center; font-size:32px; color:#cc3366; margin-bottom:40px; font-family:'Segoe UI', sans-serif;">
-        🎯 Skills & Expertise
-      </h2>
-      
-      <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px;">
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:20px; text-align:justify;">
-          I have developed a diverse set of skills through a combination of academic learning, online training, and hands-on project work. I am proficient in MS Excel, including Pivot Tables and dashboard creation, which I practiced while designing a fitness data tracking project.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:20px; text-align:justify;">
-          During my coursework and assignments, I explored market research and e-commerce planning, where I worked on a detailed Clothing & Lifestyle business plan with a budget of ₹1 Lakh, learning how to analyze costing, product selection, and profit margins.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:20px; text-align:justify;">
-          Through Internshala's training and career-focused resources, I gained exposure to resume optimization, LinkedIn keyword targeting, and direct HR outreach, which helped me strengthen my job search strategies.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; margin-bottom:20px; text-align:justify;">
-          Alongside technical skills, I have also developed content writing and portfolio development abilities, applying them in academic and personal projects.
-        </p>
-        
-        <p style="font-size:16px; line-height:1.8; color:#444; text-align:justify;">
-          Beyond academics, my interests in swimming, gym, trekking, and chess have enhanced my discipline, focus, and problem-solving mindset, which I bring into my professional work.
-        </p>
-      </div>
-    </div>
+  <section id="skills">
+    <h2>🎯 Skills & Expertise</h2>
+    <p>MS Excel, Market Research, E-commerce Planning, Resume Optimization, Content Writing...</p>
   </section>
 
   <!-- Projects -->
-<section id="projects" style="background-color:#ffe6f0; padding:60px 20px; font-family: 'Segoe UI', sans-serif;">
-  <h2 style="text-align:center; font-size:32px; color:#cc3366; margin-bottom:40px;">
-    📂 My Projects & Assignments
-  </h2>
-  
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:30px; max-width:1200px; margin:0 auto;">
-    
-    <!-- Project 1 -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; transition:all 0.3s ease;"
-         onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)';"
-         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';">
-      
-      <img src="images/project1.jpg" alt="Job Search Strategy Graph" 
-           style="width:100%; height:220px; object-fit:cover;">
-      
-      <div style="padding:25px;">
-        <h3 style="color:#cc3366; font-size:24px; margin-bottom:12px; font-weight:600;">Job Search Strategy</h3>
-        <p style="color:#666; margin-bottom:15px; font-size:14px;">
-          <strong>Duration:</strong> 2 weeks | <strong>Type:</strong> Personal Project
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Excel</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">LinkedIn</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Analytics</span>
+  <section id="projects">
+    <h2>📂 My Projects & Assignments</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="images/project1.jpg" class="project-img" alt="Project 1">
+        <div class="project-content">
+          <h3>Job Search Strategy</h3>
+          <p>Created job search analytics dashboard & HR outreach plan.</p>
         </div>
-        <p style="color:#444; margin:15px 0; line-height:1.6;">
-          Created a comprehensive job search strategy including resume optimization, LinkedIn keyword targeting, 
-          and HR outreach plan. Developed analytics dashboard to track application success rates and response patterns.
-        </p>
-        <a href="job-search-strategy.html" 
-           style="display:inline-flex; align-items:center; padding:10px 20px; background:#cc3366; color:#fff; border-radius:6px; text-decoration:none; font-weight:500; margin-top:10px;">
-          View Details <span style="margin-left:8px;">→</span>
-        </a>
+      </div>
+      <div class="project-card">
+        <img src="images/project2.jpg" class="project-img" alt="Project 2">
+        <div class="project-content">
+          <h3>Mahadev Store Dashboard</h3>
+          <p>Sales dashboard with pivot tables & charts for insights.</p>
+        </div>
       </div>
     </div>
-    
-    <!-- Project 2 -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; transition:all 0.3s ease;"
-         onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)';"
-         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';">
-      
-      <img src="images/project2.jpg" alt="Excel Dashboard" 
-           style="width:100%; height:220px; object-fit:cover;">
-      
-      <div style="padding:25px;">
-        <h3 style="color:#cc3366; font-size:24px; margin-bottom:12px; font-weight:600;">Mahadev Store Dashboard</h3>
-        <p style="color:#666; margin-bottom:15px; font-size:14px;">
-          <strong>Duration:</strong> 1 month | <strong>Type:</strong> Business Analytics
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Excel</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Pivot Tables</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Data Analysis</span>
-        </div>
-        <p style="color:#444; margin:15px 0; line-height:1.6;">
-          Developed a comprehensive sales analytics dashboard using advanced Excel features. Created dynamic Pivot Tables and charts to track revenue, regional performance, and product category trends.
-        </p>
-        <a href="files/MahadevStore_Sales_Dashboard.xlsx" download
-           style="display:inline-flex; align-items:center; padding:10px 20px; background:#cc3366; color:#fff; border-radius:6px; text-decoration:none; font-weight:500; margin-top:10px;">
-          Download Excel <span style="margin-left:8px;">↓</span>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Project 3 -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; transition:all 0.3s ease;"
-         onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.15)';"
-         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';">
-      
-      <img src="images/project3.jpg" alt="E-Commerce Analytics Graph" 
-           style="width:100%; height:220px; object-fit:cover;">
-      
-      <div style="padding:25px;">
-        <h3 style="color:#cc3366; font-size:24px; margin-bottom:12px; font-weight:600;">E-Commerce Business Plan</h3>
-        <p style="color:#666; margin-bottom:15px; font-size:14px;">
-          <strong>Duration:</strong> 3 weeks | <strong>Type:</strong> Business Planning
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:15px;">
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Market Research</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">Financial Planning</span>
-          <span style="background:#ffe6f0; color:#cc3366; padding:5px 12px; border-radius:20px; font-size:14px;">E-Commerce</span>
-        </div>
-        <p style="color:#444; margin:15px 0; line-height:1.6;">
-          Developed a detailed business plan for an online clothing store with ₹1 Lakh budget. Conducted market research, defined target audience, planned inventory, and calculated projected profits.
-        </p>
-        <a href="ecommerce-plan.html" 
-           style="display:inline-flex; align-items:center; padding:10px 20px; background:#cc3366; color:#fff; border-radius:6px; text-decoration:none; font-weight:500; margin-top:10px;">
-          View Details <span style="margin-left:8px;">→</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact -->
   <section id="contact">
