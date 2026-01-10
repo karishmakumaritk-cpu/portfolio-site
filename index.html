@@ -1,203 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karishma Kumari | Portfolio</title>
-
-  <!-- Consent Defaults (sab denied by default) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-  </script>
-
-  <!-- Google Tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KD9V1VSQ98"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-KD9V1VSQ98');
-  </script>
-
-  <!-- Preload Images & Fonts -->
-  <link rel="preload" as="image" href="images/IMG_20250421_122837_097.jpg">
-  <link rel="preload" as="image" href="images/Karishma_Home_Banner_2025.jpg">
-  <link rel="preload" as="image" href="images/Logon (1).png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #ffb6c1;
-      --secondary: #ffe6f0;
-      --heading: #333333;
-      --text: #444444;
-      --bg-dark: rgba(255,182,193,0.9);
-      --bg-light: rgba(255,230,240,0.95);
-      --bg-hover: rgba(255,153,170,0.2);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: #fff;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 50px;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-    nav h1 { font-size: 1.2rem; font-weight: 600; color:#fff; }
-    nav a {
-      color: #fff; text-decoration: none; margin: 0 15px; font-weight: 500;
-    }
-    nav a:hover { color: #ffd700; }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center;
-      background: url('images/karishma-profile-new.jpg') center/cover no-repeat;
-      position: relative;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-    }
-    .profile-img {
-      width: 200px; height: 200px;
-      border-radius: 50%; border: 4px solid #fff;
-      margin-bottom: 2rem; object-fit: cover;
-      position: relative; z-index:2;
-    }
-    .hero-content {
-      position: relative; z-index: 2; color:#fff;
-    }
-    .hero h2 { font-size: 3rem; margin-bottom: 15px; }
-    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
-    .btn {
-      padding: 12px 25px;
-      background: #ffd700; color: #000;
-      border-radius: 25px; font-weight: bold; text-decoration: none;
-      transition: 0.3s; display: inline-block;
-    }
-    .btn:hover { background: #fff; color: #000; transform: translateY(-2px); }
-
-    /* Sections */
-    section { padding: 80px 50px; max-width: 1200px; margin: auto; }
-    section:nth-child(even) { background-color: var(--secondary); }
-    section h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem; margin-bottom: 20px;
-      text-align: center; color: var(--heading);
-    }
-
-    /* Projects */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 30px; }
-    .project-card {
-      background: var(--bg-light); border-radius: 12px;
-      overflow: hidden; transition: all 0.3s ease;
-      backdrop-filter: blur(10px); position: relative;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      background: var(--bg-hover);
-    }
-    .project-img { width: 100%; height: 180px; object-fit: cover; }
-    .project-content { padding: 20px; }
-
-    /* Footer */
-    footer {
-      text-align: center; padding: 30px;
-      background: rgba(0,0,0,0.6); color:#fff;
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 20px; }
-      section { padding: 60px 20px; }
-      .hero h2 { font-size: 2rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karishma Kumari | Journalism & Digital Business Setup Consultant</title>
+    <meta name="description" content="Professional portfolio - Journalism, online business setup, and digital consultation services">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">
-      <img src="images/Logon (1).png" alt="Logo" style="height: 40px; margin-right: 10px;">
-      <h1>Karishma Kumari</h1>
-    </div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="resume.html" target="_blank" style="background:#cc3366; padding:8px 16px; border-radius:20px;">Resume</a>
-    </div>
-  </nav>
+    <!-- Header/Hero Section -->
+    <header>
+        <h1>Karishma Kumari</h1>
+        <p>Journalism & Digital Business Setup Consultant</p>
+        <p style="font-size: 0.95rem; color: #aaa;">Helping offline businesses go online • Part-time Journalism • Remote Work</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="images/IMG_20250421_122837_097.jpg" alt="Karishma Kumari" class="profile-img">
-      <h2>Karishma Kumari</h2>
-      <p>Building Digital Success Stories | E-Commerce & Wellness Entrepreneur</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I am a Bachelor of Arts graduate (2022–2024) from IGNOU with an academic background
+            in Sociology, Business Communication, Human Resource Management, and Data Analysis.
+        </p>
+        <p>
+            Alongside part-time journalism work, I help small and local businesses move their
+            work online by setting up online carts, digital listings, and basic business systems.
+            I specialize in bringing offline businesses to digital platforms and supporting
+            business owners who are new to online tools.
+        </p>
+        <p>
+            I am confident in handling remote work, part-time journalism roles, and online
+            business setup projects.
+        </p>
+    </section>
 
-  <!-- About -->
-  <section id="about">
-    <h2>👋 About Me</h2>
-    <p>Hello! I'm Karishma Kumari, a final-year graduate with a strong passion for e-commerce, wellness, and digital business development...</p>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2>Experience</h2>
 
-  <!-- Experience -->
-  <section id="experience">
-    <h2>💼 Work Experience</h2>
-    <p>Email & Booking Executive – Estrellite Business Solution Pvt. Ltd. (Sep 2022 – Apr 2025)</p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>🎯 Skills & Expertise</h2>
-    <p>MS Excel, Market Research, E-commerce Planning, Resume Optimization, Content Writing...</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>📂 My Projects & Assignments</h2>
-    <div class="projects">
-      <div class="project-card">
-        <img src="images/project1.jpg" class="project-img" alt="Project 1">
-        <div class="project-content">
-          <h3>Job Search Strategy</h3>
-          <p>Created job search analytics dashboard & HR outreach plan.</p>
+        <div class="card">
+            <h3>Part-Time Journalism & News Support</h3>
+            <div class="assignment show">
+                <ul>
+                    <li>News research and content support</li>
+                    <li>Understanding of social issues and reporting basics</li>
+                    <li>Professional communication and social awareness</li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="images/project2.jpg" class="project-img" alt="Project 2">
-        <div class="project-content">
-          <h3>Mahadev Store Dashboard</h3>
-          <p>Sales dashboard with pivot tables & charts for insights.</p>
+
+        <div class="card">
+            <h3>Seasonal Business Support – Diwali Projects</h3>
+            <div class="assignment show">
+                <ul>
+                    <li>Supported local businesses during Diwali season</li>
+                    <li>Assisted in sales coordination and customer handling</li>
+                    <li>Helped organize products and pricing</li>
+                    <li>Gained real-world business operations experience</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Online Business Setup Consultant (Freelance)</h3>
+            <div class="assignment show">
+                <ul>
+                    <li>Help offline businesses go online</li>
+                    <li>Set up basic online carts and product listings</li>
+                    <li>Guide non-technical business owners</li>
+                    <li>Provide end-to-end online business setup support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Rental Listing & Online Coordination (Freelance)</h3>
+            <div class="assignment show">
+                <ul>
+                    <li>Assist in listing two-wheelers on online rental platforms</li>
+                    <li>Coordinate pricing, availability, and platform requirements</li>
+                    <li>Support owners in managing rentals digitally</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <h3>Bachelor of Arts (BA)</h3>
+        <p><strong>Indira Gandhi National Open University (IGNOU)</strong></p>
+        <p>2022 – 2024</p>
+        
+        <h3>Key Academic Areas</h3>
+        <ul>
+            <li>Sociology & Social Research</li>
+            <li>Business Communication</li>
+            <li>Managing Human Resources</li>
+            <li>Data Analysis</li>
+            <li>Computer Applications in Business</li>
+            <li>Soft Skills & Professional Communication</li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+
+        <h3>Journalism & Communication</h3>
+        <ul>
+            <li>News Research</li>
+            <li>Social Issue Understanding</li>
+            <li>Professional Communication</li>
+            <li>Content Support</li>
+        </ul>
+
+        <h3>Business & Digital</h3>
+        <ul>
+            <li>Online Business Setup</li>
+            <li>Product Listing & Cart Creation</li>
+            <li>Customer Coordination</li>
+            <li>Digital Support for Small Businesses</li>
+            <li>Remote Business Coordination</li>
+        </ul>
+
+        <h3>Other Skills</h3>
+        <ul>
+            <li>Time Management</li>
+            <li>Remote Work Handling</li>
+            <li>Client Communication</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>Services & Pricing</h2>
+
+        <div class="card">
+            <h3>Online Business Setup</h3>
+            <div class="assignment show">
+                <p><strong>Complete online business setup for offline businesses</strong></p>
+                <ul>
+                    <li>Product listing & online cart creation</li>
+                    <li>Support for business owners new to digital platforms</li>
+                    <li>Remote setup and coordination</li>
+                </ul>
+                <p><strong>Pricing:</strong> Starting from ₹7,000<br><em>(Final cost depends on business size and requirements)</em></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Bike Rental Listing & Coordination</h3>
+            <div class="assignment show">
+                <p><strong>Two-wheeler rental listing and platform coordination support</strong></p>
+                <ul>
+                    <li>Bike listing and setup on rental platforms (GoBikes)</li>
+                    <li>Coordination between bike owner and platform</li>
+                    <li>Rental price guidance and availability management</li>
+                </ul>
+                <p><strong>Bike Rental Range:</strong> ₹400 – ₹1,300 per day (model dependent)<br>
+                <strong>Service Charge:</strong> 20% commission</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Get In Touch</h2>
+        <p>I am available for:</p>
+        <ul>
+            <li>Part-time Journalism Roles</li>
+            <li>Remote & Online Work</li>
+            <li>Business Setup Projects</li>
+            <li>Freelance Consultation</li>
+        </ul>
+        
+        <p style="margin-top: 2rem;">
+            <strong>Email:</strong> <a href="mailto:karishmakumaritk@gmail.com">karishmakumaritk@gmail.com</a><br>
+            <strong>GitHub:</strong> <a href="https://github.com/karishmakumaritk-cpu">karishmakumaritk-cpu</a><br>
+            <strong>Location:</strong> Delhi, India (Open to Remote/Global Opportunities)
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Karishma Kumari. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
         </div>
       </div>
     </div>

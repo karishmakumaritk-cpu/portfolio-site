@@ -56,6 +56,13 @@ nav a:hover {
     animation: fadeInUp 1s ease;
 }
 
+.section h2 {
+    color: #333;
+    border-bottom: 2px solid #cc3366;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Profile Image */
 .about img {
     width: 200px;
@@ -106,6 +113,26 @@ nav a:hover {
 
 .card li {
     margin-bottom: 0.5rem;
+}
+
+/* Services Card Styling */
+#services .card {
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    border-left: 4px solid #cc3366;
+}
+
+#services h3 {
+    color: #333;
+}
+
+#services ul li {
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#services .assignment p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
 }
 
 /* Project Cards */
@@ -174,6 +201,24 @@ nav a:hover {
     color: #666;
 }
 
+/* Education & Experience Styling */
+#education h3,
+#experience h3 {
+    color: #444;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#education ul,
+#experience .assignment ul {
+    margin-left: 1.5rem;
+}
+
+#education ul li,
+#experience .assignment ul li {
+    margin-bottom: 0.5rem;
+}
+
 /* Contact Section */
 #contact a {
     color: #333;
@@ -184,6 +229,26 @@ nav a:hover {
 #contact a:hover {
     text-decoration: underline;
     color: #cc3366;
+}
+
+#contact ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+#contact ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+#contact ul li:before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    color: #cc3366;
+    font-weight: bold;
 }
 
 /* Footer Styles */
