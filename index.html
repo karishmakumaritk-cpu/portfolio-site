@@ -8,22 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg: #050608;
-    --surface: #0a0b10;
-    --surface2: #0f1119;
-    --surface3: #141620;
-    --border: rgba(255,255,255,0.06);
-    --border2: rgba(255,255,255,0.10);
-    --accent: #7c3aed;
-    --accent2: #a78bfa;
-    --accent3: #38bdf8;
-    --gold: #d4a853;
-    --gold2: #f0c97a;
-    --text: #eef0f6;
-    --muted: #4a5068;
-    --muted2: #8892aa;
-    --glow: rgba(124,58,237,0.4);
-    --gold-glow: rgba(212,168,83,0.25);
+  --bg: #050608;
+  --surface: #0a0b10;
+  --surface2: #0f1119;
+  --surface3: #141620;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.10);
+  --accent: #7c3aed;
+  --accent2: #a78bfa;
+  --accent3: #38bdf8;
+  --gold: #d4a853;
+  --gold2: #f0c97a;
+  --text: #eef0f6;
+  --muted: #4a5068;
+  --muted2: #8892aa;
+  --glow: rgba(124,58,237,0.4);
+  --gold-glow: rgba(212,168,83,0.25);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -60,10 +60,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .hero-sub{color:var(--muted2);font-size:1rem;line-height:1.75;max-width:480px;margin:1.5rem 0 2.5rem;font-weight:300;}
 
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
-.btn-primary{background:linear-gradient(135deg,var(--accent) 0%,#6d28d9 100%);color:#fff;padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-weight:500;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;box-shadow:0 0 30px var(--glow),inset 0 1px 0 rgba(255,255,255,.15);} 
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow),inset 0 1px 0 rgba(255,255,255,.2);} 
-.btn-ghost{border:1px solid var(--border2);color:var(--muted2);padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;background:rgba(255,255,255,.02);} 
-.btn-ghost:hover{border-color:rgba(167,139,250,.5);color:var(--text);background:rgba(124,58,237,.08);} 
+.btn-primary{background:linear-gradient(135deg,var(--accent) 0%,#6d28d9 100%);color:#fff;padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-weight:500;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;box-shadow:0 0 30px var(--glow),inset 0 1px 0 rgba(255,255,255,.15);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow),inset 0 1px 0 rgba(255,255,255,.2);}
+.btn-ghost{border:1px solid var(--border2);color:var(--muted2);padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;background:rgba(255,255,255,.02);}
+.btn-ghost:hover{border-color:rgba(167,139,250,.5);color:var(--text);background:rgba(124,58,237,.08);}
 
 .hero-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin-bottom:2.5rem;}
 .hero-stats{display:flex;gap:3rem;}
@@ -78,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .photo-glow{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.35) 0%,transparent 70%);animation:glowbreathe 3s ease-in-out infinite alternate;}
 @keyframes glowbreathe{from{transform:scale(1);opacity:.7}to{transform:scale(1.2);opacity:1}}
 .hero-photo{width:310px;height:380px;object-fit:cover;object-position:top center;border-radius:2px 24px 2px 24px;position:relative;z-index:1;border:1px solid rgba(167,139,250,.25);box-shadow:0 0 80px rgba(124,58,237,.3),0 40px 100px rgba(0,0,0,.7);}
-.photo-badge{position:absolute;bottom:1.5rem;left:-2rem;z-index:2;background:var(--surface2);border:1px solid rgba(212,168,83,.3);border-radius:10px;padding:1rem 1.25rem;backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.5);} 
+.photo-badge{position:absolute;bottom:1.5rem;left:-2rem;z-index:2;background:var(--surface2);border:1px solid rgba(212,168,83,.3);border-radius:10px;padding:1rem 1.25rem;backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.5);}
 .photo-badge-title{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--gold2);letter-spacing:.04em;}
 .photo-badge-sub{font-size:.7rem;color:var(--muted2);margin-top:.2rem;}
 
@@ -88,7 +88,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .section-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold);}
 .section-eyebrow-text{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:500;}
 .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,3.5vw,3.2rem);letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;}
-.section-sub{color:var(--muted2);font-size:0.95rem;line-height:1.75;max-width:540px;margin-bottom:3.5rem;}
+.section-sub{color:var(--muted2);font-size:.95rem;line-height:1.75;max-width:540px;margin-bottom:3.5rem;}
 
 /* ===== SERVICES ===== */
 #services{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
@@ -136,76 +136,76 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 /* ===== ABOUT ===== */
 #about .section-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center;}
 .about-visual{position:relative;}
-.about-img{width:100%;height:460px;object-fit:cover;object-position:top;border-radius:2px 20px 2px 20px;border:1px solid var(--border2);filter:brightness(.95);} 
-.about-card{position:absolute;bottom:-2rem;right:-2rem;background:var(--surface2);border:1px solid rgba(212,168,83,.2);border-radius:12px;padding:1.5rem;min-width:180px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.5);} 
+.about-img{width:100%;height:460px;object-fit:cover;object-position:top;border-radius:2px 20px 2px 20px;border:1px solid var(--border2);filter:brightness(.95);}
+.about-card{position:absolute;bottom:-2rem;right:-2rem;background:var(--surface2);border:1px solid rgba(212,168,83,.2);border-radius:12px;padding:1.5rem;min-width:180px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.5);}
 .about-card-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:.4rem;}
 .about-card-val{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--text);}
 .about-card-sub{font-size:.72rem;color:var(--muted2);margin-top:.25rem;}
 .about-card2{top:-1.5rem;left:-1.5rem;bottom:auto;right:auto;min-width:160px;}
-.about-text p{color:var(--muted2);font-size:.93rem;line-height:1.8;margin-bottom:1.25rem;} 
-.skills-wrap{margin-top:2rem;} 
-.skills-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.75rem;} 
-.skills-list{display:flex;flex-wrap:wrap;gap:.45rem;} 
-.skill-pill{font-size:.73rem;padding:.35rem .9rem;border:1px solid var(--border2);border-radius:2px;color:var(--muted2);background:rgba(255,255,255,.02);transition:all .2s;letter-spacing:.02em;} 
-.skill-pill:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);} 
+.about-text p{color:var(--muted2);font-size:.93rem;line-height:1.8;margin-bottom:1.25rem;}
+.skills-wrap{margin-top:2rem;}
+.skills-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.75rem;}
+.skills-list{display:flex;flex-wrap:wrap;gap:.45rem;}
+.skill-pill{font-size:.73rem;padding:.35rem .9rem;border:1px solid var(--border2);border-radius:2px;color:var(--muted2);background:rgba(255,255,255,.02);transition:all .2s;letter-spacing:.02em;}
+.skill-pill:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);}
 
 /* ===== PRICING ===== */
-#pricing{background:var(--surface);border-top:1px solid var(--border);} 
-.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);} 
-.price-card{background:var(--surface);padding:2rem;transition:all .3s;} 
-.price-card:hover{background:var(--surface2);} 
-.price-card.featured{background:linear-gradient(160deg,rgba(124,58,237,.12),var(--surface));border-top:2px solid var(--accent2);} 
-.price-card.gold-featured{background:linear-gradient(160deg,rgba(212,168,83,.08),var(--surface));border-top:2px solid var(--gold);} 
-.price-badge{display:inline-block;font-size:.6rem;background:var(--accent);color:#fff;padding:.2rem .65rem;border-radius:2px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.85rem;} 
-.price-badge.gold{background:var(--gold);color:#000;} 
-.price-svc{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.6rem;} 
-.price-range{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em;color:var(--text);margin-bottom:.4rem;} 
-.price-note{font-size:.78rem;color:var(--muted2);} 
+#pricing{background:var(--surface);border-top:1px solid var(--border);}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.price-card{background:var(--surface);padding:2rem;transition:all .3s;}
+.price-card:hover{background:var(--surface2);}
+.price-card.featured{background:linear-gradient(160deg,rgba(124,58,237,.12),var(--surface));border-top:2px solid var(--accent2);}
+.price-card.gold-featured{background:linear-gradient(160deg,rgba(212,168,83,.08),var(--surface));border-top:2px solid var(--gold);}
+.price-badge{display:inline-block;font-size:.6rem;background:var(--accent);color:#fff;padding:.2rem .65rem;border-radius:2px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.85rem;}
+.price-badge.gold{background:var(--gold);color:#000;}
+.price-svc{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.6rem;}
+.price-range{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em;color:var(--text);margin-bottom:.4rem;}
+.price-note{font-size:.78rem;color:var(--muted2);}
 
 /* ===== CONTACT ===== */
-#contact{position:relative;overflow:hidden;} 
-.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(124,58,237,.12),transparent 70%);} 
-.contact-inner{position:relative;z-index:1;text-align:center;} 
-.contact-inner .section-eyebrow{justify-content:center;} 
-.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:1rem;} 
-.contact-title em{font-style:italic;background:linear-gradient(135deg,var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;} 
-.contact-sub{color:var(--muted2);max-width:480px;margin:0 auto 2.5rem;line-height:1.75;} 
-.contact-row{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;} 
-.clink{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.75rem;border-radius:4px;border:1px solid var(--border2);color:var(--muted2);text-decoration:none;font-size:.85rem;letter-spacing:.03em;background:rgba(255,255,255,.02);transition:all .25s;} 
-.clink:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);} 
-.clink.primary{background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;border-color:transparent;box-shadow:0 0 30px var(--glow);} 
-.clink.primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow);} 
-.clink svg{width:16px;height:16px;flex-shrink:0;} 
+#contact{position:relative;overflow:hidden;}
+.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(124,58,237,.12),transparent 70%);}
+.contact-inner{position:relative;z-index:1;text-align:center;}
+.contact-inner .section-eyebrow{justify-content:center;}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:1rem;}
+.contact-title em{font-style:italic;background:linear-gradient(135deg,var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.contact-sub{color:var(--muted2);max-width:480px;margin:0 auto 2.5rem;line-height:1.75;}
+.contact-row{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
+.clink{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.75rem;border-radius:4px;border:1px solid var(--border2);color:var(--muted2);text-decoration:none;font-size:.85rem;letter-spacing:.03em;background:rgba(255,255,255,.02);transition:all .25s;}
+.clink:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);}
+.clink.primary{background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;border-color:transparent;box-shadow:0 0 30px var(--glow);}
+.clink.primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow);}
+.clink svg{width:16px;height:16px;flex-shrink:0;}
 
 /* ===== FOOTER ===== */
-footer{border-top:1px solid var(--border);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;max-width:100%;} 
-.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.1rem;letter-spacing:.06em;background:linear-gradient(135deg,#fff 20%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;} 
-footer p{font-size:.75rem;color:var(--muted);letter-spacing:.04em;} 
+footer{border-top:1px solid var(--border);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;max-width:100%;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.1rem;letter-spacing:.06em;background:linear-gradient(135deg,#fff 20%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+footer p{font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
 
 /* ===== ANIMATIONS ===== */
-.fade-up{opacity:0;transform:translateY(28px);animation:fadeup .75s ease forwards;} 
-@keyframes fadeup{to{opacity:1;transform:translateY(0)}} 
-.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}.d6{animation-delay:.75s} 
+.fade-up{opacity:0;transform:translateY(28px);animation:fadeup .75s ease forwards;}
+@keyframes fadeup{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}.d6{animation-delay:.75s}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
-    nav,footer{padding:1.2rem 2rem;}
-    .section-wrap{padding:5rem 2rem;}
-    .hero-inner,#about .section-wrap{grid-template-columns:1fr;gap:3rem;}
-    #hero{padding:7rem 2rem 3rem;}
-    .hero-photo{width:260px;height:320px;}
-    .photo-ring,.photo-ring2{width:280px;height:280px;}
-    .photo-glow{width:260px;height:260px;}
-    .services-grid{grid-template-columns:1fr;}
-    .pricing-grid{grid-template-columns:repeat(2,1fr);} 
-    .nav-links{display:none;}
-    #about .section-wrap{grid-template-columns:1fr;}
-    .about-card{display:none;}
+  nav,footer{padding:1.2rem 2rem;}
+  .section-wrap{padding:5rem 2rem;}
+  .hero-inner,#about .section-wrap{grid-template-columns:1fr;gap:3rem;}
+  #hero{padding:7rem 2rem 3rem;}
+  .hero-photo{width:260px;height:320px;}
+  .photo-ring,.photo-ring2{width:280px;height:280px;}
+  .photo-glow{width:260px;height:260px;}
+  .services-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:repeat(2,1fr);}
+  .nav-links{display:none;}
+  #about .section-wrap{grid-template-columns:1fr;}
+  .about-card{display:none;}
 }
 @media(max-width:600px){
-    .pricing-grid{grid-template-columns:1fr;}
-    .hero-stats{gap:1.5rem;}
-    .stat-num{font-size:1.4rem;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:1.5rem;}
+  .stat-num{font-size:1.4rem;}
 }
 </style>
 </head>
@@ -213,112 +213,403 @@ footer p{font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
 
 <!-- NAV -->
 <nav>
-    <div class="nav-logo">Karishma Kumari</div>
-    <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-    </ul>
+  <div class="nav-logo">Karishma Kumari</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-    <div class="hero-orb1"></div>
-    <div class="hero-orb2"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-line"></div>
-    <div class="hero-inner">
-        <div>
-            <div class="hero-eyebrow fade-up">
-                <span class="eyebrow-dot"></span>
-                <span class="eyebrow-text">Available for Freelance &amp; Remote Projects</span>
-            </div>
-            <h1 class="hero-title fade-up d1">
-                AI Automation<br>
-                <span class="hero-title-serif">&amp; Digital Systems</span><br>
-                Consultant
-            </h1>
-            <p class="hero-sub fade-up d2">I help businesses automate operations using AI agents, workflow systems, AI content generation, and digital commerce solutions — so you scale without the overhead.</p>
-            <div class="hero-btns fade-up d3">
-                <a href="#contact" class="btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    Book Consultation
-                </a>
-                <a href="#services" class="btn-ghost">View Services
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="hero-divider fade-up d4"></div>
-            <div class="hero-stats fade-up d4">
-                <div class="stat-item"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Service Areas</div></div>
-                <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Live Products</div></div>
-            </div>
-        </div>
-        <div class="hero-photo-wrap fade-up d5">
-            <div class="photo-ring"></div>
-            <div class="photo-ring2"></div>
-            <div class="photo-glow"></div>
-            <img src="images/project1.jpg.png" alt="Karishma Kumari" class="hero-photo">
-            <div class="photo-badge">
-                <div class="photo-badge-title">Vision AI Studio</div>
-                <div class="photo-badge-sub">Founder &amp; AI Architect</div>
-            </div>
-        </div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow fade-up">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-text">Available for Freelance &amp; Remote Projects</span>
+      </div>
+      <h1 class="hero-title fade-up d1">
+        AI Automation<br>
+        <span class="hero-title-serif">&amp; Digital Systems</span><br>
+        Consultant
+      </h1>
+      <p class="hero-sub fade-up d2">I help businesses automate operations using AI agents, workflow systems, AI content generation, and digital commerce solutions — so you scale without the overhead.</p>
+      <div class="hero-btns fade-up d3">
+        <a href="#contact" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Book Consultation
+        </a>
+        <a href="#services" class="btn-ghost">View Services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-divider fade-up d4"></div>
+      <div class="hero-stats fade-up d4">
+        <div class="stat-item"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Service Areas</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Live Products</div></div>
+      </div>
     </div>
+    <div class="hero-photo-wrap fade-up d5">
+      <div class="photo-ring"></div>
+      <div class="photo-ring2"></div>
+      <div class="photo-glow"></div>
+      <img src="images/project1.jpg.png" alt="Karishma Kumari" class="hero-photo">
+      <div class="photo-badge">
+        <div class="photo-badge-title">Vision AI Studio</div>
+        <div class="photo-badge-sub">Founder &amp; AI Architect</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-    <div class="section-wrap" style="padding-bottom:0;">
-        <div class="section-eyebrow"><span class="section-eyebrow-text">What I Deliver</span></div>
-        <h2 class="section-title">Services &amp; Expertise</h2>
-        <p class="section-sub">From intelligent AI agents to full e-commerce operations — end-to-end digital solutions for modern businesses.</p>
+  <div class="section-wrap" style="padding-bottom:0;">
+    <div class="section-eyebrow"><span class="section-eyebrow-text">What I Deliver</span></div>
+    <h2 class="section-title">Services &amp; Expertise</h2>
+    <p class="section-sub">From intelligent AI agents to full e-commerce operations — end-to-end digital solutions for modern businesses.</p>
+  </div>
+  <div class="section-wrap" style="padding-top:0;">
+    <div class="services-grid">
+
+      <!-- Card 1: AI Agents -->
+      <div class="service-card">
+        <div class="svc-icon icon-brain">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
+            <circle cx="24" cy="14" r="3" fill="rgba(124,58,237,0.9)"/>
+            <circle cx="14" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
+            <circle cx="34" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
+            <circle cx="24" cy="36" r="3" fill="rgba(56,189,248,0.9)"/>
+            <circle cx="16" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
+            <circle cx="32" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
+            <line x1="24" y1="14" x2="16" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="24" y1="14" x2="32" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="16" y1="18" x2="14" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="32" y1="18" x2="34" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="14" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="34" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
+            </line>
+            <circle cx="24" cy="24" r="8" stroke="rgba(124,58,237,0.3)" stroke-width="1" fill="none">
+              <animate attributeName="r" values="6;14;6" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="svc-name">AI Agents &amp; Automation</div>
+        <div class="svc-desc">Custom AI chat agents, voice call agents, and WhatsApp automation systems working 24/7 for your business growth.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">AI Chatbot</span><span class="svc-tag">Voice Agent</span><span class="svc-tag">WhatsApp AI</span><span class="svc-tag">CRM Automation</span>
+        </div>
+        <div class="svc-price">₹3,000 – ₹15,000 <span>/ project</span></div>
+      </div>
+
+      <!-- Card 2: n8n Workflow -->
+      <div class="service-card">
+        <div class="svc-icon icon-flow">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="20" width="8" height="8" rx="2" fill="rgba(124,58,237,0.8)">
+              <animate attributeName="opacity" values="1;0.5;1" dur="1.8s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="20" y="10" width="8" height="8" rx="2" fill="rgba(167,139,250,0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+            </rect>
+            <rect x="20" y="30" width="8" height="8" rx="2" fill="rgba(167,139,250,0.8)">
+              <animate attributeName="opacity" values="1;0.5;1" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+            </rect>
+            <rect x="36" y="20" width="8" height="8" rx="2" fill="rgba(56,189,248,0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+            </rect>
+            <path d="M12 24 L20 14" stroke="rgba(124,58,237,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
+              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
+            </path>
+            <path d="M12 24 L20 34" stroke="rgba(124,58,237,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
+              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.2s"/>
+            </path>
+            <path d="M28 14 L36 24" stroke="rgba(56,189,248,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
+              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.4s"/>
+            </path>
+            <path d="M28 34 L36 24" stroke="rgba(56,189,248,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
+              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.6s"/>
+            </path>
+          </svg>
+        </div>
+        <div class="svc-name">n8n Workflow Automation</div>
+        <div class="svc-desc">Complex multi-step automation workflows connecting all your tools, eliminating manual repetitive business processes entirely.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">n8n Flows</span><span class="svc-tag">API Integration</span><span class="svc-tag">Data Pipelines</span><span class="svc-tag">SaaS Logic</span>
+        </div>
+        <div class="svc-price">₹4,000 – ₹20,000 <span>/ project</span></div>
+      </div>
+
+      <!-- Card 3: Website Dev -->
+      <div class="service-card">
+        <div class="svc-icon icon-globe">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="18" stroke="rgba(56,189,248,0.5)" stroke-width="1.5"/>
+            <ellipse cx="24" cy="24" rx="10" ry="18" stroke="rgba(56,189,248,0.3)" stroke-width="1">
+              <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="8s" repeatCount="indefinite"/>
+            </ellipse>
+            <line x1="6" y1="24" x2="42" y2="24" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+            <line x1="8" y1="16" x2="40" y2="16" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+            <line x1="8" y1="32" x2="40" y2="32" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+            <circle cx="24" cy="15" r="2.5" fill="rgba(56,189,248,0.9)">
+              <animate attributeName="cy" values="14;34;14" dur="4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="svc-name">Website Development</div>
+        <div class="svc-desc">Modern, fast business websites and landing pages built with clean architecture, SaaS logic and professional premium design.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Business Sites</span><span class="svc-tag">Landing Pages</span><span class="svc-tag">SaaS Systems</span><span class="svc-tag">Auth Logic</span>
+        </div>
+        <div class="svc-price">₹5,000 – ₹15,000 <span>/ project</span></div>
+      </div>
+
+      <!-- Card 4: E-Commerce -->
+      <div class="service-card gold-card">
+        <div class="svc-icon icon-cart">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="18" width="24" height="20" rx="3" stroke="rgba(212,168,83,0.7)" stroke-width="1.5" fill="rgba(212,168,83,0.08)"/>
+            <path d="M18 18 C18 13 30 13 30 18" stroke="rgba(212,168,83,0.6)" stroke-width="1.5" fill="none"/>
+            <circle cx="19" cy="29" r="2" fill="rgba(212,168,83,0.8)">
+              <animate attributeName="cy" values="28;30;28" dur="1s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="29" cy="29" r="2" fill="rgba(212,168,83,0.8)">
+              <animate attributeName="cy" values="30;28;30" dur="1s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M38 10 L39 13 L42 14 L39 15 L38 18 L37 15 L34 14 L37 13 Z" fill="rgba(212,168,83,0.9)">
+              <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+            </path>
+            <path d="M8 8 L9 10 L11 11 L9 12 L8 14 L7 12 L5 11 L7 10 Z" fill="rgba(240,201,122,0.7)">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+            </path>
+          </svg>
+        </div>
+        <div class="svc-name">E-Commerce Management</div>
+        <div class="svc-desc">Full marketplace setup and management across Flipkart, Meesho, and Amazon — from product listing to advertising campaigns.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Flipkart</span><span class="svc-tag">Meesho</span><span class="svc-tag">Amazon</span><span class="svc-tag">Marketplace SEO</span>
+        </div>
+        <div class="svc-price gold-price">₹2,000 – ₹10,000 <span>/ month</span></div>
+      </div>
+
+      <!-- Card 5: AI Creative -->
+      <div class="service-card">
+        <div class="svc-icon icon-sparkle">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6 L27 21 L42 24 L27 27 L24 42 L21 27 L6 24 L21 21 Z" fill="rgba(124,58,237,0.15)" stroke="rgba(167,139,250,0.7)" stroke-width="1.2">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M38 10 L39.5 14 L38 18 L36.5 14 Z" fill="rgba(167,139,250,0.8)">
+              <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="transform" values="scale(1);scale(1.3);scale(1)" dur="1.5s" repeatCount="indefinite" additive="sum"/>
+            </path>
+            <path d="M10 8 L11 12 L10 16 L9 12 Z" fill="rgba(56,189,248,0.8)">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
+            </path>
+            <path d="M40 34 L41 37 L40 40 L39 37 Z" fill="rgba(124,58,237,0.8)">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+            </path>
+            <circle cx="24" cy="24" r="14" stroke="rgba(167,139,250,0.2)" stroke-width="1" stroke-dasharray="3 5">
+              <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="6s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="svc-name">AI Creative Services</div>
+        <div class="svc-desc">AI-generated product photography, video ads, reels, and branding assets that make your products stand out on any platform.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">AI Product Photos</span><span class="svc-tag">AI Video Ads</span><span class="svc-tag">Product Reels</span><span class="svc-tag">Branding</span>
+        </div>
+        <div class="svc-price">₹500 – ₹5,000 <span>/ project</span></div>
+      </div>
+
+      <!-- Card 6: Full Setup -->
+      <div class="service-card gold-card">
+        <div class="svc-icon icon-rocket">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="rocket-body">
+              <path d="M24 8 C28 8 36 16 36 26 L30 32 L18 32 L12 26 C12 16 20 8 24 8 Z" fill="rgba(212,168,83,0.15)" stroke="rgba(212,168,83,0.7)" stroke-width="1.2"/>
+              <circle cx="24" cy="22" r="4" stroke="rgba(240,201,122,0.8)" stroke-width="1.2" fill="rgba(240,201,122,0.1)">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+              </circle>
+              <path d="M18 32 L12 38 L16 34" fill="rgba(212,168,83,0.5)" stroke="rgba(212,168,83,0.6)" stroke-width="1"/>
+              <path d="M30 32 L36 38 L32 34" fill="rgba(212,168,83,0.5)" stroke="rgba(212,168,83,0.6)" stroke-width="1"/>
+            </g>
+            <g class="flame">
+              <path d="M20 32 Q22 40 24 38 Q26 40 28 32" fill="rgba(212,168,83,0.6)" stroke="none">
+                <animate attributeName="d" values="M20 32 Q22 42 24 40 Q26 42 28 32;M20 32 Q22 38 24 36 Q26 38 28 32;M20 32 Q22 42 24 40 Q26 42 28 32" dur="0.4s" repeatCount="indefinite"/>
+              </path>
+            </g>
+            <circle cx="24" cy="24" r="1.5" fill="white" opacity="0">
+              <animateMotion path="M 0 0 a 10 10 0 1 1 0.01 0" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="svc-name">Full Business Setup</div>
+        <div class="svc-desc">Complete online business launch — website + marketplace + automation + branding, all delivered as a single cohesive package.</div>
+        <div class="svc-tags">
+          <span class="svc-tag">Website</span><span class="svc-tag">Marketplace</span><span class="svc-tag">Automation</span><span class="svc-tag">Branding</span>
+        </div>
+        <div class="svc-price gold-price">₹7,000+ <span>/ package</span></div>
+      </div>
+
     </div>
-    <div class="section-wrap" style="padding-top:0;">
-        <div class="services-grid">
+  </div>
+</section>
 
-            <!-- Card 1: AI Agents -->
-            <div class="service-card">
-                <div class="svc-icon icon-brain">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="24" cy="24" r="22" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
-                        <circle cx="24" cy="14" r="3" fill="rgba(124,58,237,0.9)"/>
-                        <circle cx="14" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
-                        <circle cx="34" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
-                        <circle cx="24" cy="36" r="3" fill="rgba(56,189,248,0.9)"/>
-                        <circle cx="16" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
-                        <circle cx="32" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
-                        <line x1="24" y1="14" x2="16" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="24" y1="14" x2="32" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="16" y1="18" x2="14" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="32" y1="18" x2="34" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="14" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
-                        </line>
-                        <line x1="34" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
-                            <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
-                        </line>
-                        <circle cx="24" cy="24" r="8" stroke="rgba(124,58,237,0.3)" stroke-width="1" fill="none">
-                            <animate attributeName="r" values="6;14;6" dur="3s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
-                        </circle>
-                    </svg>
-                </div>
-                <div class="svc-name">AI Agents &amp; Automation</div>
-                <div class="svc-desc">Custom AI chat agents, voice call agents, and WhatsApp automation systems working 24/7 for your business growth.</div>
-                <div class="svc-tags">
-                    <span class="svc-tag">AI Chatbot</span><span class="svc-tag">Voice Agent</span><span class="svc-tag">WhatsApp AI</span><span class="svc-tag">CRM Automation</span>
-                </div>
-                <div class="svc-price">₹3,000 – ₹15,000 <span>/ project</span></div>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-visual">
+      <img src="images/project1.jpg.png" alt="Karishma Kumari" class="about-img">
+      <div class="about-card">
+        <div class="about-card-label">Currently Building</div>
+        <div class="about-card-val">Vision AI</div>
+        <div class="about-card-sub">AI Automation Studio</div>
+      </div>
+      <div class="about-card about-card2">
+        <div class="about-card-label">Also Running</div>
+        <div class="about-card-val">Miravika</div>
+        <div class="about-card-sub">E-commerce Brand</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-eyebrow"><span class="section-eyebrow-text">About Me</span></div>
+      <h2 class="section-title">Building AI Systems<br>That Actually Work</h2>
+      <p>I'm Karishma Kumari — AI Automation Architect, founder of <strong>Vision AI Studio</strong> and <strong>Miravika</strong>. I design scalable automation systems and manage full e-commerce operations for real businesses.</p>
+      <p>With a hybrid background spanning technology, business operations, and digital marketing, I understand both system logic and real-world challenges — allowing me to build automation that delivers measurable results.</p>
+      <p>Currently available for freelance projects, remote consulting, and automation partnerships globally.</p>
+      <div class="skills-wrap">
+        <div class="skills-label">Core Skills</div>
+        <div class="skills-list">
+          <span class="skill-pill">AI Workflow Architecture</span>
+          <span class="skill-pill">n8n Automation</span>
+          <span class="skill-pill">Chatbot Development</span>
+          <span class="skill-pill">Voice AI</span>
+          <span class="skill-pill">SaaS Systems</span>
+          <span class="skill-pill">JWT Authentication</span>
+          <span class="skill-pill">Marketplace SEO</span>
+          <span class="skill-pill">Product Listing</span>
+          <span class="skill-pill">Flipkart / Meesho</span>
+          <span class="skill-pill">Prompt Engineering</span>
+          <span class="skill-pill">Digital Marketing</span>
+          <span class="skill-pill">Canva / Branding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-wrap">
+    <div class="section-eyebrow"><span class="section-eyebrow-text">Investment</span></div>
+    <h2 class="section-title">Transparent Pricing</h2>
+    <p class="section-sub">Beginner-friendly rates. Every project is unique — contact me for a custom quote tailored to your needs.</p>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="price-badge">Popular</div>
+        <div class="price-svc">AI Chatbot</div>
+        <div class="price-range">₹3K – ₹8K</div>
+        <div class="price-note">Custom chat agents for your business</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">AI Voice Agent</div>
+        <div class="price-range">₹5K – ₹15K</div>
+        <div class="price-note">Automated voice call systems</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">n8n Automation</div>
+        <div class="price-range">₹4K – ₹20K</div>
+        <div class="price-note">Workflow &amp; process automation</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">Business Website</div>
+        <div class="price-range">₹5K – ₹15K</div>
+        <div class="price-note">Modern, professional web presence</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">AI Product Images</div>
+        <div class="price-range">₹500 – ₹3K</div>
+        <div class="price-note">AI-generated product photography</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">AI Video / Reels</div>
+        <div class="price-range">₹800 – ₹5K</div>
+        <div class="price-note">Video ads and social content</div>
+      </div>
+      <div class="price-card">
+        <div class="price-svc">Marketplace Setup</div>
+        <div class="price-range">₹2K – ₹10K</div>
+        <div class="price-note">Flipkart / Meesho / Amazon</div>
+      </div>
+      <div class="price-card gold-featured">
+        <div class="price-badge gold">Best Value</div>
+        <div class="price-svc">Full Business Setup</div>
+        <div class="price-range">₹7K+</div>
+        <div class="price-note">Website + marketplace + automation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg"></div>
+  <div class="section-wrap">
+    <div class="contact-inner">
+      <div class="section-eyebrow"><span class="section-eyebrow-text">Get In Touch</span></div>
+      <h2 class="contact-title">Let's Build Something<br><em>Extraordinary</em></h2>
+      <p class="contact-sub">Available for freelance projects, remote work, and automation consulting. Let's automate your business and scale it faster.</p>
+      <div class="contact-row">
+        <a href="mailto:karishmakumaritk19@gmail.com" class="clink primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" class="clink">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://velision.in" target="_blank" class="clink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          Vision AI Studio
+        </a>
+        <a href="https://karishmakumaritk-cpu.github.io/portfolio-site/" target="_blank" class="clink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Karishma Kumari</div>
+  <p>AI Automation &amp; Digital Systems Consultant · Jaipur, India</p>
+  <p>© 2026 · All rights reserved</p>
+</footer>
+
+</body>
+</html>
