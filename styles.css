@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Kalam:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
 /* ==========================================================================
    KARISHMA KUMARI PORTFOLIO — PREMIUM LIGHT THEME & MULTI-PAGE ARCHITECTURE
    Modern India + Digital Studio + AI Technology + Business Consulting
@@ -51,6 +53,10 @@
   --font-heading: 'Syne', sans-serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-handwritten: 'Kalam', cursive;
+
+  /* Sticky Header Heights */
+  --header-height: 72px;
 }
 
 *, *::before, *::after {
@@ -62,6 +68,9 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -70,9 +79,23 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.65;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll Offset Prevention for Sticky Header Navigation */
+section,
+main,
+[id],
+.section-wrap,
+.section-title,
+.project-card,
+.service-editorial-block {
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
 }
 
 /* Subtle Architectural Grid & Indian-inspired Geometry overlay */
@@ -98,6 +121,9 @@ body::before {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .page-transition-enter {
@@ -132,15 +158,17 @@ body::before {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 900;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.15rem 4rem;
-  background: rgba(248, 245, 239, 0.92);
+  background: rgba(248, 245, 239, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
@@ -475,11 +503,34 @@ body::before {
   max-width: 580px;
 }
 
+.hero-btns-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
 .hero-btns {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin-bottom: 2.5rem;
+}
+
+.hero-handwritten-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  color: var(--terracotta);
+  opacity: 0.9;
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+.hero-handwritten-note .note-arrow {
+  color: var(--gold);
 }
 
 .hero-proof-bar {
@@ -1105,24 +1156,93 @@ body::before {
 .svc-price-pill {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0.45rem;
   background: var(--surface3);
   padding: 0.55rem 1.2rem;
   border-radius: 6px;
   border: 1px solid var(--border-gold);
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.svc-price-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .svc-price-num {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.28rem;
   color: var(--charcoal);
+  letter-spacing: -0.015em;
+  line-height: 1;
 }
 
 .svc-price-sub {
   font-size: 0.74rem;
   color: var(--muted2);
+}
+
+/* ==========================================================================
+   IMAGE FALLBACK & ROBUST IMAGE CONTAINMENT
+   ========================================================================== */
+.project-thumb-frame.has-fallback .project-img-cover {
+  display: none !important;
+}
+
+.project-fallback-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--surface2) 0%, var(--surface3) 100%);
+  color: var(--charcoal);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.project-fallback-tag {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  margin-bottom: 0.35rem;
+}
+
+.project-fallback-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--charcoal);
+}
+
+/* ==========================================================================
+   TAILORED INDUSTRY SOLUTIONS & SERVICES PREVIEW RESPONSIVE GRIDS
+   ========================================================================== */
+.industry-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.services-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  width: 100%;
 }
 
 .svc-editorial-visual {
@@ -1676,22 +1796,56 @@ body::before {
 }
 
 /* ==========================================================================
-   GLOBAL FOOTER
+   CUSTOM WEBSITE CTA BLOCK
+   ========================================================================== */
+.custom-website-cta {
+  margin-top: 4.5rem;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+.custom-website-cta h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.custom-website-cta p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER (100% VIEWPORT SPANNING)
    ========================================================================== */
 footer {
+  width: 100%;
   border-top: 1px solid var(--border);
   padding: 4.5rem 2.5rem 2.5rem;
   background: var(--surface);
   margin-top: auto;
+  box-sizing: border-box;
 }
 
 .footer-inner {
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 1fr;
   gap: 3.5rem;
   margin-bottom: 3rem;
+  box-sizing: border-box;
 }
 
 .footer-name {
@@ -1707,6 +1861,11 @@ footer {
   color: var(--muted);
   line-height: 1.5;
   margin-bottom: 1.2rem;
+}
+
+.footer-contact-info a {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .footer-links-col h4 {
@@ -1730,6 +1889,8 @@ footer {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.84rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
   transition: color 0.2s ease;
 }
 
@@ -1738,6 +1899,7 @@ footer {
 }
 
 .footer-bottom {
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   padding-top: 2rem;
@@ -1747,6 +1909,7 @@ footer {
   align-items: center;
   font-size: 0.8rem;
   color: var(--muted2);
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -1754,8 +1917,8 @@ footer {
    ========================================================================== */
 .floating-whatsapp {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 24px;
+  right: 24px;
   z-index: 850;
   display: inline-flex;
   align-items: center;
@@ -1814,6 +1977,7 @@ footer {
   padding: 2.5rem;
   position: relative;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
   animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1824,14 +1988,21 @@ footer {
 
 .modal-close-btn {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 1.8rem;
   color: var(--muted);
   cursor: pointer;
   line-height: 1;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  z-index: 10;
 }
 
 .modal-close-btn:hover {
@@ -1909,11 +2080,90 @@ footer {
 }
 
 /* ==========================================================================
+   REUSABLE CASE STUDY & TEMPLATE COMMERCIALIZATION PRESENTATION IN MODAL
+   ========================================================================== */
+.modal-case-study {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-block {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+}
+
+.case-study-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.case-study-text {
+  font-size: 0.88rem;
+  color: var(--charcoal-soft);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.template-commercial-box {
+  background: var(--surface2);
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.template-commercial-header {
+  margin-bottom: 0.5rem;
+}
+
+.commercial-badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  background: var(--surface);
+  border: 1px solid var(--border-gold);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+}
+
+.commercial-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--charcoal);
+}
+
+.commercial-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN SYSTEM (360px, 390px, 430px, 768px, 1024px, 1280px)
    NO OVERLAPPING • AIRY MARGINS • TOUCH-SAFE TARGETS
    ========================================================================== */
 @media (max-width: 1024px) {
-  #navbar { padding: 1.1rem 2rem; }
+  #navbar {
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 1.1rem 2rem;
+    box-sizing: border-box;
+  }
   .section-wrap { padding: 4.5rem 2rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 3.5rem; }
   .hero-photo-container { order: -1; }
@@ -1924,43 +2174,94 @@ footer {
     gap: 2rem;
     padding: 2.5rem;
   }
+  .industry-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .services-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo-wrap { position: static; max-width: 440px; margin: 0 auto; }
   .tier-grid { grid-template-columns: 1fr; }
   .tier-card.featured-tier { transform: none; }
   .pricing-cards-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-card { grid-template-columns: 1fr; padding: 2.5rem; }
-  .footer-inner { grid-template-columns: 1fr; }
+  footer {
+    width: 100%;
+    padding: 3.5rem 2rem 2.25rem;
+    box-sizing: border-box;
+  }
+  .footer-inner {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  /* Full-width sticky mobile header (56–64px height) */
   #navbar {
-    padding: 0.95rem 1.25rem;
     position: sticky;
-    top: 0;
-    z-index: 950;
-  }
-
-  .nav-logo {
-    font-size: 1.12rem;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    max-height: 85vh;
+    width: 100% !important;
+    min-height: 60px;
+    max-height: 64px;
+    padding: 0.75rem 1.25rem;
+    z-index: 950;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box !important;
+  }
+
+  .nav-logo-group {
+    max-width: calc(100% - 54px);
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Full-width dropdown navigation underneath header bar */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-height: calc(100vh - 62px);
     overflow-y: auto;
     background: #FFFFFF;
     border-bottom: 2px solid var(--border-gold);
-    padding: 5.5rem 1.5rem 2rem;
+    padding: 1.5rem 1.25rem 2.5rem;
     flex-direction: column;
     align-items: stretch;
-    gap: 1.1rem;
+    gap: 0.9rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    z-index: 910;
+    z-index: 940;
+    box-sizing: border-box !important;
   }
 
   .nav-links.mobile-open {
@@ -1968,40 +2269,62 @@ footer {
   }
 
   .nav-link-item {
-    font-size: 1rem;
-    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
     border-bottom: 1px solid var(--border);
   }
 
   .nav-cta {
-    margin-top: 0.8rem;
+    margin-top: 0.6rem;
     text-align: center;
     justify-content: center;
     padding: 0.85rem !important;
+    min-height: 44px;
   }
 
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    color: var(--charcoal);
+    cursor: pointer;
     z-index: 960;
   }
 
+  /* Container & Section Padding */
   .section-wrap {
     padding: 3.5rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .section-wrap-tight {
-    padding: 3rem 1.25rem;
+    padding: 2.75rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-editorial {
-    padding: 2.5rem 1.25rem 3rem;
+    padding: 2.25rem 1.25rem 2.75rem;
     min-height: auto;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 2.2rem;
+    gap: 2rem;
+    width: 100%;
   }
 
   .hero-photo-container {
@@ -2013,12 +2336,20 @@ footer {
     padding: 6px;
   }
 
-  .hero-photo {
+  .photo-glow-effect {
+    max-width: 100%;
+    max-height: 100%;
     width: 260px;
-    height: 330px;
+    height: 260px;
   }
 
-  /* Prevent absolute photo badges from obscuring content on mobile */
+  .hero-photo {
+    width: 250px;
+    height: 320px;
+    max-width: 100%;
+  }
+
+  /* Prevent absolute photo badges from causing mobile overflow */
   .photo-floater {
     display: none;
   }
@@ -2027,31 +2358,91 @@ footer {
     flex-direction: column;
     align-items: stretch;
     gap: 0.85rem;
+    width: 100%;
   }
 
   .hero-btns .btn-primary,
   .hero-btns .btn-ghost {
     width: 100%;
     justify-content: center;
+    min-height: 44px;
   }
 
   .hero-proof-bar {
     grid-template-columns: 1fr;
     gap: 1.1rem;
+    width: 100%;
   }
 
   .proof-strip-section {
     padding: 1.75rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .proof-strip-inner {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    width: 100%;
   }
 
+  /* Mobile scrollable filter bar (without bleeding negative margins) */
+  .filter-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0.5rem;
+    padding: 0.25rem 0.1rem 0.6rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.76rem;
+    border-radius: 999px;
+    touch-action: manipulation;
+  }
+
+  .industry-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  .services-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .service-editorial-block,
+  .service-editorial-block.reverse-layout {
+    padding: 1.75rem 1.25rem;
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Portfolio Grid & Cards */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    width: 100%;
   }
 
   .project-card.featured-wide,
@@ -2059,11 +2450,80 @@ footer {
   .project-card.wide-landscape,
   .project-card.medium-standard {
     grid-column: span 1;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .project-thumb-frame,
   .project-card.featured-wide .project-thumb-frame {
     height: 210px;
+  }
+
+  .project-card-info {
+    padding: 1.35rem 1.25rem;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+    line-height: 1.32;
+    margin-bottom: 0.45rem;
+  }
+
+  .project-desc {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .ptag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .project-actions {
+    padding-top: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .project-link-cta {
+    font-size: 0.8rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .project-details-btn {
+    font-size: 0.78rem;
+    min-height: 44px;
+    padding: 0.4rem 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+    text-decoration: underline;
+  }
+
+  /* Custom Website CTA Notice Card */
+  .custom-website-cta {
+    margin-top: 2.75rem;
+    padding: 1.75rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.15rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .custom-website-cta .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
   }
 
   .svc-capabilities-list {
@@ -2081,28 +2541,57 @@ footer {
   .biz-banner-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
   }
 
   .indian-biz-banner {
     padding: 2rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Full-width mobile footer */
+  footer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 3rem 1.25rem 2rem !important;
+    box-sizing: border-box !important;
   }
 
   .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 2.25rem !important;
+    margin-bottom: 2rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-col {
+    width: 100%;
   }
 
   .footer-bottom {
+    width: 100% !important;
+    max-width: 100% !important;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
     text-align: center;
+    box-sizing: border-box !important;
   }
 
-  /* Mobile WhatsApp button: Compact pill/circle with proper margin so it NEVER covers content */
+  /* Safe-area aware mobile floating WhatsApp button */
   .floating-whatsapp {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    padding: 0.75rem;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     box-shadow: 0 6px 20px rgba(27, 138, 68, 0.45);
     z-index: 850;
@@ -2112,8 +2601,14 @@ footer {
     display: none;
   }
 
+  .floating-whatsapp svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .modal-content {
     padding: 1.75rem 1.25rem;
+    width: 95%;
   }
 
   .modal-features-list {
@@ -2128,19 +2623,28 @@ footer {
   .modal-actions .btn-whatsapp {
     width: 100%;
     justify-content: center;
+    min-height: 44px;
   }
 
   .about-photo {
-    height: 360px;
-  }
-
-  .about-card-badge {
-    position: static;
-    margin-top: 1rem;
+    height: 340px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  .section-wrap {
+    padding: 3rem 1rem;
+  }
+
+  .section-wrap-tight {
+    padding: 2.25rem 1rem;
+  }
+
+  .hero-editorial {
+    padding: 2rem 1rem 2.25rem;
+  }
+
   .section-title {
     font-size: 1.95rem;
   }
@@ -2154,11 +2658,21 @@ footer {
     width: 220px;
     height: 280px;
   }
+
+  .custom-website-cta {
+    padding: 1.5rem 1rem;
+  }
+
   .contact-card {
     padding: 1.75rem 1.25rem;
   }
+
   .inquiry-box {
     padding: 1.5rem 1rem;
+  }
+
+  footer {
+    padding: 2.5rem 1rem 1.75rem !important;
   }
 }
 
@@ -2239,11 +2753,12 @@ img.reveal-on-scroll.is-revealed {
 
 /* ==========================================================================
    KAI — PROFESSIONAL AI CHATBOT (VISION STUDIO ASSISTANT)
+   STACKED IN BOTTOM RIGHT: KAI ABOVE WHATSAPP
    ========================================================================== */
 .kai-chatbot-btn {
   position: fixed;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: calc(24px + 50px + 12px); /* ~86px - directly above WhatsApp button */
+  right: 24px;
   z-index: 860;
   display: inline-flex;
   align-items: center;
@@ -2285,8 +2800,8 @@ img.reveal-on-scroll.is-revealed {
 
 .kai-chatbot-modal {
   position: fixed;
-  bottom: 5.5rem;
-  left: 2rem;
+  bottom: 24px;
+  right: 24px;
   width: 380px;
   max-width: calc(100vw - 2.5rem);
   height: 520px;
@@ -2528,21 +3043,33 @@ img.reveal-on-scroll.is-revealed {
 /* Mobile responsive adjustments for KAI */
 @media (max-width: 768px) {
   .kai-chatbot-btn {
-    bottom: 1.25rem;
-    left: 1.25rem;
-    padding: 0.75rem;
+    bottom: calc(18px + 48px + 12px + env(safe-area-inset-bottom, 0px)); /* Stacks 12px directly above WhatsApp button */
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    left: auto;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    z-index: 860;
   }
   .kai-chatbot-btn span {
     display: none;
   }
+  .kai-chatbot-btn .kai-btn-pulse {
+    display: none;
+  }
   .kai-chatbot-modal {
-    bottom: 5rem;
-    left: 1rem;
-    right: 1rem;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    left: calc(16px + env(safe-area-inset-left, 0px));
     width: auto;
     height: 480px;
-    max-height: calc(100vh - 6.5rem);
+    max-height: calc(100vh - 5.5rem);
   }
 }
 

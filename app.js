@@ -9,19 +9,21 @@ const projectsData = [
     statusClass: "status-sold",
     gridClass: "featured-wide",
     url: "https://kuchuu-puchuu-chai-bites.ai.studio/",
-    ctaText: "View Website",
+    ctaText: "VIEW LIVE WEBSITE →",
     image: "images/kuchuu_chai_concept_1788340999750.jpg",
     conceptType: "Client Delivered Business Website",
     shortDesc: "A custom commercial website created and delivered for an Indian roadside chai and food business, focused on menu presentation, local discoverability and customer inquiries.",
+    businessContext: "Local food venture in Delhi NCR needing to expand beyond walk-in patrons by giving customers an easy way to browse snacks and chai varieties, request bulk orders, and find location directions.",
+    solution: "Built a warm editorial digital storefront with mobile-first menu discovery, structured pricing, location map pin, and an instant WhatsApp ordering flow.",
     features: [
       "Custom business website architecture",
       "Mobile-optimized menu showcase",
       "Direct WhatsApp customer ordering/enquiry",
-      "Local business details & timings",
-      "Roadside food culture branding identity",
-      "Ultra-fast mobile loading times"
+      "Local business details & operating hours",
+      "Street chai food culture branding identity",
+      "Instant mobile loading speed"
     ],
-    detailsNote: "This project was sold and delivered as a live business website for the client, driving real local inquiries and WhatsApp orders."
+    detailsNote: "Sold and delivered as a live business website for the client, driving real local inquiries and WhatsApp orders."
   },
   {
     id: "lumiere",
@@ -32,10 +34,12 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "medium-tall",
     url: "https://karishmakumaritk-cpu.github.io/Selon-templet-1/",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/lumiere_salon_concept_1788341026422.jpg",
     conceptType: "Premium Indian Salon & Aesthetics Concept",
     shortDesc: "Premium salon and beauty studio concept crafted for hair stylists, makeup artists, and aesthetic clinics with complete booking flow.",
+    businessContext: "Salon and aesthetic clinics often lose premium appointments when relying solely on social media DMs without a structured service rate card or direct booking mechanism.",
+    solution: "Designed an editorial aesthetic layout featuring categorized beauty treatments, stylist credentials, client reviews, and direct WhatsApp appointment booking.",
     features: [
       "Editorial salon aesthetic & typography",
       "Interactive treatment service menu",
@@ -44,7 +48,7 @@ const projectsData = [
       "Fully responsive mobile layout",
       "Ready-to-deploy client structure"
     ],
-    detailsNote: "Website Template / Concept available for customization and rapid deployment for salon & beauty studio owners."
+    detailsNote: "Website Template / Commercial Product available for customization and rapid 3–5 day deployment for salon & beauty studio owners."
   },
   {
     id: "noire",
@@ -55,19 +59,21 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "medium-standard",
     url: "https://karishmakumaritk-cpu.github.io/Noire-salon-template-3/",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/noire_luxury_concept_1788341083049.jpg",
     conceptType: "Dark Luxury Wellness & Spa Concept",
     shortDesc: "Elegant modern salon and luxury wellness brand website concept featuring a high-contrast dark aesthetic and boutique presentation.",
+    businessContext: "Boutique wellness centers and luxury spas require high visual fidelity and sensory atmosphere to justify premium service pricing.",
+    solution: "Engineered a dark luxury visual architecture with gold accent typography, transparent treatment pricing, stylist profiles, and one-tap consultation booking.",
     features: [
       "Sophisticated dark luxury palette",
       "Treatment list with pricing breakdown",
       "Stylist team profile showcase",
       "One-click WhatsApp booking integration",
-      "Client testimonial carousel ready",
+      "Client testimonial showcase ready",
       "Seamless responsive navigation"
     ],
-    detailsNote: "Website Template / Concept designed specifically for high-end boutique salons and luxury spas."
+    detailsNote: "Website Template / Commercial Product designed specifically for high-end boutique salons and luxury spas."
   },
   {
     id: "savora",
@@ -78,19 +84,21 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "wide-landscape",
     url: "https://karishmakumaritk-cpu.github.io/restaurant-01/",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/savora_dining_concept_1788341044554.jpg",
     conceptType: "Modern Dining & Culinary Hospitality Concept",
     shortDesc: "Modern restaurant website concept designed for food businesses, fine dining venues, bistros, and culinary establishments.",
+    businessContext: "Independent restaurants and fine-dining eateries need to capture direct table reservations and takeaway orders without high 3rd-party marketplace commissions.",
+    solution: "Created a full-featured dining website with mobile digital food menu, chef narrative, table reservation trigger, and direct WhatsApp takeaway channel.",
     features: [
       "Comprehensive digital food menu",
       "Online table reservation system CTA",
       "Chef story & culinary philosophy section",
-      "Culinary photo gallery",
+      "High-definition food gallery layout",
       "WhatsApp ordering and inquiry links",
       "Google Maps integration friendly"
     ],
-    detailsNote: "Website Template / Concept ready to brand with restaurant menus, photography, and booking channels."
+    detailsNote: "Website Template / Commercial Product ready to brand with restaurant menus, photography, and booking channels in 3–5 days."
   },
   {
     id: "restaurant-02",
@@ -101,10 +109,12 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "medium-standard",
     url: "https://karishmakumaritk-cpu.github.io/restaurant-02/",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/rest2_cafe_concept_1788341129457.jpg",
     conceptType: "Fast-Casual Urban Eatery Concept",
     shortDesc: "Alternative modern restaurant concept tailored for fast-casual dining, cafés, and urban eateries seeking clean visual layout.",
+    businessContext: "Cafés and quick-service food outlets need an ultra-fast, mobile-friendly landing experience optimized for patrons browsing on Instagram or Google Maps.",
+    solution: "Implemented quick-scan menu cards, combo promotion banners, one-tap call and WhatsApp ordering buttons, and clear open hours.",
     features: [
       "Quick-scan categorized food items",
       "Special offers & combo banners",
@@ -113,7 +123,7 @@ const projectsData = [
       "Lightweight performance architecture",
       "Mobile touch-friendly interactions"
     ],
-    detailsNote: "Website Template / Concept built for cafés, cloud kitchens, and neighborhood restaurants."
+    detailsNote: "Website Template / Commercial Product built for cafés, cloud kitchens, and neighborhood restaurants."
   },
   {
     id: "maison-belle",
@@ -124,19 +134,21 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "medium-standard",
     url: "https://maison-belle-modern-beauty-lounge.ai.studio",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/maison_lounge_concept_1788341114755.jpg",
     conceptType: "Chic Skincare & Lounge Concept",
     shortDesc: "Modern beauty lounge concept highlighting clean aesthetic presentation, premium service cards and seamless appointment inquiry.",
+    businessContext: "Modern skincare lounges and aesthetic studios require trust-building design and transparent service tiers to turn visitors into repeat clients.",
+    solution: "Curated a calm, minimalist aesthetic with structured service packages, consultation inquiry flow, and lookbook gallery.",
     features: [
       "High-end beauty lounge art direction",
       "Curated service tiers and packages",
       "Consultation request lead capture",
-      "Gallery grid with lightbox view",
+      "Gallery grid with clean modal view",
       "Mobile-first responsive styling",
       "Social media integration ready"
     ],
-    detailsNote: "Website Template / Concept designed for modern skincare, nail spas, and beauty studios."
+    detailsNote: "Website Template / Commercial Product designed for modern skincare, nail spas, and beauty studios."
   },
   {
     id: "majestic-estates",
@@ -147,10 +159,12 @@ const projectsData = [
     statusClass: "status-template",
     gridClass: "wide-landscape",
     url: "https://karishmakumaritk-cpu.github.io/majestic-estates/",
-    ctaText: "View Demo",
+    ctaText: "VIEW DEMO →",
     image: "images/majestic_realestate_concept_1788341065851.jpg",
     conceptType: "Delhi / NCR Property & Consultant Concept",
     shortDesc: "Premium real estate website concept built for Indian real estate consultants, brokerages, and property developers.",
+    businessContext: "Real estate brokers and property developers require high-credibility presentation to convert high-ticket property buyers and rental leads.",
+    solution: "Engineered property showcase galleries with specifications, locality guides, virtual tour links, and instant WhatsApp inquiry forms.",
     features: [
       "Buy / Rent / Sell structured flows",
       "Residential & commercial property showcase",
@@ -159,21 +173,23 @@ const projectsData = [
       "Prime locality & neighborhood guides",
       "Full mobile responsive property viewing"
     ],
-    detailsNote: "Website Template / Concept created to showcase properties, generate buyer/renter leads, and build developer trust."
+    detailsNote: "Website Template / Commercial Product created to showcase properties, generate buyer/renter leads, and build developer trust."
   },
   {
     id: "vision-ai-studio",
     name: "Vision AI Studio",
     category: "AI Automation Studio / SaaS",
     categoryType: "team",
-    statusText: "TEAM PROJECT • CURRENTLY BUILDING",
+    statusText: "TEAM PROJECT • IN DEVELOPMENT",
     statusClass: "status-team",
     gridClass: "wide-landscape",
     url: "https://velision.in/",
-    ctaText: "Visit Vision AI Studio",
+    ctaText: "VISIT VISION AI STUDIO →",
     image: null,
     conceptType: "Team AI Automation Studio & Platform",
     shortDesc: "Vision AI Studio is a team-led AI automation studio currently being built to create scalable AI-powered workflows, automation systems and SaaS-based business solutions.",
+    businessContext: "Businesses lose substantial daily revenue and hours to repetitive manual lead management, customer support routing, and disparate data silos.",
+    solution: "Developing an end-to-end AI automation studio orchestrating multi-step agentic workflows, WhatsApp conversation bots, and voice calling systems.",
     features: [
       "AI workflow & agent orchestration",
       "SaaS subscription & trial architecture",
@@ -182,7 +198,7 @@ const projectsData = [
       "Voice AI call agents & WhatsApp bots",
       "Team-led scalable product development"
     ],
-    detailsNote: "Team Project — Currently Building. My role: Founder & AI Architect, leading automation workflows, system logic, and AI integrations."
+    detailsNote: "Team Project — In Development. My role: Founder & AI Architect, leading automation workflows, system logic, and AI integrations."
   },
   {
     id: "miravika",
@@ -193,10 +209,12 @@ const projectsData = [
     statusClass: "status-own",
     gridClass: "medium-tall",
     url: "https://miravika.com/",
-    ctaText: "Visit MIRAVIKA",
+    ctaText: "VISIT MIRAVIKA →",
     image: "images/miravika_store_concept_1788341144429.jpg",
     conceptType: "Live Consumer E-Commerce Storefront",
     shortDesc: "MIRAVIKA is my own e-commerce brand, where I work across product presentation, e-commerce operations, branding, and digital commerce.",
+    businessContext: "Independent lifestyle and consumer apparel brands face intense marketplace competition without authentic branding, sharp merchandising, and efficient order fulfillment.",
+    solution: "Built and actively manage an independent D2C storefront and multi-marketplace operation with customized product cataloging, SEO listings, and order workflows.",
     features: [
       "Live independent digital commerce storefront",
       "Marketplace operations & product listings",
@@ -216,10 +234,12 @@ const projectsData = [
     statusClass: "status-free",
     gridClass: "medium-standard",
     url: "https://buildy-tools.lovable.app",
-    ctaText: "Try It Free",
+    ctaText: "TRY IT FREE →",
     image: null,
     conceptType: "Free AI-Powered Data Structuring Utility",
     shortDesc: "A practical Excel automation tool that turns messy copied seller data into structured, usable records with AI-assisted processing. Completely free to use.",
+    businessContext: "Online sellers and spreadsheet operators waste hours every week cleaning unstructured, copied raw data to paste into standard seller catalog sheets.",
+    solution: "Engineered a zero-friction, browser-based utility that ingests unstructured text, applies smart formatting rules, and delivers clean tabular columns instantly.",
     features: [
       "100% Free digital utility for sellers & operators",
       "Raw copied data → AI parsing → structured rows",
@@ -249,7 +269,6 @@ function navigateTo(route) {
   if (route === '/' || route === 'home') {
     targetUrl = base ? `${base}/` : '/';
   } else {
-    // Normal clean URL
     targetUrl = base ? `${base}${route}` : route;
   }
 
@@ -291,14 +310,27 @@ function renderProjects(filter = "all") {
       });
 
   const base = getBasePath();
-  const imgPrefix = base ? `${base}/` : '';
+  const imgPrefix = base ? `${base}/` : '/';
 
-  container.innerHTML = filtered.map(p => `
+  container.innerHTML = filtered.map(p => {
+    const imgSrc = p.image 
+      ? (p.image.startsWith('images/') ? imgPrefix + p.image : (p.image.startsWith('/') ? p.image : '/' + p.image))
+      : null;
+
+    return `
     <div class="project-card ${p.gridClass}" onclick="openModal('${p.id}')">
       <div class="project-thumb-frame">
         <span class="project-status-tag ${p.statusClass}">${p.statusText}</span>
-        ${p.image 
-          ? `<img src="${p.image.startsWith('images/') ? imgPrefix + p.image : p.image}" alt="${p.name}" class="project-img-cover" loading="lazy" />`
+        ${imgSrc 
+          ? `<img src="${imgSrc}" 
+                  alt="${p.name}" 
+                  class="project-img-cover" 
+                  loading="lazy" 
+                  onerror="this.onerror=null; this.parentElement.classList.add('has-fallback'); this.style.display='none';" />
+             <div class="project-fallback-visual">
+               <span class="project-fallback-tag">${p.category}</span>
+               <span class="project-fallback-name">${p.name}</span>
+             </div>`
           : `<div class="project-visual-abstract">
                <div class="abstract-ring"></div>
                <div class="abstract-core">
@@ -311,7 +343,7 @@ function renderProjects(filter = "all") {
       <div class="project-card-info">
         <div class="project-card-header">
           <span class="project-cat">${p.category}</span>
-          <span class="project-concept-indicator">${p.categoryType === 'sold' ? 'Delivered Site' : (p.categoryType === 'template' ? 'Website Template' : 'Live Product')}</span>
+          <span class="project-concept-indicator">${p.categoryType === 'sold' ? 'Delivered Site' : (p.categoryType === 'template' ? 'Website Template' : (p.categoryType === 'own' ? 'Own Business' : (p.categoryType === 'team' ? 'Team Project' : 'Free Tool')))}</span>
         </div>
         <h3 class="project-title">${p.name}</h3>
         <p class="project-desc">${p.shortDesc}</p>
@@ -321,13 +353,13 @@ function renderProjects(filter = "all") {
         <div class="project-actions">
           <a href="${p.url}" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
             ${p.ctaText}
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <button class="project-details-btn" type="button">Details &amp; Specs</button>
         </div>
       </div>
     </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 function filterProjects(filter, btn) {
@@ -344,24 +376,57 @@ function openModal(id) {
   const content = document.getElementById('modal-body');
   if (!modal || !content) return;
 
+  const isTemplate = p.categoryType === 'template';
+  const whatsappMsg = isTemplate
+    ? `Hi Karishma, I would like to customize the ${encodeURIComponent(p.name)} website template for my business.`
+    : `Hi Karishma, I saw ${encodeURIComponent(p.name)} on your portfolio and want to discuss a similar project.`;
+
   content.innerHTML = `
     <span class="modal-badge ${p.statusClass}">${p.statusText}</span>
     <h2 class="modal-title">${p.name}</h2>
     <div class="modal-cat">${p.category} · ${p.detailsNote}</div>
     <p class="modal-desc">${p.shortDesc}</p>
     
-    <div class="modal-features-title">Core Architecture &amp; Features</div>
-    <ul class="modal-features-list">
-      ${p.features.map(f => `<li>${f}</li>`).join('')}
-    </ul>
+    <div class="modal-case-study">
+      ${p.businessContext ? `
+        <div class="case-study-block">
+          <div class="case-study-label">01 / BUSINESS CONTEXT &amp; OPPORTUNITY</div>
+          <p class="case-study-text">${p.businessContext}</p>
+        </div>
+      ` : ''}
+
+      ${p.solution ? `
+        <div class="case-study-block">
+          <div class="case-study-label">02 / SYSTEM ARCHITECTURE &amp; DESIGN SOLUTION</div>
+          <p class="case-study-text">${p.solution}</p>
+        </div>
+      ` : ''}
+
+      <div class="case-study-block">
+        <div class="case-study-label">03 / KEY DELIVERABLES &amp; CORE FEATURES</div>
+        <ul class="modal-features-list">
+          ${p.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
+
+      ${isTemplate ? `
+        <div class="template-commercial-box">
+          <div class="template-commercial-header">
+            <span class="commercial-badge">READY TO DEPLOY • 3–5 DAYS EXPRESS TURNAROUND</span>
+            <div class="commercial-title">Commercial Product Inclusions</div>
+          </div>
+          <p class="commercial-desc">This website template is ready to be completely customized for your specific business. Includes brand color styling, service/menu upload, direct WhatsApp inquiry buttons, mobile-first optimization, and custom domain setup assistance.</p>
+        </div>
+      ` : ''}
+    </div>
 
     <div class="modal-actions">
       <a href="${p.url}" target="_blank" rel="noopener" class="btn-primary">
         ${p.ctaText}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
       </a>
-      <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20saw%20${encodeURIComponent(p.name)}%20on%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn-whatsapp">
-        Discuss Project
+      <a href="https://wa.me/919818691915?text=${whatsappMsg}" target="_blank" rel="noopener" class="btn-whatsapp">
+        ${isTemplate ? 'CUSTOMIZE THIS WEBSITE →' : 'DISCUSS SIMILAR PROJECT'}
       </a>
     </div>
   `;
@@ -380,8 +445,12 @@ function closeModal() {
 
 function toggleMobileNav() {
   const links = document.querySelector('.nav-links');
+  const toggleBtn = document.querySelector('.mobile-toggle');
   if (links) {
     const isOpen = links.classList.toggle('mobile-open');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -392,8 +461,12 @@ function toggleMobileNav() {
 
 function closeMobileNav() {
   const links = document.querySelector('.nav-links');
+  const toggleBtn = document.querySelector('.mobile-toggle');
   if (links) {
     links.classList.remove('mobile-open');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
     document.body.style.overflow = '';
   }
 }
@@ -425,9 +498,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close modal on Escape key
+  // Close modal and mobile nav on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+      closeModal();
+      closeMobileNav();
+    }
+  });
+
+  // Close mobile nav when clicking any nav link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileNav();
+    });
   });
 
   // Highlight active nav item based on current location
