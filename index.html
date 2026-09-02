@@ -1,616 +1,556 @@
-<!-- trigger: redeploy for GitHub Pages cache refresh -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karishma Kumari — AI Automation & Digital Systems Consultant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #050608;
-  --surface: #0a0b10;
-  --surface2: #0f1119;
-  --surface3: #141620;
-  --border: rgba(255,255,255,0.06);
-  --border2: rgba(255,255,255,0.10);
-  --accent: #7c3aed;
-  --accent2: #a78bfa;
-  --accent3: #38bdf8;
-  --gold: #d4a853;
-  --gold2: #f0c97a;
-  --text: #eef0f6;
-  --muted: #4a5068;
-  --muted2: #8892aa;
-  --glow: rgba(124,58,237,0.4);
-  --gold-glow: rgba(212,168,83,0.25);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6;}
-
-/* NOISE */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5;}
-
-/* ===== NAVBAR ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5rem;background:rgba(5,6,8,0.75);backdrop-filter:blur(32px) saturate(1.4);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;letter-spacing:.06em;background:linear-gradient(135deg,#fff 20%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:3rem;list-style:none;}
-.nav-links a{color:var(--muted2);text-decoration:none;font-size:.82rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
-.nav-links a:hover{color:var(--text);}
-.nav-cta{background:linear-gradient(135deg,var(--accent),var(--accent2)) !important;color:#fff !important;padding:.55rem 1.5rem;border-radius:4px;font-weight:500 !important;letter-spacing:.04em;box-shadow:0 0 20px var(--glow);transition:all .25s !important;}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 35px var(--glow) !important;}
-
-/* ===== HERO ===== */
-#hero{min-height:100vh;display:flex;align-items:center;padding:8rem 5rem 5rem;position:relative;overflow:hidden;}
-.hero-orb1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 65%);top:-10%;right:-5%;pointer-events:none;}
-.hero-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.1) 0%,transparent 65%);bottom:10%;left:-5%;pointer-events:none;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 60% 40%,black,transparent);opacity:.5;}
-.hero-line{position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.3),transparent);pointer-events:none;}
-
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center;max-width:1260px;margin:0 auto;width:100%;}
-
-.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem;}
-.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold-glow);animation:dotpulse 2s infinite;}
-@keyframes dotpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-.eyebrow-text{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:500;}
-
-.hero-title{font-family:'Syne',sans-serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:800;line-height:1.02;letter-spacing:-.04em;margin-bottom:.5rem;}
-.hero-title-serif{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:-.01em;display:block;background:linear-gradient(135deg,var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{color:var(--muted2);font-size:1rem;line-height:1.75;max-width:480px;margin:1.5rem 0 2.5rem;font-weight:300;}
-
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;}
-.btn-primary{background:linear-gradient(135deg,var(--accent) 0%,#6d28d9 100%);color:#fff;padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-weight:500;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;box-shadow:0 0 30px var(--glow),inset 0 1px 0 rgba(255,255,255,.15);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow),inset 0 1px 0 rgba(255,255,255,.2);}
-.btn-ghost{border:1px solid var(--border2);color:var(--muted2);padding:.9rem 2.2rem;border-radius:5px;text-decoration:none;font-size:.9rem;letter-spacing:.03em;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;background:rgba(255,255,255,.02);}
-.btn-ghost:hover{border-color:rgba(167,139,250,.5);color:var(--text);background:rgba(124,58,237,.08);}
-
-.hero-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin-bottom:2.5rem;}
-.hero-stats{display:flex;gap:3rem;}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,var(--text) 40%,var(--muted2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.2rem;}
-
-/* Hero photo */
-.hero-photo-wrap{display:flex;justify-content:center;align-items:center;position:relative;}
-.photo-ring{position:absolute;width:380px;height:380px;border-radius:50%;border:1px solid rgba(124,58,237,.2);animation:ringpulse 4s ease-in-out infinite;}
-.photo-ring2{position:absolute;width:440px;height:440px;border-radius:50%;border:1px solid rgba(124,58,237,.08);animation:ringpulse 4s ease-in-out infinite reverse;}
-@keyframes ringpulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
-.photo-glow{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.35) 0%,transparent 70%);animation:glowbreathe 3s ease-in-out infinite alternate;}
-@keyframes glowbreathe{from{transform:scale(1);opacity:.7}to{transform:scale(1.2);opacity:1}}
-.hero-photo{width:310px;height:380px;object-fit:cover;object-position:top center;border-radius:2px 24px 2px 24px;position:relative;z-index:1;border:1px solid rgba(167,139,250,.25);box-shadow:0 0 80px rgba(124,58,237,.3),0 40px 100px rgba(0,0,0,.7);}
-.photo-badge{position:absolute;bottom:1.5rem;left:-2rem;z-index:2;background:var(--surface2);border:1px solid rgba(212,168,83,.3);border-radius:10px;padding:1rem 1.25rem;backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.5);}
-.photo-badge-title{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--gold2);letter-spacing:.04em;}
-.photo-badge-sub{font-size:.7rem;color:var(--muted2);margin-top:.2rem;}
-
-/* ===== SECTION BASE ===== */
-.section-wrap{max-width:1260px;margin:0 auto;padding:7rem 5rem;}
-.section-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;}
-.section-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold);}
-.section-eyebrow-text{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:500;}
-.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,3.5vw,3.2rem);letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;}
-.section-sub{color:var(--muted2);font-size:.95rem;line-height:1.75;max-width:540px;margin-bottom:3.5rem;}
-
-/* ===== SERVICES ===== */
-#services{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
-.service-card{background:var(--surface);padding:2.5rem;position:relative;overflow:hidden;transition:all .35s;cursor:default;}
-.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 0%,rgba(124,58,237,.07),transparent 60%);opacity:0;transition:opacity .35s;}
-.service-card:hover{background:var(--surface2);}
-.service-card:hover::before{opacity:1;}
-.service-card.gold-card::before{background:radial-gradient(circle at 0% 0%,rgba(212,168,83,.07),transparent 60%);}
-
-/* ANIMATED SVG ICONS */
-.svc-icon{width:52px;height:52px;margin-bottom:1.5rem;position:relative;}
-.svc-icon svg{width:100%;height:100%;}
-
-/* Icon animations */
-.icon-brain .brain-path{stroke-dasharray:200;stroke-dashoffset:200;animation:drawpath 2s ease forwards .2s;}
-@keyframes drawpath{to{stroke-dashoffset:0}}
-.icon-orbit .orbit-circle{animation:orbitrotate 3s linear infinite;}
-@keyframes orbitrotate{from{transform-origin:24px 24px;transform:rotate(0deg)}to{transform-origin:24px 24px;transform:rotate(360deg)}}
-.icon-flow .flow-dot{animation:flowmove 1.5s ease-in-out infinite alternate;}
-@keyframes flowmove{from{transform:translateX(-4px)}to{transform:translateX(4px)}}
-.icon-globe .globe-line{animation:globespin 4s linear infinite;transform-origin:24px 24px;}
-@keyframes globespin{from{transform:scaleX(1)}to{transform:scaleX(-1)}}
-.icon-cart .cart-wheel{animation:cartbounce .8s ease-in-out infinite alternate;}
-@keyframes cartbounce{from{transform:translateY(0)}to{transform:translateY(-2px)}}
-.icon-sparkle .spark{animation:sparkle 1.5s ease-in-out infinite;}
-@keyframes sparkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
-.icon-sparkle .spark2{animation-delay:.3s;}
-.icon-sparkle .spark3{animation-delay:.6s;}
-.icon-rocket .rocket-body{animation:rocketfloat 2s ease-in-out infinite alternate;}
-@keyframes rocketfloat{from{transform:translateY(2px)}to{transform:translateY(-2px)}}
-.icon-rocket .flame{animation:flicker .4s ease-in-out infinite alternate;}
-@keyframes flicker{from{opacity:.7;transform:scaleY(.9)}to{opacity:1;transform:scaleY(1.1)}}
-.icon-wave .wave-line{stroke-dasharray:120;stroke-dashoffset:120;animation:waveflow 1.8s ease-in-out infinite;}
-@keyframes waveflow{0%{stroke-dashoffset:120}50%{stroke-dashoffset:0}100%{stroke-dashoffset:-120}}
-
-.svc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:.65rem;}
-.svc-desc{color:var(--muted2);font-size:.83rem;line-height:1.7;margin-bottom:1.25rem;}
-.svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.5rem;}
-.svc-tag{font-size:.68rem;padding:.25rem .65rem;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:2px;color:var(--muted2);letter-spacing:.04em;}
-.svc-price{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;color:var(--accent2);letter-spacing:.02em;padding-top:1rem;border-top:1px solid var(--border);}
-.svc-price.gold-price{color:var(--gold2);}
-.svc-price span{font-size:.72rem;color:var(--muted);font-weight:400;font-family:'DM Sans',sans-serif;margin-left:.3rem;}
-
-/* ===== ABOUT ===== */
-#about .section-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center;}
-.about-visual{position:relative;}
-.about-img{width:100%;height:460px;object-fit:cover;object-position:top;border-radius:2px 20px 2px 20px;border:1px solid var(--border2);filter:brightness(.95);}
-.about-card{position:absolute;bottom:-2rem;right:-2rem;background:var(--surface2);border:1px solid rgba(212,168,83,.2);border-radius:12px;padding:1.5rem;min-width:180px;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.5);}
-.about-card-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:.4rem;}
-.about-card-val{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;color:var(--text);}
-.about-card-sub{font-size:.72rem;color:var(--muted2);margin-top:.25rem;}
-.about-card2{top:-1.5rem;left:-1.5rem;bottom:auto;right:auto;min-width:160px;}
-.about-text p{color:var(--muted2);font-size:.93rem;line-height:1.8;margin-bottom:1.25rem;}
-.skills-wrap{margin-top:2rem;}
-.skills-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.75rem;}
-.skills-list{display:flex;flex-wrap:wrap;gap:.45rem;}
-.skill-pill{font-size:.73rem;padding:.35rem .9rem;border:1px solid var(--border2);border-radius:2px;color:var(--muted2);background:rgba(255,255,255,.02);transition:all .2s;letter-spacing:.02em;}
-.skill-pill:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);}
-
-/* ===== PRICING ===== */
-#pricing{background:var(--surface);border-top:1px solid var(--border);}
-.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
-.price-card{background:var(--surface);padding:2rem;transition:all .3s;}
-.price-card:hover{background:var(--surface2);}
-.price-card.featured{background:linear-gradient(160deg,rgba(124,58,237,.12),var(--surface));border-top:2px solid var(--accent2);}
-.price-card.gold-featured{background:linear-gradient(160deg,rgba(212,168,83,.08),var(--surface));border-top:2px solid var(--gold);}
-.price-badge{display:inline-block;font-size:.6rem;background:var(--accent);color:#fff;padding:.2rem .65rem;border-radius:2px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.85rem;}
-.price-badge.gold{background:var(--gold);color:#000;}
-.price-svc{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.6rem;}
-.price-range{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.03em;color:var(--text);margin-bottom:.4rem;}
-.price-note{font-size:.78rem;color:var(--muted2);}
-
-/* ===== CONTACT ===== */
-#contact{position:relative;overflow:hidden;}
-.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(124,58,237,.12),transparent 70%);}
-.contact-inner{position:relative;z-index:1;text-align:center;}
-.contact-inner .section-eyebrow{justify-content:center;}
-.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:1rem;}
-.contact-title em{font-style:italic;background:linear-gradient(135deg,var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.contact-sub{color:var(--muted2);max-width:480px;margin:0 auto 2.5rem;line-height:1.75;}
-.contact-row{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
-.clink{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.75rem;border-radius:4px;border:1px solid var(--border2);color:var(--muted2);text-decoration:none;font-size:.85rem;letter-spacing:.03em;background:rgba(255,255,255,.02);transition:all .25s;}
-.clink:hover{border-color:rgba(167,139,250,.4);color:var(--text);background:rgba(124,58,237,.07);}
-.clink.primary{background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;border-color:transparent;box-shadow:0 0 30px var(--glow);}
-.clink.primary:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--glow);}
-.clink svg{width:16px;height:16px;flex-shrink:0;}
-
-/* ===== FOOTER ===== */
-footer{border-top:1px solid var(--border);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;max-width:100%;}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.1rem;letter-spacing:.06em;background:linear-gradient(135deg,#fff 20%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-footer p{font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
-
-/* ===== ANIMATIONS ===== */
-.fade-up{opacity:0;transform:translateY(28px);animation:fadeup .75s ease forwards;}
-@keyframes fadeup{to{opacity:1;transform:translateY(0)}}
-.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}.d6{animation-delay:.75s}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  nav,footer{padding:1.2rem 2rem;}
-  .section-wrap{padding:5rem 2rem;}
-  .hero-inner,#about .section-wrap{grid-template-columns:1fr;gap:3rem;}
-  #hero{padding:7rem 2rem 3rem;}
-  .hero-photo{width:260px;height:320px;}
-  .photo-ring,.photo-ring2{width:280px;height:280px;}
-  .photo-glow{width:260px;height:260px;}
-  .services-grid{grid-template-columns:1fr;}
-  .pricing-grid{grid-template-columns:repeat(2,1fr);}
-  .nav-links{display:none;}
-  #about .section-wrap{grid-template-columns:1fr;}
-  .about-card{display:none;}
-}
-@media(max-width:600px){
-  .pricing-grid{grid-template-columns:1fr;}
-  .hero-stats{gap:1.5rem;}
-  .stat-num{font-size:1.4rem;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karishma Kumari | AI Automation, Websites &amp; Digital Systems</title>
+  <meta name="description" content="Karishma Kumari builds AI-powered automation systems, modern business websites, e-commerce experiences and practical digital tools that help businesses work smarter and grow.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karishma Kumari | AI Automation, Websites &amp; Digital Systems">
+  <meta property="og:description" content="AI Systems, Websites &amp; Digital Products Built for Real Businesses.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts: Editorial Serif + Refined Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Karishma Kumari</div>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-  </ul>
-</nav>
+  <div class="page-view-container page-transition-enter">
+    <!-- 1. STICKY GLOBAL NAVIGATION (MULTI-PAGE ROUTING) -->
+    <nav id="navbar">
+      <a href="/" data-route="/" class="nav-logo-group">
+        <span class="nav-logo">KARISHMA KUMARI</span>
+        <span class="nav-tagline">AI Automation Architect</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" data-route="/" class="nav-link-item active">HOME</a></li>
+        <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+        <li><a href="/services" data-route="/services" class="nav-link-item">SERVICES</a></li>
+        <li><a href="/about" data-route="/about" class="nav-link-item">ABOUT</a></li>
+        <li><a href="/pricing" data-route="/pricing" class="nav-link-item">PRICING</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-link-item">CONTACT</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-cta">LET'S TALK</a></li>
+      </ul>
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-line"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow fade-up">
-        <span class="eyebrow-dot"></span>
-        <span class="eyebrow-text">Available for Freelance &amp; Remote Projects</span>
-      </div>
-      <h1 class="hero-title fade-up d1">
-        AI Automation<br>
-        <span class="hero-title-serif">&amp; Digital Systems</span><br>
-        Consultant
-      </h1>
-      <p class="hero-sub fade-up d2">I help businesses automate operations using AI agents, workflow systems, AI content generation, and digital commerce solutions — so you scale without the overhead.</p>
-      <div class="hero-btns fade-up d3">
-        <a href="#contact" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Book Consultation
-        </a>
-        <a href="#services" class="btn-ghost">View Services
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="hero-divider fade-up d4"></div>
-      <div class="hero-stats fade-up d4">
-        <div class="stat-item"><div class="stat-num">2+</div><div class="stat-label">Years Experience</div></div>
-        <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Service Areas</div></div>
-        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Live Products</div></div>
-      </div>
-    </div>
-    <div class="hero-photo-wrap fade-up d5">
-      <div class="photo-ring"></div>
-      <div class="photo-ring2"></div>
-      <div class="photo-glow"></div>
-      <img src="images/project1.jpg.png" alt="Karishma Kumari" class="hero-photo">
-      <div class="photo-badge">
-        <div class="photo-badge-title">Vision AI Studio</div>
-        <div class="photo-badge-sub">Founder &amp; AI Architect</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- 2. HOME HERO SECTION -->
+    <section class="hero-editorial">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span class="hero-badge-text">AVAILABLE FOR FREELANCE &amp; REMOTE PROJECTS</span>
+          </div>
+          
+          <div class="section-eyebrow" style="margin-bottom: 0.5rem;"><span class="section-num">01 /</span> INTRO &amp; EXPERTISE</div>
+          
+          <h1 class="hero-title">
+            AI Systems, Websites &amp; Digital Products <span class="highlight">Built for Real Businesses.</span>
+          </h1>
+          
+          <p class="hero-sub">
+            I build AI-powered automation systems, modern business websites, e-commerce experiences and practical digital tools that help businesses work smarter and grow.
+          </p>
+          
+          <div class="hero-btns">
+            <a href="/work" data-route="/work" class="btn-primary">
+              VIEW MY WORK
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/contact" data-route="/contact" class="btn-ghost">
+              WORK WITH ME
+            </a>
+          </div>
+          
+          <div class="hero-proof-bar">
+            <div class="proof-item">
+              <div class="proof-item-val">Kuchuu Puchuu</div>
+              <div class="proof-item-lbl">Delivered Business Site</div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-item-val">MIRAVIKA</div>
+              <div class="proof-item-lbl">Own E-Commerce Business</div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-item-val">Vision AI Studio</div>
+              <div class="proof-item-lbl">Team Automation Project</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- EXACT EXISTING PERSONAL PHOTO -->
+        <div class="hero-photo-container">
+          <div class="photo-editorial-frame">
+            <div class="photo-glow-effect"></div>
+            <div class="photo-frame-border">
+              <img src="images/project1.jpg.png" alt="Karishma Kumari" class="hero-photo">
+            </div>
+            
+            <div class="photo-floater fl-top">
+              <div class="fl-tag">AI AUTOMATION</div>
+              <div class="fl-name">Vision AI Studio</div>
+              <div class="fl-desc">Founder &amp; AI Architect</div>
+            </div>
+            
+            <div class="photo-floater fl-bottom">
+              <div class="fl-tag">E-COMMERCE</div>
+              <div class="fl-name">MIRAVIKA</div>
+              <div class="fl-desc">Live Fashion Commerce</div>
+            </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-wrap" style="padding-bottom:0;">
-    <div class="section-eyebrow"><span class="section-eyebrow-text">What I Deliver</span></div>
-    <h2 class="section-title">Services &amp; Expertise</h2>
-    <p class="section-sub">From intelligent AI agents to full e-commerce operations — end-to-end digital solutions for modern businesses.</p>
-  </div>
-  <div class="section-wrap" style="padding-top:0;">
-    <div class="services-grid">
+            <div class="photo-floater fl-side">
+              <div class="fl-tag">WEB SYSTEMS</div>
+              <div class="fl-name">Digital Products</div>
+              <div class="fl-desc">Conversion-First Delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Card 1: AI Agents -->
-      <div class="service-card">
-        <div class="svc-icon icon-brain">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
-            <circle cx="24" cy="14" r="3" fill="rgba(124,58,237,0.9)"/>
-            <circle cx="14" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
-            <circle cx="34" cy="28" r="3" fill="rgba(167,139,250,0.9)"/>
-            <circle cx="24" cy="36" r="3" fill="rgba(56,189,248,0.9)"/>
-            <circle cx="16" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
-            <circle cx="32" cy="18" r="2" fill="rgba(124,58,237,0.6)"/>
-            <line x1="24" y1="14" x2="16" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-            </line>
-            <line x1="24" y1="14" x2="32" y2="18" stroke="rgba(124,58,237,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-            </line>
-            <line x1="16" y1="18" x2="14" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-            </line>
-            <line x1="32" y1="18" x2="34" y2="28" stroke="rgba(167,139,250,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
-            </line>
-            <line x1="14" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
-            </line>
-            <line x1="34" y1="28" x2="24" y2="36" stroke="rgba(56,189,248,0.5)" stroke-width="1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
-            </line>
-            <circle cx="24" cy="24" r="8" stroke="rgba(124,58,237,0.3)" stroke-width="1" fill="none">
-              <animate attributeName="r" values="6;14;6" dur="3s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
+    <!-- 3. QUICK PROOF STRIP -->
+    <section class="proof-strip-section">
+      <div class="proof-strip-inner">
+        <div class="proof-strip-col">
+          <div class="proof-strip-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="proof-strip-tag">SOLD &amp; DELIVERED</div>
+            <div class="proof-strip-title">BUSINESS WEBSITE</div>
+          </div>
         </div>
-        <div class="svc-name">AI Agents &amp; Automation</div>
-        <div class="svc-desc">Custom AI chat agents, voice call agents, and WhatsApp automation systems working 24/7 for your business growth.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">AI Chatbot</span><span class="svc-tag">Voice Agent</span><span class="svc-tag">WhatsApp AI</span><span class="svc-tag">CRM Automation</span>
-        </div>
-        <div class="svc-price">₹3,000 – ₹15,000 <span>/ project</span></div>
-      </div>
 
-      <!-- Card 2: n8n Workflow -->
-      <div class="service-card">
-        <div class="svc-icon icon-flow">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="20" width="8" height="8" rx="2" fill="rgba(124,58,237,0.8)">
-              <animate attributeName="opacity" values="1;0.5;1" dur="1.8s" repeatCount="indefinite"/>
-            </rect>
-            <rect x="20" y="10" width="8" height="8" rx="2" fill="rgba(167,139,250,0.8)">
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
-            </rect>
-            <rect x="20" y="30" width="8" height="8" rx="2" fill="rgba(167,139,250,0.8)">
-              <animate attributeName="opacity" values="1;0.5;1" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
-            </rect>
-            <rect x="36" y="20" width="8" height="8" rx="2" fill="rgba(56,189,248,0.8)">
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
-            </rect>
-            <path d="M12 24 L20 14" stroke="rgba(124,58,237,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
-              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/>
-            </path>
-            <path d="M12 24 L20 34" stroke="rgba(124,58,237,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
-              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.2s"/>
-            </path>
-            <path d="M28 14 L36 24" stroke="rgba(56,189,248,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
-              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.4s"/>
-            </path>
-            <path d="M28 34 L36 24" stroke="rgba(56,189,248,0.6)" stroke-width="1.5" stroke-dasharray="4 2">
-              <animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite" begin="0.6s"/>
-            </path>
-          </svg>
+        <div class="proof-strip-col">
+          <div class="proof-strip-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+          </div>
+          <div>
+            <div class="proof-strip-tag">OWN BUSINESS</div>
+            <div class="proof-strip-title">MIRAVIKA LIVE</div>
+          </div>
         </div>
-        <div class="svc-name">n8n Workflow Automation</div>
-        <div class="svc-desc">Complex multi-step automation workflows connecting all your tools, eliminating manual repetitive business processes entirely.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">n8n Flows</span><span class="svc-tag">API Integration</span><span class="svc-tag">Data Pipelines</span><span class="svc-tag">SaaS Logic</span>
-        </div>
-        <div class="svc-price">₹4,000 – ₹20,000 <span>/ project</span></div>
-      </div>
 
-      <!-- Card 3: Website Dev -->
-      <div class="service-card">
-        <div class="svc-icon icon-globe">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="18" stroke="rgba(56,189,248,0.5)" stroke-width="1.5"/>
-            <ellipse cx="24" cy="24" rx="10" ry="18" stroke="rgba(56,189,248,0.3)" stroke-width="1">
-              <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="8s" repeatCount="indefinite"/>
-            </ellipse>
-            <line x1="6" y1="24" x2="42" y2="24" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
-            <line x1="8" y1="16" x2="40" y2="16" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-            <line x1="8" y1="32" x2="40" y2="32" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
-            <circle cx="24" cy="15" r="2.5" fill="rgba(56,189,248,0.9)">
-              <animate attributeName="cy" values="14;34;14" dur="4s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
+        <div class="proof-strip-col">
+          <div class="proof-strip-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          </div>
+          <div>
+            <div class="proof-strip-tag">DIGITAL TOOL</div>
+            <div class="proof-strip-title">FREE TO USE (BUILDY TOOLS)</div>
+          </div>
         </div>
-        <div class="svc-name">Website Development</div>
-        <div class="svc-desc">Modern, fast business websites and landing pages built with clean architecture, SaaS logic and professional premium design.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">Business Sites</span><span class="svc-tag">Landing Pages</span><span class="svc-tag">SaaS Systems</span><span class="svc-tag">Auth Logic</span>
-        </div>
-        <div class="svc-price">₹5,000 – ₹15,000 <span>/ project</span></div>
-      </div>
 
-      <!-- Card 4: E-Commerce -->
-      <div class="service-card gold-card">
-        <div class="svc-icon icon-cart">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="12" y="18" width="24" height="20" rx="3" stroke="rgba(212,168,83,0.7)" stroke-width="1.5" fill="rgba(212,168,83,0.08)"/>
-            <path d="M18 18 C18 13 30 13 30 18" stroke="rgba(212,168,83,0.6)" stroke-width="1.5" fill="none"/>
-            <circle cx="19" cy="29" r="2" fill="rgba(212,168,83,0.8)">
-              <animate attributeName="cy" values="28;30;28" dur="1s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="29" cy="29" r="2" fill="rgba(212,168,83,0.8)">
-              <animate attributeName="cy" values="30;28;30" dur="1s" repeatCount="indefinite"/>
-            </circle>
-            <path d="M38 10 L39 13 L42 14 L39 15 L38 18 L37 15 L34 14 L37 13 Z" fill="rgba(212,168,83,0.9)">
-              <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
-            </path>
-            <path d="M8 8 L9 10 L11 11 L9 12 L8 14 L7 12 L5 11 L7 10 Z" fill="rgba(240,201,122,0.7)">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
-            </path>
-          </svg>
+        <div class="proof-strip-col">
+          <div class="proof-strip-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <div>
+            <div class="proof-strip-tag">AI STUDIO</div>
+            <div class="proof-strip-title">TEAM PROJECT (VELISION)</div>
+          </div>
         </div>
-        <div class="svc-name">E-Commerce Management</div>
-        <div class="svc-desc">Full marketplace setup and management across Flipkart, Meesho, and Amazon — from product listing to advertising campaigns.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">Flipkart</span><span class="svc-tag">Meesho</span><span class="svc-tag">Amazon</span><span class="svc-tag">Marketplace SEO</span>
-        </div>
-        <div class="svc-price gold-price">₹2,000 – ₹10,000 <span>/ month</span></div>
       </div>
+    </section>
 
-      <!-- Card 5: AI Creative -->
-      <div class="service-card">
-        <div class="svc-icon icon-sparkle">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 6 L27 21 L42 24 L27 27 L24 42 L21 27 L6 24 L21 21 Z" fill="rgba(124,58,237,0.15)" stroke="rgba(167,139,250,0.7)" stroke-width="1.2">
-              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-            </path>
-            <path d="M38 10 L39.5 14 L38 18 L36.5 14 Z" fill="rgba(167,139,250,0.8)">
-              <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
-              <animate attributeName="transform" values="scale(1);scale(1.3);scale(1)" dur="1.5s" repeatCount="indefinite" additive="sum"/>
-            </path>
-            <path d="M10 8 L11 12 L10 16 L9 12 Z" fill="rgba(56,189,248,0.8)">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite" begin="0.4s"/>
-            </path>
-            <path d="M40 34 L41 37 L40 40 L39 37 Z" fill="rgba(124,58,237,0.8)">
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-            </path>
-            <circle cx="24" cy="24" r="14" stroke="rgba(167,139,250,0.2)" stroke-width="1" stroke-dasharray="3 5">
-              <animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="6s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
+    <!-- 4. HOME FEATURED WORK -->
+    <section class="section-wrap">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="section-eyebrow"><span class="section-num">02 /</span> SELECTED WORK</div>
+          <h2 class="section-title">Built, Delivered &amp; In Progress.</h2>
+          <p class="section-sub" style="margin-bottom: 0;">
+            A curated selection of client deliverables, active templates, team products, and live ventures.
+          </p>
         </div>
-        <div class="svc-name">AI Creative Services</div>
-        <div class="svc-desc">AI-generated product photography, video ads, reels, and branding assets that make your products stand out on any platform.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">AI Product Photos</span><span class="svc-tag">AI Video Ads</span><span class="svc-tag">Product Reels</span><span class="svc-tag">Branding</span>
-        </div>
-        <div class="svc-price">₹500 – ₹5,000 <span>/ project</span></div>
-      </div>
-
-      <!-- Card 6: Full Setup -->
-      <div class="service-card gold-card">
-        <div class="svc-icon icon-rocket">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g class="rocket-body">
-              <path d="M24 8 C28 8 36 16 36 26 L30 32 L18 32 L12 26 C12 16 20 8 24 8 Z" fill="rgba(212,168,83,0.15)" stroke="rgba(212,168,83,0.7)" stroke-width="1.2"/>
-              <circle cx="24" cy="22" r="4" stroke="rgba(240,201,122,0.8)" stroke-width="1.2" fill="rgba(240,201,122,0.1)">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-              </circle>
-              <path d="M18 32 L12 38 L16 34" fill="rgba(212,168,83,0.5)" stroke="rgba(212,168,83,0.6)" stroke-width="1"/>
-              <path d="M30 32 L36 38 L32 34" fill="rgba(212,168,83,0.5)" stroke="rgba(212,168,83,0.6)" stroke-width="1"/>
-            </g>
-            <g class="flame">
-              <path d="M20 32 Q22 40 24 38 Q26 40 28 32" fill="rgba(212,168,83,0.6)" stroke="none">
-                <animate attributeName="d" values="M20 32 Q22 42 24 40 Q26 42 28 32;M20 32 Q22 38 24 36 Q26 38 28 32;M20 32 Q22 42 24 40 Q26 42 28 32" dur="0.4s" repeatCount="indefinite"/>
-              </path>
-            </g>
-            <circle cx="24" cy="24" r="1.5" fill="white" opacity="0">
-              <animateMotion path="M 0 0 a 10 10 0 1 1 0.01 0" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
-        </div>
-        <div class="svc-name">Full Business Setup</div>
-        <div class="svc-desc">Complete online business launch — website + marketplace + automation + branding, all delivered as a single cohesive package.</div>
-        <div class="svc-tags">
-          <span class="svc-tag">Website</span><span class="svc-tag">Marketplace</span><span class="svc-tag">Automation</span><span class="svc-tag">Branding</span>
-        </div>
-        <div class="svc-price gold-price">₹7,000+ <span>/ package</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-wrap">
-    <div class="about-visual">
-      <img src="images/project1.jpg.png" alt="Karishma Kumari" class="about-img">
-      <div class="about-card">
-        <div class="about-card-label">Currently Building</div>
-        <div class="about-card-val">Vision AI</div>
-        <div class="about-card-sub">AI Automation Studio</div>
-      </div>
-      <div class="about-card about-card2">
-        <div class="about-card-label">Also Running</div>
-        <div class="about-card-val">Miravika</div>
-        <div class="about-card-sub">E-commerce Brand</div>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-eyebrow"><span class="section-eyebrow-text">About Me</span></div>
-      <h2 class="section-title">Building AI Systems<br>That Actually Work</h2>
-      <p>I'm Karishma Kumari — AI Automation Architect, founder of <strong>Vision AI Studio</strong> and <strong>Miravika</strong>. I design scalable automation systems and manage full e-commerce operations for real businesses.</p>
-      <p>With a hybrid background spanning technology, business operations, and digital marketing, I understand both system logic and real-world challenges — allowing me to build automation that delivers measurable results.</p>
-      <p>Currently available for freelance projects, remote consulting, and automation partnerships globally.</p>
-      <div class="skills-wrap">
-        <div class="skills-label">Core Skills</div>
-        <div class="skills-list">
-          <span class="skill-pill">AI Workflow Architecture</span>
-          <span class="skill-pill">n8n Automation</span>
-          <span class="skill-pill">Chatbot Development</span>
-          <span class="skill-pill">Voice AI</span>
-          <span class="skill-pill">SaaS Systems</span>
-          <span class="skill-pill">JWT Authentication</span>
-          <span class="skill-pill">Marketplace SEO</span>
-          <span class="skill-pill">Product Listing</span>
-          <span class="skill-pill">Flipkart / Meesho</span>
-          <span class="skill-pill">Prompt Engineering</span>
-          <span class="skill-pill">Digital Marketing</span>
-          <span class="skill-pill">Canva / Branding</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="section-wrap">
-    <div class="section-eyebrow"><span class="section-eyebrow-text">Investment</span></div>
-    <h2 class="section-title">Transparent Pricing</h2>
-    <p class="section-sub">Beginner-friendly rates. Every project is unique — contact me for a custom quote tailored to your needs.</p>
-    <div class="pricing-grid">
-      <div class="price-card featured">
-        <div class="price-badge">Popular</div>
-        <div class="price-svc">AI Chatbot</div>
-        <div class="price-range">₹3K – ₹8K</div>
-        <div class="price-note">Custom chat agents for your business</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">AI Voice Agent</div>
-        <div class="price-range">₹5K – ₹15K</div>
-        <div class="price-note">Automated voice call systems</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">n8n Automation</div>
-        <div class="price-range">₹4K – ₹20K</div>
-        <div class="price-note">Workflow &amp; process automation</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">Business Website</div>
-        <div class="price-range">₹5K – ₹15K</div>
-        <div class="price-note">Modern, professional web presence</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">AI Product Images</div>
-        <div class="price-range">₹500 – ₹3K</div>
-        <div class="price-note">AI-generated product photography</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">AI Video / Reels</div>
-        <div class="price-range">₹800 – ₹5K</div>
-        <div class="price-note">Video ads and social content</div>
-      </div>
-      <div class="price-card">
-        <div class="price-svc">Marketplace Setup</div>
-        <div class="price-range">₹2K – ₹10K</div>
-        <div class="price-note">Flipkart / Meesho / Amazon</div>
-      </div>
-      <div class="price-card gold-featured">
-        <div class="price-badge gold">Best Value</div>
-        <div class="price-svc">Full Business Setup</div>
-        <div class="price-range">₹7K+</div>
-        <div class="price-note">Website + marketplace + automation</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-bg"></div>
-  <div class="section-wrap">
-    <div class="contact-inner">
-      <div class="section-eyebrow"><span class="section-eyebrow-text">Get In Touch</span></div>
-      <h2 class="contact-title">Let's Build Something<br><em>Extraordinary</em></h2>
-      <p class="contact-sub">Available for freelance projects, remote work, and automation consulting. Let's automate your business and scale it faster.</p>
-      <div class="contact-row">
-        <a href="mailto:karishmakumaritk19@gmail.com" class="clink primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Email Me
-        </a>
-        <a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" class="clink">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://velision.in" target="_blank" class="clink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-          Vision AI Studio
-        </a>
-        <a href="https://karishmakumaritk-cpu.github.io/portfolio-site/" target="_blank" class="clink">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          Portfolio
+        <a href="/work" data-route="/work" class="btn-primary">
+          VIEW ALL WORK →
         </a>
       </div>
+
+      <div class="projects-grid">
+        <!-- 1. Kuchuu Puchuu -->
+        <div class="project-card featured-wide" onclick="openModal('kuchuu-puchuu')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-sold">SOLD • DELIVERED</span>
+            <img src="images/kuchuu_chai_concept_1788340999750.jpg" alt="Kuchuu Puchuu" class="project-img-cover" loading="lazy">
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">Client Business Website</span>
+              <span class="project-concept-indicator">Delivered</span>
+            </div>
+            <h3 class="project-title">Kuchuu Puchuu — Chai &amp; Bites</h3>
+            <p class="project-desc">A custom commercial website created and delivered for an Indian roadside chai and food business, focused on menu presentation, local discoverability and customer inquiries.</p>
+            <div class="project-actions">
+              <a href="https://kuchuu-puchuu-chai-bites.ai.studio/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                View Website
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details &amp; Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. MIRAVIKA -->
+        <div class="project-card medium-tall" onclick="openModal('miravika')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-own">OWN BUSINESS • LIVE</span>
+            <img src="images/miravika_store_concept_1788341144429.jpg" alt="MIRAVIKA" class="project-img-cover" loading="lazy">
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">E-Commerce Brand</span>
+              <span class="project-concept-indicator">Live Venture</span>
+            </div>
+            <h3 class="project-title">MIRAVIKA</h3>
+            <p class="project-desc">MIRAVIKA is my own e-commerce brand, where I work across product presentation, e-commerce operations, branding, and digital commerce.</p>
+            <div class="project-actions">
+              <a href="https://miravika.com/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                Visit MIRAVIKA
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Vision AI Studio -->
+        <div class="project-card wide-landscape" onclick="openModal('vision-ai-studio')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-team">TEAM PROJECT • CURRENTLY BUILDING</span>
+            <div class="project-visual-abstract">
+              <div class="abstract-ring"></div>
+              <div class="abstract-core">
+                <span class="abstract-label">AI Automation Studio</span>
+                <span class="abstract-sub">Vision AI Studio</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">AI Automation SaaS</span>
+              <span class="project-concept-indicator">Team Platform</span>
+            </div>
+            <h3 class="project-title">Vision AI Studio</h3>
+            <p class="project-desc">A team-led AI automation studio currently being built to create scalable AI-powered workflows, automation systems and SaaS-based business solutions.</p>
+            <div class="project-actions">
+              <a href="https://velision.in/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                Visit Vision AI Studio
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Lumière Beauty Studio -->
+        <div class="project-card medium-standard" onclick="openModal('lumiere')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-template">WEBSITE TEMPLATE</span>
+            <img src="images/lumiere_salon_concept_1788341026422.jpg" alt="Lumière" class="project-img-cover" loading="lazy">
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">Salon &amp; Beauty Template</span>
+              <span class="project-concept-indicator">Template</span>
+            </div>
+            <h3 class="project-title">Lumière Beauty Studio</h3>
+            <p class="project-desc">Premium salon and beauty studio concept crafted for hair stylists, makeup artists, and aesthetic clinics with complete booking flow.</p>
+            <div class="project-actions">
+              <a href="https://karishmakumaritk-cpu.github.io/Selon-templet-1/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                View Demo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Majestic Estates -->
+        <div class="project-card wide-landscape" onclick="openModal('majestic-estates')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-template">WEBSITE TEMPLATE</span>
+            <img src="images/majestic_realestate_concept_1788341065851.jpg" alt="Majestic Estates" class="project-img-cover" loading="lazy">
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">Real Estate Template</span>
+              <span class="project-concept-indicator">Template</span>
+            </div>
+            <h3 class="project-title">Majestic Estates</h3>
+            <p class="project-desc">Premium real estate website concept built for Indian real estate consultants, brokerages, and property developers with lead generation CTAs.</p>
+            <div class="project-actions">
+              <a href="https://karishmakumaritk-cpu.github.io/majestic-estates/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                View Demo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Buildy Tools -->
+        <div class="project-card medium-standard" onclick="openModal('buildy-tools')">
+          <div class="project-thumb-frame">
+            <span class="project-status-tag status-free">FREE TO USE</span>
+            <div class="project-visual-abstract">
+              <div class="abstract-ring"></div>
+              <div class="abstract-core">
+                <span class="abstract-label">Free Digital Utility</span>
+                <span class="abstract-sub">Buildy Tools</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-info">
+            <div class="project-card-header">
+              <span class="project-cat">Excel AI Automation</span>
+              <span class="project-concept-indicator">Free Utility</span>
+            </div>
+            <h3 class="project-title">Buildy Tools — Free Excel AI Tool</h3>
+            <p class="project-desc">A practical Excel automation tool that turns messy copied seller data into structured, usable records with AI-assisted processing.</p>
+            <div class="project-actions">
+              <a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                Try It Free
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <button class="project-details-btn" type="button">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WEBSITE SALES SECTION (VERY IMPORTANT MANDATE) -->
+    <section class="section-wrap" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="section-eyebrow"><span class="section-num">03 /</span> TAILORED INDUSTRY SOLUTIONS</div>
+      <h2 class="section-title">Your Business Deserves a Better Website.</h2>
+      <p class="section-sub">
+        From salons and restaurants to real estate and local businesses, I create modern websites designed around how customers actually discover and contact businesses.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+        <div class="expertise-group">
+          <div class="expertise-title">SALON &amp; BEAUTY STUDIOS</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Service rate cards, stylist portfolios, customer reviews &amp; instant WhatsApp appointment scheduling.</p>
+          <a href="/work" data-route="/work" class="project-link-cta">View Salon Templates →</a>
+        </div>
+
+        <div class="expertise-group">
+          <div class="expertise-title">RESTAURANTS &amp; CAFÉS</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Mobile food menus, special combos, Google Map directions &amp; direct WhatsApp takeaway ordering.</p>
+          <a href="/work" data-route="/work" class="project-link-cta">View Dining Templates →</a>
+        </div>
+
+        <div class="expertise-group">
+          <div class="expertise-title">REAL ESTATE &amp; AGENTS</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Property galleries, location highlights, floor plans, and quick call/WhatsApp lead capture forms.</p>
+          <a href="/work" data-route="/work" class="project-link-cta">View Property Templates →</a>
+        </div>
+
+        <div class="expertise-group">
+          <div class="expertise-title">COACHING &amp; CONSULTING</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Credibility portfolios, program tiers, student testimonials and one-on-one booking links.</p>
+          <a href="/services" data-route="/services" class="project-link-cta">View Setup Details →</a>
+        </div>
+
+        <div class="expertise-group">
+          <div class="expertise-title">LOCAL BUSINESSES</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">High-visibility landing pages built for mobile shoppers searching on Google Maps and Instagram.</p>
+          <a href="/pricing" data-route="/pricing" class="project-link-cta">View Starter Package →</a>
+        </div>
+
+        <div class="expertise-group">
+          <div class="expertise-title">PROFESSIONAL PORTFOLIOS</div>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">Executive profiles, creative agency layouts, and personal branding websites that convert viewers.</p>
+          <a href="/work" data-route="/work" class="project-link-cta">Explore All Concepts →</a>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="/work" data-route="/work" class="btn-primary" style="padding: 0.85rem 2.2rem;">
+          EXPLORE WEBSITE CONCEPTS
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. SERVICES PREVIEW (6 SERVICES) -->
+    <section class="section-wrap">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="section-eyebrow"><span class="section-num">04 /</span> CORE CAPABILITIES</div>
+          <h2 class="section-title">Digital Systems That Solve Real Business Problems.</h2>
+          <p class="section-sub" style="margin-bottom: 0;">
+            Every offering is designed to remove operational friction, boost online discoverability, and drive real customer action.
+          </p>
+        </div>
+        <a href="/services" data-route="/services" class="btn-ghost">
+          VIEW ALL SERVICES →
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;">
+        <div class="expertise-group" style="padding: 2rem;">
+          <div class="svc-num-tag" style="font-size: 1.5rem;">01</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">AI Automation &amp; AI Agents</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">AI chatbots, WhatsApp auto-responders, voice calling agents, and CRM lead capture bots.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹3,999</span>
+          </div>
+        </div>
+
+        <div class="expertise-group" style="padding: 2rem;">
+          <div class="svc-num-tag" style="font-size: 1.5rem;">02</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">Workflow Automation / n8n</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">Multi-app workflows connecting Google Sheets, WhatsApp, payment gateways, and databases.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹4,999</span>
+          </div>
+        </div>
+
+        <div class="expertise-group" style="padding: 2rem; border-color: var(--terracotta);">
+          <div class="svc-num-tag" style="font-size: 1.5rem; color: var(--terracotta);">03</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">Website Development</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">Modern business websites, restaurant menus, salon pages, real estate lead capture.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹2,999</span>
+          </div>
+        </div>
+
+        <div class="expertise-group" style="padding: 2rem;">
+          <div class="svc-num-tag" style="font-size: 1.5rem;">04</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">E-Commerce Management</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">Amazon, Flipkart, Meesho product cataloging, marketplace SEO, and visual merchandising.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹2,999 / mo</span>
+          </div>
+        </div>
+
+        <div class="expertise-group" style="padding: 2rem;">
+          <div class="svc-num-tag" style="font-size: 1.5rem;">05</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">AI Creative Services</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">AI product photography, digital staging backgrounds, reels, and high-impact social creatives.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹799</span>
+          </div>
+        </div>
+
+        <div class="expertise-group" style="padding: 2rem;">
+          <div class="svc-num-tag" style="font-size: 1.5rem;">06</div>
+          <h3 class="svc-block-title" style="font-size: 1.25rem;">Digital Business Setup</h3>
+          <p class="svc-block-desc" style="font-size: 0.86rem;">Turnkey digital architecture: website, commerce channels, branding identity, and workflows.</p>
+          <div class="svc-price-pill" style="margin-bottom: 0;">
+            <span class="svc-price-num" style="font-size: 0.95rem;">Starting ₹9,999</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOME STRONG CTA -->
+    <section class="section-wrap-tight" style="padding-bottom: 6rem;">
+      <div class="indian-biz-banner">
+        <div class="biz-banner-inner">
+          <div>
+            <span class="biz-banner-tag">LET'S COLLABORATE</span>
+            <h3 class="biz-banner-title">Have a Business Idea? Let’s Turn It Into Something Real.</h3>
+            <p class="biz-banner-desc">
+              Whether you need a business website, AI automation, e-commerce support or a practical digital tool, let’s discuss what your business actually needs.
+            </p>
+            <div class="biz-banner-guarantees">
+              <div class="guarantee-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Direct 1-on-1 strategy &amp; technical implementation</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Clear scopes, transparent pricing &amp; prompt delivery</span>
+              </div>
+            </div>
+          </div>
+          <div class="biz-banner-action">
+            <a href="/contact" data-route="/contact" class="btn-primary banner-cta-btn">
+              START A PROJECT
+            </a>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20have%20a%20business%20idea%20and%20want%20to%20collaborate." target="_blank" rel="noopener" class="btn-whatsapp banner-cta-btn">
+              WHATSAPP ME
+            </a>
+            <span class="banner-subnote">Phone &amp; WhatsApp: +91 98186 91915</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PROJECT MODAL -->
+    <div class="modal-overlay" id="project-modal">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+        <div id="modal-body"></div>
+      </div>
     </div>
+
+    <!-- 9. GLOBAL FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-name">KARISHMA KUMARI</div>
+          <p class="footer-role">
+            AI Automation Architect<br>
+            Founder of Vision AI Studio &amp; Miravika
+          </p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">
+            Email: <a href="mailto:karishmakumaritk19@gmail.com" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">karishmakumaritk19@gmail.com</a><br>
+            Phone: <a href="tel:+919818691915" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">+91 98186 91915</a>
+          </p>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="/" data-route="/">Home</a></li>
+            <li><a href="/work" data-route="/work">Work</a></li>
+            <li><a href="/services" data-route="/services">Services</a></li>
+            <li><a href="/about" data-route="/about">About</a></li>
+            <li><a href="/pricing" data-route="/pricing">Pricing</a></li>
+            <li><a href="/contact" data-route="/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Key Links &amp; Ventures</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+        <div>Built for high performance, transparency, and real business outcomes.</div>
+      </div>
+    </footer>
+
+    <!-- 10. TASTEFUL FLOATING WHATSAPP BUTTON (NO EMOJIS) -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20would%20like%20to%20discuss%20a%20website%20or%20automation%20project." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+      <span>CHAT ON WHATSAPP</span>
+    </a>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Karishma Kumari</div>
-  <p>AI Automation &amp; Digital Systems Consultant · Jaipur, India</p>
-  <p>© 2026 · All rights reserved</p>
-</footer>
-
+  <!-- Scripts -->
+  <script src="app.js"></script>
 </body>
 </html>

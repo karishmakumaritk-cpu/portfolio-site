@@ -10,6 +10,14 @@ const PORT = 3000;
 
 app.use(express.static(__dirname));
 
+// Route handlers for clean multi-page URLs and subdirectories
+const routes = ['/work', '/services', '/about', '/pricing', '/contact'];
+routes.forEach(route => {
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname, route, 'index.html'));
+  });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
