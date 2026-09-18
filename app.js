@@ -1,184 +1,41 @@
-// Shared Project Data and Client Multi-Page Router for Karishma Kumari Portfolio
+// Shared Project Data for Karishma Kumari Portfolio (7 Verified Projects)
 const projectsData = [
   {
-    id: "kuchuu-puchuu",
-    name: "Kuchuu Puchuu — Chai & Bites",
-    category: "Client / Business Website",
-    categoryType: "sold",
-    statusText: "SOLD • DELIVERED",
-    statusClass: "status-sold",
+    id: "miravika",
+    name: "MIRAVIKA — E-Commerce Brand",
+    category: "OWN BUSINESS",
+    categoryType: "own",
+    statusText: "OWN BUSINESS • LIVE D2C",
+    statusClass: "status-own",
     gridClass: "featured-wide",
-    url: "https://kuchuu-puchuu-chai-bites.ai.studio/",
-    ctaText: "VIEW LIVE WEBSITE →",
-    image: "images/kuchuu_chai_concept_1788340999750.jpg",
-    conceptType: "Client Delivered Business Website",
-    shortDesc: "A custom commercial website created and delivered for an Indian roadside chai and food business, focused on menu presentation, local discoverability and customer inquiries.",
-    businessContext: "Local food venture in Delhi NCR needing to expand beyond walk-in patrons by giving customers an easy way to browse snacks and chai varieties, request bulk orders, and find location directions.",
-    solution: "Built a warm editorial digital storefront with mobile-first menu discovery, structured pricing, location map pin, and an instant WhatsApp ordering flow.",
+    url: "https://miravika.com/",
+    ctaText: "VISIT MIRAVIKA STORE →",
+    image: "images/miravika_store_concept_1788341144429.jpg",
+    conceptType: "Live Consumer E-Commerce Storefront",
+    shortDesc: "My own consumer e-commerce brand selling fashion accessories & beauty products, operating an independent D2C storefront and selling across Flipkart, Meesho, and Amazon.",
+    businessContext: "Independent fashion & beauty brands face high acquisition costs and marketplace competition without distinct visual merchandising, catalog algorithms, and streamlined fulfillment.",
+    solution: "Engineered an independent D2C storefront alongside multi-channel marketplace listings, keyword-optimized schemas, high-converting product pages, and automated order notifications.",
     features: [
-      "Custom business website architecture",
-      "Mobile-optimized menu showcase",
-      "Direct WhatsApp customer ordering/enquiry",
-      "Local business details & operating hours",
-      "Street chai food culture branding identity",
-      "Instant mobile loading speed"
+      "Live independent digital commerce storefront",
+      "Multi-marketplace integration (Flipkart, Meesho, Amazon)",
+      "Marketplace SEO & visual cataloging",
+      "End-to-end customer order fulfillment",
+      "Direct WhatsApp customer inquiry assistance",
+      "Omnichannel inventory & packaging workflows"
     ],
-    detailsNote: "Sold and delivered as a live business website for the client, driving real local inquiries and WhatsApp orders."
-  },
-  {
-    id: "lumiere",
-    name: "Lumière Beauty Studio",
-    category: "Salon & Beauty Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "medium-tall",
-    url: "https://karishmakumaritk-cpu.github.io/Selon-templet-1/",
-    ctaText: "VIEW DEMO →",
-    image: "images/lumiere_salon_concept_1788341026422.jpg",
-    conceptType: "Premium Indian Salon & Aesthetics Concept",
-    shortDesc: "Premium salon and beauty studio concept crafted for hair stylists, makeup artists, and aesthetic clinics with complete booking flow.",
-    businessContext: "Salon and aesthetic clinics often lose premium appointments when relying solely on social media DMs without a structured service rate card or direct booking mechanism.",
-    solution: "Designed an editorial aesthetic layout featuring categorized beauty treatments, stylist credentials, client reviews, and direct WhatsApp appointment booking.",
-    features: [
-      "Editorial salon aesthetic & typography",
-      "Interactive treatment service menu",
-      "Direct appointment & WhatsApp booking CTA",
-      "High-converting lookbook gallery",
-      "Fully responsive mobile layout",
-      "Ready-to-deploy client structure"
+    architectureDecisions: "Built an omnichannel architecture pairing an independent D2C web storefront with major marketplaces. Implemented keyword-optimized titles, high-resolution lifestyle photography, and unified inventory tracking to balance marketplace sales with direct brand margins.",
+    technicalFeatures: [
+      "Mobile-optimized D2C storefront with sub-second checkout",
+      "Marketplace search keyword & attribute optimization",
+      "WhatsApp direct customer consultation & order link",
+      "Dynamic SKU categorization & packaging protocols"
     ],
-    detailsNote: "Website Template / Commercial Product available for customization and rapid 3–5 day deployment for salon & beauty studio owners."
-  },
-  {
-    id: "noire",
-    name: "NOIRÉ",
-    category: "Luxury Salon Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "medium-standard",
-    url: "https://karishmakumaritk-cpu.github.io/Noire-salon-template-3/",
-    ctaText: "VIEW DEMO →",
-    image: "images/noire_luxury_concept_1788341083049.jpg",
-    conceptType: "Dark Luxury Wellness & Spa Concept",
-    shortDesc: "Elegant modern salon and luxury wellness brand website concept featuring a high-contrast dark aesthetic and boutique presentation.",
-    businessContext: "Boutique wellness centers and luxury spas require high visual fidelity and sensory atmosphere to justify premium service pricing.",
-    solution: "Engineered a dark luxury visual architecture with gold accent typography, transparent treatment pricing, stylist profiles, and one-tap consultation booking.",
-    features: [
-      "Sophisticated dark luxury palette",
-      "Treatment list with pricing breakdown",
-      "Stylist team profile showcase",
-      "One-click WhatsApp booking integration",
-      "Client testimonial showcase ready",
-      "Seamless responsive navigation"
-    ],
-    detailsNote: "Website Template / Commercial Product designed specifically for high-end boutique salons and luxury spas."
-  },
-  {
-    id: "savora",
-    name: "SAVORA — Modern Kitchen & Dining",
-    category: "Restaurant Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "wide-landscape",
-    url: "https://karishmakumaritk-cpu.github.io/restaurant-01/",
-    ctaText: "VIEW DEMO →",
-    image: "images/savora_dining_concept_1788341044554.jpg",
-    conceptType: "Modern Dining & Culinary Hospitality Concept",
-    shortDesc: "Modern restaurant website concept designed for food businesses, fine dining venues, bistros, and culinary establishments.",
-    businessContext: "Independent restaurants and fine-dining eateries need to capture direct table reservations and takeaway orders without high 3rd-party marketplace commissions.",
-    solution: "Created a full-featured dining website with mobile digital food menu, chef narrative, table reservation trigger, and direct WhatsApp takeaway channel.",
-    features: [
-      "Comprehensive digital food menu",
-      "Online table reservation system CTA",
-      "Chef story & culinary philosophy section",
-      "High-definition food gallery layout",
-      "WhatsApp ordering and inquiry links",
-      "Google Maps integration friendly"
-    ],
-    detailsNote: "Website Template / Commercial Product ready to brand with restaurant menus, photography, and booking channels in 3–5 days."
-  },
-  {
-    id: "restaurant-02",
-    name: "Restaurant Website — Template 02",
-    category: "Restaurant Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "medium-standard",
-    url: "https://karishmakumaritk-cpu.github.io/restaurant-02/",
-    ctaText: "VIEW DEMO →",
-    image: "images/rest2_cafe_concept_1788341129457.jpg",
-    conceptType: "Fast-Casual Urban Eatery Concept",
-    shortDesc: "Alternative modern restaurant concept tailored for fast-casual dining, cafés, and urban eateries seeking clean visual layout.",
-    businessContext: "Cafés and quick-service food outlets need an ultra-fast, mobile-friendly landing experience optimized for patrons browsing on Instagram or Google Maps.",
-    solution: "Implemented quick-scan menu cards, combo promotion banners, one-tap call and WhatsApp ordering buttons, and clear open hours.",
-    features: [
-      "Quick-scan categorized food items",
-      "Special offers & combo banners",
-      "Direct phone and WhatsApp ordering",
-      "Location and operating hours highlight",
-      "Lightweight performance architecture",
-      "Mobile touch-friendly interactions"
-    ],
-    detailsNote: "Website Template / Commercial Product built for cafés, cloud kitchens, and neighborhood restaurants."
-  },
-  {
-    id: "maison-belle",
-    name: "Maison Belle Modern Beauty Lounge",
-    category: "Beauty / Salon Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "medium-standard",
-    url: "https://maison-belle-modern-beauty-lounge.ai.studio",
-    ctaText: "VIEW DEMO →",
-    image: "images/maison_lounge_concept_1788341114755.jpg",
-    conceptType: "Chic Skincare & Lounge Concept",
-    shortDesc: "Modern beauty lounge concept highlighting clean aesthetic presentation, premium service cards and seamless appointment inquiry.",
-    businessContext: "Modern skincare lounges and aesthetic studios require trust-building design and transparent service tiers to turn visitors into repeat clients.",
-    solution: "Curated a calm, minimalist aesthetic with structured service packages, consultation inquiry flow, and lookbook gallery.",
-    features: [
-      "High-end beauty lounge art direction",
-      "Curated service tiers and packages",
-      "Consultation request lead capture",
-      "Gallery grid with clean modal view",
-      "Mobile-first responsive styling",
-      "Social media integration ready"
-    ],
-    detailsNote: "Website Template / Commercial Product designed for modern skincare, nail spas, and beauty studios."
-  },
-  {
-    id: "majestic-estates",
-    name: "Majestic Estates",
-    category: "Real Estate Template",
-    categoryType: "template",
-    statusText: "WEBSITE TEMPLATE",
-    statusClass: "status-template",
-    gridClass: "wide-landscape",
-    url: "https://karishmakumaritk-cpu.github.io/majestic-estates/",
-    ctaText: "VIEW DEMO →",
-    image: "images/majestic_realestate_concept_1788341065851.jpg",
-    conceptType: "Delhi / NCR Property & Consultant Concept",
-    shortDesc: "Premium real estate website concept built for Indian real estate consultants, brokerages, and property developers.",
-    businessContext: "Real estate brokers and property developers require high-credibility presentation to convert high-ticket property buyers and rental leads.",
-    solution: "Engineered property showcase galleries with specifications, locality guides, virtual tour links, and instant WhatsApp inquiry forms.",
-    features: [
-      "Buy / Rent / Sell structured flows",
-      "Residential & commercial property showcase",
-      "Property detail specifications layout",
-      "Direct Call & WhatsApp inquiry buttons",
-      "Prime locality & neighborhood guides",
-      "Full mobile responsive property viewing"
-    ],
-    detailsNote: "Website Template / Commercial Product created to showcase properties, generate buyer/renter leads, and build developer trust."
+    detailsNote: "Own Business — Live. Represents hands-on operational experience running an active consumer e-commerce enterprise."
   },
   {
     id: "vision-ai-studio",
-    name: "Vision AI Studio",
-    category: "AI Automation Studio / SaaS",
+    name: "Vision AI Studio / Velision",
+    category: "TEAM PROJECT",
     categoryType: "team",
     statusText: "TEAM PROJECT • IN DEVELOPMENT",
     statusClass: "status-team",
@@ -187,68 +44,173 @@ const projectsData = [
     ctaText: "VISIT VISION AI STUDIO →",
     image: null,
     conceptType: "Team AI Automation Studio & Platform",
-    shortDesc: "Vision AI Studio is a team-led AI automation studio currently being built to create scalable AI-powered workflows, automation systems and SaaS-based business solutions.",
-    businessContext: "Businesses lose substantial daily revenue and hours to repetitive manual lead management, customer support routing, and disparate data silos.",
-    solution: "Developing an end-to-end AI automation studio orchestrating multi-step agentic workflows, WhatsApp conversation bots, and voice calling systems.",
+    shortDesc: "A team-led AI automation studio currently being developed to create scalable multi-agent workflows, customer inquiry bots, and SaaS-based business solutions.",
+    businessContext: "Modern businesses lose substantial revenue and daily operational hours to repetitive manual lead qualification, delayed customer responses, and fragmented data tools.",
+    solution: "Developing an end-to-end AI automation studio orchestrating multi-step agentic workflows, n8n webhook pipelines, WhatsApp AI agents, and voice calling systems.",
     features: [
-      "AI workflow & agent orchestration",
+      "AI multi-agent workflow orchestration",
       "SaaS subscription & trial architecture",
-      "JWT authentication structures",
-      "Automated CRM & customer lifecycle flows",
-      "Voice AI call agents & WhatsApp bots",
-      "Team-led scalable product development"
+      "JWT-authenticated secure API endpoints",
+      "Automated CRM & customer lifecycle synchronization",
+      "Voice AI agents & 24/7 WhatsApp bots",
+      "Modular event-driven architecture"
     ],
-    detailsNote: "Team Project — In Development. My role: Founder & AI Architect, leading automation workflows, system logic, and AI integrations."
+    architectureDecisions: "Architected as a decoupled event-driven automation framework. Ingest webhooks (website forms, WhatsApp API) connect to backend n8n worker nodes, with structured JSON payloads ensuring fault-tolerant retries between touchpoints and internal CRMs.",
+    technicalFeatures: [
+      "Multi-agent workflow pipelines built with n8n and LLM APIs",
+      "Natural language customer inquiry classification",
+      "Automated two-way WhatsApp conversational agent",
+      "CRM synchronization across Google Sheets, Airtable, and Notion"
+    ],
+    detailsNote: "Team Project — In Development (velision.in). Role: Founder & AI Architect leading automation workflows and system logic."
   },
   {
-    id: "miravika",
-    name: "MIRAVIKA",
-    category: "E-Commerce Business",
-    categoryType: "own",
-    statusText: "OWN BUSINESS • LIVE",
-    statusClass: "status-own",
+    id: "kuchuu-puchuu",
+    name: "Kuchuu Puchuu — Chai & Bites",
+    category: "CLIENT DELIVERY",
+    categoryType: "sold",
+    statusText: "CLIENT DELIVERY • LIVE",
+    statusClass: "status-sold",
     gridClass: "medium-tall",
-    url: "https://miravika.com/",
-    ctaText: "VISIT MIRAVIKA →",
-    image: "images/miravika_store_concept_1788341144429.jpg",
-    conceptType: "Live Consumer E-Commerce Storefront",
-    shortDesc: "MIRAVIKA is my own e-commerce brand, where I work across product presentation, e-commerce operations, branding, and digital commerce.",
-    businessContext: "Independent lifestyle and consumer apparel brands face intense marketplace competition without authentic branding, sharp merchandising, and efficient order fulfillment.",
-    solution: "Built and actively manage an independent D2C storefront and multi-marketplace operation with customized product cataloging, SEO listings, and order workflows.",
+    url: "https://kuchuu-puchuu-chai-bites.ai.studio/",
+    ctaText: "VIEW LIVE WEBSITE →",
+    image: "images/kuchuu_chai_concept_1788340999750.jpg",
+    conceptType: "Client Delivered Business Website",
+    shortDesc: "A custom commercial website created and delivered for an Indian roadside chai and street food venture, focused on menu discovery, local search, and direct bulk orders.",
+    businessContext: "A local street food business in Delhi NCR needed to expand beyond foot traffic by enabling local customers to browse snacks, request bulk office catering, and find map directions.",
+    solution: "Delivered a warm editorial web storefront with mobile-first menu discovery, clear item pricing, map location pin, and direct WhatsApp order dispatch.",
     features: [
-      "Live independent digital commerce storefront",
-      "Marketplace operations & product listings",
-      "Marketplace SEO & visual merchandising",
-      "End-to-end customer experience management",
-      "Real-world operational inventory workflows",
-      "Brand identity & packaging curation"
+      "Custom commercial website architecture",
+      "Mobile-optimized menu showcase & categories",
+      "Direct WhatsApp customer ordering flow",
+      "Local operating hours & Google Maps integration",
+      "Street chai culture branding & visual layout",
+      "Instant page load speed"
     ],
-    detailsNote: "Own Business — Live. Represents hands-on operational knowledge of running an active consumer e-commerce venture."
+    architectureDecisions: "Engineered with lightweight semantic HTML5 and CSS for immediate mobile loading. Structured local business schema (Restaurant/FoodEstablishment) for map discovery.",
+    technicalFeatures: [
+      "WhatsApp ordering pre-filling menu items and quantities",
+      "Responsive touch menu navigation for smartphone browsers",
+      "Local Business Schema.org JSON-LD microdata"
+    ],
+    detailsNote: "Client Delivery — Live business website delivering real local customer inquiries and WhatsApp orders."
+  },
+  {
+    id: "lumiere",
+    name: "Lumière Beauty Studio",
+    category: "CLIENT DELIVERY",
+    categoryType: "sold",
+    statusText: "CLIENT DELIVERY • LIVE",
+    statusClass: "status-sold",
+    gridClass: "medium-standard",
+    url: "https://karishmakumaritk-cpu.github.io/Selon-templet-1/",
+    ctaText: "VIEW LIVE WEBSITE →",
+    image: "images/lumiere_salon_concept_1788341026422.jpg",
+    conceptType: "Premium Salon & Beauty Studio Website",
+    shortDesc: "Delivered beauty studio website crafted for hair stylists, makeup artists, and aesthetic clinics featuring editorial art direction and interactive booking.",
+    businessContext: "Salons lose premium appointments when relying exclusively on social media DMs without a structured rate card or instant booking channel.",
+    solution: "Designed an editorial aesthetic layout with categorized treatment rate cards, stylist credential profiles, client reviews, and direct WhatsApp appointment triggers.",
+    features: [
+      "Editorial salon aesthetic & typography",
+      "Interactive treatment service menu",
+      "Direct appointment & WhatsApp booking CTA",
+      "High-converting lookbook gallery",
+      "Fully responsive mobile layout"
+    ],
+    architectureDecisions: "Built with responsive flex-grid layouts and CSS variable themes. Optimized image loading and appointment action triggers.",
+    technicalFeatures: [
+      "Categorized service rate card with price breakdown",
+      "One-click WhatsApp consultation & appointment dispatch"
+    ],
+    detailsNote: "Client Delivery — Customized and deployed for hair, beauty, and aesthetic studio operations."
+  },
+  {
+    id: "majestic-estates",
+    name: "Majestic Estates",
+    category: "CLIENT DELIVERY",
+    categoryType: "sold",
+    statusText: "CLIENT DELIVERY • LIVE",
+    statusClass: "status-sold",
+    gridClass: "wide-landscape",
+    url: "https://karishmakumaritk-cpu.github.io/majestic-estates/",
+    ctaText: "VIEW LIVE WEBSITE →",
+    image: "images/majestic_realestate_concept_1788341065851.jpg",
+    conceptType: "Real Estate & Property Showcase Website",
+    shortDesc: "Delivered real estate showcase platform built for property consultants and developers in Delhi NCR to showcase residential and commercial listings.",
+    businessContext: "Property brokers need high-credibility web presentation to capture high-intent property buyers and rental inquiries.",
+    solution: "Engineered property showcase galleries with detailed specifications, prime locality guides, virtual tour links, and instant WhatsApp lead capture forms.",
+    features: [
+      "Buy / Rent / Sell structured property flows",
+      "Residential & commercial listing cards",
+      "Property detail specifications layout",
+      "Direct Call & WhatsApp inquiry buttons",
+      "Prime locality & neighborhood guides"
+    ],
+    architectureDecisions: "Structured property categories with clear visual hierarchy, responsive image sliders, and instant contact CTA bars.",
+    technicalFeatures: [
+      "Property filter navigation",
+      "Pre-filled WhatsApp property inquiry button with property code"
+    ],
+    detailsNote: "Client Delivery — High-ticket real estate lead acquisition and property showcase website."
+  },
+  {
+    id: "ironvault-fitness",
+    name: "IronVault Fitness — Gym & WhatsApp Pipeline",
+    category: "TEMPLATE",
+    categoryType: "template",
+    statusText: "TEMPLATE & AUTOMATION PIPELINE",
+    statusClass: "status-template",
+    gridClass: "wide-landscape",
+    url: "https://karishmakumari143la-droid.github.io/Gym-temp-01/",
+    ctaText: "VIEW LIVE DEMO →",
+    image: null,
+    conceptType: "Dark Athletic Gym Template & Lead Pipeline",
+    shortDesc: "A dark-athletic gym website template engineered around a documented WhatsApp lead-automation pipeline and free-trial workout pass conversion engine.",
+    businessContext: "Gyms across Indian metros lose prospective members when their websites act as static brochures. Trial bookings require an active, low-friction funnel.",
+    solution: "Engineered a high-energy dark-athletic digital engine centered on a '1-Day Free Trial Workout Pass' trigger paired with direct WhatsApp lead routing.",
+    features: [
+      "Dark premium athletic art direction with conversion-first layout",
+      "Free-trial booking funnel with instant WhatsApp lead dispatch",
+      "Tiered membership matrix (Monthly, Quarterly, Annual)",
+      "Trainer credentials, facility amenities & class schedules",
+      "ExerciseGym Schema.org JSON-LD for local map search discoverability"
+    ],
+    architectureDecisions: "Built with a performance-first dark layout (<1.2s First Contentful Paint). Employs vanilla JavaScript for micro-interactions and mobile touch gestures.",
+    technicalFeatures: [
+      "Zero-friction trial pass modal pre-populating workout time in WhatsApp",
+      "Schema.org ExerciseGym microdata with opening hours & geo-coordinates",
+      "Sticky mobile bottom action bar with 1-tap WhatsApp and Call triggers"
+    ],
+    detailsNote: "Website Template & Automation Architecture — Ready for 3–5 day deployment for gyms and CrossFit boxes."
   },
   {
     id: "buildy-tools",
     name: "Buildy Tools — Free Excel Automation Tool",
-    category: "Digital Product / Excel AI",
+    category: "DIGITAL PRODUCT",
     categoryType: "free",
-    statusText: "FREE TO USE",
+    statusText: "DIGITAL PRODUCT • FREE UTILITY",
     statusClass: "status-free",
     gridClass: "medium-standard",
     url: "https://buildy-tools.lovable.app",
-    ctaText: "TRY IT FREE →",
+    ctaText: "TRY BUILDY TOOLS FREE →",
     image: null,
     conceptType: "Free AI-Powered Data Structuring Utility",
-    shortDesc: "A practical Excel automation tool that turns messy copied seller data into structured, usable records with AI-assisted processing. Completely free to use.",
-    businessContext: "Online sellers and spreadsheet operators waste hours every week cleaning unstructured, copied raw data to paste into standard seller catalog sheets.",
-    solution: "Engineered a zero-friction, browser-based utility that ingests unstructured text, applies smart formatting rules, and delivers clean tabular columns instantly.",
+    shortDesc: "A practical browser-based Excel automation tool that turns messy copied seller data into structured, usable tabular records instantly.",
+    businessContext: "E-commerce sellers and spreadsheet operators spend hours cleaning unstructured copied raw product text for catalog upload spreadsheets.",
+    solution: "Engineered a zero-friction browser utility that ingests unstructured text, applies smart formatting rules, and delivers structured columns instantly.",
     features: [
-      "100% Free digital utility for sellers & operators",
-      "Raw copied data → AI parsing → structured rows",
+      "100% Free digital utility for marketplace sellers & operators",
+      "Raw copied text → AI parsing → structured tabular columns",
       "Preserves target Excel column arrangements",
       "Eliminates hours of manual data formatting",
-      "Clean instant browser-based interface",
-      "Built, tested, and published as a live product"
+      "Instant browser-based interface, zero installation required"
     ],
-    detailsNote: "Free to Use digital product. Built to solve repetitive manual data formatting for marketplace sellers."
+    architectureDecisions: "Client-side processing engine for instant response, ensuring complete seller data privacy and zero server latency.",
+    technicalFeatures: [
+      "Regex & AI string pattern matching for price, SKU, and product specs",
+      "One-click Copy to Clipboard and CSV export capabilities"
+    ],
+    detailsNote: "Digital Product — Free to use utility built to solve repetitive seller catalog data formatting."
   }
 ];
 
@@ -312,14 +274,24 @@ function renderProjects(filter = "all") {
   const base = getBasePath();
   const imgPrefix = base ? `${base}/` : '/';
 
-  container.innerHTML = filtered.map(p => {
+  container.innerHTML = filtered.map((p, index) => {
     const imgSrc = p.image 
       ? (p.image.startsWith('images/') ? imgPrefix + p.image : (p.image.startsWith('/') ? p.image : '/' + p.image))
       : null;
 
+    const isIronVault = p.id === "ironvault-fitness";
+
     return `
-    <div class="project-card ${p.gridClass}" onclick="openModal('${p.id}')">
+    <div class="project-card ${p.gridClass} reveal reveal-card stagger-${(index % 6) + 1}" onclick="openModal('${p.id}')">
       <div class="project-thumb-frame">
+        <div class="project-browser-bar">
+          <div class="browser-dots">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+          </div>
+          <div class="browser-address-pill"></div>
+        </div>
         <span class="project-status-tag ${p.statusClass}">${p.statusText}</span>
         ${imgSrc 
           ? `<img src="${imgSrc}" 
@@ -331,13 +303,29 @@ function renderProjects(filter = "all") {
                <span class="project-fallback-tag">${p.category}</span>
                <span class="project-fallback-name">${p.name}</span>
              </div>`
-          : `<div class="project-visual-abstract">
+          : (isIronVault ? `
+             <div class="project-visual-abstract dark-athletic">
+               <div class="abstract-athletic-grid"></div>
+               <div class="abstract-core">
+                 <span class="abstract-badge-athletic">ATHLETIC LEAD ENGINE</span>
+                 <span class="abstract-sub athletic-title">IRONVAULT FITNESS</span>
+                 <span class="abstract-athletic-caption">Gym &amp; Fitness Studio Template</span>
+                 <div class="abstract-athletic-pills">
+                   <span>Free Trial Funnel</span>
+                   <span>WhatsApp Leads</span>
+                   <span>Local SEO</span>
+                 </div>
+               </div>
+             </div>
+          ` : `
+             <div class="project-visual-abstract">
                <div class="abstract-ring"></div>
                <div class="abstract-core">
                  <span class="abstract-label">${p.category}</span>
                  <span class="abstract-sub">${p.name}</span>
                </div>
-             </div>`
+             </div>
+          `)
         }
       </div>
       <div class="project-card-info">
@@ -360,12 +348,35 @@ function renderProjects(filter = "all") {
     </div>
     `;
   }).join('');
+
+  // Observe newly rendered cards with motion system
+  if (typeof observeMotionElements === 'function') {
+    observeMotionElements(container.querySelectorAll('.reveal'));
+  }
+
+  // Attach card tilt and scroll choreography on newly rendered cards
+  initCardTilt();
+  initWorkArchiveChoreography();
 }
 
 function filterProjects(filter, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  renderProjects(filter);
+
+  const container = document.getElementById("projects-grid");
+  if (container) {
+    container.style.opacity = '0.35';
+    container.style.transform = 'scale(0.99)';
+    container.style.transition = 'opacity 130ms var(--ease-motion), transform 130ms var(--ease-motion)';
+
+    setTimeout(() => {
+      renderProjects(filter);
+      container.style.opacity = '1';
+      container.style.transform = 'scale(1)';
+    }, 120);
+  } else {
+    renderProjects(filter);
+  }
 }
 
 function openModal(id) {
@@ -388,6 +399,13 @@ function openModal(id) {
     <p class="modal-desc">${p.shortDesc}</p>
     
     <div class="modal-case-study">
+      ${p.targetAudience ? `
+        <div class="case-study-block">
+          <div class="case-study-label">TARGET AUDIENCE &amp; COMMERCIAL PROFILE</div>
+          <p class="case-study-text">${p.targetAudience}</p>
+        </div>
+      ` : ''}
+
       ${p.businessContext ? `
         <div class="case-study-block">
           <div class="case-study-label">01 / BUSINESS CONTEXT &amp; OPPORTUNITY</div>
@@ -395,19 +413,40 @@ function openModal(id) {
         </div>
       ` : ''}
 
-      ${p.solution ? `
+      ${p.architectureDecisions ? `
+        <div class="case-study-block">
+          <div class="case-study-label">02 / SYSTEM ARCHITECTURE &amp; DESIGN DECISIONS</div>
+          <p class="case-study-text">${p.architectureDecisions}</p>
+        </div>
+      ` : (p.solution ? `
         <div class="case-study-block">
           <div class="case-study-label">02 / SYSTEM ARCHITECTURE &amp; DESIGN SOLUTION</div>
           <p class="case-study-text">${p.solution}</p>
         </div>
-      ` : ''}
+      ` : '')}
 
-      <div class="case-study-block">
-        <div class="case-study-label">03 / KEY DELIVERABLES &amp; CORE FEATURES</div>
-        <ul class="modal-features-list">
-          ${p.features.map(f => `<li>${f}</li>`).join('')}
-        </ul>
-      </div>
+      ${p.technicalFeatures ? `
+        <div class="case-study-block">
+          <div class="case-study-label">03 / TECHNICAL &amp; CONVERSION SPECIFICATIONS</div>
+          <ul class="modal-features-list">
+            ${p.technicalFeatures.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+        </div>
+      ` : `
+        <div class="case-study-block">
+          <div class="case-study-label">03 / KEY DELIVERABLES &amp; CORE FEATURES</div>
+          <ul class="modal-features-list">
+            ${p.features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+        </div>
+      `}
+
+      ${p.differentiation ? `
+        <div class="case-study-block" style="background: var(--surface-warm); border-left: 3px solid var(--terracotta); padding: 1.1rem 1.25rem; border-radius: 6px;">
+          <div class="case-study-label" style="color: var(--terracotta);">04 / DIFFERENTIATION FROM GENERIC TEMPLATES</div>
+          <p class="case-study-text" style="color: var(--charcoal); font-weight: 500;">${p.differentiation}</p>
+        </div>
+      ` : ''}
 
       ${isTemplate ? `
         <div class="template-commercial-box">
@@ -443,6 +482,207 @@ function closeModal() {
   }
 }
 
+const aiMethodologyData = {
+  aeo: {
+    tag: "01 / AEO",
+    badgeClass: "",
+    title: "Answer Engine Optimization (AEO) Methodology",
+    subtitle: "Structuring content for direct answers, voice search, and AI assistant extraction.",
+    definition: "Answer Engine Optimization is the discipline of structuring and authoring web content so that modern answer engines (Google AI Overviews, Perplexity, ChatGPT, Apple Intelligence, Siri) can effortlessly identify and extract direct, accurate answers to user queries.",
+    purpose: "When a potential client asks 'How much does a custom business website cost in Delhi?' or 'How does WhatsApp automation work for salons?', your site should provide the immediate, authoritative answer rather than making users dig through vague paragraphs.",
+    steps: [
+      {
+        title: "1. Question-Centric Heading Architecture",
+        desc: "Transform standard marketing copy into precise, high-intent questions formulated as H2 and H3 headings matching real user search queries."
+      },
+      {
+        title: "2. The 40-Word Direct Answer Window",
+        desc: "Place a concise, standalone, factual answer in the very first sentence directly underneath each question heading before providing extended context."
+      },
+      {
+        title: "3. Structured FAQPage & Speakable Microdata",
+        desc: "Generate valid Schema.org JSON-LD scripts mirroring visible on-page content, enabling search engines to verify question-answer pairings without parsing ambiguity."
+      },
+      {
+        title: "4. Elimination of Ambiguous Adjectives",
+        desc: "Replace generic claims like 'best services' with tangible parameters: scope inclusions, realistic delivery timeframes (3–5 days), and exact transparent pricing."
+      }
+    ],
+    example: "On this website, the FAQ and service pricing sections answer common client questions directly, allowing answer engines to synthesize accurate answers with zero hallucination.",
+    whatsappMsg: "Hi Karishma, I would like to consult on implementing AEO (Answer Engine Optimization) for my business website."
+  },
+  geo: {
+    tag: "02 / GEO",
+    badgeClass: "",
+    title: "Generative Engine Optimization (GEO) Methodology",
+    subtitle: "Optimizing digital footprints for synthesis and citation in generative AI models.",
+    definition: "Generative Engine Optimization focuses on crafting context-rich, entity-anchored content that generative search engines (such as Google SGE/AI Overviews, Bing Copilot, and Perplexity) evaluate, cite, and synthesize when generating answers.",
+    purpose: "Instead of simply aiming for a blue link click, GEO ensures your brand, founder profile, and services are accurately represented and cited when prospects research solutions in generative AI interfaces.",
+    steps: [
+      {
+        title: "1. Entity & Topic Grounding",
+        desc: "Explicitly connect core business entities (e.g., Karishma Kumari → AI Automation Architect → Vision AI Studio & MIRAVIKA) across internal schemas and external references."
+      },
+      {
+        title: "2. Problem-Solution Dualism in Case Studies",
+        desc: "Structure portfolio and project deliverables around clear business challenges, architectural decisions, and tangible outcomes that models can summarize easily."
+      },
+      {
+        title: "3. Multi-Source Fact Corroboration",
+        desc: "Ensure consistent entity attributes (founder role, location, primary skills, verified contact channels) across LinkedIn, GitHub, and client domains."
+      },
+      {
+        title: "4. High Semantic Density & Clean Layout",
+        desc: "Maintain rich semantic text markup that allows generative scrapers and LLMs to extract key takeaways without running into heavy client-side rendering hurdles."
+      }
+    ],
+    example: "The project cards on this portfolio explicitly separate business context, design solution, and core deliverables, providing clean data triples for generative AI citation.",
+    whatsappMsg: "Hi Karishma, I would like to discuss optimizing my brand and website for Generative Engine Optimization (GEO)."
+  },
+  llmo: {
+    tag: "03 / LLMO",
+    badgeClass: "",
+    title: "Large Language Model Optimization (LLMO) Methodology",
+    subtitle: "Structuring information for tokenization, vector retrieval, and RAG architectures.",
+    definition: "Large Language Model Optimization is the practice of formatting information architectures so that large language models and Retrieval-Augmented Generation (RAG) pipelines can ingest, chunk, embed, and retrieve data without semantic confusion.",
+    purpose: "As more software applications rely on LLM embeddings and web-crawled knowledge bases, LLMO ensures your digital content is ingested cleanly, preventing hallucinated or omitted details.",
+    steps: [
+      {
+        title: "1. Semantic DOM Tree Chunking",
+        desc: "Utilize clean HTML5 structural elements (<article>, <section>, <header>, <nav>, <footer>) so document scrapers chunk content along logical boundaries."
+      },
+      {
+        title: "2. Consistent Terminology & Entity Co-Occurrence",
+        desc: "Consistently place primary keywords and service offerings in close semantic proximity to the brand and person entity to reinforce knowledge graph weights."
+      },
+      {
+        title: "3. Machine-Readable Data Availability",
+        desc: "Never bury crucial specifications, pricing, or capabilities exclusively inside images or PDFs without accessible, crawlable HTML text counterparts."
+      },
+      {
+        title: "4. Structured Taxonomy & Hierarchical Hubs",
+        desc: "Build clear relational structures connecting top-level services to specific packages, deliverables, and case study implementations."
+      }
+    ],
+    example: "All portfolio data on this site is represented in crawlable HTML and accessible data structures, allowing embedding models to index Karishma Kumari's skillsets accurately.",
+    whatsappMsg: "Hi Karishma, I would like to learn more about LLMO and preparing my business data for AI retrieval."
+  },
+  aiso: {
+    tag: "04 / AISO",
+    badgeClass: "gold",
+    title: "AI Search Optimization (AISO) Methodology",
+    subtitle: "The unified modern framework uniting technical SEO with next-generation AI discovery.",
+    definition: "AI Search Optimization is the comprehensive technical and content strategy that prepares websites for hybrid search environments—where traditional algorithmic indexing works side-by-side with AI search agents and conversational discovery engines.",
+    purpose: "Guarantees your business remains discoverable across Google, Bing Copilot, ChatGPT Search, Perplexity, and voice assistants without sacrificing human conversion rates.",
+    steps: [
+      {
+        title: "1. Full-Spectrum Schema.org Graphs",
+        desc: "Embed interconnected JSON-LD graphs (Person, WebSite, Service, CreativeWork, FAQPage) that describe exactly who you are, what you offer, and what you charge."
+      },
+      {
+        title: "2. Core Web Vitals & Sub-Second Latency",
+        desc: "Deliver lightweight static assets, fast FCP (First Contentful Paint), and minimal CLS (Cumulative Layout Shift) for both crawler efficiency and human retention."
+      },
+      {
+        title: "3. Canonical Verification & Robots Protocol",
+        desc: "Configure strict canonical tags, clean XML sitemaps, and robots.txt directives that guide search crawlers directly to canonical representations."
+      },
+      {
+        title: "4. Frictionless Conversion Architecture",
+        desc: "Pair search visibility with direct action points—prominent WhatsApp inquiry links, transparent scope explanations, and verified contact channels."
+      }
+    ],
+    example: "This portfolio demonstrates AISO with sub-second load times, Schema.org JSON-LD graph, canonical verification, and immediate 1-click consultation links.",
+    whatsappMsg: "Hi Karishma, I would like to build an AISO-optimized business website for modern search."
+  },
+  eeat: {
+    tag: "05 / E-E-A-T",
+    badgeClass: "gold",
+    title: "E-E-A-T Framework (Experience • Expertise • Authoritativeness • Trustworthiness)",
+    subtitle: "Google's core Search Quality Rater Guidelines implemented through verifiable proof.",
+    definition: "E-E-A-T is Google's core framework evaluating content based on firsthand Experience, demonstrable Expertise, verified Authoritativeness, and transparent Trustworthiness. It serves as a benchmark for assessing real-world credibility.",
+    purpose: "Distinguishes authentic practitioners and genuine business operators from automated spam, unverified content mills, and exaggerated marketing claims.",
+    steps: [
+      {
+        title: "1. Demonstrable Firsthand Experience",
+        desc: "Show real work: delivered client websites (Kuchuu Puchuu), active e-commerce operations (MIRAVIKA), and in-development platforms (Vision AI Studio)."
+      },
+      {
+        title: "2. Genuine Technical Expertise",
+        desc: "Detail specific technical competencies (n8n workflows, AI agent orchestration, commercial web development) rather than vague buzzwords."
+      },
+      {
+        title: "3. External Authoritativeness & Entity Linking",
+        desc: "Connect verified professional profiles (LinkedIn, GitHub) and live business properties with consistent naming and credentials."
+      },
+      {
+        title: "4. Absolute Commercial Trustworthiness",
+        desc: "Label project statuses transparently ('SOLD • DELIVERED', 'WEBSITE TEMPLATE', 'OWN BUSINESS • LIVE', 'TEAM PROJECT • IN DEVELOPMENT', 'FREE TOOL'), state transparent prices, and provide verified phone and email contact."
+      }
+    ],
+    example: "Karishma Kumari's portfolio provides transparent status labels on all projects, verified contact information, and clear attribution of personal ventures.",
+    whatsappMsg: "Hi Karishma, I want to audit and strengthen the E-E-A-T signals on my business website."
+  }
+};
+
+function openAiMethodologyModal(topic) {
+  const data = aiMethodologyData[topic];
+  if (!data) return;
+
+  const modal = document.getElementById('project-modal');
+  const content = document.getElementById('modal-body');
+  if (!modal || !content) return;
+
+  content.innerHTML = `
+    <span class="methodology-tag ${data.badgeClass}">${data.tag}</span>
+    <h2 class="methodology-title">${data.title}</h2>
+    <p class="modal-desc" style="font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem;">${data.subtitle}</p>
+
+    <div class="modal-case-study">
+      <div class="case-study-block">
+        <div class="case-study-label">01 / CONCEPT DEFINITION</div>
+        <p class="case-study-text">${data.definition}</p>
+      </div>
+
+      <div class="case-study-block">
+        <div class="case-study-label">02 / PRACTICAL COMMERCIAL PURPOSE</div>
+        <p class="case-study-text">${data.purpose}</p>
+      </div>
+
+      <div class="case-study-block">
+        <div class="case-study-label">03 / IMPLEMENTATION BLUEPRINT</div>
+        <div class="methodology-steps-list">
+          ${data.steps.map(s => `
+            <div class="methodology-step">
+              <div class="methodology-step-title">${s.title}</div>
+              <p class="methodology-step-desc">${s.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="case-study-block">
+        <div class="case-study-label">04 / REAL-WORLD DEMONSTRATION</div>
+        <div class="ai-card-example" style="margin-bottom: 0;">
+          <strong>Applied on this site:</strong> ${data.example}
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions" style="margin-top: 2rem;">
+      <a href="https://wa.me/919818691915?text=${encodeURIComponent(data.whatsappMsg)}" target="_blank" rel="noopener" class="btn-whatsapp">
+        CONSULT ON THIS METHODOLOGY →
+      </a>
+      <button type="button" class="btn-ghost" onclick="closeModal()">
+        CLOSE
+      </button>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 function toggleMobileNav() {
   const links = document.querySelector('.nav-links');
   const toggleBtn = document.querySelector('.mobile-toggle');
@@ -473,12 +713,18 @@ function closeMobileNav() {
 
 function handleInquiry(event) {
   event.preventDefault();
-  const name = document.getElementById('inq-name') ? document.getElementById('inq-name').value : '';
-  const service = document.getElementById('inq-service') ? document.getElementById('inq-service').value : '';
-  const budget = document.getElementById('inq-budget') ? document.getElementById('inq-budget').value : '';
-  const message = document.getElementById('inq-message') ? document.getElementById('inq-message').value : '';
+  const form = event.target;
+  const nameEl = form.querySelector('#inq-name') || document.getElementById('inq-name');
+  const serviceEl = form.querySelector('#inq-service') || document.getElementById('inq-service');
+  const budgetEl = form.querySelector('#inq-budget') || document.getElementById('inq-budget');
+  const messageEl = form.querySelector('#inq-details') || form.querySelector('#inq-message') || document.getElementById('inq-details') || document.getElementById('inq-message');
 
-  const text = `Hi Karishma, my name is ${name}. I am interested in ${service}${budget ? ' (Budget: ' + budget + ')' : ''}. Details: ${message}`;
+  const name = nameEl ? nameEl.value : '';
+  const service = serviceEl ? serviceEl.value : '';
+  const budget = budgetEl ? budgetEl.value : '';
+  const message = messageEl ? messageEl.value : '';
+
+  const text = `Hi Karishma, my name is ${name}. I am interested in ${service}${budget ? ' (Budget: ' + budget + ')' : ''}.${message ? ' Project details: ' + message : ''}`;
   const whatsappUrl = `https://wa.me/919818691915?text=${encodeURIComponent(text)}`;
   window.open(whatsappUrl, '_blank');
 }
@@ -534,9 +780,937 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize image reveal animations
   initImageAnimations();
 
+  // Initialize scroll progress bar & sticky header transition
+  initScrollProgressBar();
+
+  // Initialize global scroll reveal motion system
+  initScrollMotionSystem();
+
+  // Initialize desktop subtle 3D card tilt
+  initCardTilt();
+
+  // Initialize custom desktop interactive cursor
+  initCustomCursor();
+
+  // Initialize high-end catwalk hero interaction (subtle parallax & spotlight tracking)
+  initHeroCatwalkInteraction();
+
+  // Initialize Discoverability Lab word flipper
+  initDiscoverabilityWordFlipper();
+
+  // Initialize interactive AI Systems Architecture Map
+  initSystemsArchitectureMap();
+
+  // Initialize Secret Interactions
+  initLogoSecret();
+  initCommandPalette();
+  initKKeyEasterEgg();
+  initHiddenArchitectureView();
+
+  // Initialize smart inquiry form
+  initSmartInquiryForm();
+
   // Mount professional AI Chatbot (KAI)
   mountKaiChatbot();
+
+  // Initialize Directional Motion System
+  initScrollReveals();
+
+  // Initialize Cinematic Scroll Choreography across all sections
+  initWorkArchiveChoreography();
+  initSystemsConnectors();
+  initEngineeringTimeline();
+  initAiSearchChoreography();
+  initPricingChoreography();
+  initFaqChoreography();
+  initFooterChoreography();
 });
+
+/* ==========================================================================
+   HIGH-END HERO CATWALK & SPOTLIGHT INTERACTION
+   Smooth 3D drift + mouse spotlight tracking + scroll parallax
+   ========================================================================== */
+function initHeroCatwalkInteraction() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouchDevice) return;
+
+  const spotlight = document.getElementById('hero-spotlight');
+  const textCol = document.getElementById('hero-text-col');
+  const modelWrapper = document.getElementById('hero-model-wrapper');
+
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+    targetX = Math.max(-1, Math.min(1, x));
+    targetY = Math.max(-1, Math.min(1, y));
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  function renderHeroParallax() {
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+
+    // Spotlight transform (-60px to 60px X, -40px to 40px Y)
+    if (spotlight) {
+      const spX = (currentX * 60).toFixed(2);
+      const spY = (currentY * 40).toFixed(2);
+      spotlight.style.transform = `translate(calc(-50% + ${spX}px), calc(-50% + ${spY}px))`;
+    }
+
+    // Model transform (-8px to 8px X, -6px to 6px Y)
+    if (modelWrapper) {
+      const mX = (currentX * -8).toFixed(2);
+      const mY = (currentY * -6).toFixed(2);
+      modelWrapper.style.transform = `translate3d(${mX}px, ${mY}px, 0)`;
+    }
+
+    // Text column transform (15px to -15px X)
+    if (textCol) {
+      const tX = (currentX * 15).toFixed(2);
+      textCol.style.transform = `translate3d(${tX}px, 0, 0)`;
+    }
+
+    requestAnimationFrame(renderHeroParallax);
+  }
+
+  requestAnimationFrame(renderHeroParallax);
+}
+
+/* ==========================================================================
+   CINEMATIC SCROLL CHOREOGRAPHY ENGINES
+   ========================================================================== */
+
+/* 1. Work Archive: Skew-correct cards entrance */
+function initWorkArchiveChoreography() {
+  const cards = document.querySelectorAll('.project-card');
+  if (!cards.length) return;
+
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced || !('IntersectionObserver' in window)) {
+    cards.forEach(c => c.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  cards.forEach((card, idx) => {
+    card.style.transitionDelay = `${(idx % 4) * 0.08}s`;
+    observer.observe(card);
+  });
+}
+
+/* 2. Systems Map: SVG Connector Lines Drawing Node-by-Node with Traveling Gold Light Pulse */
+function initSystemsConnectors() {
+  const canvas = document.getElementById('sys-map-canvas');
+  const svg = document.getElementById('sys-connectors-svg');
+  if (!canvas || !svg) return;
+
+  const hub = canvas.querySelector('.sys-core-hub-banner');
+  const nodes = canvas.querySelectorAll('.sys-interactive-node');
+  if (!hub || !nodes.length) return;
+
+  function renderConnectorPaths() {
+    const canvasRect = canvas.getBoundingClientRect();
+    const hubRect = hub.getBoundingClientRect();
+
+    const startX = hubRect.left + hubRect.width / 2 - canvasRect.left;
+    const startY = hubRect.bottom - canvasRect.top;
+
+    svg.setAttribute('viewBox', `0 0 ${canvasRect.width} ${canvasRect.height}`);
+    svg.innerHTML = '';
+
+    // Add SVG filter definition for gold glow pulse
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    defs.innerHTML = `
+      <filter id="gold-glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3.5" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    `;
+    svg.appendChild(defs);
+
+    nodes.forEach((node, index) => {
+      const nodeRect = node.getBoundingClientRect();
+      const endX = nodeRect.left + nodeRect.width / 2 - canvasRect.left;
+      const endY = nodeRect.top - canvasRect.top;
+
+      const midY = startY + (endY - startY) * 0.5;
+      const pathData = `M ${startX} ${startY} C ${startX} ${midY}, ${endX} ${midY}, ${endX} ${endY}`;
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', pathData);
+      path.setAttribute('class', 'sys-connector-path' + (node.classList.contains('active-node') ? ' active-path' : ''));
+      path.setAttribute('data-connector-index', index);
+      svg.appendChild(path);
+
+      // Create traveling gold light pulse along this path
+      const pulseGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      pulseGroup.setAttribute('class', 'sys-pulse-group' + (node.classList.contains('active-node') ? ' pulse-active' : ''));
+      pulseGroup.setAttribute('data-pulse-index', index);
+
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('r', '3.5');
+      circle.setAttribute('fill', '#E4C77A');
+      circle.setAttribute('filter', 'url(#gold-glow)');
+
+      const animMotion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+      animMotion.setAttribute('dur', `${2.4 + (index % 3) * 0.4}s`);
+      animMotion.setAttribute('repeatCount', 'indefinite');
+      animMotion.setAttribute('path', pathData);
+
+      circle.appendChild(animMotion);
+      pulseGroup.appendChild(circle);
+      svg.appendChild(pulseGroup);
+
+      const length = path.getTotalLength() || 350;
+      path.style.strokeDasharray = `${length}`;
+      path.style.strokeDashoffset = canvas.classList.contains('connectors-drawn') ? '0' : `${length}`;
+    });
+  }
+
+  renderConnectorPaths();
+  window.addEventListener('resize', () => {
+    renderConnectorPaths();
+    if (canvas.classList.contains('connectors-drawn')) {
+      svg.querySelectorAll('.sys-connector-path').forEach(p => {
+        p.style.strokeDashoffset = '0';
+      });
+    }
+  }, { passive: true });
+
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced) {
+    canvas.classList.add('connectors-drawn');
+    svg.querySelectorAll('.sys-connector-path').forEach(p => {
+      p.style.strokeDashoffset = '0';
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !canvas.classList.contains('connectors-drawn')) {
+        canvas.classList.add('connectors-drawn');
+        const paths = svg.querySelectorAll('.sys-connector-path');
+        paths.forEach((path, idx) => {
+          setTimeout(() => {
+            path.style.strokeDashoffset = '0';
+            if (nodes[idx]) {
+              nodes[idx].classList.add('node-connected');
+            }
+          }, 120 + idx * 180);
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(canvas);
+}
+
+/* 2b. Engineering Timeline: Progressive Laser Draw & Step Illumination */
+function initEngineeringTimeline() {
+  const container = document.getElementById('engineering-timeline');
+  if (!container) return;
+
+  const progressLine = document.getElementById('timeline-laser-progress');
+  const nodes = container.querySelectorAll('.timeline-step-node');
+  if (!nodes.length) return;
+
+  function updateProgressLine() {
+    if (!progressLine) return;
+    const activeNode = container.querySelector('.timeline-step-node.active-step') || nodes[0];
+    const activeStepIndex = parseInt(activeNode.getAttribute('data-step') || '1', 10);
+    const totalSteps = nodes.length;
+    const pct = Math.min(100, Math.max(15, (activeStepIndex / totalSteps) * 100));
+
+    if (window.innerWidth >= 992) {
+      progressLine.style.width = `${pct}%`;
+      progressLine.style.height = '100%';
+    } else {
+      progressLine.style.height = `${pct}%`;
+      progressLine.style.width = '100%';
+    }
+  }
+
+  nodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      nodes.forEach(n => n.classList.remove('active-step'));
+      node.classList.add('active-step');
+      updateProgressLine();
+    });
+
+    node.addEventListener('click', () => {
+      nodes.forEach(n => n.classList.remove('active-step'));
+      node.classList.add('active-step');
+      updateProgressLine();
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        container.classList.add('in-view');
+        nodes.forEach((node, idx) => {
+          setTimeout(() => {
+            node.classList.add('in-view');
+            if (idx === 0) {
+              node.classList.add('active-step');
+              updateProgressLine();
+            }
+          }, idx * 160);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(container);
+  window.addEventListener('resize', updateProgressLine, { passive: true });
+}
+
+/* 3. AI Search & Visibility: Radiating Outward Nodes & Soft Gold Glow Pulse */
+function initAiSearchChoreography() {
+  const section = document.getElementById('ai-search') || document.querySelector('.ai-visibility-intro');
+  if (!section) return;
+
+  const centralNode = document.getElementById('ai-search-central-node');
+  const cards = document.querySelectorAll('.ai-card');
+
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced || !('IntersectionObserver' in window)) {
+    if (centralNode) centralNode.classList.add('in-view');
+    cards.forEach(c => c.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (centralNode) centralNode.classList.add('in-view');
+        cards.forEach((card, idx) => {
+          setTimeout(() => {
+            card.classList.add('in-view');
+          }, 150 + idx * 130);
+        });
+
+        // Set default soft gold glow pulse on card-aiso
+        const aisoCard = document.getElementById('card-aiso');
+        if (aisoCard) {
+          setTimeout(() => {
+            aisoCard.classList.add('selected-pulse');
+          }, 900);
+        }
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observer.observe(section);
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach(c => c.classList.remove('selected-pulse'));
+      card.classList.add('selected-pulse');
+    });
+  });
+}
+
+/* 4. Pricing: 3D Tilt Settle & Recommended Gold Border Pulse */
+function initPricingChoreography() {
+  const pricingSection = document.getElementById('pricing') || document.querySelector('.tier-grid');
+  if (!pricingSection) return;
+
+  const cards = document.querySelectorAll('.tier-card');
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced || !('IntersectionObserver' in window)) {
+    cards.forEach(c => c.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        cards.forEach((card, idx) => {
+          setTimeout(() => {
+            card.classList.add('in-view');
+          }, 100 + idx * 140);
+        });
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observer.observe(pricingSection);
+}
+
+/* 5. FAQ: Gold Underline Rule Drawing On Scroll */
+function initFaqChoreography() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems.length) return;
+
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isReduced || !('IntersectionObserver' in window)) {
+    faqItems.forEach(i => i.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  faqItems.forEach((item, idx) => {
+    item.style.transitionDelay = `${idx * 0.08}s`;
+    observer.observe(item);
+  });
+}
+
+/* 6. Footer: Laser Sweep Line & Drifting Words Background Parallax */
+function initFooterChoreography() {
+  const footer = document.getElementById('global-footer') || document.querySelector('footer');
+  if (!footer) return;
+
+  const driftWords = document.getElementById('footer-drift-words');
+
+  // Gold sweep line trigger
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        footer.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(footer);
+
+  // Background word parallax drift on scroll
+  if (driftWords && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const rect = footer.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            const driftY = (progress * 50 - 25).toFixed(1);
+            const driftX = (progress * 30 - 15).toFixed(1);
+            driftWords.style.transform = `translate3d(${driftX}px, ${driftY}px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE DESKTOP CURSOR (DOT + RING + STATE LABELS)
+   ========================================================================== */
+function initCustomCursor() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let dot = document.getElementById('cursor-dot');
+  let ring = document.getElementById('cursor-ring');
+
+  if (!dot) {
+    dot = document.createElement('div');
+    dot.id = 'cursor-dot';
+    document.body.appendChild(dot);
+  }
+
+  if (!ring) {
+    ring = document.createElement('div');
+    ring.id = 'cursor-ring';
+    ring.innerHTML = '<span id="cursor-label">VIEW</span>';
+    document.body.appendChild(ring);
+  }
+
+  const label = document.getElementById('cursor-label');
+  let mouseX = -100, mouseY = -100;
+  let ringX = -100, ringY = -100;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  }, { passive: true });
+
+  function renderRing() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+    requestAnimationFrame(renderRing);
+  }
+  requestAnimationFrame(renderRing);
+
+  // Attach hover triggers
+  document.addEventListener('mouseover', (e) => {
+    const target = e.target;
+    const isProjectCard = target.closest('.project-card, .product-item-card');
+    const isInteractiveNode = target.closest('.sys-interactive-node');
+    const isInteractive = target.closest('a, button, input, select, textarea, .filter-btn, .faq-question');
+
+    if (isProjectCard) {
+      ring.classList.add('cursor-hover-project');
+      if (label) label.textContent = 'EXPLORE';
+    } else if (isInteractiveNode) {
+      ring.classList.add('cursor-hover-project');
+      if (label) label.textContent = 'INSPECT';
+    } else if (isInteractive) {
+      ring.classList.add('cursor-hover');
+      ring.classList.remove('cursor-hover-project');
+    } else {
+      ring.classList.remove('cursor-hover', 'cursor-hover-project');
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    dot.style.opacity = '1';
+    ring.style.opacity = '1';
+  });
+}
+
+/* ==========================================================================
+   DISCOVERABILITY LAB: WORD FLIPPER
+   Cycles: DISCOVER -> UNDERSTAND -> ANSWER -> CITE -> TRUST
+   ========================================================================== */
+function initDiscoverabilityWordFlipper() {
+  const container = document.getElementById('flipper-words-viewport');
+  if (!container) return;
+
+  const words = ['DISCOVER', 'UNDERSTAND', 'ANSWER', 'CITE', 'TRUST'];
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % words.length;
+    const wordEl = container.querySelector('.flipper-word');
+    if (wordEl) {
+      wordEl.style.transform = 'translateY(-100%)';
+      wordEl.style.opacity = '0';
+      setTimeout(() => {
+        wordEl.textContent = words[currentIndex];
+        wordEl.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+          wordEl.style.transform = 'translateY(0)';
+          wordEl.style.opacity = '1';
+        }, 30);
+      }, 300);
+    }
+  }, 2400);
+}
+
+/* ==========================================================================
+   INTERACTIVE AI SYSTEMS ARCHITECTURE MAP & TELEMETRY CONTROLLER
+   ========================================================================== */
+const systemsMapData = {
+  "ai-agents": {
+    code: "01 / AI AGENTS",
+    title: "AI Automation & AI Agents",
+    tagline: "Autonomous customer dialogue, 24/7 lead qualification, and multi-channel response bots.",
+    desc: "Autonomous AI-powered conversation agents deployed across WhatsApp, web chat, and voice channels. Designed to answer complex customer inquiries, qualify high-intent prospects, and trigger immediate booking flows without human latency.",
+    whatIsIt: "Custom LLM-powered conversational agents integrated with your business knowledge base and real-time APIs.",
+    whoFor: "Gyms, salons, clinics, consultants, and service businesses losing leads after hours.",
+    problemSolved: "Eliminates slow lead response times, missed weekend inquiries, and repetitive manual customer Q&A.",
+    deliverables: "Configured AI agent, prompt architecture, WhatsApp Business API webhook, lead qualification pipeline, and test suite.",
+    connectsTo: "WhatsApp Business, Web chat widget, Google Sheets CRM, n8n webhook pipelines.",
+    price: "Starting from ₹3,999",
+    waMessage: "Hi Karishma, I am interested in exploring an AI Agent / Automation solution for my business."
+  },
+  "n8n-workflow": {
+    code: "02 / N8N PIPELINE",
+    title: "Workflow Automation (n8n)",
+    tagline: "Event-driven pipelines syncing forms, databases, spreadsheets, and notification channels.",
+    desc: "Robust back-office workflow orchestration connecting disparate applications into an integrated, zero-data-loss automation loop. Eliminates manual spreadsheet copy-pasting, invoice emailing, and lead synchronization.",
+    whatIsIt: "Server-orchestrated multi-step automation pipelines built on n8n or custom webhook endpoints.",
+    whoFor: "E-commerce sellers, agencies, local businesses, and operations teams handling multi-app handoffs.",
+    problemSolved: "Stops manual data entry errors, fragmented customer records, and delayed internal notifications.",
+    deliverables: "Custom n8n workflow JSON, error-retry triggers, API credentials setup, and data mapping schema.",
+    connectsTo: "Google Sheets, Notion, Airtable, Razorpay, WhatsApp, Gmail, Slack.",
+    price: "Starting from ₹4,999",
+    waMessage: "Hi Karishma, I need workflow automation (n8n) to connect my business apps and automate data."
+  },
+  "websites-templates": {
+    code: "03 / WEB ARCHITECTURE",
+    title: "Websites & Commerce Templates",
+    tagline: "High-contrast editorial websites built around customer conversion and sub-second performance.",
+    desc: "Production-ready commercial business websites and tailored industry templates. Engineered with responsive mobile-first layouts, Schema.org microdata for AI discoverability, and 1-click WhatsApp inquiry funnels.",
+    whatIsIt: "Clean, high-performance static or dynamic web architecture tailored for commercial lead conversion.",
+    whoFor: "Gyms, salons, restaurants, real estate consultants, and modern professionals.",
+    problemSolved: "Replaces slow, outdated, generic WordPress themes with fast, authoritative, mobile-optimized sites.",
+    deliverables: "Full responsive codebase, domain connection, Schema.org JSON-LD graph, WhatsApp CTAs, 3–5 day delivery.",
+    connectsTo: "Google Maps, WhatsApp Business, Local SEO crawlers, custom analytics.",
+    price: "Starting from ₹2,999",
+    waMessage: "Hi Karishma, I want to discuss a new website or website template for my business."
+  },
+  "ecommerce-ops": {
+    code: "04 / E-COMMERCE OPS",
+    title: "E-Commerce & Marketplace Management",
+    tagline: "Marketplace cataloging, algorithmic listing SEO, and D2C operational synchronization.",
+    desc: "Hands-on multi-channel e-commerce execution informed by running live brands (MIRAVIKA). Covers Amazon, Flipkart, Meesho product cataloging, search algorithm optimization, bullet point copywriting, and visual merchandising.",
+    whatIsIt: "Complete digital cataloging, marketplace SEO, and D2C operational listing management.",
+    whoFor: "D2C lifestyle brands, consumer goods manufacturers, and retail stores expanding online.",
+    problemSolved: "Low search impression rankings, rejected catalog listings, and disjointed product merchandising.",
+    deliverables: "Optimized product listings, keyword index tags, backend search term schemas, visual merchandising review.",
+    connectsTo: "Amazon Seller Central, Flipkart, Meesho, Shopify/WooCommerce, D2C portals.",
+    price: "Starting from ₹2,999 / mo",
+    waMessage: "Hi Karishma, I need e-commerce cataloging and marketplace management for my brand."
+  },
+  "ai-creative": {
+    code: "05 / AI CREATIVE",
+    title: "AI Creative & Product Visuals",
+    tagline: "Studio-grade synthetic product staging, video reels, and high-impact social assets.",
+    desc: "High-fidelity AI-assisted visual production that eliminates expensive commercial studio photoshoots. Transforms raw smartphone product photos into luxury lifestyle staged imagery and dynamic social video creatives.",
+    whatIsIt: "AI-generated product staging, digital lifestyle compositions, and vertical short-form creatives.",
+    whoFor: "Apparel brands, food businesses, beauty salons, and product creators wanting high visual fidelity.",
+    problemSolved: "High photography studio costs, slow production turnarounds, and flat social media engagement.",
+    deliverables: "High-resolution staged image package, multi-angle visual variations, optimized web assets.",
+    connectsTo: "Social ad campaigns, website product galleries, Amazon A+ content, Instagram merchandising.",
+    price: "Starting from ₹799",
+    waMessage: "Hi Karishma, I would like AI creative services and staged product visuals for my products."
+  },
+  "digital-setup": {
+    code: "06 / TURNKEY SETUP",
+    title: "Turnkey Digital Business Setup",
+    tagline: "End-to-end digital foundation: website, WhatsApp channel, branding, and operational workflows.",
+    desc: "A holistic 360-degree launch package that takes an offline or newly incorporated business from raw idea to active, customer-accepting digital operations in under 10 days.",
+    whatIsIt: "Comprehensive business digital transformation package combining all studio capabilities into one unified rollout.",
+    whoFor: "New entrepreneurs, brick-and-mortar stores going online, and service professionals launching new ventures.",
+    problemSolved: "Overwhelmed founders dealing with 5 different freelancers for web, marketing, automation, and design.",
+    deliverables: "Custom website, domain setup, Google Business Profile, WhatsApp API channel, automated lead spreadsheet, branding kit.",
+    connectsTo: "Entire modern digital ecosystem (Search, WhatsApp, CRM, Payment gateways).",
+    price: "Starting from ₹9,999",
+    waMessage: "Hi Karishma, I'm looking for a complete Turnkey Digital Business Setup for my new venture."
+  }
+};
+
+function initSystemsArchitectureMap() {
+  const nodes = document.querySelectorAll('.sys-interactive-node');
+  if (!nodes.length) return;
+
+  nodes.forEach(node => {
+    node.addEventListener('click', () => {
+      const systemKey = node.getAttribute('data-system-key');
+      selectSystemNode(systemKey);
+    });
+
+    node.addEventListener('mouseenter', () => {
+      const systemKey = node.getAttribute('data-system-key');
+      selectSystemNode(systemKey);
+    });
+  });
+}
+
+function selectSystemNode(key) {
+  const data = systemsMapData[key];
+  if (!data) return;
+
+  // Update active state on nodes
+  document.querySelectorAll('.sys-interactive-node').forEach(n => {
+    if (n.getAttribute('data-system-key') === key) {
+      n.classList.add('active-node');
+    } else {
+      n.classList.remove('active-node');
+    }
+  });
+
+  // Update Telemetry Panel
+  const panel = document.getElementById('sys-telemetry-panel');
+  if (!panel) return;
+
+  panel.style.opacity = '0.4';
+  panel.style.transform = 'scale(0.99)';
+  panel.style.transition = 'opacity 120ms ease, transform 120ms ease';
+
+  setTimeout(() => {
+    const codeEl = document.getElementById('telemetry-code') || document.getElementById('telemetry-node-code');
+    const titleEl = document.getElementById('telemetry-title') || document.getElementById('telemetry-node-title');
+    const descEl = document.getElementById('telemetry-desc') || document.getElementById('telemetry-node-desc');
+    const specWhat = document.getElementById('spec-what');
+    const specWho = document.getElementById('spec-who');
+    const specProblem = document.getElementById('spec-problem');
+    const specGet = document.getElementById('spec-get');
+    const specConnect = document.getElementById('spec-connect');
+    const priceVal = document.getElementById('telemetry-price-val');
+    const actionBtn = document.getElementById('telemetry-action-btn') || document.getElementById('telemetry-btn-action');
+
+    if (codeEl) codeEl.textContent = data.code;
+    if (titleEl) titleEl.textContent = data.title;
+    if (descEl) descEl.textContent = data.desc;
+    if (specWhat) specWhat.textContent = data.whatIsIt;
+    if (specWho) specWho.textContent = data.whoFor;
+    if (specProblem) specProblem.textContent = data.problemSolved;
+    if (specGet) specGet.textContent = data.deliverables;
+    if (specConnect) specConnect.textContent = data.connectsTo;
+    if (priceVal) priceVal.textContent = data.price;
+
+    if (actionBtn) {
+      actionBtn.href = `https://wa.me/919818691915?text=${encodeURIComponent(data.waMessage)}`;
+    }
+
+    panel.style.opacity = '1';
+    panel.style.transform = 'scale(1)';
+  }, 120);
+}
+
+/* ==========================================================================
+   SMART PROJECT INQUIRY FORM CONTROLLER
+   Formats complete structured message and pre-populates WhatsApp dispatch
+   ========================================================================== */
+function initSmartInquiryForm() {
+  const form = document.getElementById('smart-inquiry-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById('inq-client-name') || {}).value || 'Prospective Client';
+    const business = (document.getElementById('inq-client-biz') || {}).value || 'Business';
+    const category = (document.getElementById('inq-client-cat') || {}).value || 'Website / Automation';
+    const budget = (document.getElementById('inq-client-budget') || {}).value || 'To be discussed';
+    const timeline = (document.getElementById('inq-client-timeline') || {}).value || 'Flexible';
+    const brief = (document.getElementById('inq-client-brief') || {}).value || '';
+
+    const formattedMessage = 
+`Hi Karishma, I'm reaching out from your portfolio regarding a new project inquiry:
+
+• Name: ${name}
+• Business / Brand: ${business}
+• Project Category: ${category}
+• Target Budget: ${budget}
+• Timeline: ${timeline}
+• Project Brief: ${brief}
+
+Looking forward to connecting!`;
+
+    const waUrl = `https://wa.me/919818691915?text=${encodeURIComponent(formattedMessage)}`;
+    window.open(waUrl, '_blank');
+
+    const submitBtn = form.querySelector('.inquiry-submit-btn');
+    if (submitBtn) {
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span>✓ INQUIRY DISPATCHED TO WHATSAPP</span>`;
+      submitBtn.style.background = '#1B8A44';
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.background = '';
+      }, 4000);
+    }
+  });
+}
+
+/* ==========================================================================
+   DESKTOP SUBTLE CURSOR-AWARE CARD TILT (2.5° MAX)
+   ========================================================================== */
+function initCardTilt() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    if (card._hasTiltListener) return;
+    card._hasTiltListener = true;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -2.2;
+      const rotateY = ((x - centerX) / centerX) * 2.2;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+/* ==========================================================================
+   SCROLL PROGRESS INDICATOR & STICKY HEADER MOTION
+   ========================================================================== */
+function initScrollProgressBar() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
+  let progressBar = document.getElementById('scroll-progress-bar');
+  if (!progressBar) {
+    progressBar = document.createElement('div');
+    progressBar.id = 'scroll-progress-bar';
+    progressBar.className = 'scroll-progress-bar';
+    navbar.appendChild(progressBar);
+  }
+
+  let ticking = false;
+  function updateScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    
+    if (progressBar) {
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }
+
+    if (scrollTop > 24) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial calculation
+  updateScroll();
+}
+
+/* ==========================================================================
+   GLOBAL SCROLL REVEAL & STAGGER MOTION SYSTEM (BI-DIRECTIONAL)
+   ========================================================================== */
+let globalMotionObserver = null;
+
+function attachMotionClasses() {
+  // Section Eyebrows / Labels
+  document.querySelectorAll('.section-eyebrow:not(.reveal), .proof-strip-tag:not(.reveal), .svc-num-tag:not(.reveal)').forEach(el => {
+    el.classList.add('reveal', 'reveal-label');
+  });
+
+  // Section Titles
+  document.querySelectorAll('.section-title:not(.reveal), .page-hero-title:not(.reveal)').forEach(el => {
+    el.classList.add('reveal', 'reveal-heading');
+  });
+
+  // Section Subtitles
+  document.querySelectorAll('.section-sub:not(.reveal), .page-hero-sub:not(.reveal)').forEach(el => {
+    el.classList.add('reveal', 'reveal-sub');
+  });
+
+  // Proof Strip Columns (Staggered)
+  document.querySelectorAll('.proof-strip-col').forEach((col, idx) => {
+    col.classList.add('reveal', 'reveal-card', `stagger-${(idx % 4) + 1}`);
+  });
+
+  // Project Cards (Static or Dynamic)
+  document.querySelectorAll('.project-card').forEach((card, idx) => {
+    card.classList.add('reveal', 'reveal-card');
+    if (!card.className.includes('stagger-')) {
+      card.classList.add(`stagger-${(idx % 6) + 1}`);
+    }
+  });
+
+  // Expertise & Service Blocks
+  document.querySelectorAll('.expertise-group, .service-editorial-block, .about-card, .pricing-card, .contact-card, .faq-card, .inquiry-box').forEach((item, idx) => {
+    item.classList.add('reveal', 'reveal-card');
+    if (!item.className.includes('stagger-')) {
+      item.classList.add(`stagger-${(idx % 4) + 1}`);
+    }
+  });
+
+  // Call-To-Action Banners
+  document.querySelectorAll('.custom-website-cta, .indian-biz-banner').forEach(banner => {
+    banner.classList.add('reveal');
+  });
+
+  // Footer Sections
+  const footerCols = document.querySelectorAll('footer .footer-col, footer .footer-links-col');
+  footerCols.forEach((col, idx) => {
+    col.classList.add('reveal', `stagger-${(idx % 3) + 1}`);
+  });
+  const footerBottom = document.querySelector('footer .footer-bottom');
+  if (footerBottom) {
+    footerBottom.classList.add('reveal');
+  }
+}
+
+function observeMotionElements(elements) {
+  if (!elements || !elements.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    elements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+  if (!globalMotionObserver) {
+    initScrollMotionSystem();
+    return;
+  }
+  elements.forEach(el => {
+    globalMotionObserver.observe(el);
+  });
+}
+
+function initScrollMotionSystem() {
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  attachMotionClasses();
+
+  const allRevealElements = document.querySelectorAll('.reveal, [data-reveal]');
+
+  if (isReduced || !('IntersectionObserver' in window)) {
+    allRevealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  if (globalMotionObserver) {
+    globalMotionObserver.disconnect();
+  }
+
+  globalMotionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+      } else {
+        // Bi-directional scroll-up handling:
+        // Reset when scrolled past bottom so re-entrance from above plays cleanly
+        const rect = entry.boundingClientRect;
+        if (rect.top > window.innerHeight + 80) {
+          entry.target.classList.remove('is-revealed');
+        }
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  allRevealElements.forEach(el => {
+    globalMotionObserver.observe(el);
+  });
+}
 
 /* ==========================================================================
    IMAGE REVEAL & INTERSECTION OBSERVER ANIMATIONS
@@ -829,3 +2003,706 @@ function escapeHtml(str) {
     }[tag] || tag)
   );
 }
+
+/* ==========================================================================
+   SECRET INTERACTIONS ENGINE
+   ========================================================================== */
+
+/* SECRET #1 — LOGO REVEAL */
+function initLogoSecret() {
+  const logo = document.querySelector('.nav-logo-group') || document.querySelector('.nav-logo');
+  if (!logo) return;
+  let clickCount = 0;
+  let clickTimer = null;
+
+  logo.addEventListener('click', (e) => {
+    clickCount++;
+    if (clickCount === 1) {
+      clickTimer = setTimeout(() => {
+        clickCount = 0;
+      }, 1200);
+    } else if (clickCount >= 3) {
+      e.preventDefault();
+      e.stopPropagation();
+      clearTimeout(clickTimer);
+      clickCount = 0;
+      openSystemStatusModal();
+    }
+  });
+}
+
+function openSystemStatusModal() {
+  const modal = document.getElementById('project-modal');
+  const content = document.getElementById('modal-body');
+  if (!modal || !content) return;
+
+  content.innerHTML = `
+    <span class="methodology-tag gold">SECRET REVEAL #1 // SYSTEM STATUS</span>
+    <h2 class="methodology-title" style="font-family: var(--font-display); font-size: 1.8rem; margin: 0.5rem 0 1rem;">ARCHITECT SYSTEM PROFILE</h2>
+    <p class="modal-desc" style="color: var(--gold-light); font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">[ SECURITY PROTOCOL: VERIFIED ARCHITECT ENTITY ]</p>
+    
+    <div class="modal-case-study">
+      <div class="case-study-block" style="background: rgba(212,175,55,0.04); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; border-radius: 6px;">
+        <div class="case-study-label" style="color: var(--gold);">IDENTIFIER</div>
+        <p class="case-study-text" style="font-family: var(--font-mono); font-size: 0.95rem; color: #fff;">KARISHMA KUMARI — AI AUTOMATION ARCHITECT</p>
+      </div>
+      
+      <div class="case-study-block">
+        <div class="case-study-label">OPERATIONAL STATUS</div>
+        <p class="case-study-text" style="color: #4ade80; font-family: var(--font-mono);">● ALL SYSTEMS ONLINE • AVAILABLE FOR SELECT COMMISSIONS</p>
+      </div>
+
+      <div class="case-study-block">
+        <div class="case-study-label">ACTIVE VENTURES</div>
+        <ul class="modal-features-list" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+          <li><strong style="color: #fff;">MIRAVIKA:</strong> Live Consumer D2C Brand (miravika.com)</li>
+          <li><strong style="color: #fff;">Vision AI Studio:</strong> Team AI Automation Studio (velision.in)</li>
+          <li><strong style="color: #fff;">Buildy Tools:</strong> Free Excel AI Utility (buildy-tools.lovable.app)</li>
+        </ul>
+      </div>
+
+      <div class="case-study-block">
+        <div class="case-study-label">DISCOVERY COMMANDS</div>
+        <p class="case-study-text" style="font-size: 0.85rem; color: var(--text-muted);">
+          Press <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--gold);">⌘K</kbd> or <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--gold);">Ctrl+K</kbd> anywhere to open the Command Center. Press <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--gold);">K</kbd> 3 times rapidly to unlock the System Architecture Diagram.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-actions" style="margin-top: 1.5rem;">
+      <a href="https://wa.me/919310860361?text=Hi%20Karishma,%20I%20unlocked%20your%20System%20Status%20and%20want%20to%20commission%20a%20project." target="_blank" rel="noopener" class="btn-primary">
+        COMMISSION SYSTEM →
+      </a>
+      <button type="button" class="btn-ghost" onclick="closeModal()">
+        CLOSE STATUS
+      </button>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+/* SECRET #4 — COMMAND PALETTE (Cmd+K / Ctrl+K) */
+function initCommandPalette() {
+  if (!document.getElementById('command-palette-modal')) {
+    const paletteHtml = `
+      <div id="command-palette-modal" class="cmd-palette-overlay" aria-hidden="true" role="dialog" aria-label="Command Center">
+        <div class="cmd-palette-card">
+          <div class="cmd-palette-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="cmd-input" placeholder="Type a command or search... (e.g., Work, Pricing, MIRAVIKA)" autocomplete="off" />
+            <kbd class="cmd-esc-tag">ESC</kbd>
+          </div>
+          <div class="cmd-palette-results" id="cmd-results"></div>
+          <div class="cmd-palette-footer">
+            <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+            <span><kbd>↵</kbd> Select</span>
+            <span><kbd>ESC</kbd> Close</span>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', paletteHtml);
+  }
+
+  const modal = document.getElementById('command-palette-modal');
+  const input = document.getElementById('cmd-input');
+  const results = document.getElementById('cmd-results');
+
+  const commands = [
+    { title: "Selected Work", desc: "View 7 verified portfolio projects & case studies", action: () => { jumpTo('#work'); } },
+    { title: "System Architecture", desc: "Interactive 6-stage automation pipeline", action: () => { jumpTo('#services'); } },
+    { title: "AI Search & GEO Visibility", desc: "AEO, GEO, LLMO, AISO & E-E-A-T methodologies", action: () => { jumpTo('#ai-search'); } },
+    { title: "Services & Pricing Architecture", desc: "Verified packages starting ₹2,999", action: () => { jumpTo('#pricing'); } },
+    { title: "About Karishma Kumari", desc: "AI Automation Architect profile & ventures", action: () => { jumpTo('#about'); } },
+    { title: "Start a Project", desc: "Inquire for custom website or AI automation", action: () => { jumpTo('#contact'); } },
+    { title: "Open MIRAVIKA (D2C Store)", desc: "Live consumer e-commerce venture", action: () => { window.open('https://miravika.com/', '_blank'); } },
+    { title: "Open Vision AI Studio", desc: "Team AI Automation platform (velision.in)", action: () => { window.open('https://velision.in/', '_blank'); } },
+    { title: "Open Buildy Tools", desc: "Free AI Excel automation utility", action: () => { window.open('https://buildy-tools.lovable.app', '_blank'); } },
+    { title: "Direct WhatsApp Inquiry", desc: "Chat directly with Karishma Kumari", action: () => { window.open('https://wa.me/919310860361?text=Hi%20Karishma,%20I%20am%20reaching%20out%20via%20your%20Command%20Center.', '_blank'); } }
+  ];
+
+  let selectedIdx = 0;
+
+  function renderCmdResults(query = '') {
+    const q = query.toLowerCase().trim();
+    const filtered = commands.filter(c => c.title.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q));
+    
+    if (filtered.length === 0) {
+      results.innerHTML = `<div class="cmd-item empty">No matching system commands found</div>`;
+      return;
+    }
+
+    if (selectedIdx >= filtered.length) selectedIdx = 0;
+
+    results.innerHTML = filtered.map((c, idx) => `
+      <div class="cmd-item ${idx === selectedIdx ? 'selected' : ''}" data-idx="${idx}">
+        <div class="cmd-item-title">${c.title}</div>
+        <div class="cmd-item-desc">${c.desc}</div>
+      </div>
+    `).join('');
+
+    results.querySelectorAll('.cmd-item').forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        closeCommandPalette();
+        filtered[idx].action();
+      });
+      item.addEventListener('mouseenter', () => {
+        selectedIdx = idx;
+        renderCmdResults(input.value);
+      });
+    });
+  }
+
+  function jumpTo(selector) {
+    closeCommandPalette();
+    const target = document.querySelector(selector);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function openCommandPalette() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    input.value = '';
+    selectedIdx = 0;
+    renderCmdResults('');
+    setTimeout(() => input.focus(), 50);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCommandPalette() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  window.openCommandPalette = openCommandPalette;
+  window.closeCommandPalette = closeCommandPalette;
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (modal.classList.contains('open')) {
+        closeCommandPalette();
+      } else {
+        openCommandPalette();
+      }
+      return;
+    }
+
+    if (modal.classList.contains('open')) {
+      if (e.key === 'Escape') {
+        closeCommandPalette();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const items = results.querySelectorAll('.cmd-item');
+        if (items.length > 0) {
+          selectedIdx = (selectedIdx + 1) % items.length;
+          renderCmdResults(input.value);
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const items = results.querySelectorAll('.cmd-item');
+        if (items.length > 0) {
+          selectedIdx = (selectedIdx - 1 + items.length) % items.length;
+          renderCmdResults(input.value);
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const q = input.value.toLowerCase().trim();
+        const filtered = commands.filter(c => c.title.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q));
+        if (filtered[selectedIdx]) {
+          closeCommandPalette();
+          filtered[selectedIdx].action();
+        }
+      }
+    }
+  });
+
+  input.addEventListener('input', () => {
+    selectedIdx = 0;
+    renderCmdResults(input.value);
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeCommandPalette();
+  });
+}
+
+/* SECRET #5 — 'K' KEY EASTER EGG */
+function initKKeyEasterEgg() {
+  let kCount = 0;
+  let kTimer = null;
+
+  document.addEventListener('keydown', (e) => {
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+    if (e.key === 'k' || e.key === 'K') {
+      kCount++;
+      if (kCount === 1) {
+        kTimer = setTimeout(() => { kCount = 0; }, 1500);
+      } else if (kCount >= 3) {
+        clearTimeout(kTimer);
+        kCount = 0;
+        showEasterEggToast();
+      }
+    }
+  });
+}
+
+function showEasterEggToast() {
+  let toast = document.getElementById('k-easter-egg-toast');
+  if (!toast) {
+    const toastHtml = `
+      <div id="k-easter-egg-toast" class="k-easter-egg-banner">
+        <div class="k-banner-inner">
+          <span class="k-banner-tag">SECRET #5 UNLOCKED</span>
+          <div class="k-banner-title">SYSTEM UNLOCKED — BUILD SOMETHING USEFUL</div>
+          <p class="k-banner-sub">You pressed 'K' 3 times. The architecture pipeline is now fully active.</p>
+          <div class="k-banner-pipeline">
+            <span>DISCOVER</span> → <span>DESIGN</span> → <span>BUILD</span> → <span>AUTOMATE</span> → <span>DEPLOY</span>
+          </div>
+          <div class="k-banner-actions">
+            <button onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'}); this.closest('.k-easter-egg-banner').classList.remove('active');" class="btn-primary-sm">VIEW PIPELINE</button>
+            <button onclick="this.closest('.k-easter-egg-banner').classList.remove('active');" class="btn-ghost-sm">DISMISS</button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', toastHtml);
+    toast = document.getElementById('k-easter-egg-toast');
+  }
+
+  toast.classList.add('active');
+  setTimeout(() => {
+    if (toast) toast.classList.remove('active');
+  }, 10000);
+}
+
+/* SECRET #8 — HIDDEN ARCHITECTURE VIEW */
+function initHiddenArchitectureView() {
+  const trigger = document.getElementById('hidden-architecture-trigger');
+  if (trigger) {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('services');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        const pipeline = document.querySelector('.systems-map-container') || target;
+        pipeline.classList.add('highlight-pulse');
+        setTimeout(() => pipeline.classList.remove('highlight-pulse'), 3000);
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE CONTROLLER EXTENSIONS FOR OVERHAULED PORTFOLIO SECTIONS
+   ========================================================================== */
+
+// System Grid Mode Toggle in Hero
+function toggleTelemetryGrid() {
+  const grid = document.getElementById('hero-telemetry-grid');
+  const btn = document.querySelector('.hero-system-toggle-btn');
+  if (!grid) return;
+  const isActive = grid.classList.toggle('grid-active');
+  if (btn) {
+    btn.textContent = isActive ? '[ SYSTEM: ACTIVE ]' : '[ SYSTEM ]';
+    btn.style.color = isActive ? 'var(--gold-light)' : 'var(--gold-champagne)';
+  }
+}
+
+/* ==========================================================================
+   REUSABLE INTERSECTION OBSERVER FOR DIRECTIONAL ANIMATIONS
+   ========================================================================== */
+function initScrollReveals() {
+  const revealElements = document.querySelectorAll(
+    '.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-line, .reveal-eyebrow, .section-eyebrow, .reveal-mask, .stagger-chips'
+  );
+
+  if (!revealElements.length) return;
+
+  // Respect accessibility setting for reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.12
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        // Unobserve after revealing for high scroll performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+window.initScrollReveals = initScrollReveals;
+
+// AI Search Data Dictionary & Switcher
+const aiSearchData = {
+  aeo: {
+    badge: "AEO",
+    acronym: "Direct Extraction",
+    title: "Answer Engine Optimization",
+    def: "Structuring web content into direct, concise, factual answers designed for answer engines, voice assistants, and immediate query extraction.",
+    purpose: "When prospects ask specific questions ('How much does a salon site cost?', 'What is included?'), search engines extract clear answers directly.",
+    how: [
+      "Question-centric H2/H3 header architecture",
+      "40-word standalone direct answer window",
+      "Schema.org FAQPage & speakable JSON-LD microdata",
+      "Transparent scopes replacing vague marketing jargon"
+    ],
+    example: "The transparent pricing and Q&A blocks on this website are designed for direct answer extraction."
+  },
+  geo: {
+    badge: "GEO",
+    acronym: "Generative Citation",
+    title: "Generative Engine Optimization",
+    def: "Crafting context-rich, entity-anchored content that generative engines (Google AI Overviews, Bing Copilot, Perplexity) synthesize and cite.",
+    purpose: "Ensures your business, founder credentials, and services are recommended and accurately cited when users ask conversational AI tools.",
+    how: [
+      "Explicit entity anchor mapping across internal schemas",
+      "Problem-solution-deliverable case study framing",
+      "Multi-source profile consistency (LinkedIn, GitHub)",
+      "High semantic density for crawler extraction"
+    ],
+    example: "Project case studies detail specific business challenges, technical choices, and deliverables cited by generative engines."
+  },
+  llmo: {
+    badge: "LLMO",
+    acronym: "Vector & RAG Ingestion",
+    title: "Large Language Model Optimization",
+    def: "Formatting information architectures so large language models and RAG pipelines can ingest, parse, and embed content without ambiguity.",
+    purpose: "Establishes clear associative knowledge weights between your brand name, leadership, core skills, and service categories.",
+    how: [
+      "Semantic DOM tree chunking (<article>, <section>)",
+      "Consistent entity co-occurrence in key copy",
+      "Machine-readable data availability (no hidden text in images)",
+      "Structured taxonomy connecting parent services to packages"
+    ],
+    example: "Clean semantic layout ensures RAG embeddings associate Karishma Kumari with AI Automation & Web Systems."
+  },
+  aiso: {
+    badge: "AISO",
+    acronym: "Unified Architecture",
+    title: "AI Search Optimization",
+    def: "The unified modern framework uniting technical SEO with next-generation AI discovery and conversational assistant readiness.",
+    purpose: "Guarantees visibility across Google, Bing, ChatGPT Search, and voice assistants without sacrificing human conversion rates.",
+    how: [
+      "Full-spectrum Schema.org graphs (Person, WebSite, Service, FAQ)",
+      "Sub-second Core Web Vitals (FCP, LCP, zero CLS)",
+      "Canonical tags, robots.txt, and clean XML sitemaps",
+      "Frictionless 1-click WhatsApp consultation channels"
+    ],
+    example: "This portfolio loads sub-second with full JSON-LD graphs, canonical tags, and mobile-first accessibility."
+  },
+  eeat: {
+    badge: "E-E-A-T",
+    acronym: "Trust & Proof",
+    title: "E-E-A-T Framework",
+    def: "Google's core Search Quality Rater Guidelines framework: Experience, Expertise, Authoritativeness, and Trustworthiness.",
+    purpose: "Distinguishes genuine practitioners and authentic businesses from unverified, low-quality automated filler.",
+    how: [
+      "Demonstrable firsthand experience (shipped client sites, live stores)",
+      "Specific technical competencies (n8n, AI agents, web systems)",
+      "External authoritativeness & verified LinkedIn/GitHub profiles",
+      "Transparent commercial statuses ('SOLD', 'TEMPLATE', 'LIVE')"
+    ],
+    example: "Honest disclosure of personal businesses (MIRAVIKA), delivered client work (Kuchuu Puchuu), and verified contact info."
+  }
+};
+
+function switchAiSearchTab(tabKey) {
+  const data = aiSearchData[tabKey];
+  if (!data) return;
+
+  // Update active state on tab buttons
+  document.querySelectorAll('.ai-tab-btn').forEach(btn => {
+    if (btn.getAttribute('data-ai-tab') === tabKey) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // Fade panel briefly for smooth visual feedback
+  const panel = document.getElementById('ai-inspector-panel');
+  if (panel) {
+    panel.style.opacity = '0.3';
+    panel.style.transform = 'translateY(4px)';
+    panel.style.transition = 'opacity 150ms ease, transform 150ms ease';
+
+    setTimeout(() => {
+      const badgeEl = document.getElementById('ai-panel-badge');
+      const acronymEl = document.getElementById('ai-panel-acronym');
+      const titleEl = document.getElementById('ai-panel-title');
+      const defEl = document.getElementById('ai-panel-def');
+      const purposeEl = document.getElementById('ai-panel-purpose');
+      const exampleEl = document.getElementById('ai-panel-example');
+      const listEl = document.getElementById('ai-panel-how');
+
+      if (badgeEl) badgeEl.textContent = data.badge;
+      if (acronymEl) acronymEl.textContent = data.acronym;
+      if (titleEl) titleEl.textContent = data.title;
+      if (defEl) defEl.textContent = data.def;
+      if (purposeEl) purposeEl.textContent = data.purpose;
+      if (exampleEl) exampleEl.textContent = data.example;
+
+      if (listEl) {
+        listEl.innerHTML = data.how.map(item => `<li>${item}</li>`).join('');
+      }
+
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0)';
+    }, 150);
+  }
+}
+
+// Process Step Node Activator
+function activateProcessNode(stepNum) {
+  const nodes = document.querySelectorAll('.process-node-card');
+  const progressBar = document.getElementById('path-line-progress');
+  nodes.forEach((node, idx) => {
+    if (idx + 1 === stepNum) {
+      node.classList.add('active');
+    } else {
+      node.classList.remove('active');
+    }
+  });
+  if (progressBar) {
+    const pct = Math.min(100, Math.max(14, (stepNum / 7) * 100));
+    progressBar.style.width = `${pct}%`;
+  }
+}
+
+// Footer Secret Reveal Trigger
+function triggerSecret05Reveal() {
+  const btn = document.querySelector('.secret-end-system-btn');
+  if (btn) {
+    btn.textContent = '[ THANK YOU FOR EXPLORING ]';
+    btn.style.color = 'var(--gold-light)';
+  }
+  showEasterEggToast();
+}
+
+// AI Search Interactive Demo Functions
+const aiKnowledgeBase = {
+  "build": "Karishma builds modern web applications, e-commerce storefronts, AI agent workflows, WhatsApp auto-responders, and business automation pipelines using Next.js, React, TypeScript, Python, and n8n.",
+  "miravika": "MIRAVIKA is Karishma's active fashion & beauty e-commerce venture operating an independent D2C storefront alongside listings on Flipkart, Meesho, and Amazon.",
+  "ai": "Karishma designs 24/7 WhatsApp AI auto-responders, multi-agent lead triage bots, customer qualification workflows, and n8n event bridges.",
+  "work": "You can work together via direct WhatsApp (+91 98186 91915) or email (karishmakumaritk19@gmail.com). Projects typically deliver within 3–7 business days with clear fixed pricing.",
+  "default": "Karishma Kumari is an AI Automation Architect & Product Builder in Delhi, India, specializing in web systems, D2C e-commerce, and agentic workflows."
+};
+
+function askAiDemo(questionText) {
+  const inputEl = document.getElementById('ai-demo-input');
+  if (inputEl) inputEl.value = questionText;
+  runAiQueryLogic(questionText);
+}
+
+function runCustomAiQuery() {
+  const inputEl = document.getElementById('ai-demo-input');
+  if (!inputEl || !inputEl.value.trim()) return;
+  runAiQueryLogic(inputEl.value.trim());
+}
+
+function runAiQueryLogic(q) {
+  const outputTextEl = document.getElementById('ai-demo-text');
+  if (!outputTextEl) return;
+  
+  outputTextEl.innerHTML = `<span style="opacity: 0.6;">Synthesizing structured answer...</span>`;
+  
+  setTimeout(() => {
+    const queryLower = q.toLowerCase();
+    let ans = aiKnowledgeBase["default"];
+    if (queryLower.includes("build") || queryLower.includes("what does") || queryLower.includes("make")) {
+      ans = aiKnowledgeBase["build"];
+    } else if (queryLower.includes("miravika") || queryLower.includes("e-commerce") || queryLower.includes("store")) {
+      ans = aiKnowledgeBase["miravika"];
+    } else if (queryLower.includes("ai") || queryLower.includes("agent") || queryLower.includes("automation")) {
+      ans = aiKnowledgeBase["ai"];
+    } else if (queryLower.includes("work") || queryLower.includes("contact") || queryLower.includes("hire") || queryLower.includes("together")) {
+      ans = aiKnowledgeBase["work"];
+    }
+    
+    outputTextEl.innerHTML = `<strong>Answer:</strong> ${ans}`;
+  }, 300);
+}
+
+window.toggleTelemetryGrid = toggleTelemetryGrid;
+window.switchAiSearchTab = switchAiSearchTab;
+window.activateProcessNode = activateProcessNode;
+window.triggerSecret05Reveal = triggerSecret05Reveal;
+window.askAiDemo = askAiDemo;
+window.runCustomAiQuery = runCustomAiQuery;
+
+/* ==========================================================================
+   DEVELOPER TERMINAL LOGIC
+   ========================================================================== */
+function executeTerminalCmd() {
+  const input = document.getElementById('terminal-input');
+  if (!input) return;
+  const val = input.value.trim();
+  if (!val) return;
+  runTermCmd(val);
+  input.value = '';
+}
+
+function runTermCmd(cmdStr) {
+  const output = document.getElementById('terminal-output');
+  if (!output) return;
+  const lower = cmdStr.toLowerCase();
+  let reply = '';
+  if (lower.includes('build')) {
+    reply = 'AI Automation workflows, WhatsApp inquiry bots, D2C e-commerce storefronts (MIRAVIKA), and high-converting web applications.';
+  } else if (lower.includes('stack')) {
+    reply = 'Next.js, React, TypeScript, Python, FastAPI, Supabase, PostgreSQL, n8n, WhatsApp API, Vercel, Render.';
+  } else if (lower.includes('ventures') || lower.includes('projects')) {
+    reply = 'MIRAVIKA (Live D2C Brand), Vision AI Studio (velision.in), Kuchuu Puchuu, Buildy Tools (buildy-tools.lovable.app).';
+  } else if (lower.includes('contact') || lower.includes('hire')) {
+    reply = 'WhatsApp: +91 98186 91915 | Email: karishmakumaritk19@gmail.com | Location: Delhi NCR, India.';
+  } else if (lower === 'clear') {
+    output.innerHTML = '';
+    return;
+  } else {
+    reply = `Command '${cmdStr}' executed. Type 'ask karishma build', 'ask karishma stack', or 'ask karishma ventures'.`;
+  }
+
+  const lineHtml = `
+    <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">${cmdStr}</span></div>
+    <div class="t-line t-response">> ${reply}</div>
+  `;
+  output.insertAdjacentHTML('beforeend', lineHtml);
+  output.scrollTop = output.scrollHeight;
+}
+
+function scrollToTopHero() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.executeTerminalCmd = executeTerminalCmd;
+window.runTermCmd = runTermCmd;
+window.scrollToTopHero = scrollToTopHero;
+
+/* ==========================================================================
+   INTERACTIVE CHARACTER REVEAL & SCROLL STORY INITIALIZATION
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const charStage = document.getElementById('hero-model-wrapper');
+  const overlayImg = document.getElementById('developer-character-overlay');
+  const charBadgeText = document.getElementById('character-state-text');
+  const pCharStateLabel = document.getElementById('p-char-state-label');
+
+  // Mouse Interactive Feathered Mask Reveal
+  if (charStage && overlayImg) {
+    charStage.addEventListener('mousemove', (e) => {
+      const rect = charStage.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      overlayImg.style.setProperty('--mask-x', `${x}%`);
+      overlayImg.style.setProperty('--mask-y', `${y}%`);
+      overlayImg.style.setProperty('--mask-radius', '160px');
+
+      if (charBadgeText) {
+        charBadgeText.textContent = 'STATE 02 — DEVELOPER REVEAL';
+      }
+    });
+
+    charStage.addEventListener('mouseleave', () => {
+      overlayImg.style.setProperty('--mask-radius', '0px');
+      updateScrollCharacterState();
+    });
+  }
+
+  // Scroll Percentage & Character State Story Updates
+  function updateScrollCharacterState() {
+    const scrollMax = document.body.scrollHeight - window.innerHeight;
+    if (scrollMax <= 0) return;
+    const pct = (window.scrollY / scrollMax) * 100;
+
+    let currentState = 'STATE 01 — PROFESSIONAL';
+    if (pct < 20) {
+      currentState = 'STATE 01 — PROFESSIONAL';
+    } else if (pct < 45) {
+      currentState = 'STATE 02 — DEVELOPER';
+    } else if (pct < 70) {
+      currentState = 'STATE 03 — AI / AUTOMATION';
+    } else if (pct < 85) {
+      currentState = 'STATE 04 — FOUNDER';
+    } else {
+      currentState = 'STATE 05 — DIRECT STANCE';
+    }
+
+    if (pCharStateLabel) {
+      pCharStateLabel.textContent = currentState;
+    }
+    if (charBadgeText && (!charStage || !charStage.matches(':hover'))) {
+      charBadgeText.textContent = currentState;
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollCharacterState, { passive: true });
+  updateScrollCharacterState();
+
+  // Custom Cursor & Context Label Switching
+  const cursorDot = document.getElementById('cursor-dot');
+  const cursorRing = document.getElementById('cursor-ring');
+  const cursorLabel = document.getElementById('cursor-label');
+
+  if (cursorDot && cursorRing) {
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    function renderCursor() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.left = `${ringX}px`;
+      cursorRing.style.top = `${ringY}px`;
+      requestAnimationFrame(renderCursor);
+    }
+    renderCursor();
+
+    // Contextual Hover Labels
+    document.addEventListener('mouseover', (e) => {
+      const target = e.target.closest('[data-cursor-label], a, button, .project-card');
+      if (target) {
+        cursorRing.classList.add('cursor-view');
+        let labelText = target.getAttribute('data-cursor-label');
+        if (!labelText) {
+          if (target.classList.contains('project-card')) labelText = 'VIEW PROJECT';
+          else if (target.tagName === 'A') labelText = 'OPEN ↗';
+          else if (target.tagName === 'BUTTON') labelText = 'SELECT';
+          else labelText = 'EXPLORE';
+        }
+        if (cursorLabel) cursorLabel.textContent = labelText;
+      } else {
+        cursorRing.classList.remove('cursor-view');
+      }
+    });
+  }
+});
+
+
+
