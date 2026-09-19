@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process | Karishma Kumari</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <section class="section-wrap" id="process">
+        <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">PROCESS</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">HOW I BUILD</span></h2>
+        <p class="section-sub reveal-up">
+          A transparent engineering methodology for building reliable digital systems.
+        </p>
+
+        <!-- Horizontal Storytelling Process Track (No 01, 02 numbers) -->
+        <div class="process-path-container">
+          <div class="process-steps-row stagger-chips">
+            <div class="process-node-card active">
+              <h4 class="p-step-title">Understand</h4>
+              <p class="p-step-desc">Extract business mechanics &amp; identify manual operational bottlenecks.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Map</h4>
+              <p class="p-step-desc">Define system architecture, data flow &amp; API webhook integration points.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Design</h4>
+              <p class="p-step-desc">Craft editorial visual direction, wireframing &amp; mobile UX hierarchy.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Build</h4>
+              <p class="p-step-desc">Construct clean, fast web interfaces with sub-second performance.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Connect</h4>
+              <p class="p-step-desc">Integrate WhatsApp Business API, payment gateways &amp; CRMs.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Automate</h4>
+              <p class="p-step-desc">Deploy event pipelines &amp; AI lead triage workflows.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Measure</h4>
+              <p class="p-step-desc">Validate structured schemas, analytics &amp; post-launch execution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  <script src="../app.js"></script>
+</body>
+</html>

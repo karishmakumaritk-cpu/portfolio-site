@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Karishma Kumari | AI Automation Architect</title>
+  <meta name="description" content="Meet Karishma Kumari: Founder of Vision AI Studio & Miravika, builder of AI automations, websites and e-commerce systems.">
+  <link rel="canonical" href="https://karishmakumaritk-cpu.github.io/portfolio-site/about/">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Karishma Kumari | AI Automation Architect">
+  <meta property="og:description" content="AI Automation Architect, Founder & Builder. Building practical technology that works in the real world.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/about/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="page-view-container page-transition-enter">
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+      <a href="/" data-route="/" class="nav-logo-group">
+        <span class="nav-logo">KARISHMA KUMARI</span>
+        <span class="nav-tagline">AI Automation Architect</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" data-route="/" class="nav-link-item">HOME</a></li>
+        <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+        <li><a href="/services" data-route="/services" class="nav-link-item">SERVICES</a></li>
+        <li><a href="/#ai-search" class="nav-link-item">AI SEARCH</a></li>
+        <li><a href="/about" data-route="/about" class="nav-link-item active">ABOUT</a></li>
+        <li><a href="/pricing" data-route="/pricing" class="nav-link-item">PRICING</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-link-item">CONTACT</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-cta">LET'S TALK</a></li>
+      </ul>
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <!-- ABOUT PAGE HERO -->
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <div class="section-eyebrow"><span class="section-num">01 /</span> IDENTITY &amp; CRAFT</div>
+        <h1 class="page-hero-title">ABOUT KARISHMA KUMARI</h1>
+        <p class="page-hero-sub">
+          “I don’t just consult on AI and digital systems — I build them, run them, and deploy them into the real commercial world.”
+        </p>
+      </div>
+    </header>
+
+    <!-- ABOUT MAIN CONTENT -->
+    <main class="section-wrap">
+      <div class="about-grid">
+        <!-- EXACT PERSONAL PHOTO (project1.jpg.png) -->
+        <div class="about-photo-wrap">
+          <img src="/images/project1.jpg.png" alt="Karishma Kumari" class="about-photo" onerror="this.onerror=null; this.src='../images/project1.jpg.png';">
+          <div class="about-card-badge">
+            <div class="about-badge-role">FOUNDER &amp; BUILDER</div>
+            <div class="about-badge-name">Karishma Kumari</div>
+            <div style="font-size: 0.72rem; color: var(--muted2); margin-top: 0.2rem;">New Delhi, India</div>
+          </div>
+        </div>
+
+        <!-- EDITORIAL STORY & FACTS -->
+        <div class="about-text-col">
+          <div class="section-eyebrow"><span class="section-num">02 /</span> THE BUILDER'S PROFILE</div>
+          <h2 style="font-family: var(--font-display); font-size: 2.2rem; color: var(--charcoal); margin-bottom: 1.2rem; line-height: 1.2;">
+            Bridging Emerging AI Automation with Practical Everyday Business Operations.
+          </h2>
+
+          <p class="about-p">
+            I am an <strong>AI Automation Architect</strong> and digital builder based in Delhi NCR, India. My work centers on creating practical technology that works in real life: commercial websites that actually convert local customers, automation workflows that save hours of human manual labor, and scalable AI agents that handle operational communication.
+          </p>
+
+          <p class="about-p">
+            Rather than treating AI as an abstract theoretical playground, I deploy it directly into active commercial ventures. As the <strong>Founder of Vision AI Studio</strong> (currently building), I guide automation pipelines, SaaS system architectures, and AI workflow integrations.
+          </p>
+
+          <div class="about-highlight-box">
+            <strong>Active E-Commerce Ownership:</strong> I run <strong>MIRAVIKA</strong>, an active e-commerce fashion brand. This means I understand packaging, inventory reconciliation, marketplace SEO, and real customer support from the inside out — not just as a developer writing code, but as a business operator.
+          </div>
+
+          <p class="about-p">
+            I believe that Indian businesses — from neighborhood salons and fast-casual eateries to consultants and retail brands — deserve digital infrastructure that matches global design standards while being directly optimized for Indian consumer habits like WhatsApp discovery and UPI payments.
+          </p>
+
+          <!-- VERIFIED TECHNICAL EXPERTISE (FACTUAL ONLY) -->
+          <div class="about-expertise-grid">
+            <div class="expertise-group">
+              <div class="expertise-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+                AI &amp; Automation
+              </div>
+              <div class="expertise-tags">
+                <span class="expertise-chip">n8n Workflows</span>
+                <span class="expertise-chip">AI Agent Logic</span>
+                <span class="expertise-chip">WhatsApp Auto-Bot</span>
+                <span class="expertise-chip">Voice AI Calling</span>
+                <span class="expertise-chip">CRM Pipelines</span>
+                <span class="expertise-chip">Excel AI Structuring</span>
+              </div>
+            </div>
+
+            <div class="expertise-group">
+              <div class="expertise-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Web &amp; Digital Commerce
+              </div>
+              <div class="expertise-tags">
+                <span class="expertise-chip">Business Websites</span>
+                <span class="expertise-chip">Mobile Optimization</span>
+                <span class="expertise-chip">E-Commerce Ops</span>
+                <span class="expertise-chip">Marketplace SEO</span>
+                <span class="expertise-chip">AI Photography</span>
+                <span class="expertise-chip">Brand Identity</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/work" data-route="/work" class="btn-primary">
+              EXPLORE MY WORK
+            </a>
+            <a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener" class="btn-ghost">
+              CONNECT ON LINKEDIN
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-name">KARISHMA KUMARI</div>
+          <p class="footer-role">
+            AI Automation Architect<br>
+            Founder of Vision AI Studio & Miravika
+          </p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">
+            Email: <a href="mailto:karishmakumaritk19@gmail.com" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">karishmakumaritk19@gmail.com</a><br>
+            Phone: <a href="tel:+919818691915" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">+91 98186 91915</a>
+          </p>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="/" data-route="/">Home</a></li>
+            <li><a href="/work" data-route="/work">Work</a></li>
+            <li><a href="/services" data-route="/services">Services</a></li>
+            <li><a href="/about" data-route="/about">About</a></li>
+            <li><a href="/pricing" data-route="/pricing">Pricing</a></li>
+            <li><a href="/contact" data-route="/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Key Links & Ventures</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+        <div>Built for high performance, transparency, and real business outcomes.</div>
+      </div>
+    </footer>
+
+    <!-- TASTEFUL FLOATING WHATSAPP -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20read%20your%20About%20page%20and%20want%20to%20connect." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+      <span>CHAT ON WHATSAPP</span>
+    </a>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

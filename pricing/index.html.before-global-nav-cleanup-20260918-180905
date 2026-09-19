@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Packages | Karishma Kumari</title>
+  <meta name="description" content="Transparent pricing for Indian businesses: Starter Website ₹2,999, Growth Website ₹5,999, Custom Business Website ₹9,999, and automation workflows.">
+  <link rel="canonical" href="https://karishmakumaritk-cpu.github.io/portfolio-site/pricing/">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pricing & Packages | Karishma Kumari">
+  <meta property="og:description" content="Transparent, predictable rates for websites, AI automations, and digital operations.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/pricing/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="page-view-container page-transition-enter">
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+      <a href="/" data-route="/" class="nav-logo-group">
+        <span class="nav-logo">KARISHMA KUMARI</span>
+        <span class="nav-tagline">AI Automation Architect</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" data-route="/" class="nav-link-item">HOME</a></li>
+        <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+        <li><a href="/services" data-route="/services" class="nav-link-item">SERVICES</a></li>
+        <li><a href="/#ai-search" class="nav-link-item">AI SEARCH</a></li>
+        <li><a href="/about" data-route="/about" class="nav-link-item">ABOUT</a></li>
+        <li><a href="/pricing" data-route="/pricing" class="nav-link-item active">PRICING</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-link-item">CONTACT</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-cta">LET'S TALK</a></li>
+      </ul>
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <!-- PRICING PAGE HERO -->
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <div class="section-eyebrow"><span class="section-num">01 /</span> TRANSPARENT VALUE</div>
+        <h1 class="page-hero-title">PACKAGES &amp; INVESTMENT</h1>
+        <p class="page-hero-sub">
+          “Transparent, Fair &amp; Predictable.” No hidden charges, no fake countdown discounts, no artificial marketing hype. Clear scopes and direct execution.
+        </p>
+      </div>
+    </header>
+
+    <!-- PRICING MAIN CONTENT -->
+    <main class="section-wrap">
+      
+      <div class="section-eyebrow"><span class="section-num">02 /</span> WEBSITE PACKAGES</div>
+      <h2 class="section-title" style="margin-bottom: 0.8rem;">Select the Right Tier for Your Business.</h2>
+      <p class="section-sub">
+        Every website package includes mobile optimization, clean typography, fast performance, and direct WhatsApp customer contact buttons.
+      </p>
+
+      <!-- 3 WEBSITE TIERS (GIVING ₹5,999 STRONG VISUAL PROMINENCE) -->
+      <div class="tier-grid">
+        
+        <!-- TIER 1 -->
+        <div class="tier-card">
+          <div class="tier-name">STARTER WEBSITE</div>
+          <div class="tier-cost">₹2,999</div>
+          <p style="font-size: 0.85rem; color: var(--charcoal); font-weight: 600; margin-bottom: 1.1rem; line-height: 1.45;">
+            Outcome: Launch a credible mobile storefront in 3 days with direct WhatsApp customer routing and essential business details.
+          </p>
+          <ul class="tier-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Single-page conversion landing website</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Mobile-first responsive typography &amp; layout</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Business hours, amenities &amp; Google Map pin</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Instant 1-tap WhatsApp consultation button</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>3-day express turnaround to live domain</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20order%20the%20Starter%20Website%20Package%20(₹2,999)." target="_blank" rel="noopener" class="btn-ghost" style="justify-content: center;">
+            ORDER STARTER (₹2,999) →
+          </a>
+          <div class="tier-scope-note">Ideal for food joints, roadside eateries &amp; solo local services</div>
+        </div>
+
+        <!-- TIER 2 (FEATURED / PROMINENT) -->
+        <div class="tier-card featured-tier">
+          <div class="tier-pop-badge">MOST POPULAR • BEST FOR BUSINESSES</div>
+          <div class="tier-name" style="color: var(--terracotta);">GROWTH WEBSITE</div>
+          <div class="tier-cost" style="color: var(--terracotta-dark);">₹5,999</div>
+          <p style="font-size: 0.88rem; color: var(--charcoal); font-weight: 600; margin-bottom: 1.1rem; line-height: 1.45;">
+            Outcome: Turn your business into an authoritative local choice with curated service menus, lead inquiry routing, and on-page search discoverability.
+          </p>
+          <ul class="tier-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Up to 5 pages / rich multi-section architecture</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom brand styling, color palette &amp; font hierarchy</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Service menu / rate card / trainer or lookbook gallery</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Interactive inquiry form + WhatsApp lead dispatch</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Google Maps embed + local business Schema.org SEO</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>5-day prompt delivery with domain connection assistance</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20order%20the%20Growth%20Website%20Package%20(₹5,999)." target="_blank" rel="noopener" class="btn-primary" style="justify-content: center; font-size: 0.95rem;">
+            CHOOSE GROWTH (₹5,999) →
+          </a>
+          <div class="tier-scope-note" style="color: var(--terracotta); font-weight: 600;">Recommended for gyms, salons, boutique dining &amp; consultants</div>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-card">
+          <div class="tier-name">CUSTOM BUSINESS &amp; AUTOMATION</div>
+          <div class="tier-cost">₹9,999 – ₹14,999</div>
+          <p style="font-size: 0.85rem; color: var(--charcoal); font-weight: 600; margin-bottom: 1.1rem; line-height: 1.45;">
+            Outcome: Deploy an advanced digital engine combining catalog showcases, multi-channel lead automation, payment workflows, and AI search architecture.
+          </p>
+          <ul class="tier-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full custom website architecture &amp; interactive flows</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Product catalog or e-commerce storefront integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Payment gateway / UPI direct checkout flow setup</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom CRM / WhatsApp automated lead qualification bot</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>7-10 day delivery with dedicated post-launch support</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20discuss%20the%20Custom%20Business%20Website%20Package." target="_blank" rel="noopener" class="btn-ghost" style="justify-content: center;">
+            DISCUSS CUSTOM SCOPE →
+          </a>
+          <div class="tier-scope-note">For digital brands, multi-location studios &amp; modern agencies</div>
+        </div>
+
+      </div>
+
+      <!-- AUTOMATION & SPECIALIZED SERVICE RATES -->
+      <div class="section-eyebrow" style="margin-top: 2rem;"><span class="section-num">03 /</span> AUTOMATION &amp; SPECIALIZED SERVICES</div>
+      <h2 class="section-title" style="margin-bottom: 0.8rem;">Modular Operational Services.</h2>
+      <p class="section-sub">
+        Choose standalone automation workflows, marketplace support, or creative production based on your exact operational requirements.
+      </p>
+
+      <div class="pricing-cards-grid">
+        <div class="rate-card gold-flag">
+          <div class="rate-title">AI Chatbot / WhatsApp Agent</div>
+          <div class="rate-cost">₹3,999</div>
+          <div class="rate-info">Setup and integration of custom WhatsApp / Web AI automated customer assistant with your FAQs and product info.</div>
+        </div>
+
+        <div class="rate-card accent-flag">
+          <div class="rate-title">Workflow Automation (n8n)</div>
+          <div class="rate-cost">₹4,999</div>
+          <div class="rate-info">Per automated workflow pipeline connecting Google Sheets, webhooks, WhatsApp, or order notifications.</div>
+        </div>
+
+        <div class="rate-card gold-flag">
+          <div class="rate-title">E-Commerce Management</div>
+          <div class="rate-cost">₹2,999 <span style="font-size: 0.75rem; font-weight: normal; color: var(--muted2);">/ month</span></div>
+          <div class="rate-info">Ongoing cataloging, SEO optimization, and inventory support for Amazon, Flipkart, or Meesho.</div>
+        </div>
+
+        <div class="rate-card accent-flag">
+          <div class="rate-title">AI Product Photoshoot</div>
+          <div class="rate-cost">₹799 <span style="font-size: 0.75rem; font-weight: normal; color: var(--muted2);">/ batch</span></div>
+          <div class="rate-info">Studio-grade staged AI backgrounds and high-converting visual assets for 5 to 10 product photographs.</div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-name">KARISHMA KUMARI</div>
+          <p class="footer-role">
+            AI Automation Architect<br>
+            Founder of Vision AI Studio & Miravika
+          </p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">
+            Email: <a href="mailto:karishmakumaritk19@gmail.com" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">karishmakumaritk19@gmail.com</a><br>
+            Phone: <a href="tel:+919818691915" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">+91 98186 91915</a>
+          </p>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="/" data-route="/">Home</a></li>
+            <li><a href="/work" data-route="/work">Work</a></li>
+            <li><a href="/services" data-route="/services">Services</a></li>
+            <li><a href="/about" data-route="/about">About</a></li>
+            <li><a href="/pricing" data-route="/pricing">Pricing</a></li>
+            <li><a href="/contact" data-route="/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Key Links & Ventures</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+        <div>Built for high performance, transparency, and real business outcomes.</div>
+      </div>
+    </footer>
+
+    <!-- TASTEFUL FLOATING WHATSAPP -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20reviewed%20your%20Pricing%20and%20want%20to%20discuss%20a%20package." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+      <span>CHAT ON WHATSAPP</span>
+    </a>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

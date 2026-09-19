@@ -1755,13 +1755,36 @@ function mountKaiChatbot() {
   const kaiContainer = document.createElement('div');
   kaiContainer.id = 'kai-chatbot-root';
   kaiContainer.innerHTML = `
-    <!-- Floating Trigger Button -->
-    <button class="kai-chatbot-btn" id="kai-toggle-btn" aria-label="Open AI Assistant" onclick="toggleKaiChat()">
-      <span class="kai-btn-pulse"></span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-      <span>Ask KAI (AI Assistant)</span>
+    <!-- KAI — Floating AI Agent -->
+    <button class="kai-chatbot-btn kai-agent-trigger" id="kai-toggle-btn"
+            aria-label="Open KAI AI Agent"
+            onclick="toggleKaiChat()">
+      <span class="kai-agent-orbit kai-orbit-one" aria-hidden="true"></span>
+      <span class="kai-agent-orbit kai-orbit-two" aria-hidden="true"></span>
+
+      <span class="kai-agent-core" aria-hidden="true">
+        <span class="kai-robot-face">
+          <span class="kai-eye kai-eye-left"></span>
+          <span class="kai-eye kai-eye-right"></span>
+          <span class="kai-mouth"></span>
+        </span>
+      </span>
+
+      <span class="kai-agent-signal" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="kai-agent-label">
+        <strong>KAI</strong>
+        <small>AI AGENT</small>
+      </span>
+
+      <span class="kai-agent-online">
+        <span class="kai-btn-pulse"></span>
+        ONLINE
+      </span>
     </button>
 
     <!-- Chatbot Window Modal -->
@@ -1770,7 +1793,7 @@ function mountKaiChatbot() {
         <div class="kai-header-info">
           <div class="kai-avatar">KK</div>
           <div>
-            <div class="kai-name">KAI — Studio Assistant</div>
+            <div class="kai-name">KAI — AI ASSISTANT</div>
             <div class="kai-status">
               <span class="kai-btn-pulse" style="width:6px;height:6px;"></span>
               Online • Karishma Kumari Studio
@@ -1784,7 +1807,7 @@ function mountKaiChatbot() {
         <!-- Initial Welcome Message -->
         <div class="kai-message bot">
           <div class="kai-bubble">
-            <strong>Namaste &amp; Hello!</strong> I am KAI, Karishma Kumari's AI Studio Assistant.<br><br>
+            <strong>Namaste &amp; Hello!</strong> I am KAI, Karishma's AI Assistant.<br><br>
             I can answer questions in <strong>English, Hindi, or Hinglish</strong> regarding:
             <ul style="margin: 0.4rem 0 0.4rem 1.2rem; font-size: 0.82rem; line-height: 1.5;">
               <li>Website Packages (₹2,999 – ₹14,999)</li>
@@ -2604,7 +2627,6 @@ window.scrollToTopHero = scrollToTopHero;
 document.addEventListener('DOMContentLoaded', () => {
   const charStage = document.getElementById('hero-model-wrapper');
   const overlayImg = document.getElementById('developer-character-overlay');
-  const charBadgeText = document.getElementById('character-state-text');
   const pCharStateLabel = document.getElementById('p-char-state-label');
 
   // Mouse Interactive Feathered Mask Reveal
@@ -2618,9 +2640,6 @@ document.addEventListener('DOMContentLoaded', () => {
       overlayImg.style.setProperty('--mask-y', `${y}%`);
       overlayImg.style.setProperty('--mask-radius', '160px');
 
-      if (charBadgeText) {
-        charBadgeText.textContent = 'STATE 02 — DEVELOPER REVEAL';
-      }
     });
 
     charStage.addEventListener('mouseleave', () => {

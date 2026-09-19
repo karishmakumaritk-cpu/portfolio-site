@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Inquiries | Karishma Kumari</title>
+  <meta name="description" content="Get in touch with Karishma Kumari directly via WhatsApp, Phone, Email, or LinkedIn to discuss websites, AI automations, and digital systems.">
+  <link rel="canonical" href="https://karishmakumaritk-cpu.github.io/portfolio-site/contact/">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact & Inquiries | Karishma Kumari">
+  <meta property="og:description" content="Start a project with Karishma Kumari. Verified contact channels and direct consultation.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/contact/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="page-view-container page-transition-enter">
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+      <a href="/" data-route="/" class="nav-logo-group">
+        <span class="nav-logo">KARISHMA KUMARI</span>
+        <span class="nav-tagline">AI Automation Architect</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" data-route="/" class="nav-link-item">HOME</a></li>
+        <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+        <li><a href="/services" data-route="/services" class="nav-link-item">SERVICES</a></li>
+        <li><a href="/#ai-search" class="nav-link-item">AI SEARCH</a></li>
+        <li><a href="/about" data-route="/about" class="nav-link-item">ABOUT</a></li>
+        <li><a href="/pricing" data-route="/pricing" class="nav-link-item">PRICING</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-link-item active">CONTACT</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-cta">LET'S TALK</a></li>
+      </ul>
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <!-- CONTACT PAGE HERO -->
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <div class="section-eyebrow"><span class="section-num">01 /</span> COMMUNICATION &amp; PARTNERSHIP</div>
+        <h1 class="page-hero-title">LET’S TALK</h1>
+        <p class="page-hero-sub">
+          “Have a Business Idea or Need a System Built?” Get directly in touch via verified channels. Fast response, direct 1-on-1 discussion, and honest advice.
+        </p>
+      </div>
+    </header>
+
+    <!-- CONTACT MAIN CONTENT -->
+    <main class="section-wrap">
+      <div class="contact-card">
+        <!-- LEFT: DIRECT VERIFIED CHANNELS -->
+        <div class="contact-left">
+          <div class="section-eyebrow"><span class="section-num">02 /</span> DIRECT REACH</div>
+          <h2>Start a Conversation.</h2>
+          <p>
+            Whether you need a new website, want to automate manual work with AI, or need operational support for your business, reach out directly through any channel below:
+          </p>
+
+          <div class="contact-action-list">
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="contact-direct-item whatsapp-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+              <div>
+                <div class="c-label">WHATSAPP (FASTEST RESPONSE)</div>
+                <div class="c-val">+91 98186 91915</div>
+              </div>
+            </a>
+
+            <!-- PHONE CALL -->
+            <a href="tel:+919818691915" class="contact-direct-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <div class="c-label">PHONE CALL</div>
+                <div class="c-val">+91 98186 91915</div>
+              </div>
+            </a>
+
+            <!-- EMAIL -->
+            <a href="mailto:karishmakumaritk19@gmail.com" class="contact-direct-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <div class="c-label">OFFICIAL EMAIL</div>
+                <div class="c-val">karishmakumaritk19@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- LINKEDIN -->
+            <a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener" class="contact-direct-item">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <div>
+                <div class="c-label">LINKEDIN PROFILE</div>
+                <div class="c-val">Karishma Kumari</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: STRUCTURED INQUIRY FORM (DIRECT WHATSAPP ROUTING) -->
+        <div class="inquiry-box">
+          <h3 class="inquiry-title">Send Project Inquiry</h3>
+          <p class="inquiry-sub">Fill out this quick form — it will generate a formatted WhatsApp brief for instant review.</p>
+          
+          <form onsubmit="handleInquiry(event)">
+            <div class="form-group">
+              <label class="form-label" for="inq-name">Your Name / Business Name *</label>
+              <input type="text" id="inq-name" class="form-input" placeholder="e.g. Ramesh / Salon Luxe" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inq-service">Interested Service *</label>
+              <select id="inq-service" class="form-select">
+                <option value="Website Development (Growth Package ₹5,999)">Website Development (Growth ₹5,999)</option>
+                <option value="Starter Website (₹2,999)">Starter Website (₹2,999)</option>
+                <option value="Custom Business Website (₹9,999+)">Custom Business Website (₹9,999+)</option>
+                <option value="AI Automation & AI Agents">AI Automation &amp; AI Agents</option>
+                <option value="Workflow Automation (n8n)">Workflow Automation (n8n)</option>
+                <option value="E-Commerce Management">E-Commerce Management</option>
+                <option value="AI Creative & Product Staging">AI Creative &amp; Product Staging</option>
+                <option value="Turnkey Digital Business Setup">Turnkey Digital Business Setup</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inq-budget">Estimated Budget (Optional)</label>
+              <select id="inq-budget" class="form-select">
+                <option value="₹2,999 - ₹5,999">₹2,999 – ₹5,999</option>
+                <option value="₹5,999 - ₹15,000">₹5,999 – ₹15,000</option>
+                <option value="₹15,000 - ₹30,000">₹15,000 – ₹30,000</option>
+                <option value="₹30,000+">₹30,000+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inq-message">Brief Details / Requirements *</label>
+              <textarea id="inq-message" class="form-textarea" rows="3" placeholder="Tell me what your business does and what you're looking to build or automate..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+              SEND INQUIRY VIA WHATSAPP
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-name">KARISHMA KUMARI</div>
+          <p class="footer-role">
+            AI Automation Architect<br>
+            Founder of Vision AI Studio & Miravika
+          </p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.6;">
+            Email: <a href="mailto:karishmakumaritk19@gmail.com" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">karishmakumaritk19@gmail.com</a><br>
+            Phone: <a href="tel:+919818691915" style="color: var(--charcoal); text-decoration: none; font-weight: 500;">+91 98186 91915</a>
+          </p>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="/" data-route="/">Home</a></li>
+            <li><a href="/work" data-route="/work">Work</a></li>
+            <li><a href="/services" data-route="/services">Services</a></li>
+            <li><a href="/about" data-route="/about">About</a></li>
+            <li><a href="/pricing" data-route="/pricing">Pricing</a></li>
+            <li><a href="/contact" data-route="/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Key Links & Ventures</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+        <div>Built for high performance, transparency, and real business outcomes.</div>
+      </div>
+    </footer>
+
+    <!-- TASTEFUL FLOATING WHATSAPP -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20am%20on%20your%20Contact%20page%20and%20want%20to%20chat." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+      <span>CHAT ON WHATSAPP</span>
+    </a>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

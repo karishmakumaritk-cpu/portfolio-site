@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karishma Kumari | AI Automation Architect</title>
+  <meta name="description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://karishmakumaritk-cpu.github.io/portfolio-site/">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karishma Kumari | AI Automation Architect">
+  <meta property="og:description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/">
+  <meta property="og:image" content="https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg">
+  <meta property="og:site_name" content="Karishma Kumari Portfolio">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karishma Kumari | AI Automation Architect">
+  <meta name="twitter:description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  <meta name="twitter:image" content="https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg">
+  
+  <!-- Google Fonts: Luxury Editorial Serif + Refined Space Grotesk + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD Graph for AI Search & E-E-A-T Grounding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#person",
+        "name": "Karishma Kumari",
+        "jobTitle": "AI Automation Architect",
+        "url": "https://karishmakumaritk-cpu.github.io/portfolio-site/",
+        "image": "https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/karishma-kumari-1a2b65235/",
+          "https://github.com/karishmakumaritk-cpu"
+        ],
+        "knowsAbout": [
+          "AI Automation Architecture",
+          "Agentic AI Workflows & n8n",
+          "WhatsApp Business API Integration",
+          "Schema.org JSON-LD & AEO Strategy",
+          "E-Commerce Digital Storefronts",
+          "Conversion Web Architecture"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#website",
+        "url": "https://karishmakumaritk-cpu.github.io/portfolio-site/",
+        "name": "Karishma Kumari | AI Automation Architect",
+        "description": "AI automation systems, business websites, digital products and AI search visibility solutions.",
+        "publisher": {
+          "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#person"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="has-custom-cursor">
+  <!-- Custom Luxury Cursor System (Desktop) -->
+  <div class="luxury-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="luxury-cursor-ring" id="cursor-ring" aria-hidden="true">
+    <span class="luxury-cursor-label" id="cursor-label">EXPLORE</span>
+  </div>
+
+  <!-- Global Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Persistent Character Visual Guide Anchor (Scroll Story Indicator) -->
+  <div class="persistent-character-anchor" id="persistent-character-anchor" aria-label="Karishma Character Visual Guide" onclick="scrollToTopHero()">
+    <div class="p-char-thumb">
+      
+      <span class="p-char-glow"></span>
+    </div>
+    
+
+  </div>
+
+  <div class="page-view-container page-transition-enter">
+    <!-- FILM OPENING BLACK CURTAIN -->
+    <div class="film-opening-curtain" id="film-opening-curtain" aria-hidden="true"></div>
+
+    <!-- 1. STICKY GLOBAL NAVIGATION -->
+    <header id="site-header">
+      <nav id="navbar" aria-label="Main Navigation">
+        <a href="/" data-route="/" class="nav-logo-group">
+          <span class="nav-logo">KARISHMA KUMARI</span>
+          <span class="nav-tagline">AI Systems &amp; Product Builder</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link-item">WORK</a></li>
+          <li><a href="#about" class="nav-link-item">ABOUT</a></li>
+          <li><a href="#capabilities" class="nav-link-item">CAPABILITIES</a></li>
+          <li><a href="#process" class="nav-link-item">PROCESS</a></li>
+          <li><a href="#contact" class="nav-link-item">CONTACT</a></li>
+          <li><a href="#contact" class="nav-cta">LET'S TALK ↗</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- 2. FULL VIEWPORT CINEMATIC EDITORIAL HERO SECTION -->
+      <section class="hero-editorial" id="hero">
+        <!-- Film Grain / Noise Overlay -->
+        <div class="hero-film-grain" aria-hidden="true"></div>
+
+        <!-- Living Background Art Direction & Ambient Gold Spotlight -->
+        <div class="hero-living-bg" aria-hidden="true">
+          <div class="hero-spotlight-radial" id="hero-spotlight"></div>
+        </div>
+
+        <div class="hero-inner" id="hero-camera-container">
+          <div class="hero-content" id="hero-text-col">
+
+            <div class="hero-kicker reveal-eyebrow">
+              <span class="kicker-live-dot" aria-hidden="true"></span>
+              <span>AI SYSTEMS / AUTOMATION / PRODUCTS</span>
+            </div>
+
+            <h1 class="hero-dramatic-title reveal-mask">
+              <span class="mask-line title-line">I BUILD</span>
+              <span class="mask-line title-line title-accent">AI SYSTEMS</span>
+              <span class="mask-line title-line">THAT MOVE.</span>
+            </h1>
+
+            <p class="hero-sub-statement reveal-up">
+              AI agents, automation workflows, commerce systems and digital products — designed, built and shipped for real businesses.
+            </p>
+
+            <div class="hero-actions-group reveal-up">
+              <a href="#work" class="btn-primary hero-btn-main">
+                <span>EXPLORE SYSTEMS ↗</span>
+              </a>
+              <a href="#contact" class="btn-ghost hero-btn-sec">
+                <span>START A PROJECT ↗</span>
+              </a>
+            </div>
+
+            <div class="hero-micro-meta reveal-up" aria-hidden="true">
+              <span>01</span>
+              <span class="meta-line"></span>
+              <span>BUILDING IN PUBLIC</span>
+            </div>
+
+          </div>
+
+          <!-- Editorial Portrait Stage with Interactive Character Reveal -->
+          <div class="hero-portrait-stage" id="hero-portrait-stage">
+            <div class="portrait-wrapper interactive-character-stage" id="hero-model-wrapper" data-cursor-label="REVEAL">
+              <!-- Base Layer: Professional State -->
+              <img src="src/assets/images/karishma-professional.png" 
+                   alt="Karishma Kumari - Professional State" 
+                   class="hero-portrait-img base-character-layer" 
+                   width="1024" 
+                   height="1536" 
+                   fetchpriority="high" 
+                   loading="eager"
+                   onerror="this.onerror=null; this.src='/images/karishma_hero_portrait_v2.jpg';">
+
+              <!-- Overlay Layer: Developer / AI State (Revealed via Feathered Radial Mask on Hover) -->
+              <img src="src/assets/images/karishma-developer.png" 
+                   alt="Karishma Kumari - Developer State" 
+                   class="hero-portrait-img overlay-character-layer" 
+                   id="developer-character-overlay"
+                   width="1024" 
+                   height="1536" 
+                   loading="eager"
+                   onerror="this.onerror=null; this.src='/images/regenerated_image_1789057685366.png';">
+
+              <div class="portrait-blend-gradient" aria-hidden="true"></div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+</div>
+
+      <!-- 4. ABOUT -->
+      <section class="section-wrap about-editorial-section" id="about">
+        <div class="about-editorial-grid">
+          <!-- Portrait & Ventures Column -->
+          <div class="about-portrait-col reveal-left">
+            <div class="about-portrait-box reveal-scale">
+              <div class="about-portrait-badge">
+                <span class="role-tag">BUILDER &amp; OPERATOR</span>
+                <span class="name-tag">Karishma Kumari</span>
+                <span class="geo-tag">DELHI, INDIA</span>
+              </div>
+            </div>
+
+            <div class="about-ventures-list stagger-chips">
+              <div class="venture-item">
+                <span class="v-dot gold"></span>
+                <div class="v-info">
+                  <span class="v-title">Vision AI Studio</span>
+                  <span class="v-desc">Founder &amp; Builder (velision.in)</span>
+                </div>
+              </div>
+              <div class="venture-item">
+                <span class="v-dot active"></span>
+                <div class="v-info">
+                  <span class="v-title">MIRAVIKA</span>
+                  <span class="v-desc">E-commerce Operator (miravika.com)</span>
+                </div>
+              </div>
+              <div class="venture-item">
+                <span class="v-dot"></span>
+                <div class="v-info">
+                  <span class="v-title">Buildy Tools</span>
+                  <span class="v-desc">Product Builder (buildy-tools.lovable.app)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative Column -->
+          <div class="about-text-col reveal-right">
+            <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">ABOUT</span></div>
+            <h2 class="about-headline reveal-mask">
+              <span class="mask-line">I build practical digital systems at the intersection of AI, automation, commerce and web technology.</span>
+            </h2>
+
+            <div class="about-body-copy reveal-up" style="margin-top: 1.5rem;">
+              <p>
+                As an e-commerce operator running <strong>MIRAVIKA</strong> (a live D2C brand selling fashion accessories across independent storefronts, Flipkart, Meesho, and Amazon), I understand first-hand the operational realities of inventory, customer response times, and checkout funnels.
+              </p>
+              <p>
+                Through <strong>Vision AI Studio</strong> and client engagements, I engineer custom web products, multi-agent AI workflows, and automated WhatsApp inquiry bridges that replace manual friction with fast, reliable execution.
+              </p>
+            </div>
+
+            <div class="about-ctas-row reveal-up">
+              <a href="#work" class="btn-primary">
+                <span>VIEW WORK ↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener" class="btn-ghost">
+                <span>LINKEDIN ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SELECTED WORK ARCHIVE -->
+      <section class="section-wrap" id="work">
+        <div class="work-watermark-bg" aria-hidden="true">ARCHIVE</div>
+
+        <div class="work-header-bar reveal-up">
+          <div>
+            <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">SELECTED WORK</span></div>
+            <h2 class="section-title reveal-mask"><span class="mask-line">Built Systems &amp; Live Products</span></h2>
+            <p class="section-sub reveal-up" style="margin-bottom: 0;">
+              Real systems, live e-commerce storefronts, client sites, and digital utilities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="work-filter-bar reveal-up stagger-chips">
+          <button class="filter-pill active" onclick="renderProjects('all')" type="button">ALL <span class="filter-count">7</span></button>
+          <button class="filter-pill" onclick="renderProjects('ventures')" type="button">VENTURES <span class="filter-count">2</span></button>
+          <button class="filter-pill" onclick="renderProjects('client')" type="button">CLIENT SITES <span class="filter-count">3</span></button>
+          <button class="filter-pill" onclick="renderProjects('templates')" type="button">TEMPLATES &amp; TOOLS <span class="filter-count">2</span></button>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- 1. MIRAVIKA -->
+          <div class="project-card featured-wide" onclick="openModal('miravika')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-own">OWN BUSINESS • LIVE</span>
+              <img src="/images/miravika_store_concept_1788341144429.jpg" alt="MIRAVIKA" class="project-img-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('has-fallback'); this.style.display='none';">
+              <div class="project-fallback-visual">
+                <span class="project-fallback-tag">E-Commerce Brand</span>
+                <span class="project-fallback-name">MIRAVIKA</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">E-Commerce Brand</span>
+                <span class="project-concept-indicator">Live D2C Store</span>
+              </div>
+              <h3 class="project-title">MIRAVIKA — D2C E-Commerce Brand</h3>
+              <p class="project-desc">My own active fashion &amp; beauty consumer e-commerce brand operating an independent storefront alongside Flipkart, Meesho, and Amazon listings.</p>
+              <div class="project-actions">
+                <a href="https://miravika.com/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VISIT MIRAVIKA STORE →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Vision AI Studio -->
+          <div class="project-card wide-landscape" onclick="openModal('vision-ai-studio')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-team">TEAM PROJECT • IN DEVELOPMENT</span>
+              <div class="project-visual-abstract">
+                <div class="abstract-ring"></div>
+                <div class="abstract-core">
+                  <span class="abstract-label">AI Automation Studio</span>
+                  <span class="abstract-sub">Vision AI Studio</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">AI Automation SaaS</span>
+                <span class="project-concept-indicator">Team Platform</span>
+              </div>
+              <h3 class="project-title">Vision AI Studio / Velision</h3>
+              <p class="project-desc">A team-led AI automation studio currently being developed to create scalable multi-agent workflows, customer inquiry bots, and SaaS business solutions.</p>
+              <div class="project-actions">
+                <a href="https://velision.in/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VISIT VISION AI STUDIO →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Kuchuu Puchuu -->
+          <div class="project-card medium-standard" onclick="openModal('kuchuu-puchuu')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-sold">CLIENT DELIVERY • LIVE</span>
+              <img src="/images/kuchuu_chai_concept_1788340999750.jpg" alt="Kuchuu Puchuu" class="project-img-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('has-fallback'); this.style.display='none';">
+              <div class="project-fallback-visual">
+                <span class="project-fallback-tag">Client Business Website</span>
+                <span class="project-fallback-name">Kuchuu Puchuu — Chai &amp; Bites</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">Client Delivery</span>
+                <span class="project-concept-indicator">Live Client Site</span>
+              </div>
+              <h3 class="project-title">Kuchuu Puchuu — Chai &amp; Bites</h3>
+              <p class="project-desc">Custom commercial business website delivered for a street chai and food business, featuring mobile menu presentation, local map integration, and WhatsApp ordering.</p>
+              <div class="project-actions">
+                <a href="https://kuchuu-puchuu-chai-bites.ai.studio/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VIEW LIVE WEBSITE →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Lumière Beauty Studio -->
+          <div class="project-card medium-standard" onclick="openModal('lumiere')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-sold">CLIENT DELIVERY • LIVE</span>
+              <img src="/images/lumiere_salon_concept_1788341026422.jpg" alt="Lumière" class="project-img-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('has-fallback'); this.style.display='none';">
+              <div class="project-fallback-visual">
+                <span class="project-fallback-tag">Salon &amp; Beauty Site</span>
+                <span class="project-fallback-name">Lumière Beauty Studio</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">Client Delivery</span>
+                <span class="project-concept-indicator">Live Client Site</span>
+              </div>
+              <h3 class="project-title">Lumière Beauty Studio</h3>
+              <p class="project-desc">Editorial beauty salon website created for hair stylists and aesthetic clinics, featuring treatment rate cards and direct WhatsApp appointment triggers.</p>
+              <div class="project-actions">
+                <a href="https://karishmakumaritk-cpu.github.io/Selon-templet-1/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VIEW LIVE DEMO →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Majestic Estates -->
+          <div class="project-card wide-landscape" onclick="openModal('majestic-estates')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-sold">CLIENT DELIVERY • LIVE</span>
+              <img src="/images/majestic_realestate_concept_1788341065851.jpg" alt="Majestic Estates" class="project-img-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('has-fallback'); this.style.display='none';">
+              <div class="project-fallback-visual">
+                <span class="project-fallback-tag">Real Estate Showcase</span>
+                <span class="project-fallback-name">Majestic Estates</span>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">Client Delivery</span>
+                <span class="project-concept-indicator">Live Client Site</span>
+              </div>
+              <h3 class="project-title">Majestic Estates — Property Showcase</h3>
+              <p class="project-desc">High-ticket real estate showcase platform built for property consultants in Delhi NCR, with prime locality highlights and instant WhatsApp inquiry forms.</p>
+              <div class="project-actions">
+                <a href="https://karishmakumaritk-cpu.github.io/majestic-estates/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VIEW LIVE DEMO →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. IronVault Fitness -->
+          <div class="project-card wide-landscape" onclick="openModal('ironvault-fitness')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-template">TEMPLATE &amp; PIPELINE</span>
+              <div class="project-visual-abstract dark-athletic">
+                <div class="abstract-core">
+                  <span class="abstract-badge-athletic">ATHLETIC LEAD ENGINE</span>
+                  <span class="abstract-sub athletic-title">IRONVAULT FITNESS</span>
+                  <span class="abstract-athletic-caption">Gym &amp; WhatsApp Lead Pipeline</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">Commercial Template</span>
+                <span class="project-concept-indicator">Gym Engine</span>
+              </div>
+              <h3 class="project-title">IronVault Fitness — Gym Lead Engine</h3>
+              <p class="project-desc">Dark-athletic gym website template engineered around free-trial workout pass bookings, direct WhatsApp lead dispatch, and local map SEO schema.</p>
+              <div class="project-actions">
+                <a href="https://karishmakumari143la-droid.github.io/Gym-temp-01/" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  VIEW LIVE DEMO →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Buildy Tools -->
+          <div class="project-card medium-standard" onclick="openModal('buildy-tools')">
+            <div class="project-thumb-frame">
+              <span class="project-status-tag status-free">FREE DIGITAL TOOL</span>
+              <div class="project-visual-abstract">
+                <div class="abstract-ring"></div>
+                <div class="abstract-core">
+                  <span class="abstract-label">Free Digital Utility</span>
+                  <span class="abstract-sub">Buildy Tools</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-header">
+                <span class="project-cat">Digital Utility</span>
+                <span class="project-concept-indicator">Free Tool</span>
+              </div>
+              <h3 class="project-title">Buildy Tools — Free Excel Automation Tool</h3>
+              <p class="project-desc">Practical browser-based data restructuring tool that turns raw copied text into clean tabular records instantly with zero installation.</p>
+              <div class="project-actions">
+                <a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener" class="project-link-cta" onclick="event.stopPropagation()">
+                  TRY IT FREE →
+                </a>
+                <button class="project-details-btn" type="button">Details &amp; Specs</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CAPABILITIES -->
+      <section class="section-wrap" id="capabilities">
+        <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">CAPABILITIES</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">Core Capabilities &amp; Engineering Scope</span></h2>
+        <p class="section-sub reveal-up">
+          Focused capabilities across AI systems, web products, automation, commerce, and discoverability.
+        </p>
+
+        <div class="capabilities-grid">
+          <div class="cap-card reveal-left">
+            <div class="cap-header">
+              <span class="cap-num">01</span>
+              <h3 class="cap-title">AI SYSTEMS</h3>
+            </div>
+            <p class="cap-desc">
+              AI agents, conversational workflows, 24/7 lead triage, WhatsApp API integrations, and business automation.
+            </p>
+            <ul class="cap-tags">
+              <li>WhatsApp API</li>
+              <li>LLM Workflows</li>
+              <li>Lead Triage</li>
+              <li>Custom Agents</li>
+            </ul>
+          </div>
+
+          <div class="cap-card reveal-right">
+            <div class="cap-header">
+              <span class="cap-num">02</span>
+              <h3 class="cap-title">WEB PRODUCTS</h3>
+            </div>
+            <p class="cap-desc">
+              Next.js, React, responsive product interfaces, high-converting digital landing pages, and sub-second web experiences.
+            </p>
+            <ul class="cap-tags">
+              <li>Next.js</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+
+          <div class="cap-card reveal-left">
+            <div class="cap-header">
+              <span class="cap-num">03</span>
+              <h3 class="cap-title">AUTOMATION</h3>
+            </div>
+            <p class="cap-desc">
+              APIs, webhooks, workflow orchestration, database sync, n8n event pipelines, and business process automation.
+            </p>
+            <ul class="cap-tags">
+              <li>n8n</li>
+              <li>Webhooks</li>
+              <li>REST APIs</li>
+              <li>Database Sync</li>
+            </ul>
+          </div>
+
+          <div class="cap-card reveal-right">
+            <div class="cap-header">
+              <span class="cap-num">04</span>
+              <h3 class="cap-title">COMMERCE</h3>
+            </div>
+            <p class="cap-desc">
+              D2C storefronts, marketplace catalog SEO (Amazon, Flipkart, Meesho), inventory flows, and payment checkout integrations.
+            </p>
+            <ul class="cap-tags">
+              <li>D2C Stores</li>
+              <li>Marketplace SEO</li>
+              <li>Razorpay/Stripe</li>
+              <li>Catalog Ops</li>
+            </ul>
+          </div>
+
+          <div class="cap-card cap-card-wide reveal-up">
+            <div class="cap-header">
+              <span class="cap-num">05</span>
+              <h3 class="cap-title">AI SEARCH &amp; VISIBILITY</h3>
+            </div>
+            <p class="cap-desc">
+              Structured content, technical SEO, Schema.org JSON-LD microdata, entity signals, and AI-readable information architecture.
+            </p>
+            <ul class="cap-tags">
+              <li>Schema.org</li>
+              <li>Technical SEO</li>
+              <li>Structured Data</li>
+              <li>Entity Signals</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COMPACT TECHNICAL STACK -->
+        <div class="tech-stack-wrap reveal-up" style="margin-top: 3rem;">
+          <div class="tech-stack-header">
+            <span class="tech-stack-title">TECHNICAL STACK</span>
+            <span class="tech-stack-sub">Core tools and frameworks used across my systems</span>
+          </div>
+          <div class="tech-chips-flex">
+            <span class="tech-chip">Next.js</span>
+            <span class="tech-chip">React</span>
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">FastAPI</span>
+            <span class="tech-chip">Supabase</span>
+            <span class="tech-chip">PostgreSQL</span>
+            <span class="tech-chip">REST APIs</span>
+            <span class="tech-chip">Webhooks</span>
+            <span class="tech-chip">WhatsApp APIs</span>
+            <span class="tech-chip">LLM APIs</span>
+            <span class="tech-chip">Vercel</span>
+            <span class="tech-chip">Render</span>
+            <span class="tech-chip">n8n</span>
+          </div>
+
+          <!-- AUTHENTIC DEVELOPER TERMINAL INTERACTION -->
+          <div class="developer-terminal-box reveal-up" style="margin-top: 2rem;" data-cursor-label="INTERACT">
+            <div class="terminal-top-bar">
+              <div class="terminal-dots">
+                <span class="t-dot close"></span>
+                <span class="t-dot minimize"></span>
+                <span class="t-dot expand"></span>
+              </div>
+              <div class="terminal-title">karishma@portfolio:~ (zsh)</div>
+              <div class="terminal-badge">STATE 02 — DEVELOPER MODE</div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <div class="t-line t-welcome">Karishma's Developer Console v2.4 initialized. Type a query or click a quick command below.</div>
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">ask karishma build</span></div>
+              <div class="t-line t-response">> AI Automation workflows, WhatsApp inquiry bots, D2C e-commerce storefronts, and high-converting web applications.</div>
+              <div class="t-output-area" id="terminal-output"></div>
+            </div>
+            <div class="terminal-input-row">
+              <span class="t-prompt">$</span>
+              <input type="text" id="terminal-input" class="t-input" placeholder="type 'ask karishma stack' or 'ask karishma ventures'..." onkeydown="if(event.key==='Enter') executeTerminalCmd()">
+              <button type="button" class="t-run-btn" onclick="executeTerminalCmd()">RUN ↗</button>
+            </div>
+            <div class="terminal-shortcuts">
+              <span class="t-s-label">Quick Commands:</span>
+              <button type="button" class="t-chip" onclick="runTermCmd('ask karishma build')">ask karishma build</button>
+              <button type="button" class="t-chip" onclick="runTermCmd('ask karishma stack')">ask karishma stack</button>
+              <button type="button" class="t-chip" onclick="runTermCmd('ask karishma ventures')">ask karishma ventures</button>
+              <button type="button" class="t-chip" onclick="runTermCmd('ask karishma contact')">ask karishma contact</button>
+              <button type="button" class="t-chip" onclick="runTermCmd('clear')">clear</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PROCESS -->
+      <section class="section-wrap" id="process">
+        <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">PROCESS</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">HOW I BUILD</span></h2>
+        <p class="section-sub reveal-up">
+          A transparent engineering methodology for building reliable digital systems.
+        </p>
+
+        <!-- Horizontal Storytelling Process Track (No 01, 02 numbers) -->
+        <div class="process-path-container">
+          <div class="process-steps-row stagger-chips">
+            <div class="process-node-card active">
+              <h4 class="p-step-title">Understand</h4>
+              <p class="p-step-desc">Extract business mechanics &amp; identify manual operational bottlenecks.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Map</h4>
+              <p class="p-step-desc">Define system architecture, data flow &amp; API webhook integration points.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Design</h4>
+              <p class="p-step-desc">Craft editorial visual direction, wireframing &amp; mobile UX hierarchy.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Build</h4>
+              <p class="p-step-desc">Construct clean, fast web interfaces with sub-second performance.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Connect</h4>
+              <p class="p-step-desc">Integrate WhatsApp Business API, payment gateways &amp; CRMs.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Automate</h4>
+              <p class="p-step-desc">Deploy event pipelines &amp; AI lead triage workflows.</p>
+            </div>
+
+            <div class="process-node-card">
+              <h4 class="p-step-title">Measure</h4>
+              <p class="p-step-desc">Validate structured schemas, analytics &amp; post-launch execution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. AI SEARCH & VISIBILITY -->
+      <section class="section-wrap" id="ai-search">
+        <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">AI SEARCH</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">AI SEARCH &amp; VISIBILITY</span></h2>
+        <p class="section-sub reveal-up">
+          Designing web architecture so information is structured, semantically clear, and readable by both human users and AI engines.
+        </p>
+
+        <div class="ai-overview-grid reveal-up">
+          <div class="ai-feature-pill">Structured Content</div>
+          <div class="ai-feature-pill">Entity Understanding</div>
+          <div class="ai-feature-pill">Technical SEO</div>
+          <div class="ai-feature-pill">Schema Microdata</div>
+          <div class="ai-feature-pill">Content Architecture</div>
+          <div class="ai-feature-pill">AI-Readable Information</div>
+        </div>
+
+        <!-- Interactive Mini Demo: ASK ABOUT MY WORK -->
+        <div class="ai-interactive-demo reveal-up" style="margin-top: 2.5rem;">
+          <div class="demo-header-bar">
+            <span class="demo-status-dot"></span>
+            <span class="demo-title">ASK ABOUT MY WORK</span>
+            <span class="demo-badge">INTERACTIVE DEMO</span>
+          </div>
+
+          <div class="demo-input-container">
+            <div class="demo-chips-label">Quick Queries:</div>
+            <div class="demo-chips-row">
+              <button type="button" class="query-chip" onclick="askAiDemo('What does Karishma build?')">"What does Karishma build?"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('Tell me about Miravika')">"Tell me about Miravika"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('What AI systems do you build?')">"What AI systems do you build?"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('How can we work together?')">"How can we work together?"</button>
+            </div>
+
+            <div class="demo-search-row">
+              <input type="text" id="ai-demo-input" class="demo-search-input" placeholder="Ask a question about Karishma's work..." onkeydown="if(event.key==='Enter') runCustomAiQuery()">
+              <button type="button" class="btn-primary demo-ask-btn" onclick="runCustomAiQuery()">ASK ↗</button>
+            </div>
+          </div>
+
+          <div class="demo-output-box" id="ai-demo-output">
+            <div class="demo-output-header">
+              <span class="source-tag">SYNTHESIZED FROM VERIFIED PORTFOLIO CONTENT</span>
+            </div>
+            <div class="demo-output-body" id="ai-demo-text">
+              Click any question above or type your own to test how structured content enables instant synthesis.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. PRICING -->
+      <section class="section-wrap" id="pricing">
+        <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">PRICING</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">Commercial Offers</span></h2>
+        <p class="section-sub reveal-up">
+          Compact, transparent commercial offers for web products and systems.
+        </p>
+
+        <div class="compact-pricing-grid reveal-up">
+          <div class="compact-price-card">
+            <div class="c-price-title">WEBSITES</div>
+            <div class="c-price-num">starting from ₹2,999</div>
+            <p class="c-price-desc">Conversion-focused responsive sites with WhatsApp inquiry triggers.</p>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20am%20interested%20in%20a%20Website%20project." target="_blank" rel="noopener" class="btn-ghost c-price-btn">INQUIRE ↗</a>
+          </div>
+
+          <div class="compact-price-card featured-price">
+            <div class="c-price-title">AUTOMATION</div>
+            <div class="c-price-num">starting from ₹4,999</div>
+            <p class="c-price-desc">n8n workflows, CRM webhooks, and automated lead handling.</p>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20am%20interested%20in%20Automation." target="_blank" rel="noopener" class="btn-primary c-price-btn">INQUIRE ↗</a>
+          </div>
+
+          <div class="compact-price-card">
+            <div class="c-price-title">AI SYSTEMS</div>
+            <div class="c-price-num">Custom</div>
+            <p class="c-price-desc">Multi-agent workflows, WhatsApp agents, and custom AI logic.</p>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20am%20interested%20in%20an%20AI%20System." target="_blank" rel="noopener" class="btn-ghost c-price-btn">INQUIRE ↗</a>
+          </div>
+
+          <div class="compact-price-card">
+            <div class="c-price-title">E-COMMERCE</div>
+            <div class="c-price-num">starting from ₹5,999</div>
+            <p class="c-price-desc">D2C storefronts, marketplace SEO, and catalog setup.</p>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20am%20interested%20in%20E-Commerce." target="_blank" rel="noopener" class="btn-ghost c-price-btn">INQUIRE ↗</a>
+          </div>
+
+          <div class="compact-price-card">
+            <div class="c-price-title">CUSTOM SYSTEM</div>
+            <div class="c-price-num">Let's discuss</div>
+            <p class="c-price-desc">Full-stack web applications, custom databases, and end-to-end ops.</p>
+            <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20discuss%20a%20Custom%20System." target="_blank" rel="noopener" class="btn-ghost c-price-btn">LET'S TALK ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. CONTACT -->
+      <section class="section-wrap contact-cinematic-section" id="contact">
+        <div class="contact-cinematic-inner">
+          <div class="contact-hero-statement reveal-left">
+            <div class="section-eyebrow reveal-eyebrow"><span class="section-line"></span><span class="eyebrow-text">CONTACT</span></div>
+            <h2 class="contact-huge-title reveal-mask">
+              <span class="mask-line">LET'S BUILD</span>
+            </h2>
+            <p class="contact-editorial-sub reveal-up">
+              Direct technical partnership for your next web application, e-commerce storefront, or automation workflow.
+            </p>
+
+            <div class="contact-actions-duo reveal-up" style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20start%20a%20project." target="_blank" rel="noopener" class="btn-primary">
+                <span>START A PROJECT ↗</span>
+              </a>
+              <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20messaging%20you%20from%20your%20portfolio." target="_blank" rel="noopener" class="btn-ghost">
+                <span>MESSAGE ON WHATSAPP ↗</span>
+              </a>
+            </div>
+
+            <div class="contact-fast-channels reveal-up stagger-chips" style="margin-top: 2rem;">
+              <a href="mailto:karishmakumaritk19@gmail.com" class="contact-quick-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <div>
+                  <div class="q-label">EMAIL</div>
+                  <div class="q-val">karishmakumaritk19@gmail.com</div>
+                </div>
+              </a>
+              <a href="https://wa.me/919818691915" target="_blank" rel="noopener" class="contact-quick-item">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+                <div>
+                  <div class="q-label">WHATSAPP</div>
+                  <div class="q-val">+91 98186 91915</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Brief Form -->
+          <div class="contact-form-panel reveal-right">
+            <div class="form-header-bar">
+              <span class="form-title">PROJECT INQUIRY</span>
+              <span class="form-status">INSTANT DISPATCH</span>
+            </div>
+            <form onsubmit="handleInquiry(event)" class="contact-form-inner">
+              <div class="form-group">
+                <label class="form-label" for="inq-name">Your Name / Business Name *</label>
+                <input type="text" id="inq-name" class="form-input" placeholder="e.g. Ramesh Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inq-contact">Email / WhatsApp Number *</label>
+                <input type="text" id="inq-contact" class="form-input" placeholder="e.g. +91 98123 45678 or ramesh@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inq-details">What are you building? *</label>
+                <textarea id="inq-details" class="form-textarea" rows="3" placeholder="Describe what you are building or looking to automate..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="inq-budget">Budget Range (Optional)</label>
+                <select id="inq-budget" class="form-select">
+                  <option value="Not specified">Select budget range</option>
+                  <option value="₹2,999 - ₹5,999">₹2,999 – ₹5,999</option>
+                  <option value="₹5,999 - ₹15,000">₹5,999 – ₹15,000</option>
+                  <option value="₹15,000 - ₹30,000">₹15,000 – ₹30,000</option>
+                  <option value="₹30,000+">₹30,000+</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-primary submit-commission-btn">
+                <span>SUBMIT INQUIRY ↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 11. PROJECT MODAL -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-body">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- 12. MINIMAL EDITORIAL FOOTER -->
+    <footer id="global-footer" class="cinematic-credits-footer">
+      <div class="footer-inner">
+        <div class="footer-col reveal-left">
+          <div class="footer-film-logo">
+            <span class="gold-symbol">◆</span>
+            <span class="footer-name">KARISHMA KUMARI</span>
+          </div>
+          <p class="footer-role">
+            AI Automation Architect &amp; Product Builder &bull; Delhi, India
+          </p>
+          <div class="footer-contact-specs">
+            <div><span class="spec-label">EMAIL:</span> <a href="mailto:karishmakumaritk19@gmail.com" class="footer-direct-link">karishmakumaritk19@gmail.com</a></div>
+            <div><span class="spec-label">WHATSAPP:</span> <a href="https://wa.me/919818691915" target="_blank" rel="noopener" class="footer-direct-link">+91 98186 91915</a></div>
+          </div>
+        </div>
+        
+        <div class="footer-links-col reveal-right">
+          <div class="footer-col-header">CONNECT</div>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/karishmakumaritk-cpu" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom reveal-up">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- TASTEFUL FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20would%20like%20to%20discuss%20a%20website%20or%20automation%20project." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+    </a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

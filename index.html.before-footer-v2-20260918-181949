@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karishma Kumari | AI Automation Architect</title>
+  <meta name="description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://karishmakumaritk-cpu.github.io/portfolio-site/">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karishma Kumari | AI Automation Architect">
+  <meta property="og:description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  <meta property="og:url" content="https://karishmakumaritk-cpu.github.io/portfolio-site/">
+  <meta property="og:image" content="https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg">
+  <meta property="og:site_name" content="Karishma Kumari Portfolio">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karishma Kumari | AI Automation Architect">
+  <meta name="twitter:description" content="AI automation systems, business websites, digital products and AI search visibility solutions built for modern businesses by Karishma Kumari.">
+  <meta name="twitter:image" content="https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg">
+  
+  <!-- Google Fonts: Luxury Editorial Serif + Refined Space Grotesk + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org JSON-LD Graph for AI Search & E-E-A-T Grounding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#person",
+        "name": "Karishma Kumari",
+        "jobTitle": "AI Automation Architect",
+        "url": "https://karishmakumaritk-cpu.github.io/portfolio-site/",
+        "image": "https://karishmakumaritk-cpu.github.io/portfolio-site/images/karishma_hero_portrait_v2.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/karishma-kumari-1a2b65235/",
+          "https://github.com/karishmakumaritk-cpu"
+        ],
+        "knowsAbout": [
+          "AI Automation Architecture",
+          "Agentic AI Workflows & n8n",
+          "WhatsApp Business API Integration",
+          "Schema.org JSON-LD & AEO Strategy",
+          "E-Commerce Digital Storefronts",
+          "Conversion Web Architecture"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#website",
+        "url": "https://karishmakumaritk-cpu.github.io/portfolio-site/",
+        "name": "Karishma Kumari | AI Automation Architect",
+        "description": "AI automation systems, business websites, digital products and AI search visibility solutions.",
+        "publisher": {
+          "@id": "https://karishmakumaritk-cpu.github.io/portfolio-site/#person"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="has-custom-cursor">
+  <!-- Custom Luxury Cursor System (Desktop) -->
+  <div class="luxury-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="luxury-cursor-ring" id="cursor-ring" aria-hidden="true">
+    <span class="luxury-cursor-label" id="cursor-label">EXPLORE</span>
+  </div>
+
+  <!-- Global Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <div class="page-view-container page-transition-enter">
+    <!-- FILM OPENING BLACK CURTAIN -->
+    <div class="film-opening-curtain" id="film-opening-curtain" aria-hidden="true"></div>
+
+    <!-- 1. STICKY GLOBAL NAVIGATION -->
+    <header id="site-header">
+      <nav id="navbar" aria-label="Main Navigation">
+        <a href="/" data-route="/" class="nav-logo-group">
+          <span class="nav-logo">KARISHMA KUMARI</span>
+          <span class="nav-tagline">AI Systems &amp; Product Builder</span>
+        </a>
+        <ul class="nav-links">
+        <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+        <li><a href="/about" data-route="/about" class="nav-link-item">ABOUT</a></li>
+        <li><a href="/capabilities" data-route="/capabilities" class="nav-link-item">CAPABILITIES</a></li>
+        <li><a href="/process" data-route="/process" class="nav-link-item">PROCESS</a></li>
+        <li><a href="/ai-search" data-route="/ai-search" class="nav-link-item">AI SEARCH</a></li>
+        <li><a href="/pricing" data-route="/pricing" class="nav-link-item">PRICING</a></li>
+        <li><a href="/contact" data-route="/contact" class="nav-link-item">CONTACT</a></li>
+        </ul>
+        <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- 2. FULL VIEWPORT CINEMATIC EDITORIAL HERO SECTION -->
+      <section class="hero-editorial" id="hero">
+        <!-- Film Grain / Noise Overlay -->
+        <div class="hero-film-grain" aria-hidden="true"></div>
+
+        <!-- Living Background Art Direction & Ambient Gold Spotlight -->
+        <div class="hero-living-bg" aria-hidden="true">
+          <div class="hero-spotlight-radial" id="hero-spotlight"></div>
+        </div>
+
+        <div class="hero-inner" id="hero-camera-container">
+          <div class="hero-content" id="hero-text-col">
+
+            <div class="hero-kicker reveal-eyebrow">
+              <span class="kicker-live-dot" aria-hidden="true"></span>
+              <span>AI SYSTEMS / AUTOMATION / PRODUCTS</span>
+            </div>
+
+            <h1 class="hero-dramatic-title reveal-mask">
+              <span class="mask-line title-line">I BUILD</span>
+              <span class="mask-line title-line title-accent">AI SYSTEMS</span>
+              <span class="mask-line title-line">THAT MOVE.</span>
+            </h1>
+
+            <p class="hero-sub-statement reveal-up">
+              AI agents, automation workflows, commerce systems and digital products — designed, built and shipped for real businesses.
+            </p>
+
+            <div class="hero-actions-group reveal-up">
+              <a href="/work" class="btn-primary hero-btn-main">
+                <span>EXPLORE SYSTEMS ↗</span>
+              </a>
+              <a href="/contact" class="btn-ghost hero-btn-sec">
+                <span>START A PROJECT ↗</span>
+              </a>
+            </div>
+
+            <div class="hero-micro-meta reveal-up" aria-hidden="true">
+              <span>BUILDING IN PUBLIC</span>
+            </div>
+
+          </div>
+
+          <!-- Editorial Portrait Stage with Interactive Character Reveal -->
+          <div class="hero-portrait-stage" id="hero-portrait-stage">
+            <div class="portrait-wrapper interactive-character-stage" id="hero-model-wrapper" data-cursor-label="REVEAL">
+              <!-- Base Layer: Professional State -->
+              <img src="src/assets/images/karishma-professional.png" 
+                   alt="Karishma Kumari - Professional State" 
+                   class="hero-portrait-img base-character-layer" 
+                   width="1024" 
+                   height="1536" 
+                   fetchpriority="high" 
+                   loading="eager"
+                   onerror="this.onerror=null; this.src='/images/karishma_hero_portrait_v2.jpg';">
+
+              <!-- Overlay Layer: Developer / AI State (Revealed via Feathered Radial Mask on Hover) -->
+              <img src="src/assets/images/karishma-developer.png" 
+                   alt="Karishma Kumari - Developer State" 
+                   class="hero-portrait-img overlay-character-layer" 
+                   id="developer-character-overlay"
+                   width="1024" 
+                   height="1536" 
+                   loading="eager"
+                   onerror="this.onerror=null; this.src='/images/regenerated_image_1789057685366.png';">
+
+              <div class="portrait-blend-gradient" aria-hidden="true"></div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+</div>
+
+      <!-- HOME LANDING NAVIGATION -->
+      <section class="home-explore-strip" aria-label="Explore portfolio">
+        <div class="home-explore-header">
+          <span class="home-explore-label">EXPLORE</span>
+          <span class="home-explore-line" aria-hidden="true"></span>
+        </div>
+        <nav class="home-explore-grid" aria-label="Portfolio sections">
+          <a href="/work" class="home-explore-card">
+            <span class="home-explore-name">WORK</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/about" class="home-explore-card">
+            <span class="home-explore-name">ABOUT</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/capabilities" class="home-explore-card">
+            <span class="home-explore-name">CAPABILITIES</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/process" class="home-explore-card">
+            <span class="home-explore-name">PROCESS</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/ai-search" class="home-explore-card">
+            <span class="home-explore-name">AI SEARCH</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/pricing" class="home-explore-card">
+            <span class="home-explore-name">PRICING</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+          <a href="/contact" class="home-explore-card">
+            <span class="home-explore-name">CONTACT</span>
+            <span class="home-explore-arrow">↗</span>
+          </a>
+        </nav>
+      </section>
+
+    <!-- 11. PROJECT MODAL -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-body">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- 12. MINIMAL EDITORIAL FOOTER -->
+    <footer id="global-footer" class="cinematic-credits-footer">
+      <div class="footer-inner">
+        <div class="footer-col reveal-left">
+          <div class="footer-film-logo">
+            <span class="gold-symbol">◆</span>
+            <span class="footer-name">KARISHMA KUMARI</span>
+          </div>
+          <p class="footer-role">
+            AI Automation Architect &amp; Product Builder &bull; Delhi, India
+          </p>
+          <div class="footer-contact-specs">
+            <div><span class="spec-label">EMAIL:</span> <a href="mailto:karishmakumaritk19@gmail.com" class="footer-direct-link">karishmakumaritk19@gmail.com</a></div>
+            <div><span class="spec-label">WHATSAPP:</span> <a href="https://wa.me/919818691915" target="_blank" rel="noopener" class="footer-direct-link">+91 98186 91915</a></div>
+          </div>
+        </div>
+        
+        <div class="footer-links-col reveal-right">
+          <div class="footer-col-header">CONNECT</div>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/karishma-kumari-1a2b65235/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/karishmakumaritk-cpu" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://velision.in/" target="_blank" rel="noopener">Vision AI Studio</a></li>
+            <li><a href="https://miravika.com/" target="_blank" rel="noopener">MIRAVIKA</a></li>
+            <li><a href="https://buildy-tools.lovable.app" target="_blank" rel="noopener">Buildy Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom reveal-up">
+        <div>&copy; 2026 Karishma Kumari. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- TASTEFUL FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919818691915?text=Hi%20Karishma,%20I%20would%20like%20to%20discuss%20a%20website%20or%20automation%20project." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+    </a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

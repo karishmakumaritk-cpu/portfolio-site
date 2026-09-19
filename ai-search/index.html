@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Search &amp; Visibility | Karishma Kumari</title>
+  <meta name="description" content="AI Search, AI visibility, structured content, semantic architecture and technical SEO by Karishma Kumari.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <a href="/" data-route="/" class="nav-logo-group">
+      <span class="nav-logo">KARISHMA KUMARI</span>
+      <span class="nav-tagline">AI Systems &amp; Product Builder</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="/" data-route="/" class="nav-link-item">HOME</a></li>
+      <li><a href="/work" data-route="/work" class="nav-link-item">WORK</a></li>
+      <li><a href="/about" data-route="/about" class="nav-link-item">ABOUT</a></li>
+      <li><a href="/capabilities" data-route="/capabilities" class="nav-link-item">CAPABILITIES</a></li>
+      <li><a href="/process" data-route="/process" class="nav-link-item">PROCESS</a></li>
+      <li><a href="/ai-search" data-route="/ai-search" class="nav-link-item">AI SEARCH</a></li>
+      <li><a href="/pricing" data-route="/pricing" class="nav-link-item">PRICING</a></li>
+      <li><a href="/contact" data-route="/contact" class="nav-link-item">CONTACT</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <section class="section-wrap" id="ai-search">
+        <div class="section-eyebrow reveal-eyebrow"><span class="eyebrow-text">AI SEARCH</span></div>
+        <h2 class="section-title reveal-mask"><span class="mask-line">AI SEARCH &amp; VISIBILITY</span></h2>
+        <p class="section-sub reveal-up">
+          Designing web architecture so information is structured, semantically clear, and readable by both human users and AI engines.
+        </p>
+
+        <div class="ai-overview-grid reveal-up">
+          <div class="ai-feature-pill">Structured Content</div>
+          <div class="ai-feature-pill">Entity Understanding</div>
+          <div class="ai-feature-pill">Technical SEO</div>
+          <div class="ai-feature-pill">Schema Microdata</div>
+          <div class="ai-feature-pill">Content Architecture</div>
+          <div class="ai-feature-pill">AI-Readable Information</div>
+        </div>
+
+        <!-- Interactive Mini Demo: ASK ABOUT MY WORK -->
+        <div class="ai-interactive-demo reveal-up" style="margin-top: 2.5rem;">
+          <div class="demo-header-bar">
+            <span class="demo-status-dot"></span>
+            <span class="demo-title">ASK ABOUT MY WORK</span>
+            <span class="demo-badge">INTERACTIVE DEMO</span>
+          </div>
+
+          <div class="demo-input-container">
+            <div class="demo-chips-label">Quick Queries:</div>
+            <div class="demo-chips-row">
+              <button type="button" class="query-chip" onclick="askAiDemo('What does Karishma build?')">"What does Karishma build?"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('Tell me about Miravika')">"Tell me about Miravika"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('What AI systems do you build?')">"What AI systems do you build?"</button>
+              <button type="button" class="query-chip" onclick="askAiDemo('How can we work together?')">"How can we work together?"</button>
+            </div>
+
+            <div class="demo-search-row">
+              <input type="text" id="ai-demo-input" class="demo-search-input" placeholder="Ask a question about Karishma's work..." onkeydown="if(event.key==='Enter') runCustomAiQuery()">
+              <button type="button" class="btn-primary demo-ask-btn" onclick="runCustomAiQuery()">ASK ↗</button>
+            </div>
+          </div>
+
+          <div class="demo-output-box" id="ai-demo-output">
+            <div class="demo-output-header">
+              <span class="source-tag">SYNTHESIZED FROM VERIFIED PORTFOLIO CONTENT</span>
+            </div>
+            <div class="demo-output-body" id="ai-demo-text">
+              Click any question above or type your own to test how structured content enables instant synthesis.
+            </div>
+          </div>
+        </div>
+      </section>
+  <script src="../app.js"></script>
+</body>
+</html>
