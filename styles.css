@@ -10660,3 +10660,675 @@ body::after {
     animation: none;
   }
 }
+
+/* CINEMATIC VIDEO + TEXT — FINAL GEOMETRY */
+
+/*
+ * The video is the primary visual.
+ * The stage stays pinned while JS maps scroll progress to the
+ * complete source-video timeline and the chapter text animates above it.
+ */
+
+.cinematic-story {
+  height: 300svh !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.story-sticky-stage {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 0 !important;
+  max-height: 100svh !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+.cinematic-scroll-video__sticky {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.story-video-shell {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.cinematic-scroll-video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+/* Keep the existing JS-driven chapter/text animation. */
+.story-overlay,
+.story-copy,
+.story-chapter,
+.story-text,
+.story-timeline,
+.story-scene-copy {
+  pointer-events: none;
+}
+
+.story-video-vignette {
+  pointer-events: none;
+}
+
+/* CINEMATIC STICKY — REMOVE ANCESTOR SCROLL CONTAINER */
+.has-custom-cursor {
+  overflow: clip !important;
+}
+
+/* ============================================================
+   ROUTE STORY IMAGES + MOBILE NAV VISIBILITY FIX
+   ============================================================ */
+
+.story-asset-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-asset-image,
+.story-asset-image.reveal-on-scroll,
+.img-reveal-wrap img.reveal-on-scroll {
+  display: block !important;
+  width: 100%;
+  height: auto;
+  min-height: 1px;
+  object-fit: cover;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none;
+}
+
+.story-asset-image {
+  border-radius: 14px;
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    background: #050505 !important;
+    color: #f5f1e8 !important;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.45) !important;
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.65),
+      0 8px 30px rgba(201, 162, 75, 0.08) !important;
+  }
+
+  .nav-links .nav-link-item {
+    color: #f5f1e8 !important;
+    background: transparent !important;
+    border-bottom-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  .nav-links .nav-link-item:hover,
+  .nav-links .nav-link-item:focus-visible,
+  .nav-links .nav-link-item.active {
+    color: var(--gold, #c9a24b) !important;
+  }
+
+  .nav-links .nav-cta {
+    color: #050505 !important;
+    background: linear-gradient(
+      135deg,
+      #c9a24b,
+      #e5c56f
+    ) !important;
+  }
+
+  .mobile-toggle {
+    background: #050505 !important;
+    color: #f5f1e8 !important;
+    border-color: rgba(201, 162, 75, 0.55) !important;
+  }
+
+  .mobile-toggle svg,
+  .mobile-toggle svg line {
+    stroke: #f5f1e8 !important;
+  }
+
+  .mobile-toggle:hover,
+  .mobile-toggle:focus-visible {
+    background: #111111 !important;
+    border-color: #c9a24b !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links,
+  .nav-links.mobile-open {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+/* ============================================================
+   CINEMATIC PAGE ADVERTISEMENT TITLES
+   Applies to inner pages only — Home cinematic video untouched.
+   ============================================================ */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: min(180px, 28vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--gold, #c9a24b),
+    transparent
+  );
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 900ms cubic-bezier(.16,1,.3,1);
+}
+
+.page-ad-ready::before {
+  transform: scaleX(1);
+}
+
+.page-ad-title {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.24em;
+  row-gap: 0.02em;
+  perspective: 900px;
+}
+
+.page-ad-title .page-ad-word {
+  display: inline-block;
+  opacity: 0;
+  transform:
+    translate3d(0, 115%, 0)
+    rotateX(-70deg)
+    scale(.94);
+  transform-origin: 50% 100%;
+  filter: blur(8px);
+  clip-path: inset(0 0 100% 0);
+  transition:
+    opacity 700ms cubic-bezier(.16,1,.3,1),
+    transform 900ms cubic-bezier(.16,1,.3,1),
+    filter 900ms cubic-bezier(.16,1,.3,1),
+    clip-path 900ms cubic-bezier(.16,1,.3,1);
+  transition-delay: calc(var(--word-index) * 75ms + 120ms);
+  will-change: transform, opacity, filter;
+}
+
+.page-ad-ready .page-ad-title .page-ad-word {
+  opacity: 1;
+  transform:
+    translate3d(0, 0, 0)
+    rotateX(0)
+    scale(1);
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+.page-ad-space {
+  display: inline;
+  width: 0;
+}
+
+.page-hero-sub {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(5px);
+  transition:
+    opacity 800ms ease,
+    transform 900ms cubic-bezier(.16,1,.3,1),
+    filter 900ms ease;
+  transition-delay: 620ms;
+}
+
+.page-ad-ready .page-hero-sub {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* ============================================================
+   CINEMATIC FOOTER ADVERTISEMENT SEQUENCE
+   ============================================================ */
+
+.cinematic-footer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cinematic-footer .footer-signal-line {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1200ms cubic-bezier(.16,1,.3,1);
+}
+
+.cinematic-footer.footer-ad-ready .footer-signal-line {
+  transform: scaleX(1);
+}
+
+.cinematic-footer .footer-primary,
+.cinematic-footer .footer-secondary,
+.cinematic-footer .footer-bottom,
+.cinematic-footer .footer-closing-statement,
+.cinematic-footer .footer-build-link {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(6px);
+  transition:
+    opacity 800ms cubic-bezier(.16,1,.3,1),
+    transform 900ms cubic-bezier(.16,1,.3,1),
+    filter 900ms cubic-bezier(.16,1,.3,1);
+  transition-delay: calc(var(--footer-index, 0) * 100ms + 180ms);
+}
+
+.cinematic-footer.footer-ad-ready .footer-primary,
+.cinematic-footer.footer-ad-ready .footer-secondary,
+.cinematic-footer.footer-ad-ready .footer-bottom,
+.cinematic-footer.footer-ad-ready .footer-closing-statement,
+.cinematic-footer.footer-ad-ready .footer-build-link {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.cinematic-footer .footer-col,
+.cinematic-footer .footer-links-col {
+  transition-delay: calc(var(--footer-index, 0) * 90ms + 300ms);
+}
+
+.cinematic-footer .footer-name {
+  position: relative;
+  display: inline-block;
+}
+
+.cinematic-footer .footer-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 1px;
+  background: var(--gold, #c9a24b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 850ms cubic-bezier(.16,1,.3,1);
+  transition-delay: 550ms;
+}
+
+.cinematic-footer.footer-ad-ready .footer-name::after {
+  transform: scaleX(1);
+}
+
+
+/* ============================================================
+   MOBILE — KEEP TITLE IMPACTFUL WITHOUT OVERFLOW
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .page-ad-title {
+    display: block;
+    line-height: .96;
+  }
+
+  .page-ad-title .page-ad-word {
+    margin-right: .18em;
+    margin-bottom: .06em;
+  }
+
+  .page-hero-sub {
+    transition-delay: 420ms;
+  }
+
+  .cinematic-footer .footer-primary,
+  .cinematic-footer .footer-secondary,
+  .cinematic-footer .footer-bottom {
+    transform: translateY(22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero::before,
+  .page-ad-title .page-ad-word,
+  .page-hero-sub,
+  .cinematic-footer .footer-signal-line,
+  .cinematic-footer .footer-primary,
+  .cinematic-footer .footer-secondary,
+  .cinematic-footer .footer-bottom,
+  .cinematic-footer .footer-closing-statement,
+  .cinematic-footer .footer-build-link {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* =========================================================
+   FLOATING AI + WHATSAPP — UNIFIED ICON SYSTEM
+   AI and WhatsApp use the exact same visual footprint.
+   ========================================================= */
+
+.kai-chatbot-btn.kai-agent-trigger {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+  right: 24px !important;
+  bottom: 96px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  z-index: 9998 !important;
+}
+
+.kai-agent-core {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 10px !important;
+  transform: none !important;
+}
+
+.kai-robot-face {
+  width: 22px !important;
+  height: 17px !important;
+  border-radius: 5px !important;
+}
+
+.kai-eye {
+  top: 5px !important;
+  width: 3px !important;
+  height: 3px !important;
+}
+
+.kai-eye-left {
+  left: 5px !important;
+}
+
+.kai-eye-right {
+  right: 5px !important;
+}
+
+.kai-mouth {
+  bottom: 3px !important;
+  width: 6px !important;
+  height: 1px !important;
+}
+
+.kai-agent-orbit {
+  opacity: .65;
+}
+
+.kai-orbit-one {
+  width: 48px !important;
+  height: 19px !important;
+}
+
+.kai-orbit-two {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.kai-agent-signal,
+.kai-agent-label,
+.kai-agent-online {
+  display: none !important;
+}
+
+/* WhatsApp = exact same footprint as KAI */
+.floating-whatsapp {
+  position: fixed !important;
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  gap: 0 !important;
+  z-index: 9997 !important;
+  box-sizing: border-box !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.floating-whatsapp span {
+  display: none !important;
+}
+
+.floating-whatsapp svg {
+  width: 25px !important;
+  height: 25px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+}
+
+/* Same visual language */
+.kai-chatbot-btn.kai-agent-trigger,
+.floating-whatsapp {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 24px rgba(201,162,75,.14),
+    0 12px 32px rgba(0,0,0,.62) !important;
+}
+
+.kai-chatbot-btn.kai-agent-trigger:hover,
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+/* Keep both above every page layer */
+#kai-chatbot-root {
+  position: static !important;
+}
+
+@media (max-width: 768px) {
+  .kai-chatbot-btn.kai-agent-trigger {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    right: 18px !important;
+    bottom: 88px !important;
+  }
+
+  .floating-whatsapp {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .floating-whatsapp svg {
+    width: 23px !important;
+    height: 23px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kai-chatbot-btn.kai-agent-trigger {
+    animation: none !important;
+  }
+
+  .kai-agent-orbit,
+  .kai-eye {
+    animation: none !important;
+  }
+}
+
+
+
+/* =========================================================
+   FLOATING AI + WHATSAPP — EXACT SAME SIZE ON DESKTOP/MOBILE
+   ========================================================= */
+
+.kai-chatbot-btn.kai-agent-trigger {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+  right: 24px !important;
+  bottom: 96px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+  z-index: 9998 !important;
+}
+
+.kai-agent-core {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 10px !important;
+  transform: none !important;
+}
+
+.kai-robot-face {
+  width: 22px !important;
+  height: 17px !important;
+  border-radius: 5px !important;
+}
+
+.kai-eye {
+  top: 5px !important;
+  width: 3px !important;
+  height: 3px !important;
+}
+
+.kai-eye-left { left: 5px !important; }
+.kai-eye-right { right: 5px !important; }
+
+.kai-mouth {
+  bottom: 3px !important;
+  width: 6px !important;
+  height: 1px !important;
+}
+
+.kai-agent-signal,
+.kai-agent-label,
+.kai-agent-online {
+  display: none !important;
+}
+
+.kai-agent-orbit {
+  opacity: .65 !important;
+}
+
+.kai-orbit-one {
+  width: 48px !important;
+  height: 19px !important;
+}
+
+.kai-orbit-two {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* WhatsApp — same exact 60px circle */
+.floating-whatsapp {
+  position: fixed !important;
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  z-index: 9997 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.floating-whatsapp span {
+  display: none !important;
+}
+
+.floating-whatsapp svg {
+  width: 26px !important;
+  height: 26px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  fill: currentColor !important;
+}
+
+.kai-chatbot-btn.kai-agent-trigger,
+.floating-whatsapp {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 24px rgba(201,162,75,.14),
+    0 12px 32px rgba(0,0,0,.62) !important;
+}
+
+.kai-chatbot-btn.kai-agent-trigger:hover,
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+/* IMPORTANT: mobile remains exactly 60x60 */
+@media (max-width: 768px) {
+  .kai-chatbot-btn.kai-agent-trigger {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    right: 18px !important;
+    bottom: 90px !important;
+  }
+
+  .floating-whatsapp {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .floating-whatsapp svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .kai-chatbot-btn.kai-agent-trigger,
+  .floating-whatsapp {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+  }
+}
+

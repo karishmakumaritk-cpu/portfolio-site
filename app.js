@@ -790,6 +790,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize global scroll reveal motion system
   initScrollMotionSystem();
 
+  // Initialize cinematic page advertisement title + footer motion
+  initPageAdvertisementMotion();
+
   // Initialize desktop subtle 3D card tilt
   initCardTilt();
 
@@ -816,6 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mount professional AI Chatbot (KAI)
   mountKaiChatbot();
+  initGlobalFloatingWhatsApp();
 
   // Initialize Directional Motion System
   initScrollReveals();
@@ -829,6 +833,68 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqChoreography();
   initFooterChoreography();
 });
+
+
+/* ==========================================================================
+   CINEMATIC PAGE ADVERTISEMENT MOTION
+   Premium title sequence + footer entrance
+   ========================================================================== */
+function initPageAdvertisementMotion() {
+  const pageHero = document.querySelector('.page-hero');
+  const title = document.querySelector('.page-hero-title');
+
+  if (pageHero && title) {
+    title.classList.add('page-ad-title');
+
+    const raw = title.textContent.trim();
+    title.setAttribute('aria-label', raw);
+
+    title.innerHTML = raw
+      .split(/\s+/)
+      .map((word, index) =>
+        `<span class="page-ad-word" style="--word-index:${index}">${word}</span>`
+      )
+      .join('<span class="page-ad-space"> </span>');
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        pageHero.classList.add('page-ad-ready');
+      });
+    });
+  }
+
+  /* Footer entrance */
+  const footer = document.getElementById('global-footer') || document.querySelector('footer');
+
+  if (footer) {
+    footer.classList.add('cinematic-footer');
+
+    const footerItems = footer.querySelectorAll(
+      '.footer-primary, .footer-secondary, .footer-col, .footer-links-col, .footer-bottom, .footer-closing-statement, .footer-build-link'
+    );
+
+    footerItems.forEach((item, index) => {
+      item.style.setProperty('--footer-index', index);
+    });
+
+    if ('IntersectionObserver' in window) {
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('footer-ad-ready');
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -5% 0px'
+      });
+
+      footerObserver.observe(footer);
+    } else {
+      footer.classList.add('footer-ad-ready');
+    }
+  }
+}
 
 /* ==========================================================================
    HIGH-END HERO CATWALK & SPOTLIGHT INTERACTION
@@ -2558,13 +2624,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const getSceneProgress = (progress, activeIndex) => {
       const current = timeline[activeIndex];
       const next = timeline[Math.min(activeIndex + 1, timeline.length - 1)];
-      const duration = Math.max(0.001, next.at - current.at);
+      const duration = activeIndex === timeline.length - 1
+        ? Math.max(0.001, 1 - current.at)
+        : Math.max(0.001, next.at - current.at);
+
       const local = clamp((progress - current.at) / duration);
+
       return {
         current,
         next,
         local,
-        chapterProgress: activeIndex === timeline.length - 1 ? clamp((progress - current.at) / Math.max(0.12, 1 - current.at)) : clamp((progress - current.at) / duration)
+        chapterProgress: local
       };
     };
 
@@ -2764,4 +2834,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+
+
+
+
+
+/* GLOBAL FLOATING WHATSAPP — PRESENT ON EVERY PAGE */
+function initGlobalFloatingWhatsApp() {
+  let button = document.querySelector('.floating-whatsapp');
+
+  if (!button) {
+    button = document.createElement('a');
+    button.className = 'floating-whatsapp';
+    button.href = 'https://wa.me/919818691915?text=Hi%20Karishma,%20I%20want%20to%20discuss%20a%20project.';
+    button.target = '_blank';
+    button.rel = 'noopener';
+    button.setAttribute('aria-label', 'Chat with Karishma on WhatsApp');
+    button.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20.52 3.48A11.78 11.78 0 0 0 12.09 0C5.58 0 .28 5.3.28 11.82c0 2.08.54 4.11 1.57 5.9L.18 24l6.43-1.64a11.8 11.8 0 0 0 5.48 1.35h.01c6.51 0 11.81-5.3 11.81-11.82 0-3.16-1.23-6.13-3.39-8.41ZM12.1 21.7h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.81.97 1.02-3.71-.23-.38a9.83 9.83 0 1 1 8.4 4.7Zm5.39-7.37c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15-.19.29-.74.93-.91 1.12-.17.2-.33.22-.62.08-.29-.15-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.49.15-.17.19-.29.29-.48.1-.2.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.5h-.54c-.19 0-.49.07-.74.36-.25.29-.98.96-.98 2.35s1 2.73 1.14 2.92c.15.2 1.96 2.99 4.75 4.2.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.12-.26-.19-.55-.34Z"/>
+      </svg>
+    `;
+    document.body.appendChild(button);
+  }
+
+  button.classList.add('floating-whatsapp');
+}
 
