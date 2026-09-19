@@ -2641,24 +2641,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const active = timeline[activeIndex];
 
       const cameraDrift =
-        Math.sin(progress * Math.PI * 2.2) * 1.9;
+        Math.sin(progress * Math.PI * 1.7) * 1.2;
 
       const cameraX =
-        Math.sin(progress * Math.PI * 1.7) * 1.4 +
+        Math.sin(progress * Math.PI * 1.5) * 1.2 +
         cameraDrift;
 
       const cameraY =
-        -2.2 * progress +
-        Math.cos(progress * Math.PI * 2.4) * 0.8;
+        -1.4 * progress +
+        Math.cos(progress * Math.PI * 2.1) * 0.55;
 
       const finalShotProgress =
-        ease(clamp((progress - 0.88) / 0.12));
+        ease(clamp((progress - 0.84) / 0.16));
 
       const cameraScale =
         1 +
-        progress * 0.04 +
-        finalShotProgress * 0.018 +
-        Math.sin(progress * Math.PI * 2.4) * 0.01;
+        progress * 0.025 +
+        finalShotProgress * 0.012 +
+        Math.sin(progress * Math.PI * 2.0) * 0.01;
 
       storyStage.style.setProperty(
         '--story-progress',
@@ -2789,26 +2789,38 @@ document.addEventListener('DOMContentLoaded', () => {
             lerp(from.rotate, to.rotate, t);
 
           const cinematicPush =
-            Math.sin(t * Math.PI) * 0.03;
+            Math.sin(t * Math.PI) * 0.4;
 
           const finalFrame =
-            progress >= 0.88 &&
+            progress >= 0.84 &&
             index === timeline[timeline.length - 1].character;
 
           const x = finalFrame
             ? 0
-            : localX +
-              Math.sin((progress + index * 0.07) * Math.PI * 2.8) * 0.9;
+            : clamp(
+                localX +
+                Math.sin((progress + index * 0.07) * Math.PI * 2.4) * 0.7,
+                -3.2,
+                3.2
+              );
 
           const y = finalFrame
             ? 0
-            : localY +
-              Math.cos((progress + index * 0.11) * Math.PI * 3.2) * 0.8;
+            : clamp(
+                localY +
+                Math.cos((progress + index * 0.09) * Math.PI * 2.8) * 0.5,
+                -3.5,
+                2.5
+              );
 
           const scale = finalFrame
-            ? 1
-            : localScale + cinematicPush +
-              Math.sin(progress * Math.PI * 4) * 0.015;
+            ? 1.02
+            : clamp(
+                localScale + cinematicPush +
+                Math.sin(progress * Math.PI * 2.8) * 0.02,
+                0.96,
+                1.1
+              );
 
           frame.style.opacity =
             String(clamp(opacity));
@@ -2817,7 +2829,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `translate3d(calc(-50% + ${x}vw), ` +
             `calc(-50% + ${y}vh), 0) ` +
             `scale(${scale}) ` +
-            `rotate(${localRotate + Math.sin(progress * Math.PI * 2.8) * 0.6}deg)`;
+            `rotate(${localRotate + Math.sin(progress * Math.PI * 2.8) * 0.35}deg)`;
 
           frame.style.zIndex =
             String(
