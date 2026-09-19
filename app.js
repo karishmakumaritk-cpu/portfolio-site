@@ -2650,18 +2650,82 @@ document.addEventListener('DOMContentLoaded', () => {
       storyLayout.storyTravel = Math.max(1, story.offsetHeight - storyLayout.height);
     };
 
+    // Scroll-controlled video seek engine.
+    // Keep only the newest scroll target and avoid decoder thrashing on
+    // mobile/low-power browsers caused by issuing currentTime writes every frame.
+    let pendingVideoProgress = null;
+    let videoSeekRaf = 0;
+    let lastVideoSeekTime = -1;
+    let videoSeekInFlight = false;
+    let videoSeekQueued = false;
+    let lastVideoSeekAt = 0;
+    const VIDEO_SEEK_INTERVAL = 34;
+
+    const performVideoSeek = () => {
+      videoSeekRaf = 0;
+      if (!video || reduceMotion || pendingVideoProgress === null) return;
+      if (video.readyState < 1) return;
+
+      const duration = Number.isFinite(video.duration) && video.duration > 0
+        ? video.duration
+        : 36.866666;
+      const targetTime = clamp(pendingVideoProgress) * duration;
+      pendingVideoProgress = null;
+
+      const now = performance.now();
+      const timeSinceLastSeek = now - lastVideoSeekAt;
+
+      if (timeSinceLastSeek < VIDEO_SEEK_INTERVAL) {
+        pendingVideoProgress = targetTime / duration;
+        videoSeekRaf = requestAnimationFrame(performVideoSeek);
+        return;
+      }
+
+      if (Math.abs(targetTime - video.currentTime) < 0.06) return;
+
+      lastVideoSeekAt = now;
+      lastVideoSeekTime = targetTime;
+      videoSeekInFlight = true;
+      video.currentTime = targetTime;
+
+      // currentTime seeking is asynchronous on many mobile decoders.
+      // Clear the guard shortly after the browser has accepted the seek,
+      // while retaining the newest pending scroll position.
+      const releaseSeek = () => {
+        videoSeekInFlight = false;
+        if (pendingVideoProgress !== null && !videoSeekRaf) {
+          videoSeekRaf = requestAnimationFrame(performVideoSeek);
+        }
+      };
+
+      if ('fastSeek' in video && typeof video.fastSeek === 'function' && Math.abs(targetTime - video.currentTime) > 1) {
+        try {
+          video.fastSeek(targetTime);
+        } catch (_) {
+          // currentTime assignment above is the portable fallback.
+        }
+      }
+
+      if (video.readyState >= 2) {
+        requestAnimationFrame(releaseSeek);
+      } else {
+        video.addEventListener('canplay', releaseSeek, { once: true });
+      }
+    };
+
     const syncVideo = (progress) => {
       if (!video) return;
-      const fallbackDuration = 36;
-      const duration = Number.isFinite(video.duration) && video.duration > 0 ? video.duration : fallbackDuration;
-      const targetTime = clamp(progress) * duration;
-
-      if (video.readyState >= 1 && Math.abs(targetTime - video.currentTime) > 0.04) {
-        video.currentTime = targetTime;
-      }
 
       if (reduceMotion) {
         video.pause();
+        pendingVideoProgress = null;
+        return;
+      }
+
+      pendingVideoProgress = clamp(progress);
+
+      if (!videoSeekRaf && !videoSeekInFlight) {
+        videoSeekRaf = requestAnimationFrame(performVideoSeek);
       }
     };
 
