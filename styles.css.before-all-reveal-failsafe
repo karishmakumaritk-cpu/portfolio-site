@@ -261,8 +261,8 @@ body::before {
 
 /* Upward Entrance */
 .reveal-up {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(32px);
   transition: opacity 0.75s var(--ease-motion), transform 0.75s var(--ease-motion);
   will-change: opacity, transform;
 }
@@ -273,8 +273,8 @@ body::before {
 
 /* Left-Side Entrance (From Left to Right) */
 .reveal-left {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 0;
+  transform: translateX(-42px);
   transition: opacity 0.75s var(--ease-motion), transform 0.75s var(--ease-motion);
   will-change: opacity, transform;
 }
@@ -285,8 +285,8 @@ body::before {
 
 /* Right-Side Entrance (From Right to Left) */
 .reveal-right {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 0;
+  transform: translateX(42px);
   transition: opacity 0.75s var(--ease-motion), transform 0.75s var(--ease-motion);
   will-change: opacity, transform;
 }
@@ -297,8 +297,8 @@ body::before {
 
 /* Scale & Image Focus Entrance */
 .reveal-scale {
-  opacity: 1;
-  transform: scale(1);
+  opacity: 0;
+  transform: scale(0.95);
   transition: opacity 0.8s var(--ease-motion), transform 0.8s var(--ease-motion);
   will-change: opacity, transform;
 }
@@ -335,8 +335,8 @@ body::before {
 .reveal-eyebrow .eyebrow-text,
 .section-eyebrow .eyebrow-text {
   display: inline-block;
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 0;
+  transform: translateX(-12px);
   transition: opacity 0.5s var(--ease-motion) 0.22s, transform 0.5s var(--ease-motion) 0.22s;
 }
 .reveal-eyebrow.is-revealed .eyebrow-text,
@@ -352,8 +352,8 @@ body::before {
 }
 .reveal-mask .mask-line {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(105%);
   transition: opacity 0.75s var(--ease-motion), transform 0.75s var(--ease-motion);
   will-change: opacity, transform;
 }
@@ -370,8 +370,8 @@ body::before {
 
 /* Staggered Children Container */
 .stagger-chips > * {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(12px);
   transition: opacity 0.45s var(--ease-motion), transform 0.45s var(--ease-motion);
 }
 .stagger-chips.is-revealed > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0ms; }
@@ -3129,8 +3129,8 @@ footer {
 /* Footer Reveal & Links Micro-Interaction */
 footer .footer-col.reveal,
 footer .footer-links-col.reveal {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(20px);
   transition: opacity 0.7s var(--ease-motion), transform 0.7s var(--ease-motion);
 }
 
@@ -3141,8 +3141,8 @@ footer .footer-links-col.reveal.is-revealed {
 }
 
 footer .footer-bottom.reveal {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(14px);
   transition: opacity 0.7s var(--ease-motion) 280ms, transform 0.7s var(--ease-motion) 280ms;
 }
 
@@ -10142,15 +10142,12 @@ body::after {
 }
 
 /* ==========================================================================
-   CINEMATIC STORY — ADVERTISEMENT TIMELINE
-   Single source of truth. Scroll controls the timeline; CSS never fights JS.
+   CINEMATIC STORY / ADVERTISEMENT SYSTEM — HOMEPAGE
    ========================================================================== */
 
 .cinematic-story {
   position: relative;
-  height: 125vh;
-  margin: 0;
-  padding: 0;
+  height: 620vh;
   background: #030303;
   isolation: isolate;
 }
@@ -10164,158 +10161,92 @@ body::after {
   overflow: hidden;
   background: #030303;
   isolation: isolate;
-  perspective: 1400px;
-  transform-style: preserve-3d;
 }
 
-/* --------------------------------------------------------------------------
-   BACKGROUND / CAMERA
-   -------------------------------------------------------------------------- */
-
-.story-background {
+.story-background,
+.story-background::after {
   position: absolute;
   inset: 0;
+}
+
+.story-background {
   z-index: 0;
   overflow: hidden;
   background: #030303;
-  transform: translate3d(0, var(--story-camera-y, 0px), 0);
-  will-change: transform;
 }
 
 .story-background::after {
   content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 8;
   background:
-    radial-gradient(circle at 50% 45%, rgba(201,162,75,.07), transparent 36%),
-    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.68));
+    radial-gradient(circle at 50% 48%, rgba(201,162,75,.075), transparent 34%),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.72));
+  pointer-events: none;
 }
 
 .story-environment {
   position: absolute;
-  inset: -6%;
-  width: 112%;
-  height: 112%;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   opacity: 0;
-  transform: translate3d(0,0,0) scale(1.06);
-  transform-origin: center center;
-  filter: brightness(.42) contrast(1.06) saturate(.78);
-  backface-visibility: hidden;
-  will-change: opacity, transform, filter;
+  transform: scale(1.08);
+  filter: brightness(.38) contrast(1.08) saturate(.72);
+  /* Scroll timeline owns opacity + transform; no CSS interpolation. */
   transition: none;
 }
 
 .story-env-a {
-  opacity: .8;
+  opacity: .72;
+  transform: scale(1);
+}
+
+.story-env-b,
+.story-env-c {
+  opacity: 0;
 }
 
 .story-vignette {
   position: absolute;
   inset: 0;
-  z-index: 12;
+  z-index: 4;
   pointer-events: none;
   background:
-    radial-gradient(
-      ellipse at center,
-      transparent 28%,
-      rgba(0,0,0,.38) 72%,
-      rgba(0,0,0,.86) 100%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.46),
-      transparent 40%,
-      rgba(0,0,0,.22)
-    );
+    radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,.42) 72%, rgba(0,0,0,.9) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.52), transparent 42%, rgba(0,0,0,.25));
 }
 
 .story-grain {
   position: absolute;
   inset: -50%;
-  z-index: 15;
+  z-index: 5;
   pointer-events: none;
-  opacity: .035;
+  opacity: .045;
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
-  animation: storyGrain .22s steps(2) infinite;
+  animation: storyGrain .18s steps(2) infinite;
 }
 
 @keyframes storyGrain {
-  0%   { transform: translate3d(0,0,0); }
-  25%  { transform: translate3d(2%,-1%,0); }
-  50%  { transform: translate3d(-1%,2%,0); }
-  75%  { transform: translate3d(1%,1%,0); }
+  0% { transform: translate3d(0,0,0); }
+  25% { transform: translate3d(2%,-1%,0); }
+  50% { transform: translate3d(-1%,2%,0); }
+  75% { transform: translate3d(1%,1%,0); }
   100% { transform: translate3d(-2%,-1%,0); }
 }
-
-/* --------------------------------------------------------------------------
-   CHARACTER — ONE STABLE CANVAS FOR ALL NORMALIZED FRAMES
-   -------------------------------------------------------------------------- */
-
-.story-character {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  z-index: 25;
-  width: min(48vw, 680px);
-  height: 94vh;
-  transform: translate3d(-50%, -50%, 0);
-  pointer-events: none;
-  overflow: visible;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.story-character-frame {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
-  transform: translate3d(-50%, -50%, 0);
-  transform-origin: 50% 78%;
-  opacity: 0;
-  filter:
-    drop-shadow(0 30px 55px rgba(0,0,0,.72))
-    drop-shadow(0 0 22px rgba(201,162,75,.045));
-  backface-visibility: hidden;
-  will-change: opacity, transform, filter;
-  transition: none;
-}
-
-.story-character-frame.frame-01 {
-  opacity: 1;
-}
-
-/* --------------------------------------------------------------------------
-   CINEMATIC COPY
-   -------------------------------------------------------------------------- */
 
 .story-copy {
   position: absolute;
   left: clamp(1.25rem, 7vw, 8rem);
   top: 50%;
-  z-index: 50;
+  z-index: 20;
   width: min(42vw, 620px);
-  transform: translate3d(0,-50%,0);
-  transform-origin: left center;
+  transform: translateY(-50%);
   pointer-events: none;
-  will-change: opacity, transform;
 }
 
 .story-kicker {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: .65rem;
-  min-height: 18px;
   margin: 0 0 1.1rem;
   font-family: var(--font-mono);
   font-size: 10px;
@@ -10323,16 +10254,7 @@ body::after {
   letter-spacing: .22em;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--gold-champagne, var(--gold));
-}
-
-.story-kicker::before {
-  content: "";
-  width: 22px;
-  height: 1px;
-  background: var(--gold-champagne, var(--gold));
-  transform: scaleX(calc(.35 + var(--story-progress, 0) * .65));
-  transform-origin: left;
+  color: var(--gold);
 }
 
 .story-copy h2 {
@@ -10344,16 +10266,10 @@ body::after {
   letter-spacing: -.075em;
   text-transform: uppercase;
   color: #f5f5f5;
-  text-wrap: balance;
-  will-change: transform, opacity;
 }
 
 .story-copy h2 span {
-  display: inline-block;
-  color: var(--gold-champagne, var(--gold));
-  text-shadow:
-    0 0 22px rgba(201,162,75,.08),
-    0 0 60px rgba(201,162,75,.035);
+  color: var(--gold);
 }
 
 .story-description {
@@ -10365,14 +10281,42 @@ body::after {
   color: rgba(255,255,255,.52);
 }
 
-/* --------------------------------------------------------------------------
-   HUD / INTERFACE
-   -------------------------------------------------------------------------- */
+.story-character {
+  position: absolute;
+  left: 50%;
+  bottom: -5%;
+  z-index: 12;
+  width: min(46vw, 620px);
+  height: 105%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.story-character-frame {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%) scale(1.02);
+  opacity: 0;
+  filter:
+    drop-shadow(0 30px 55px rgba(0,0,0,.72))
+    drop-shadow(0 0 22px rgba(201,162,75,.045));
+  /* Scroll timeline owns opacity + transform; no CSS interpolation. */
+  transition: none;
+}
+
+.story-character-frame.frame-01 {
+  opacity: 1;
+}
 
 .story-interface {
   position: absolute;
   inset: 0;
-  z-index: 70;
+  z-index: 30;
   pointer-events: none;
 }
 
@@ -10382,8 +10326,7 @@ body::after {
   height: 34px;
   border-color: rgba(201,162,75,.42);
   border-style: solid;
-  opacity: .65;
-  will-change: transform, opacity;
+  opacity: .6;
 }
 
 .corner-tl {
@@ -10418,7 +10361,6 @@ body::after {
   letter-spacing: .13em;
   text-transform: uppercase;
   color: rgba(255,255,255,.28);
-  will-change: opacity, transform;
 }
 
 .code-one {
@@ -10436,15 +10378,11 @@ body::after {
   top: 37%;
 }
 
-/* --------------------------------------------------------------------------
-   PROGRESS
-   -------------------------------------------------------------------------- */
-
 .story-progress {
   position: absolute;
   right: clamp(1.25rem, 3vw, 3rem);
   top: 50%;
-  z-index: 90;
+  z-index: 40;
   display: flex;
   align-items: center;
   gap: .8rem;
@@ -10476,20 +10414,15 @@ body::after {
   bottom: 0;
   width: 100%;
   height: 0%;
-  background: var(--gold-champagne, var(--gold));
-  box-shadow: 0 0 14px rgba(201,162,75,.32);
-  transform-origin: bottom center;
+  background: var(--gold);
+  box-shadow: 0 0 12px rgba(201,162,75,.5);
 }
-
-/* --------------------------------------------------------------------------
-   CHAPTER NAV
-   -------------------------------------------------------------------------- */
 
 .story-chapter-nav {
   position: absolute;
   left: clamp(1.25rem, 3vw, 3rem);
   bottom: 2.5rem;
-  z-index: 90;
+  z-index: 40;
   display: flex;
   align-items: center;
   gap: clamp(.7rem, 1.5vw, 1.5rem);
@@ -10503,12 +10436,11 @@ body::after {
   font-weight: 600;
   letter-spacing: .14em;
   color: rgba(255,255,255,.22);
-  will-change: opacity, transform, letter-spacing;
-  transition: none;
+  transition: color 300ms ease;
 }
 
 .story-chapter.active {
-  color: var(--gold-champagne, var(--gold));
+  color: var(--gold);
 }
 
 .story-chapter.active::after {
@@ -10518,18 +10450,21 @@ body::after {
   right: 0;
   bottom: -.45rem;
   height: 1px;
-  background: var(--gold-champagne, var(--gold));
+  background: var(--gold);
+  transform-origin: left;
+  animation: chapterLine 500ms var(--ease-out-soft);
 }
 
-/* --------------------------------------------------------------------------
-   SCROLL CUE
-   -------------------------------------------------------------------------- */
+@keyframes chapterLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
 
 .story-scroll-cue {
   position: absolute;
   right: clamp(4rem, 7vw, 7rem);
   bottom: 2.5rem;
-  z-index: 90;
+  z-index: 40;
   display: flex;
   align-items: center;
   gap: .75rem;
@@ -10538,8 +10473,6 @@ body::after {
   font-weight: 600;
   letter-spacing: .15em;
   color: rgba(255,255,255,.28);
-  pointer-events: none;
-  will-change: opacity, transform;
 }
 
 .story-scroll-cue i {
@@ -10553,51 +10486,12 @@ body::after {
 
 @keyframes storyCuePulse {
   0%,100% { transform: scaleX(.45); opacity: .35; }
-  50%     { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(1); opacity: 1; }
 }
-
-/* --------------------------------------------------------------------------
-   SCREEN EDGE
-   -------------------------------------------------------------------------- */
-
-.cinematic-story::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 120;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(201,162,75,.025),
-      transparent 18%,
-      transparent 82%,
-      rgba(201,162,75,.025)
-    );
-  mix-blend-mode: screen;
-}
-
-/* --------------------------------------------------------------------------
-   PAGE TRANSITION SAFETY
-   -------------------------------------------------------------------------- */
-
-.page-view-container.page-transition-enter {
-  animation: none !important;
-  transform: none !important;
-  opacity: 1 !important;
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE
-   -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
   .cinematic-story {
-    height: 120vh;
-  }
-
-  .story-sticky-stage {
-    min-height: 560px;
+    height: 560vh;
   }
 
   .story-copy {
@@ -10615,9 +10509,9 @@ body::after {
   }
 
   .story-character {
-    width: min(78vw, 560px);
-    height: 76vh;
-    top: 57%;
+    width: min(76vw, 540px);
+    height: 78%;
+    bottom: 2%;
   }
 
   .story-interface-code {
@@ -10643,7 +10537,11 @@ body::after {
 
 @media (max-width: 600px) {
   .cinematic-story {
-    height: 115vh;
+    height: 520vh;
+  }
+
+  .story-sticky-stage {
+    min-height: 560px;
   }
 
   .story-copy {
@@ -10660,15 +10558,15 @@ body::after {
   }
 
   .story-character {
-    width: 96vw;
-    height: 68vh;
-    top: 58%;
+    width: 100vw;
+    height: 67%;
+    bottom: 7%;
   }
 
   .story-environment {
-    inset: -3%;
-    width: 106%;
-    height: 106%;
+    inset: -2%;
+    width: 104%;
+    height: 104%;
   }
 
   .story-interface-corner {
@@ -10718,10 +10616,14 @@ body::after {
   }
 
   .story-environment,
-  .story-character-frame,
-  .story-copy,
-  .story-interface-code,
-  .story-chapter {
-    transition: none !important;
+  .story-character-frame {
+    transition: none;
   }
 }
+
+
+
+/* CINEMATIC STORY — STICKY MUST NOT INHERIT PAGE TRANSITION TRANSFORM */
+.page-view-container.page-transition-enter { animation: none !important; transform: none !important; opacity: 1 !important; }
+
+

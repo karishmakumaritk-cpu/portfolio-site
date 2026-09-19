@@ -483,207 +483,6 @@ function closeModal() {
 }
 
 
-const aiMethodologyData = {
-  aeo: {
-    tag: "01 / AEO",
-    badgeClass: "",
-    title: "Answer Engine Optimization (AEO) Methodology",
-    subtitle: "Structuring content for direct answers, voice search, and AI assistant extraction.",
-    definition: "Answer Engine Optimization is the discipline of structuring and authoring web content so that modern answer engines (Google AI Overviews, Perplexity, ChatGPT, Apple Intelligence, Siri) can effortlessly identify and extract direct, accurate answers to user queries.",
-    purpose: "When a potential client asks 'How much does a custom business website cost in Delhi?' or 'How does WhatsApp automation work for salons?', your site should provide the immediate, authoritative answer rather than making users dig through vague paragraphs.",
-    steps: [
-      {
-        title: "1. Question-Centric Heading Architecture",
-        desc: "Transform standard marketing copy into precise, high-intent questions formulated as H2 and H3 headings matching real user search queries."
-      },
-      {
-        title: "2. The 40-Word Direct Answer Window",
-        desc: "Place a concise, standalone, factual answer in the very first sentence directly underneath each question heading before providing extended context."
-      },
-      {
-        title: "3. Structured FAQPage & Speakable Microdata",
-        desc: "Generate valid Schema.org JSON-LD scripts mirroring visible on-page content, enabling search engines to verify question-answer pairings without parsing ambiguity."
-      },
-      {
-        title: "4. Elimination of Ambiguous Adjectives",
-        desc: "Replace generic claims like 'best services' with tangible parameters: scope inclusions, realistic delivery timeframes (3–5 days), and exact transparent pricing."
-      }
-    ],
-    example: "On this website, the FAQ and service pricing sections answer common client questions directly, allowing answer engines to synthesize accurate answers with zero hallucination.",
-    whatsappMsg: "Hi Karishma, I would like to consult on implementing AEO (Answer Engine Optimization) for my business website."
-  },
-  geo: {
-    tag: "02 / GEO",
-    badgeClass: "",
-    title: "Generative Engine Optimization (GEO) Methodology",
-    subtitle: "Optimizing digital footprints for synthesis and citation in generative AI models.",
-    definition: "Generative Engine Optimization focuses on crafting context-rich, entity-anchored content that generative search engines (such as Google SGE/AI Overviews, Bing Copilot, and Perplexity) evaluate, cite, and synthesize when generating answers.",
-    purpose: "Instead of simply aiming for a blue link click, GEO ensures your brand, founder profile, and services are accurately represented and cited when prospects research solutions in generative AI interfaces.",
-    steps: [
-      {
-        title: "1. Entity & Topic Grounding",
-        desc: "Explicitly connect core business entities (e.g., Karishma Kumari → AI Automation Architect → Vision AI Studio & MIRAVIKA) across internal schemas and external references."
-      },
-      {
-        title: "2. Problem-Solution Dualism in Case Studies",
-        desc: "Structure portfolio and project deliverables around clear business challenges, architectural decisions, and tangible outcomes that models can summarize easily."
-      },
-      {
-        title: "3. Multi-Source Fact Corroboration",
-        desc: "Ensure consistent entity attributes (founder role, location, primary skills, verified contact channels) across LinkedIn, GitHub, and client domains."
-      },
-      {
-        title: "4. High Semantic Density & Clean Layout",
-        desc: "Maintain rich semantic text markup that allows generative scrapers and LLMs to extract key takeaways without running into heavy client-side rendering hurdles."
-      }
-    ],
-    example: "The project cards on this portfolio explicitly separate business context, design solution, and core deliverables, providing clean data triples for generative AI citation.",
-    whatsappMsg: "Hi Karishma, I would like to discuss optimizing my brand and website for Generative Engine Optimization (GEO)."
-  },
-  llmo: {
-    tag: "03 / LLMO",
-    badgeClass: "",
-    title: "Large Language Model Optimization (LLMO) Methodology",
-    subtitle: "Structuring information for tokenization, vector retrieval, and RAG architectures.",
-    definition: "Large Language Model Optimization is the practice of formatting information architectures so that large language models and Retrieval-Augmented Generation (RAG) pipelines can ingest, chunk, embed, and retrieve data without semantic confusion.",
-    purpose: "As more software applications rely on LLM embeddings and web-crawled knowledge bases, LLMO ensures your digital content is ingested cleanly, preventing hallucinated or omitted details.",
-    steps: [
-      {
-        title: "1. Semantic DOM Tree Chunking",
-        desc: "Utilize clean HTML5 structural elements (<article>, <section>, <header>, <nav>, <footer>) so document scrapers chunk content along logical boundaries."
-      },
-      {
-        title: "2. Consistent Terminology & Entity Co-Occurrence",
-        desc: "Consistently place primary keywords and service offerings in close semantic proximity to the brand and person entity to reinforce knowledge graph weights."
-      },
-      {
-        title: "3. Machine-Readable Data Availability",
-        desc: "Never bury crucial specifications, pricing, or capabilities exclusively inside images or PDFs without accessible, crawlable HTML text counterparts."
-      },
-      {
-        title: "4. Structured Taxonomy & Hierarchical Hubs",
-        desc: "Build clear relational structures connecting top-level services to specific packages, deliverables, and case study implementations."
-      }
-    ],
-    example: "All portfolio data on this site is represented in crawlable HTML and accessible data structures, allowing embedding models to index Karishma Kumari's skillsets accurately.",
-    whatsappMsg: "Hi Karishma, I would like to learn more about LLMO and preparing my business data for AI retrieval."
-  },
-  aiso: {
-    tag: "04 / AISO",
-    badgeClass: "gold",
-    title: "AI Search Optimization (AISO) Methodology",
-    subtitle: "The unified modern framework uniting technical SEO with next-generation AI discovery.",
-    definition: "AI Search Optimization is the comprehensive technical and content strategy that prepares websites for hybrid search environments—where traditional algorithmic indexing works side-by-side with AI search agents and conversational discovery engines.",
-    purpose: "Guarantees your business remains discoverable across Google, Bing Copilot, ChatGPT Search, Perplexity, and voice assistants without sacrificing human conversion rates.",
-    steps: [
-      {
-        title: "1. Full-Spectrum Schema.org Graphs",
-        desc: "Embed interconnected JSON-LD graphs (Person, WebSite, Service, CreativeWork, FAQPage) that describe exactly who you are, what you offer, and what you charge."
-      },
-      {
-        title: "2. Core Web Vitals & Sub-Second Latency",
-        desc: "Deliver lightweight static assets, fast FCP (First Contentful Paint), and minimal CLS (Cumulative Layout Shift) for both crawler efficiency and human retention."
-      },
-      {
-        title: "3. Canonical Verification & Robots Protocol",
-        desc: "Configure strict canonical tags, clean XML sitemaps, and robots.txt directives that guide search crawlers directly to canonical representations."
-      },
-      {
-        title: "4. Frictionless Conversion Architecture",
-        desc: "Pair search visibility with direct action points—prominent WhatsApp inquiry links, transparent scope explanations, and verified contact channels."
-      }
-    ],
-    example: "This portfolio demonstrates AISO with sub-second load times, Schema.org JSON-LD graph, canonical verification, and immediate 1-click consultation links.",
-    whatsappMsg: "Hi Karishma, I would like to build an AISO-optimized business website for modern search."
-  },
-  eeat: {
-    tag: "05 / E-E-A-T",
-    badgeClass: "gold",
-    title: "E-E-A-T Framework (Experience • Expertise • Authoritativeness • Trustworthiness)",
-    subtitle: "Google's core Search Quality Rater Guidelines implemented through verifiable proof.",
-    definition: "E-E-A-T is Google's core framework evaluating content based on firsthand Experience, demonstrable Expertise, verified Authoritativeness, and transparent Trustworthiness. It serves as a benchmark for assessing real-world credibility.",
-    purpose: "Distinguishes authentic practitioners and genuine business operators from automated spam, unverified content mills, and exaggerated marketing claims.",
-    steps: [
-      {
-        title: "1. Demonstrable Firsthand Experience",
-        desc: "Show real work: delivered client websites (Kuchuu Puchuu), active e-commerce operations (MIRAVIKA), and in-development platforms (Vision AI Studio)."
-      },
-      {
-        title: "2. Genuine Technical Expertise",
-        desc: "Detail specific technical competencies (n8n workflows, AI agent orchestration, commercial web development) rather than vague buzzwords."
-      },
-      {
-        title: "3. External Authoritativeness & Entity Linking",
-        desc: "Connect verified professional profiles (LinkedIn, GitHub) and live business properties with consistent naming and credentials."
-      },
-      {
-        title: "4. Absolute Commercial Trustworthiness",
-        desc: "Label project statuses transparently ('SOLD • DELIVERED', 'WEBSITE TEMPLATE', 'OWN BUSINESS • LIVE', 'TEAM PROJECT • IN DEVELOPMENT', 'FREE TOOL'), state transparent prices, and provide verified phone and email contact."
-      }
-    ],
-    example: "Karishma Kumari's portfolio provides transparent status labels on all projects, verified contact information, and clear attribution of personal ventures.",
-    whatsappMsg: "Hi Karishma, I want to audit and strengthen the E-E-A-T signals on my business website."
-  }
-};
-
-function openAiMethodologyModal(topic) {
-  const data = aiMethodologyData[topic];
-  if (!data) return;
-
-  const modal = document.getElementById('project-modal');
-  const content = document.getElementById('modal-body');
-  if (!modal || !content) return;
-
-  content.innerHTML = `
-    <span class="methodology-tag ${data.badgeClass}">${data.tag}</span>
-    <h2 class="methodology-title">${data.title}</h2>
-    <p class="modal-desc" style="font-size: 1.05rem; font-weight: 500; color: var(--charcoal); margin-bottom: 1.5rem;">${data.subtitle}</p>
-
-    <div class="modal-case-study">
-      <div class="case-study-block">
-        <div class="case-study-label">01 / CONCEPT DEFINITION</div>
-        <p class="case-study-text">${data.definition}</p>
-      </div>
-
-      <div class="case-study-block">
-        <div class="case-study-label">02 / PRACTICAL COMMERCIAL PURPOSE</div>
-        <p class="case-study-text">${data.purpose}</p>
-      </div>
-
-      <div class="case-study-block">
-        <div class="case-study-label">03 / IMPLEMENTATION BLUEPRINT</div>
-        <div class="methodology-steps-list">
-          ${data.steps.map(s => `
-            <div class="methodology-step">
-              <div class="methodology-step-title">${s.title}</div>
-              <p class="methodology-step-desc">${s.desc}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-
-      <div class="case-study-block">
-        <div class="case-study-label">04 / REAL-WORLD DEMONSTRATION</div>
-        <div class="ai-card-example" style="margin-bottom: 0;">
-          <strong>Applied on this site:</strong> ${data.example}
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-actions" style="margin-top: 2rem;">
-      <a href="https://wa.me/919818691915?text=${encodeURIComponent(data.whatsappMsg)}" target="_blank" rel="noopener" class="btn-whatsapp">
-        CONSULT ON THIS METHODOLOGY →
-      </a>
-      <button type="button" class="btn-ghost" onclick="closeModal()">
-        CLOSE
-      </button>
-    </div>
-  `;
-
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
 function toggleMobileNav() {
   const links = document.querySelector('.nav-links');
   const toggleBtn = document.querySelector('.mobile-toggle');
@@ -2351,705 +2150,360 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // -------------------------------------------------------------------------
-  // CINEMATIC ADVERTISEMENT ENGINE
-  //
-  // Normal browser scroll is the timeline.
-  // One scroll position drives ALL visual layers simultaneously:
-  // camera + environment + character + typography + HUD.
-  //
-  // No scroll-jacking.
-  // No timers.
-  // No waiting for an animation to finish.
-  // No intentional black transition.
-  // -------------------------------------------------------------------------
+  // Cinematic Advertisement Story — scroll-driven storyboard engine
+  const story = document.getElementById("cinematic-story");
+  const storyStage = document.getElementById("story-sticky-stage");
+  const storyCharacter = document.getElementById("story-character");
+  const storyCharacterFrames = story ? [...story.querySelectorAll(".story-character-frame")] : [];
+  const storyEnvironments = story ? [...story.querySelectorAll(".story-environment")] : [];
+  const storyChapters = story ? [...story.querySelectorAll(".story-chapter")] : [];
+  const storyKicker = document.getElementById("story-kicker");
+  const storyTitle = document.getElementById("story-title");
+  const storyDescription = document.getElementById("story-description");
+  const storyProgressFill = document.getElementById("story-progress-fill");
+  const storyProgressValue = document.getElementById("story-progress-value");
 
-  const story = document.getElementById('cinematic-story');
-  const storyStage = document.getElementById('story-sticky-stage');
+  const storyScenes = [
+    {
+      key: "IDEA",
+      start: 0.00,
+      end: 0.16,
+      title: "IDEA<br><span>TO SYSTEM.</span>",
+      description: "Every product starts as a problem worth solving.",
+      character: 0,
+      environment: 0,
+      fromX: -150,
+      toX: -35,
+      fromScale: 0.94,
+      toScale: 1.02
+    },
+    {
+      key: "BUILD",
+      start: 0.16,
+      end: 0.32,
+      title: "TURNING<br><span>IDEAS REAL.</span>",
+      description: "Structure, interface and experience built around the outcome.",
+      character: 1,
+      environment: 0,
+      fromX: 80,
+      toX: 145,
+      fromScale: 0.96,
+      toScale: 1.04
+    },
+    {
+      key: "CODE",
+      start: 0.32,
+      end: 0.48,
+      title: "CODE<br><span>THAT MOVES.</span>",
+      description: "Interfaces become working systems — responsive, adaptive and alive.",
+      character: 2,
+      environment: 0,
+      fromX: 145,
+      toX: -95,
+      fromScale: 1.04,
+      toScale: 1.08
+    },
+    {
+      key: "AUTOMATE",
+      start: 0.48,
+      end: 0.65,
+      title: "MAKE IT<br><span>RUN.</span>",
+      description: "AI agents and automated workflows remove repetitive work.",
+      character: 3,
+      environment: 1,
+      fromX: -115,
+      toX: 145,
+      fromScale: 1.00,
+      toScale: 1.06
+    },
+    {
+      key: "SHIP",
+      start: 0.65,
+      end: 0.82,
+      title: "BUILD.<br><span>SHIP.</span>",
+      description: "From prototype to production — the system becomes usable.",
+      character: 4,
+      environment: 2,
+      fromX: 145,
+      toX: -100,
+      fromScale: 1.04,
+      toScale: 1.10
+    },
+    {
+      key: "FOUNDER",
+      start: 0.82,
+      end: 1.00,
+      title: "BUILD<br><span>WHAT MOVES.</span>",
+      description: "Products, businesses and digital systems built with intention.",
+      character: 5,
+      environment: 2,
+      fromX: -100,
+      toX: 0,
+      fromScale: 1.08,
+      toScale: 1.00
+    }
+  ];
 
-  if (story && storyStage) {
-    const characters = Array.from(
-      story.querySelectorAll('.story-character-frame')
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
+
+  const ease = (v) => {
+    v = clamp01(v);
+    return v * v * (3 - 2 * v);
+  };
+
+  const smoothStep = (v) => {
+    v = clamp01(v);
+    return v * v * (3 - 2 * v);
+  };
+
+  function sceneProgress(progress, scene) {
+    return clamp01(
+      (progress - scene.start) /
+      Math.max(0.0001, scene.end - scene.start)
     );
-
-    const environments = Array.from(
-      story.querySelectorAll('.story-environment')
-    );
-
-    const copy = document.getElementById('story-copy');
-    const kicker = document.getElementById('story-kicker');
-    const title = document.getElementById('story-title');
-    const description = document.getElementById('story-description');
-
-    const progressFill =
-      document.getElementById('story-progress-fill');
-
-    const progressValue =
-      document.getElementById('story-progress-value');
-
-    const chapters =
-      Array.from(story.querySelectorAll('.story-chapter'));
-
-    /*
-     * Six supplied visual keyframes.
-     *
-     * The important difference from the previous engine:
-     * these are not six isolated "scenes".
-     * They are points on one continuous film timeline.
-     */
-    const timeline = [
-      {
-        key: 'IDEA',
-        at: 0.00,
-        character: 0,
-        environment: 0,
-        title: 'IDEA<br><span>TO SYSTEM.</span>',
-        description:
-          'Every product starts as a problem worth solving.',
-        x: -5,
-        y: 3,
-        scale: 0.96,
-        rotate: -1.5
-      },
-      {
-        key: 'BUILD',
-        at: 0.18,
-        character: 1,
-        environment: 0,
-        title: 'TURNING<br><span>IDEAS REAL.</span>',
-        description:
-          'Structure, interface and experience built around the outcome.',
-        x: 7,
-        y: 0,
-        scale: 1.00,
-        rotate: 1
-      },
-      {
-        key: 'CODE',
-        at: 0.36,
-        character: 2,
-        environment: 0,
-        title: 'CODE<br><span>THAT MOVES.</span>',
-        description:
-          'Interfaces become working systems — responsive, adaptive and alive.',
-        x: -7,
-        y: -1,
-        scale: 1.035,
-        rotate: -1
-      },
-      {
-        key: 'AUTOMATE',
-        at: 0.54,
-        character: 3,
-        environment: 1,
-        title: 'MAKE IT<br><span>RUN.</span>',
-        description:
-          'AI agents and automated workflows remove repetitive work.',
-        x: 7,
-        y: -2,
-        scale: 1.055,
-        rotate: 1
-      },
-      {
-        key: 'SHIP',
-        at: 0.72,
-        character: 4,
-        environment: 2,
-        title: 'BUILD.<br><span>SHIP.</span>',
-        description:
-          'From prototype to production — the system becomes usable.',
-        x: -6,
-        y: -1,
-        scale: 1.07,
-        rotate: -1
-      },
-      {
-        key: 'FOUNDER',
-        at: 0.88,
-        character: 5,
-        environment: 2,
-        title: 'BUILD<br><span>WHAT MOVES.</span>',
-        description:
-          'Products, businesses and digital systems built with intention.',
-        x: 0,
-        y: 0,
-        scale: 1.00,
-        rotate: 0
-      }
-    ];
-
-    const clamp = (v, min = 0, max = 1) =>
-      Math.min(max, Math.max(min, v));
-
-    const ease = (v) => {
-      const t = clamp(v);
-      return t * t * (3 - 2 * t);
-    };
-
-    const lerp = (a, b, t) =>
-      a + (b - a) * t;
-
-    const wrap = (v) => {
-      if (v < 0) return 0;
-      if (v > 1) return 1;
-      return v;
-    };
-
-    /*
-     * Find the two neighbouring keyframes around the current scroll.
-     * This makes the character move continuously between supplied frames.
-     */
-    const getPair = (progress) => {
-      if (progress <= timeline[0].at) {
-        return {
-          from: timeline[0],
-          to: timeline[1],
-          local: 0
-        };
-      }
-
-      for (let i = 0; i < timeline.length - 1; i += 1) {
-        const from = timeline[i];
-        const to = timeline[i + 1];
-
-        if (progress <= to.at) {
-          const local = ease(
-            (progress - from.at) /
-            Math.max(0.001, to.at - from.at)
-          );
-
-          return { from, to, local };
-        }
-      }
-
-      return {
-        from: timeline[timeline.length - 2],
-        to: timeline[timeline.length - 1],
-        local: 1
-      };
-    };
-
-    const getChapterIndex = (progress) => {
-      let index = 0;
-
-      for (let i = 0; i < timeline.length; i += 1) {
-        if (progress >= timeline[i].at) {
-          index = i;
-        }
-      }
-
-      return index;
-    };
-
-    const renderStory = (progress) => {
-      progress = wrap(progress);
-
-      const pair = getPair(progress);
-      const from = pair.from;
-      const to = pair.to;
-      const t = pair.local;
-
-      const activeIndex = getChapterIndex(progress);
-      const active = timeline[activeIndex];
-
-      /*
-       * ---------------------------------------------------------------------
-       * CAMERA
-       * ---------------------------------------------------------------------
-       *
-       * The whole environment drifts continuously while each individual
-       * environment also gets its own parallax movement.
-       */
-      const cameraX =
-        Math.sin(progress * Math.PI * 1.7) * 1.4;
-
-      const cameraY =
-        progress * -2.2;
-
-      const finalShotProgress =
-        ease(clamp((progress - 0.88) / 0.12));
-
-      const cameraScale =
-        1 +
-        progress * 0.035 +
-        finalShotProgress * 0.012;
-
-      storyStage.style.setProperty(
-        '--story-progress',
-        progress.toFixed(4)
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-y',
-        `${cameraY}vh`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-x',
-        `${cameraX}vw`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-scale',
-        cameraScale.toFixed(4)
-      );
-
-      /*
-       * ---------------------------------------------------------------------
-       * ENVIRONMENT FILM
-       * ---------------------------------------------------------------------
-       *
-       * Current environment is always visible.
-       * The next environment starts entering BEFORE the chapter changes,
-       * creating a film-like environment transition instead of a black cut.
-       */
-      environments.forEach((environment, index) => {
-        const first = timeline.findIndex(
-          item => item.environment === index
-        );
-
-        if (first === -1) {
-          environment.style.opacity = '0';
-          return;
-        }
-
-        const envStart = timeline[first].at;
-
-        const nextEnvironmentIndex =
-          index < environments.length - 1
-            ? index + 1
-            : index;
-
-        const nextStart =
-          nextEnvironmentIndex !== index
-            ? timeline.find(
-                item => item.environment === nextEnvironmentIndex
-              )?.at
-            : null;
-
-        let opacity = 0.04;
-
-        if (progress >= envStart) {
-          opacity = 0.78;
-        }
-
-        if (
-          nextStart !== null &&
-          progress > nextStart - 0.07
-        ) {
-          const transition = ease(
-            (progress - (nextStart - 0.07)) / 0.14
-          );
-
-          opacity =
-            index === nextEnvironmentIndex
-              ? lerp(opacity, 0.78, transition)
-              : lerp(opacity, 0.04, transition);
-        }
-
-        const parallaxX =
-          cameraX +
-          Math.sin((progress + index * 0.13) * Math.PI * 2) *
-          (index === 0 ? 1.8 : 2.4);
-
-        const parallaxY =
-          -progress * (1.4 + index * 0.5);
-
-        const zoom =
-          1.06 +
-          progress * 0.045 +
-          index * 0.012;
-
-        environment.style.opacity =
-          String(clamp(opacity));
-
-        environment.style.transform =
-          `translate3d(${parallaxX}%, ${parallaxY}%, 0) scale(${zoom})`;
-
-        const brightness =
-          0.40 +
-          (active.environment === index ? 0.10 : 0);
-
-        environment.style.filter =
-          `brightness(${brightness}) contrast(1.07) saturate(.78)`;
-
-        environment.style.zIndex =
-          active.environment === index ? '2' : '1';
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * CHARACTER FILM
-       * ---------------------------------------------------------------------
-       *
-       * Both neighbouring supplied frames overlap.
-       * This prevents black gaps and makes the sequence feel like a single
-       * moving subject.
-       */
-      characters.forEach((frame, index) => {
-        const fromIndex = from.character;
-        const toIndex = to.character;
-
-        let opacity = 0;
-
-        if (index === fromIndex) {
-          opacity = 1 - t;
-        }
-
-        if (index === toIndex) {
-          opacity = Math.max(opacity, t);
-        }
-
-        if (fromIndex === toIndex && index === fromIndex) {
-          opacity = 1;
-        }
-
-        /*
-         * Slight depth/camera movement is continuous even while the supplied
-         * artwork changes. This is intentionally subtle; no body-part faking.
-         */
-        if (opacity > 0) {
-          const localX =
-            lerp(from.x, to.x, t);
-
-          const localY =
-            lerp(from.y, to.y, t);
-
-          const localScale =
-            lerp(from.scale, to.scale, t);
-
-          const localRotate =
-            lerp(from.rotate, to.rotate, t);
-
-          /*
-           * Film-camera movement:
-           * small forward push + lateral sweep.
-           */
-          const cinematicPush =
-            Math.sin(t * Math.PI) * 0.025;
-
-          const finalFrame =
-            progress >= 0.88 &&
-            index === timeline[timeline.length - 1].character;
-
-          /*
-           * FINAL SHOT:
-           * Stop the camera drift completely. The supplied final character
-           * artwork stays centered and fills the cinematic viewport until
-           * the story physically hands off to the footer.
-           */
-          const x = finalFrame
-            ? 0
-            : localX +
-              Math.sin(progress * Math.PI * 2) * 0.8;
-
-          const y = finalFrame
-            ? 0
-            : localY +
-              Math.sin(progress * Math.PI * 3) * 0.7;
-
-          const scale = finalFrame
-            ? 1
-            : localScale + cinematicPush;
-
-          frame.style.opacity =
-            String(clamp(opacity));
-
-          frame.style.transform =
-            `translate3d(calc(-50% + ${x}vw), ` +
-            `calc(-50% + ${y}vh), 0) ` +
-            `scale(${scale}) ` +
-            `rotate(${localRotate}deg)`;
-
-          frame.style.zIndex =
-            String(
-              30 +
-              Math.round(opacity * 20)
-            );
-        } else {
-          frame.style.opacity = '0';
-        }
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * TYPOGRAPHY
-       * ---------------------------------------------------------------------
-       *
-       * Text has its own choreography, independent from the character.
-       * It slides, lifts and subtly scales while the character/environment
-       * continue moving underneath.
-       */
-      const chapterStart = active.at;
-
-      const next =
-        timeline[Math.min(
-          activeIndex + 1,
-          timeline.length - 1
-        )];
-
-      const chapterLength =
-        Math.max(
-          0.001,
-          next.at - chapterStart
-        );
-
-      const chapterProgress =
-        activeIndex === timeline.length - 1
-          ? clamp(
-              (progress - chapterStart) /
-              Math.max(0.12, 1 - chapterStart)
-            )
-          : clamp(
-              (progress - chapterStart) /
-              chapterLength
-            );
-
-      const textIn =
-        ease(clamp(chapterProgress / 0.20));
-
-      const textOut =
-        activeIndex === timeline.length - 1
-          ? 1
-          : 1 - ease(
-              clamp(
-                (chapterProgress - 0.78) /
-                0.22
-              )
-            );
-
-      const textOpacity =
-        Math.max(0.08, textIn * textOut);
-
-      const direction =
-        activeIndex % 2 === 0 ? -1 : 1;
-
-      const textX =
-        direction *
-        (1 - textIn) *
-        7;
-
-      const textY =
-        (1 - textIn) * 28 -
-        chapterProgress * 8;
-
-      const textScale =
-        0.97 +
-        textIn * 0.03;
-
-      if (copy) {
-        copy.style.opacity =
-          String(textOpacity);
-
-        copy.style.transform =
-          `translate3d(${textX}vw, ` +
-          `calc(-50% + ${textY}px), 0) ` +
-          `scale(${textScale})`;
-      }
-
-      if (kicker) {
-        kicker.textContent =
-          `0${activeIndex + 1} / ${active.key}`;
-      }
-
-      if (title) {
-        title.innerHTML = active.title;
-      }
-
-      if (description) {
-        description.textContent =
-          active.description;
-      }
-
-      /*
-       * ---------------------------------------------------------------------
-       * HUD MOTION
-       * ---------------------------------------------------------------------
-       */
-      const hudX =
-        Math.sin(progress * Math.PI * 2) * 12;
-
-      const hudY =
-        Math.cos(progress * Math.PI * 2) * 8;
-
-      storyStage.style.setProperty(
-        '--story-hud-x',
-        `${hudX}px`
-      );
-
-      storyStage.style.setProperty(
-        '--story-hud-y',
-        `${hudY}px`
-      );
-
-      const corners =
-        story.querySelectorAll('.story-interface-corner');
-
-      corners.forEach((corner, index) => {
-        const direction =
-          index % 2 === 0 ? 1 : -1;
-
-        corner.style.transform =
-          `translate3d(` +
-          `${hudX * direction}px, ` +
-          `${hudY * direction}px, 0)`;
-      });
-
-      const interfaceCodes =
-        story.querySelectorAll('.story-interface-code');
-
-      interfaceCodes.forEach((code, index) => {
-        const drift =
-          Math.sin(
-            progress * Math.PI * (2 + index * 0.7)
-          ) *
-          (14 + index * 5);
-
-        const rise =
-          Math.cos(
-            progress * Math.PI * 2
-          ) *
-          5;
-
-        code.style.opacity =
-          String(
-            0.20 +
-            0.42 *
-            Math.max(
-              0,
-              Math.sin(
-                (progress + index * 0.17) *
-                Math.PI
-              )
-            )
-          );
-
-        code.style.transform =
-          `translate3d(${drift}px, ${rise}px, 0)`;
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * PROGRESS / CHAPTERS
-       * ---------------------------------------------------------------------
-       */
-      if (progressFill) {
-        progressFill.style.height =
-          `${progress * 100}%`;
-      }
-
-      if (progressValue) {
-        progressValue.textContent =
-          String(
-            Math.round(progress * 100)
-          ).padStart(2, '0');
-      }
-
-      chapters.forEach((chapter, index) => {
-        const distance =
-          Math.abs(index - activeIndex);
-
-        chapter.classList.toggle(
-          'active',
-          index === activeIndex
-        );
-
-        chapter.style.opacity =
-          index === activeIndex
-            ? '1'
-            : String(
-                Math.max(
-                  0.16,
-                  0.42 - distance * 0.06
-                )
-              );
-
-        chapter.style.transform =
-          index === activeIndex
-            ? 'translateY(-3px) scale(1.04)'
-            : 'translateY(0) scale(1)';
-      });
-    };
-
-    let raf = 0;
-    let lastProgress = -1;
-
-    const requestStoryRender = () => {
-      if (raf) return;
-
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-
-        const rect =
-          story.getBoundingClientRect();
-
-        /*
-         * The sticky stage occupies exactly one viewport.
-         * Map the ENTIRE remaining story travel to the cinematic timeline,
-         * so the final frame is the visual state immediately before the
-         * story's physical bottom and therefore immediately before footer.
-         */
-        const storyTravel =
-          Math.max(
-            1,
-            story.offsetHeight -
-            window.innerHeight
-          );
-
-        const storyOffset =
-          Math.max(
-            0,
-            Math.min(
-              storyTravel,
-              -rect.top
-            )
-          );
-
-        const progress =
-          clamp(
-            storyOffset / storyTravel
-          );
-
-        /*
-         * Skip duplicate frames, but never throttle scroll itself.
-         */
-        if (
-          Math.abs(progress - lastProgress) <
-          0.0001
-        ) {
-          return;
-        }
-
-        lastProgress = progress;
-
-        renderStory(progress);
-      });
-    };
-
-    characters.forEach(frame => {
-      frame.style.willChange =
-        'opacity, transform';
-    });
-
-    environments.forEach(environment => {
-      environment.style.willChange =
-        'opacity, transform, filter';
-    });
-
-    window.addEventListener(
-      'scroll',
-      requestStoryRender,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      'resize',
-      requestStoryRender
-    );
-
-    renderStory(0);
-    requestStoryRender();
   }
+
+  function activeSceneIndex(progress) {
+    if (progress >= 1) return storyScenes.length - 1;
+
+    for (let i = 0; i < storyScenes.length; i++) {
+      if (progress >= storyScenes[i].start && progress < storyScenes[i].end) {
+        return i;
+      }
+    }
+
+    return 0;
+  }
+
+  function sceneWeight(progress, scene) {
+    const p = sceneProgress(progress, scene);
+    const edge = 0.20;
+
+    if (p <= 0) return 0;
+    if (p >= 1) return 0;
+
+    const fadeIn = smoothStep(p / edge);
+    const fadeOut = smoothStep((1 - p) / edge);
+
+    return Math.min(fadeIn, fadeOut);
+  }
+
+  function renderCinematicStory() {
+    if (!story || !storyStage) return;
+
+    const rect = story.getBoundingClientRect();
+    const travel = Math.max(1, story.offsetHeight - window.innerHeight);
+    const progress = clamp01(-rect.top / travel);
+    const activeIndex = activeSceneIndex(progress);
+    const scene = storyScenes[activeIndex];
+    const local = sceneProgress(progress, scene);
+    const motion = ease(local);
+
+    /* ---------------------------------------------------------------
+       CHARACTER
+       Existing PNGs are treated as cinematic keyframes.
+       Scroll is the only clock; upward scroll reverses automatically.
+    ---------------------------------------------------------------- */
+    storyCharacterFrames.forEach((img, index) => {
+      const sceneForFrame = storyScenes.find(item => item.character === index);
+
+      if (!sceneForFrame) {
+        img.style.opacity = "0";
+        return;
+      }
+
+      const p = sceneProgress(progress, sceneForFrame);
+      const weight = sceneWeight(progress, sceneForFrame);
+      const isActive = index === scene.character;
+
+      if (isActive) {
+        const x =
+          scene.fromX +
+          (scene.toX - scene.fromX) * motion;
+
+        const depth =
+          scene.fromScale +
+          (scene.toScale - scene.fromScale) * motion;
+
+        const entranceLift = (1 - ease(p)) * 34;
+        const cinematicTilt =
+          Math.sin(local * Math.PI) *
+          (index === 3 ? -1.8 : index === 4 ? 1.4 : 0);
+
+        img.style.opacity = String(Math.max(weight, 0.001));
+        img.style.transform =
+          `translate3d(calc(-50% + ${x}px), ${entranceLift}px, 0)
+           scale(${depth})
+           rotate(${cinematicTilt}deg)`;
+        img.style.zIndex = "20";
+      } else {
+        const residual = weight * 0.18;
+
+        img.style.opacity = String(residual);
+        img.style.transform =
+          "translate3d(-50%, 28px, 0) scale(0.985)";
+        img.style.zIndex = "10";
+      }
+
+      const glow =
+        10 +
+        Math.sin(progress * Math.PI * 8 + index) * 5;
+
+      img.style.filter =
+        `drop-shadow(0 30px 55px rgba(0,0,0,.72))
+         drop-shadow(0 0 ${glow}px rgba(201,162,75,.11))`;
+    });
+
+    /* ---------------------------------------------------------------
+       ENVIRONMENT / CAMERA
+    ---------------------------------------------------------------- */
+    storyEnvironments.forEach((img, index) => {
+      const environmentScenes =
+        storyScenes.filter(item => item.environment === index);
+
+      let weight = 0;
+
+      environmentScenes.forEach(item => {
+        weight = Math.max(weight, sceneWeight(progress, item));
+      });
+
+      const push =
+        progress * 6 +
+        index * 1.5;
+
+      const drift =
+        Math.sin(progress * Math.PI * 2 + index) * 16;
+
+      const vertical =
+        Math.cos(progress * Math.PI * 1.5 + index) * 8;
+
+      img.style.opacity = String(
+        0.08 + weight * 0.58
+      );
+
+      img.style.transform =
+        `translate3d(${drift}px, ${vertical}px, 0)
+         scale(${1.04 + push * 0.012})`;
+
+      img.style.filter =
+        `brightness(${0.28 + weight * 0.15})
+         contrast(1.12)
+         saturate(${0.65 + weight * 0.16})`;
+
+      img.style.zIndex = String(2 + index);
+    });
+
+    /* ---------------------------------------------------------------
+       TYPOGRAPHY
+    ---------------------------------------------------------------- */
+    const textIn = smoothStep(clamp01(local / 0.22));
+    const textOut = smoothStep(clamp01((1 - local) / 0.20));
+    const textOpacity = Math.min(textIn, textOut);
+
+    if (storyKicker) {
+      storyKicker.textContent = scene.key;
+      storyKicker.style.opacity = String(textOpacity);
+      storyKicker.style.transform =
+        `translate3d(${(1 - textIn) * -60}px,
+                     ${(1 - textIn) * 14}px, 0)`;
+    }
+
+    if (storyTitle) {
+      storyTitle.innerHTML = scene.title;
+
+      const titleIn =
+        smoothStep(clamp01(local / 0.30));
+
+      storyTitle.style.opacity = String(textOpacity);
+      storyTitle.style.transform =
+        `translate3d(${(1 - titleIn) * -110}px,
+                     ${(1 - titleIn) * 42}px, 0)
+         scale(${0.90 + titleIn * 0.10})`;
+    }
+
+    if (storyDescription) {
+      const descIn =
+        smoothStep(clamp01((local - 0.05) / 0.24));
+
+      storyDescription.textContent = scene.description;
+      storyDescription.style.opacity =
+        String(textOpacity * descIn);
+
+      storyDescription.style.transform =
+        `translate3d(${(1 - descIn) * -36}px,
+                     ${(1 - descIn) * 12}px, 0)`;
+    }
+
+    /* ---------------------------------------------------------------
+       CAMERA + HUD
+    ---------------------------------------------------------------- */
+    const cameraX =
+      Math.sin(progress * Math.PI * 2) * 10;
+
+    const cameraY =
+      Math.cos(progress * Math.PI * 2) * 6;
+
+    storyStage.style.setProperty(
+      "--story-camera-x",
+      `${cameraX}px`
+    );
+
+    storyStage.style.setProperty(
+      "--story-camera-y",
+      `${cameraY}px`
+    );
+
+    if (storyCharacter) {
+      storyCharacter.style.setProperty(
+        "--story-progress",
+        String(progress)
+      );
+    }
+
+    storyChapters.forEach((chapter, index) => {
+      chapter.classList.toggle(
+        "active",
+        index === activeIndex
+      );
+    });
+
+    if (storyProgressFill) {
+      storyProgressFill.style.height =
+        `${progress * 100}%`;
+    }
+
+    if (storyProgressValue) {
+      storyProgressValue.textContent =
+        String(Math.round(progress * 100)).padStart(2, "0");
+    }
+  }
+
+  let storyTicking = false;
+
+  function requestCinematicStoryRender() {
+    if (storyTicking) return;
+
+    storyTicking = true;
+
+    requestAnimationFrame(() => {
+      storyTicking = false;
+      renderCinematicStory();
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    requestCinematicStoryRender,
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "resize",
+    requestCinematicStoryRender,
+    { passive: true }
+  );
+
+  requestCinematicStoryRender();
 
   // Custom Cursor & Context Label Switching
   const cursorDot = document.getElementById('cursor-dot');

@@ -10148,7 +10148,7 @@ body::after {
 
 .cinematic-story {
   position: relative;
-  height: 125vh;
+  height: 160vh;
   margin: 0;
   padding: 0;
   background: #030303;
@@ -10593,7 +10593,7 @@ body::after {
 
 @media (max-width: 900px) {
   .cinematic-story {
-    height: 120vh;
+    height: 150vh;
   }
 
   .story-sticky-stage {
@@ -10643,7 +10643,7 @@ body::after {
 
 @media (max-width: 600px) {
   .cinematic-story {
-    height: 115vh;
+    height: 140vh;
   }
 
   .story-copy {
@@ -10723,5 +10723,185 @@ body::after {
   .story-interface-code,
   .story-chapter {
     transition: none !important;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   CINEMATIC STORY — FINAL EXPLORE ZONE
+   The final part of the sticky film becomes an intentional navigation scene.
+   It is driven directly by --story-progress, so there is no dead black tail.
+   ========================================================================== */
+
+.story-explore-zone {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.4rem, 4vh, 3rem);
+  z-index: 45;
+  width: min(92vw, 1180px);
+  transform: translate3d(-50%, 24px, 0);
+  opacity: clamp(0, calc((var(--story-progress, 0) - .76) * 4.2), 1);
+  visibility: visible;
+  pointer-events: none;
+  transition:
+    opacity 180ms linear,
+    transform 500ms cubic-bezier(.22,1,.36,1);
+}
+
+.story-explore-heading {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: .7rem;
+  color: rgba(255,255,255,.52);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.story-explore-index {
+  color: var(--gold, #c9a24b);
+  font-variant-numeric: tabular-nums;
+}
+
+.story-explore-line {
+  width: 42px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold, #c9a24b), transparent);
+}
+
+.story-explore-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .55rem;
+}
+
+.story-explore-card {
+  position: relative;
+  min-height: 76px;
+  padding: .72rem .78rem .65rem;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 2px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.012)),
+    rgba(3,3,3,.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  transform: translateY(0);
+  transition:
+    border-color 240ms ease,
+    background 240ms ease,
+    transform 240ms ease;
+}
+
+.story-explore-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201,162,75,.8),
+    transparent
+  );
+  transform: scaleX(.15);
+  transform-origin: center;
+  transition: transform 300ms ease;
+}
+
+.story-explore-card:hover {
+  border-color: rgba(201,162,75,.48);
+  background:
+    linear-gradient(135deg, rgba(201,162,75,.11), rgba(255,255,255,.025)),
+    rgba(3,3,3,.86);
+  transform: translateY(-5px);
+}
+
+.story-explore-card:hover::before {
+  transform: scaleX(1);
+}
+
+.story-explore-num {
+  display: block;
+  margin-bottom: .38rem;
+  color: rgba(201,162,75,.72);
+  font-size: .52rem;
+  letter-spacing: .12em;
+}
+
+.story-explore-card strong {
+  display: block;
+  font-size: .7rem;
+  line-height: 1.05;
+  letter-spacing: .08em;
+}
+
+.story-explore-card small {
+  display: block;
+  margin-top: .35rem;
+  color: rgba(255,255,255,.42);
+  font-size: .52rem;
+  line-height: 1.2;
+}
+
+.story-explore-card-accent {
+  border-color: rgba(201,162,75,.28);
+}
+
+@media (max-width: 900px) {
+  .story-explore-zone {
+    width: calc(100vw - 2rem);
+  }
+
+  .story-explore-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .story-explore-card:nth-child(4),
+  .story-explore-card:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-explore-zone {
+    bottom: 1rem;
+    width: calc(100vw - 1.25rem);
+  }
+
+  .story-explore-heading {
+    margin-bottom: .45rem;
+  }
+
+  .story-explore-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .4rem;
+  }
+
+  .story-explore-card {
+    min-height: 62px;
+    padding: .55rem .6rem;
+  }
+
+  .story-explore-card:nth-child(3) {
+    display: none;
+  }
+
+  .story-explore-card strong {
+    font-size: .58rem;
+  }
+
+  .story-explore-card small {
+    font-size: .46rem;
   }
 }

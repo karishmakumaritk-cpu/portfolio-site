@@ -10148,7 +10148,7 @@ body::after {
 
 .cinematic-story {
   position: relative;
-  height: 125vh;
+  height: 160vh;
   margin: 0;
   padding: 0;
   background: #030303;
@@ -10593,7 +10593,7 @@ body::after {
 
 @media (max-width: 900px) {
   .cinematic-story {
-    height: 120vh;
+    height: 150vh;
   }
 
   .story-sticky-stage {
@@ -10643,7 +10643,7 @@ body::after {
 
 @media (max-width: 600px) {
   .cinematic-story {
-    height: 115vh;
+    height: 140vh;
   }
 
   .story-copy {
@@ -10725,3 +10725,6 @@ body::after {
     transition: none !important;
   }
 }
+
+
+

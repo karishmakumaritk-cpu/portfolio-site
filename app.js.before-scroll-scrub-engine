@@ -482,7 +482,6 @@ function closeModal() {
   }
 }
 
-
 const aiMethodologyData = {
   aeo: {
     tag: "01 / AEO",
@@ -2323,6 +2322,304 @@ function initHiddenArchitectureView() {
   }
 }
 
+/* ==========================================================================
+   INTERACTIVE CONTROLLER EXTENSIONS FOR OVERHAULED PORTFOLIO SECTIONS
+   ========================================================================== */
+
+// System Grid Mode Toggle in Hero
+function toggleTelemetryGrid() {
+  const grid = document.getElementById('hero-telemetry-grid');
+  const btn = document.querySelector('.hero-system-toggle-btn');
+  if (!grid) return;
+  const isActive = grid.classList.toggle('grid-active');
+  if (btn) {
+    btn.textContent = isActive ? '[ SYSTEM: ACTIVE ]' : '[ SYSTEM ]';
+    btn.style.color = isActive ? 'var(--gold-light)' : 'var(--gold-champagne)';
+  }
+}
+
+/* ==========================================================================
+   REUSABLE INTERSECTION OBSERVER FOR DIRECTIONAL ANIMATIONS
+   ========================================================================== */
+function initScrollReveals() {
+  const revealElements = document.querySelectorAll(
+    '.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-line, .reveal-eyebrow, .section-eyebrow, .reveal-mask, .stagger-chips'
+  );
+
+  if (!revealElements.length) return;
+
+  // Respect accessibility setting for reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.12
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        // Unobserve after revealing for high scroll performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+window.initScrollReveals = initScrollReveals;
+
+// AI Search Data Dictionary & Switcher
+const aiSearchData = {
+  aeo: {
+    badge: "AEO",
+    acronym: "Direct Extraction",
+    title: "Answer Engine Optimization",
+    def: "Structuring web content into direct, concise, factual answers designed for answer engines, voice assistants, and immediate query extraction.",
+    purpose: "When prospects ask specific questions ('How much does a salon site cost?', 'What is included?'), search engines extract clear answers directly.",
+    how: [
+      "Question-centric H2/H3 header architecture",
+      "40-word standalone direct answer window",
+      "Schema.org FAQPage & speakable JSON-LD microdata",
+      "Transparent scopes replacing vague marketing jargon"
+    ],
+    example: "The transparent pricing and Q&A blocks on this website are designed for direct answer extraction."
+  },
+  geo: {
+    badge: "GEO",
+    acronym: "Generative Citation",
+    title: "Generative Engine Optimization",
+    def: "Crafting context-rich, entity-anchored content that generative engines (Google AI Overviews, Bing Copilot, Perplexity) synthesize and cite.",
+    purpose: "Ensures your business, founder credentials, and services are recommended and accurately cited when users ask conversational AI tools.",
+    how: [
+      "Explicit entity anchor mapping across internal schemas",
+      "Problem-solution-deliverable case study framing",
+      "Multi-source profile consistency (LinkedIn, GitHub)",
+      "High semantic density for crawler extraction"
+    ],
+    example: "Project case studies detail specific business challenges, technical choices, and deliverables cited by generative engines."
+  },
+  llmo: {
+    badge: "LLMO",
+    acronym: "Vector & RAG Ingestion",
+    title: "Large Language Model Optimization",
+    def: "Formatting information architectures so large language models and RAG pipelines can ingest, parse, and embed content without ambiguity.",
+    purpose: "Establishes clear associative knowledge weights between your brand name, leadership, core skills, and service categories.",
+    how: [
+      "Semantic DOM tree chunking (<article>, <section>)",
+      "Consistent entity co-occurrence in key copy",
+      "Machine-readable data availability (no hidden text in images)",
+      "Structured taxonomy connecting parent services to packages"
+    ],
+    example: "Clean semantic layout ensures RAG embeddings associate Karishma Kumari with AI Automation & Web Systems."
+  },
+  aiso: {
+    badge: "AISO",
+    acronym: "Unified Architecture",
+    title: "AI Search Optimization",
+    def: "The unified modern framework uniting technical SEO with next-generation AI discovery and conversational assistant readiness.",
+    purpose: "Guarantees visibility across Google, Bing, ChatGPT Search, and voice assistants without sacrificing human conversion rates.",
+    how: [
+      "Full-spectrum Schema.org graphs (Person, WebSite, Service, FAQ)",
+      "Sub-second Core Web Vitals (FCP, LCP, zero CLS)",
+      "Canonical tags, robots.txt, and clean XML sitemaps",
+      "Frictionless 1-click WhatsApp consultation channels"
+    ],
+    example: "This portfolio loads sub-second with full JSON-LD graphs, canonical tags, and mobile-first accessibility."
+  },
+  eeat: {
+    badge: "E-E-A-T",
+    acronym: "Trust & Proof",
+    title: "E-E-A-T Framework",
+    def: "Google's core Search Quality Rater Guidelines framework: Experience, Expertise, Authoritativeness, and Trustworthiness.",
+    purpose: "Distinguishes genuine practitioners and authentic businesses from unverified, low-quality automated filler.",
+    how: [
+      "Demonstrable firsthand experience (shipped client sites, live stores)",
+      "Specific technical competencies (n8n, AI agents, web systems)",
+      "External authoritativeness & verified LinkedIn/GitHub profiles",
+      "Transparent commercial statuses ('SOLD', 'TEMPLATE', 'LIVE')"
+    ],
+    example: "Honest disclosure of personal businesses (MIRAVIKA), delivered client work (Kuchuu Puchuu), and verified contact info."
+  }
+};
+
+function switchAiSearchTab(tabKey) {
+  const data = aiSearchData[tabKey];
+  if (!data) return;
+
+  // Update active state on tab buttons
+  document.querySelectorAll('.ai-tab-btn').forEach(btn => {
+    if (btn.getAttribute('data-ai-tab') === tabKey) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // Fade panel briefly for smooth visual feedback
+  const panel = document.getElementById('ai-inspector-panel');
+  if (panel) {
+    panel.style.opacity = '0.3';
+    panel.style.transform = 'translateY(4px)';
+    panel.style.transition = 'opacity 150ms ease, transform 150ms ease';
+
+    setTimeout(() => {
+      const badgeEl = document.getElementById('ai-panel-badge');
+      const acronymEl = document.getElementById('ai-panel-acronym');
+      const titleEl = document.getElementById('ai-panel-title');
+      const defEl = document.getElementById('ai-panel-def');
+      const purposeEl = document.getElementById('ai-panel-purpose');
+      const exampleEl = document.getElementById('ai-panel-example');
+      const listEl = document.getElementById('ai-panel-how');
+
+      if (badgeEl) badgeEl.textContent = data.badge;
+      if (acronymEl) acronymEl.textContent = data.acronym;
+      if (titleEl) titleEl.textContent = data.title;
+      if (defEl) defEl.textContent = data.def;
+      if (purposeEl) purposeEl.textContent = data.purpose;
+      if (exampleEl) exampleEl.textContent = data.example;
+
+      if (listEl) {
+        listEl.innerHTML = data.how.map(item => `<li>${item}</li>`).join('');
+      }
+
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0)';
+    }, 150);
+  }
+}
+
+// Process Step Node Activator
+function activateProcessNode(stepNum) {
+  const nodes = document.querySelectorAll('.process-node-card');
+  const progressBar = document.getElementById('path-line-progress');
+  nodes.forEach((node, idx) => {
+    if (idx + 1 === stepNum) {
+      node.classList.add('active');
+    } else {
+      node.classList.remove('active');
+    }
+  });
+  if (progressBar) {
+    const pct = Math.min(100, Math.max(14, (stepNum / 7) * 100));
+    progressBar.style.width = `${pct}%`;
+  }
+}
+
+// Footer Secret Reveal Trigger
+function triggerSecret05Reveal() {
+  const btn = document.querySelector('.secret-end-system-btn');
+  if (btn) {
+    btn.textContent = '[ THANK YOU FOR EXPLORING ]';
+    btn.style.color = 'var(--gold-light)';
+  }
+  showEasterEggToast();
+}
+
+// AI Search Interactive Demo Functions
+const aiKnowledgeBase = {
+  "build": "Karishma builds modern web applications, e-commerce storefronts, AI agent workflows, WhatsApp auto-responders, and business automation pipelines using Next.js, React, TypeScript, Python, and n8n.",
+  "miravika": "MIRAVIKA is Karishma's active fashion & beauty e-commerce venture operating an independent D2C storefront alongside listings on Flipkart, Meesho, and Amazon.",
+  "ai": "Karishma designs 24/7 WhatsApp AI auto-responders, multi-agent lead triage bots, customer qualification workflows, and n8n event bridges.",
+  "work": "You can work together via direct WhatsApp (+91 98186 91915) or email (karishmakumaritk19@gmail.com). Projects typically deliver within 3–7 business days with clear fixed pricing.",
+  "default": "Karishma Kumari is an AI Automation Architect & Product Builder in Delhi, India, specializing in web systems, D2C e-commerce, and agentic workflows."
+};
+
+function askAiDemo(questionText) {
+  const inputEl = document.getElementById('ai-demo-input');
+  if (inputEl) inputEl.value = questionText;
+  runAiQueryLogic(questionText);
+}
+
+function runCustomAiQuery() {
+  const inputEl = document.getElementById('ai-demo-input');
+  if (!inputEl || !inputEl.value.trim()) return;
+  runAiQueryLogic(inputEl.value.trim());
+}
+
+function runAiQueryLogic(q) {
+  const outputTextEl = document.getElementById('ai-demo-text');
+  if (!outputTextEl) return;
+  
+  outputTextEl.innerHTML = `<span style="opacity: 0.6;">Synthesizing structured answer...</span>`;
+  
+  setTimeout(() => {
+    const queryLower = q.toLowerCase();
+    let ans = aiKnowledgeBase["default"];
+    if (queryLower.includes("build") || queryLower.includes("what does") || queryLower.includes("make")) {
+      ans = aiKnowledgeBase["build"];
+    } else if (queryLower.includes("miravika") || queryLower.includes("e-commerce") || queryLower.includes("store")) {
+      ans = aiKnowledgeBase["miravika"];
+    } else if (queryLower.includes("ai") || queryLower.includes("agent") || queryLower.includes("automation")) {
+      ans = aiKnowledgeBase["ai"];
+    } else if (queryLower.includes("work") || queryLower.includes("contact") || queryLower.includes("hire") || queryLower.includes("together")) {
+      ans = aiKnowledgeBase["work"];
+    }
+    
+    outputTextEl.innerHTML = `<strong>Answer:</strong> ${ans}`;
+  }, 300);
+}
+
+window.toggleTelemetryGrid = toggleTelemetryGrid;
+window.switchAiSearchTab = switchAiSearchTab;
+window.activateProcessNode = activateProcessNode;
+window.triggerSecret05Reveal = triggerSecret05Reveal;
+window.askAiDemo = askAiDemo;
+window.runCustomAiQuery = runCustomAiQuery;
+
+/* ==========================================================================
+   DEVELOPER TERMINAL LOGIC
+   ========================================================================== */
+function executeTerminalCmd() {
+  const input = document.getElementById('terminal-input');
+  if (!input) return;
+  const val = input.value.trim();
+  if (!val) return;
+  runTermCmd(val);
+  input.value = '';
+}
+
+function runTermCmd(cmdStr) {
+  const output = document.getElementById('terminal-output');
+  if (!output) return;
+  const lower = cmdStr.toLowerCase();
+  let reply = '';
+  if (lower.includes('build')) {
+    reply = 'AI Automation workflows, WhatsApp inquiry bots, D2C e-commerce storefronts (MIRAVIKA), and high-converting web applications.';
+  } else if (lower.includes('stack')) {
+    reply = 'Next.js, React, TypeScript, Python, FastAPI, Supabase, PostgreSQL, n8n, WhatsApp API, Vercel, Render.';
+  } else if (lower.includes('ventures') || lower.includes('projects')) {
+    reply = 'MIRAVIKA (Live D2C Brand), Vision AI Studio (velision.in), Kuchuu Puchuu, Buildy Tools (buildy-tools.lovable.app).';
+  } else if (lower.includes('contact') || lower.includes('hire')) {
+    reply = 'WhatsApp: +91 98186 91915 | Email: karishmakumaritk19@gmail.com | Location: Delhi NCR, India.';
+  } else if (lower === 'clear') {
+    output.innerHTML = '';
+    return;
+  } else {
+    reply = `Command '${cmdStr}' executed. Type 'ask karishma build', 'ask karishma stack', or 'ask karishma ventures'.`;
+  }
+
+  const lineHtml = `
+    <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">${cmdStr}</span></div>
+    <div class="t-line t-response">> ${reply}</div>
+  `;
+  output.insertAdjacentHTML('beforeend', lineHtml);
+  output.scrollTop = output.scrollHeight;
+}
+
+function scrollToTopHero() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.executeTerminalCmd = executeTerminalCmd;
+window.runTermCmd = runTermCmd;
+window.scrollToTopHero = scrollToTopHero;
 
 /* ==========================================================================
    INTERACTIVE CHARACTER REVEAL & SCROLL STORY INITIALIZATION
@@ -2351,705 +2648,236 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // -------------------------------------------------------------------------
-  // CINEMATIC ADVERTISEMENT ENGINE
-  //
-  // Normal browser scroll is the timeline.
-  // One scroll position drives ALL visual layers simultaneously:
-  // camera + environment + character + typography + HUD.
-  //
-  // No scroll-jacking.
-  // No timers.
-  // No waiting for an animation to finish.
-  // No intentional black transition.
-  // -------------------------------------------------------------------------
-
+  // Cinematic Advertisement Story — continuous scroll timeline
   const story = document.getElementById('cinematic-story');
   const storyStage = document.getElementById('story-sticky-stage');
-
-  if (story && storyStage) {
-    const characters = Array.from(
-      story.querySelectorAll('.story-character-frame')
-    );
-
-    const environments = Array.from(
-      story.querySelectorAll('.story-environment')
-    );
-
-    const copy = document.getElementById('story-copy');
-    const kicker = document.getElementById('story-kicker');
-    const title = document.getElementById('story-title');
-    const description = document.getElementById('story-description');
-
-    const progressFill =
-      document.getElementById('story-progress-fill');
-
-    const progressValue =
-      document.getElementById('story-progress-value');
-
-    const chapters =
-      Array.from(story.querySelectorAll('.story-chapter'));
-
-    /*
-     * Six supplied visual keyframes.
-     *
-     * The important difference from the previous engine:
-     * these are not six isolated "scenes".
-     * They are points on one continuous film timeline.
-     */
-    const timeline = [
-      {
-        key: 'IDEA',
-        at: 0.00,
-        character: 0,
-        environment: 0,
-        title: 'IDEA<br><span>TO SYSTEM.</span>',
-        description:
-          'Every product starts as a problem worth solving.',
-        x: -5,
-        y: 3,
-        scale: 0.96,
-        rotate: -1.5
-      },
-      {
-        key: 'BUILD',
-        at: 0.18,
-        character: 1,
-        environment: 0,
-        title: 'TURNING<br><span>IDEAS REAL.</span>',
-        description:
-          'Structure, interface and experience built around the outcome.',
-        x: 7,
-        y: 0,
-        scale: 1.00,
-        rotate: 1
-      },
-      {
-        key: 'CODE',
-        at: 0.36,
-        character: 2,
-        environment: 0,
-        title: 'CODE<br><span>THAT MOVES.</span>',
-        description:
-          'Interfaces become working systems — responsive, adaptive and alive.',
-        x: -7,
-        y: -1,
-        scale: 1.035,
-        rotate: -1
-      },
-      {
-        key: 'AUTOMATE',
-        at: 0.54,
-        character: 3,
-        environment: 1,
-        title: 'MAKE IT<br><span>RUN.</span>',
-        description:
-          'AI agents and automated workflows remove repetitive work.',
-        x: 7,
-        y: -2,
-        scale: 1.055,
-        rotate: 1
-      },
-      {
-        key: 'SHIP',
-        at: 0.72,
-        character: 4,
-        environment: 2,
-        title: 'BUILD.<br><span>SHIP.</span>',
-        description:
-          'From prototype to production — the system becomes usable.',
-        x: -6,
-        y: -1,
-        scale: 1.07,
-        rotate: -1
-      },
-      {
-        key: 'FOUNDER',
-        at: 0.88,
-        character: 5,
-        environment: 2,
-        title: 'BUILD<br><span>WHAT MOVES.</span>',
-        description:
-          'Products, businesses and digital systems built with intention.',
-        x: 0,
-        y: 0,
-        scale: 1.00,
-        rotate: 0
-      }
-    ];
-
-    const clamp = (v, min = 0, max = 1) =>
-      Math.min(max, Math.max(min, v));
-
-    const ease = (v) => {
-      const t = clamp(v);
-      return t * t * (3 - 2 * t);
-    };
-
-    const lerp = (a, b, t) =>
-      a + (b - a) * t;
-
-    const wrap = (v) => {
-      if (v < 0) return 0;
-      if (v > 1) return 1;
-      return v;
-    };
-
-    /*
-     * Find the two neighbouring keyframes around the current scroll.
-     * This makes the character move continuously between supplied frames.
-     */
-    const getPair = (progress) => {
-      if (progress <= timeline[0].at) {
-        return {
-          from: timeline[0],
-          to: timeline[1],
-          local: 0
-        };
-      }
-
-      for (let i = 0; i < timeline.length - 1; i += 1) {
-        const from = timeline[i];
-        const to = timeline[i + 1];
-
-        if (progress <= to.at) {
-          const local = ease(
-            (progress - from.at) /
-            Math.max(0.001, to.at - from.at)
-          );
-
-          return { from, to, local };
-        }
-      }
-
-      return {
-        from: timeline[timeline.length - 2],
-        to: timeline[timeline.length - 1],
-        local: 1
-      };
-    };
-
-    const getChapterIndex = (progress) => {
-      let index = 0;
-
-      for (let i = 0; i < timeline.length; i += 1) {
-        if (progress >= timeline[i].at) {
-          index = i;
-        }
-      }
-
-      return index;
-    };
-
-    const renderStory = (progress) => {
-      progress = wrap(progress);
-
-      const pair = getPair(progress);
-      const from = pair.from;
-      const to = pair.to;
-      const t = pair.local;
-
-      const activeIndex = getChapterIndex(progress);
-      const active = timeline[activeIndex];
-
-      /*
-       * ---------------------------------------------------------------------
-       * CAMERA
-       * ---------------------------------------------------------------------
-       *
-       * The whole environment drifts continuously while each individual
-       * environment also gets its own parallax movement.
-       */
-      const cameraX =
-        Math.sin(progress * Math.PI * 1.7) * 1.4;
-
-      const cameraY =
-        progress * -2.2;
-
-      const finalShotProgress =
-        ease(clamp((progress - 0.88) / 0.12));
-
-      const cameraScale =
-        1 +
-        progress * 0.035 +
-        finalShotProgress * 0.012;
-
-      storyStage.style.setProperty(
-        '--story-progress',
-        progress.toFixed(4)
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-y',
-        `${cameraY}vh`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-x',
-        `${cameraX}vw`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-scale',
-        cameraScale.toFixed(4)
-      );
-
-      /*
-       * ---------------------------------------------------------------------
-       * ENVIRONMENT FILM
-       * ---------------------------------------------------------------------
-       *
-       * Current environment is always visible.
-       * The next environment starts entering BEFORE the chapter changes,
-       * creating a film-like environment transition instead of a black cut.
-       */
-      environments.forEach((environment, index) => {
-        const first = timeline.findIndex(
-          item => item.environment === index
-        );
-
-        if (first === -1) {
-          environment.style.opacity = '0';
-          return;
-        }
-
-        const envStart = timeline[first].at;
-
-        const nextEnvironmentIndex =
-          index < environments.length - 1
-            ? index + 1
-            : index;
-
-        const nextStart =
-          nextEnvironmentIndex !== index
-            ? timeline.find(
-                item => item.environment === nextEnvironmentIndex
-              )?.at
-            : null;
-
-        let opacity = 0.04;
-
-        if (progress >= envStart) {
-          opacity = 0.78;
-        }
-
-        if (
-          nextStart !== null &&
-          progress > nextStart - 0.07
-        ) {
-          const transition = ease(
-            (progress - (nextStart - 0.07)) / 0.14
-          );
-
-          opacity =
-            index === nextEnvironmentIndex
-              ? lerp(opacity, 0.78, transition)
-              : lerp(opacity, 0.04, transition);
-        }
-
-        const parallaxX =
-          cameraX +
-          Math.sin((progress + index * 0.13) * Math.PI * 2) *
-          (index === 0 ? 1.8 : 2.4);
-
-        const parallaxY =
-          -progress * (1.4 + index * 0.5);
-
-        const zoom =
-          1.06 +
-          progress * 0.045 +
-          index * 0.012;
-
-        environment.style.opacity =
-          String(clamp(opacity));
-
-        environment.style.transform =
-          `translate3d(${parallaxX}%, ${parallaxY}%, 0) scale(${zoom})`;
-
-        const brightness =
-          0.40 +
-          (active.environment === index ? 0.10 : 0);
-
-        environment.style.filter =
-          `brightness(${brightness}) contrast(1.07) saturate(.78)`;
-
-        environment.style.zIndex =
-          active.environment === index ? '2' : '1';
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * CHARACTER FILM
-       * ---------------------------------------------------------------------
-       *
-       * Both neighbouring supplied frames overlap.
-       * This prevents black gaps and makes the sequence feel like a single
-       * moving subject.
-       */
-      characters.forEach((frame, index) => {
-        const fromIndex = from.character;
-        const toIndex = to.character;
-
-        let opacity = 0;
-
-        if (index === fromIndex) {
-          opacity = 1 - t;
-        }
-
-        if (index === toIndex) {
-          opacity = Math.max(opacity, t);
-        }
-
-        if (fromIndex === toIndex && index === fromIndex) {
-          opacity = 1;
-        }
-
-        /*
-         * Slight depth/camera movement is continuous even while the supplied
-         * artwork changes. This is intentionally subtle; no body-part faking.
-         */
-        if (opacity > 0) {
-          const localX =
-            lerp(from.x, to.x, t);
-
-          const localY =
-            lerp(from.y, to.y, t);
-
-          const localScale =
-            lerp(from.scale, to.scale, t);
-
-          const localRotate =
-            lerp(from.rotate, to.rotate, t);
-
-          /*
-           * Film-camera movement:
-           * small forward push + lateral sweep.
-           */
-          const cinematicPush =
-            Math.sin(t * Math.PI) * 0.025;
-
-          const finalFrame =
-            progress >= 0.88 &&
-            index === timeline[timeline.length - 1].character;
-
-          /*
-           * FINAL SHOT:
-           * Stop the camera drift completely. The supplied final character
-           * artwork stays centered and fills the cinematic viewport until
-           * the story physically hands off to the footer.
-           */
-          const x = finalFrame
-            ? 0
-            : localX +
-              Math.sin(progress * Math.PI * 2) * 0.8;
-
-          const y = finalFrame
-            ? 0
-            : localY +
-              Math.sin(progress * Math.PI * 3) * 0.7;
-
-          const scale = finalFrame
-            ? 1
-            : localScale + cinematicPush;
-
-          frame.style.opacity =
-            String(clamp(opacity));
-
-          frame.style.transform =
-            `translate3d(calc(-50% + ${x}vw), ` +
-            `calc(-50% + ${y}vh), 0) ` +
-            `scale(${scale}) ` +
-            `rotate(${localRotate}deg)`;
-
-          frame.style.zIndex =
-            String(
-              30 +
-              Math.round(opacity * 20)
-            );
-        } else {
-          frame.style.opacity = '0';
-        }
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * TYPOGRAPHY
-       * ---------------------------------------------------------------------
-       *
-       * Text has its own choreography, independent from the character.
-       * It slides, lifts and subtly scales while the character/environment
-       * continue moving underneath.
-       */
-      const chapterStart = active.at;
-
-      const next =
-        timeline[Math.min(
-          activeIndex + 1,
-          timeline.length - 1
-        )];
-
-      const chapterLength =
-        Math.max(
-          0.001,
-          next.at - chapterStart
-        );
-
-      const chapterProgress =
-        activeIndex === timeline.length - 1
-          ? clamp(
-              (progress - chapterStart) /
-              Math.max(0.12, 1 - chapterStart)
-            )
-          : clamp(
-              (progress - chapterStart) /
-              chapterLength
-            );
-
-      const textIn =
-        ease(clamp(chapterProgress / 0.20));
-
-      const textOut =
-        activeIndex === timeline.length - 1
-          ? 1
-          : 1 - ease(
-              clamp(
-                (chapterProgress - 0.78) /
-                0.22
-              )
-            );
-
-      const textOpacity =
-        Math.max(0.08, textIn * textOut);
-
-      const direction =
-        activeIndex % 2 === 0 ? -1 : 1;
-
-      const textX =
-        direction *
-        (1 - textIn) *
-        7;
-
-      const textY =
-        (1 - textIn) * 28 -
-        chapterProgress * 8;
-
-      const textScale =
-        0.97 +
-        textIn * 0.03;
-
-      if (copy) {
-        copy.style.opacity =
-          String(textOpacity);
-
-        copy.style.transform =
-          `translate3d(${textX}vw, ` +
-          `calc(-50% + ${textY}px), 0) ` +
-          `scale(${textScale})`;
-      }
-
-      if (kicker) {
-        kicker.textContent =
-          `0${activeIndex + 1} / ${active.key}`;
-      }
-
-      if (title) {
-        title.innerHTML = active.title;
-      }
-
-      if (description) {
-        description.textContent =
-          active.description;
-      }
-
-      /*
-       * ---------------------------------------------------------------------
-       * HUD MOTION
-       * ---------------------------------------------------------------------
-       */
-      const hudX =
-        Math.sin(progress * Math.PI * 2) * 12;
-
-      const hudY =
-        Math.cos(progress * Math.PI * 2) * 8;
-
-      storyStage.style.setProperty(
-        '--story-hud-x',
-        `${hudX}px`
-      );
-
-      storyStage.style.setProperty(
-        '--story-hud-y',
-        `${hudY}px`
-      );
-
-      const corners =
-        story.querySelectorAll('.story-interface-corner');
-
-      corners.forEach((corner, index) => {
-        const direction =
-          index % 2 === 0 ? 1 : -1;
-
-        corner.style.transform =
-          `translate3d(` +
-          `${hudX * direction}px, ` +
-          `${hudY * direction}px, 0)`;
-      });
-
-      const interfaceCodes =
-        story.querySelectorAll('.story-interface-code');
-
-      interfaceCodes.forEach((code, index) => {
-        const drift =
-          Math.sin(
-            progress * Math.PI * (2 + index * 0.7)
-          ) *
-          (14 + index * 5);
-
-        const rise =
-          Math.cos(
-            progress * Math.PI * 2
-          ) *
-          5;
-
-        code.style.opacity =
-          String(
-            0.20 +
-            0.42 *
-            Math.max(
-              0,
-              Math.sin(
-                (progress + index * 0.17) *
-                Math.PI
-              )
-            )
-          );
-
-        code.style.transform =
-          `translate3d(${drift}px, ${rise}px, 0)`;
-      });
-
-      /*
-       * ---------------------------------------------------------------------
-       * PROGRESS / CHAPTERS
-       * ---------------------------------------------------------------------
-       */
-      if (progressFill) {
-        progressFill.style.height =
-          `${progress * 100}%`;
-      }
-
-      if (progressValue) {
-        progressValue.textContent =
-          String(
-            Math.round(progress * 100)
-          ).padStart(2, '0');
-      }
-
-      chapters.forEach((chapter, index) => {
-        const distance =
-          Math.abs(index - activeIndex);
-
-        chapter.classList.toggle(
-          'active',
-          index === activeIndex
-        );
-
-        chapter.style.opacity =
-          index === activeIndex
-            ? '1'
-            : String(
-                Math.max(
-                  0.16,
-                  0.42 - distance * 0.06
-                )
-              );
-
-        chapter.style.transform =
-          index === activeIndex
-            ? 'translateY(-3px) scale(1.04)'
-            : 'translateY(0) scale(1)';
-      });
-    };
-
-    let raf = 0;
-    let lastProgress = -1;
-
-    const requestStoryRender = () => {
-      if (raf) return;
-
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-
-        const rect =
-          story.getBoundingClientRect();
-
-        /*
-         * The sticky stage occupies exactly one viewport.
-         * Map the ENTIRE remaining story travel to the cinematic timeline,
-         * so the final frame is the visual state immediately before the
-         * story's physical bottom and therefore immediately before footer.
-         */
-        const storyTravel =
-          Math.max(
-            1,
-            story.offsetHeight -
-            window.innerHeight
-          );
-
-        const storyOffset =
-          Math.max(
-            0,
-            Math.min(
-              storyTravel,
-              -rect.top
-            )
-          );
-
-        const progress =
-          clamp(
-            storyOffset / storyTravel
-          );
-
-        /*
-         * Skip duplicate frames, but never throttle scroll itself.
-         */
-        if (
-          Math.abs(progress - lastProgress) <
-          0.0001
-        ) {
-          return;
-        }
-
-        lastProgress = progress;
-
-        renderStory(progress);
-      });
-    };
-
-    characters.forEach(frame => {
-      frame.style.willChange =
-        'opacity, transform';
-    });
-
-    environments.forEach(environment => {
-      environment.style.willChange =
-        'opacity, transform, filter';
-    });
-
-    window.addEventListener(
-      'scroll',
-      requestStoryRender,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      'resize',
-      requestStoryRender
-    );
-
-    renderStory(0);
-    requestStoryRender();
+  const storyCharacterFrames = story ? [...story.querySelectorAll('.story-character-frame')] : [];
+  const storyEnvironments = story ? [...story.querySelectorAll('.story-environment')] : [];
+  const storyChapters = story ? [...story.querySelectorAll('.story-chapter')] : [];
+  const storyKicker = document.getElementById('story-kicker');
+  const storyTitle = document.getElementById('story-title');
+  const storyDescription = document.getElementById('story-description');
+  const storyProgressFill = document.getElementById('story-progress-fill');
+  const storyProgressValue = document.getElementById('story-progress-value');
+
+  const storyScenes = [
+    {
+      start: 0.00, end: 0.16,
+      kicker: '01 / IDEA',
+      title: 'IDEA<br><span>TO SYSTEM.</span>',
+      description: 'Every product starts as a problem worth solving.',
+      character: 0,
+      environment: 0,
+      enterX: -120,
+      exitX: -80
+    },
+    {
+      start: 0.14, end: 0.32,
+      kicker: '02 / BUILD',
+      title: 'TURNING<br><span>IDEAS REAL.</span>',
+      description: 'I design the structure, interface and experience around the outcome.',
+      character: 1,
+      environment: 0,
+      enterX: 100,
+      exitX: 160
+    },
+    {
+      start: 0.30, end: 0.49,
+      kicker: '03 / CODE',
+      title: 'CODE<br><span>THAT MOVES.</span>',
+      description: 'Interfaces become working systems — built to respond, adapt and scale.',
+      character: 2,
+      environment: 0,
+      enterX: -100,
+      exitX: 120
+    },
+    {
+      start: 0.47, end: 0.66,
+      kicker: '04 / AUTOMATE',
+      title: 'MAKE IT<br><span>RUN.</span>',
+      description: 'AI agents and automated workflows remove repetitive work from the system.',
+      character: 3,
+      environment: 1,
+      enterX: 150,
+      exitX: -130
+    },
+    {
+      start: 0.64, end: 0.83,
+      kicker: '05 / SHIP',
+      title: 'BUILD.<br><span>SHIP.</span>',
+      description: 'From prototype to production — the system becomes something people can use.',
+      character: 4,
+      environment: 2,
+      enterX: -140,
+      exitX: 100
+    },
+    {
+      start: 0.81, end: 1.00,
+      kicker: '06 / FOUNDER',
+      title: 'BUILD<br><span>WHAT MOVES.</span>',
+      description: 'Products, businesses and digital systems built with intention.',
+      character: 5,
+      environment: 2,
+      enterX: 100,
+      exitX: 0
+    }
+  ];
+
+  let storyTicking = false;
+  let storyLastScene = -1;
+  let storyLastText = '';
+
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
+  const easeOut = (v) => 1 - Math.pow(1 - clamp01(v), 3);
+  const easeInOut = (v) => {
+    v = clamp01(v);
+    return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2;
+  };
+
+  function sceneOpacity(progress, scene) {
+    const fade = .035;
+    const enter = clamp01((progress - scene.start) / fade);
+    const exit = clamp01((scene.end - progress) / fade);
+    return Math.min(easeOut(enter), easeOut(exit));
   }
+
+  function renderCinematicStory() {
+    storyTicking = false;
+    if (!story || !storyStage) return;
+
+    const rect = story.getBoundingClientRect();
+    const travel = Math.max(1, story.offsetHeight - window.innerHeight);
+    const progress = clamp01(-rect.top / travel);
+
+    let activeIndex = storyScenes.findIndex((scene) =>
+      progress >= scene.start && progress <= scene.end
+    );
+
+    if (activeIndex < 0) {
+      activeIndex = progress < storyScenes[0].start ? 0 : storyScenes.length - 1;
+    }
+
+    const scene = storyScenes[activeIndex];
+    const sceneLength = Math.max(.001, scene.end - scene.start);
+    const local = clamp01((progress - scene.start) / sceneLength);
+    const motion = easeInOut(local);
+    const opacity = sceneOpacity(progress, scene);
+
+    /* ----- CHARACTER: continuous entrance / walk / exit ----- */
+    storyCharacterFrames.forEach((img, index) => {
+      const isCurrent = index === scene.character;
+      const previous = index === storyScenes[Math.max(0, activeIndex - 1)].character;
+      const next = index === storyScenes[Math.min(storyScenes.length - 1, activeIndex + 1)].character;
+
+      if (isCurrent) {
+        const x = scene.enterX + (scene.exitX - scene.enterX) * motion;
+        const lift = Math.sin(local * Math.PI) * 22;
+        const scale = 1.00 + Math.sin(local * Math.PI) * .045;
+
+        img.style.opacity = String(opacity);
+        img.style.transform =
+          `translateX(calc(-50% + ${x}px))
+           translateY(${-lift}px)
+           scale(${scale})`;
+
+        img.style.filter =
+          `drop-shadow(0 30px 55px rgba(0,0,0,.72))
+           drop-shadow(0 0 ${12 + Math.sin(local * Math.PI) * 18}px rgba(201,162,75,.08))`;
+      } else if (index === previous || index === next) {
+        img.style.opacity = '0';
+        img.style.transform = 'translateX(-50%) scale(.94)';
+      } else {
+        img.style.opacity = '0';
+        img.style.transform = 'translateX(-50%) scale(.92)';
+      }
+    });
+
+    /* ----- ENVIRONMENT: cinematic camera movement ----- */
+    storyEnvironments.forEach((img, index) => {
+      const active = index === scene.environment;
+      const depth = active ? 1 : 0;
+      img.style.opacity = active ? String(.56 + opacity * .16) : '0';
+
+      if (active) {
+        const zoom = 1.08 + motion * .075;
+        const driftX = Math.sin(local * Math.PI) * -24;
+        const driftY = Math.sin(local * Math.PI) * -10;
+        img.style.transform =
+          `scale(${zoom}) translate3d(${driftX}px, ${driftY}px, 0)`;
+        img.style.filter =
+          `brightness(${.34 + opacity * .08}) contrast(1.08) saturate(.72)`;
+      }
+    });
+
+    /* ----- CHAPTER INDICATOR ----- */
+    storyChapters.forEach((chapter, index) => {
+      chapter.classList.toggle('active', index === activeIndex);
+    });
+
+    /* ----- TYPOGRAPHY: enter / hold / exit ----- */
+    const textKey = `${activeIndex}:${Math.round(local * 20)}`;
+
+    if (textKey !== storyLastText) {
+      storyLastText = textKey;
+
+      if (storyKicker) {
+        storyKicker.textContent = scene.kicker;
+        storyKicker.style.transform =
+          `translate3d(${(1 - easeOut(clamp01(local / .22))) * -45}px, 0, 0)`;
+        storyKicker.style.opacity = String(opacity);
+      }
+
+      if (storyTitle) {
+        storyTitle.innerHTML = scene.title;
+        const titleProgress = clamp01(local / .28);
+        const titleX = (1 - easeOut(titleProgress)) * -90;
+        const titleY = (1 - easeOut(titleProgress)) * 42;
+        const titleScale = .92 + easeOut(titleProgress) * .08;
+
+        storyTitle.style.transform =
+          `translate3d(${titleX}px, ${titleY}px, 0) scale(${titleScale})`;
+        storyTitle.style.opacity = String(opacity);
+      }
+
+      if (storyDescription) {
+        const descProgress = clamp01((local - .08) / .25);
+        storyDescription.style.transform =
+          `translate3d(${(1 - easeOut(descProgress)) * -35}px, 0, 0)`;
+        storyDescription.style.opacity =
+          String(opacity * easeOut(descProgress));
+      }
+    }
+
+    /* ----- AD-LIKE MICRO MOTION ----- */
+    if (storyStage) {
+      const cameraX = Math.sin(progress * Math.PI * 2) * 8;
+      const cameraY = Math.cos(progress * Math.PI * 2) * 4;
+      storyStage.style.setProperty('--story-camera-x', `${cameraX}px`);
+      storyStage.style.setProperty('--story-camera-y', `${cameraY}px`);
+    }
+
+    if (storyProgressFill) {
+      storyProgressFill.style.height = `${progress * 100}%`;
+    }
+
+    if (storyProgressValue) {
+      storyProgressValue.textContent =
+        String(Math.round(progress * 100)).padStart(2, '0');
+    }
+
+    storyLastScene = activeIndex;
+  }
+
+  function requestCinematicStoryRender() {
+    if (!storyTicking) {
+      storyTicking = true;
+      requestAnimationFrame(renderCinematicStory);
+    }
+  }
+
+  window.addEventListener('scroll', requestCinematicStoryRender, { passive: true });
+  window.addEventListener('resize', requestCinematicStoryRender, { passive: true });
+  requestCinematicStoryRender();
 
   // Custom Cursor & Context Label Switching
   const cursorDot = document.getElementById('cursor-dot');
