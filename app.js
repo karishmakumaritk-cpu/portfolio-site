@@ -2584,7 +2584,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!video) return;
       const fallbackDuration = 36;
       const duration = Number.isFinite(video.duration) && video.duration > 0 ? video.duration : fallbackDuration;
-      const targetTime = progress * duration;
+      const CINEMATIC_VIDEO_END_PROGRESS = 0.965;
+      const targetTime = clamp(progress) * duration * CINEMATIC_VIDEO_END_PROGRESS;
 
       if (video.readyState >= 1 && Math.abs(targetTime - video.currentTime) > 0.04) {
         video.currentTime = targetTime;
