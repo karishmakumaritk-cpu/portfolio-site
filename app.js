@@ -10,7 +10,7 @@ const projectsData = [
     gridClass: "featured-wide",
     url: "https://miravika.com/",
     ctaText: "VISIT MIRAVIKA STORE →",
-    image: "images/miravika_store_concept_1788341144429.jpg",
+    image: "src/assets/images/miravika_store_concept_1788341144429.jpg",
     conceptType: "Live Consumer E-Commerce Storefront",
     shortDesc: "My own consumer e-commerce brand selling fashion accessories & beauty products, operating an independent D2C storefront and selling across Flipkart, Meesho, and Amazon.",
     businessContext: "Independent fashion & beauty brands face high acquisition costs and marketplace competition without distinct visual merchandising, catalog algorithms, and streamlined fulfillment.",
@@ -74,7 +74,7 @@ const projectsData = [
     gridClass: "medium-tall",
     url: "https://kuchuu-puchuu-chai-bites.ai.studio/",
     ctaText: "VIEW LIVE WEBSITE →",
-    image: "images/kuchuu_chai_concept_1788340999750.jpg",
+    image: "src/assets/images/kuchuu_chai_concept_1788340999750.jpg",
     conceptType: "Client Delivered Business Website",
     shortDesc: "A custom commercial website created and delivered for an Indian roadside chai and street food venture, focused on menu discovery, local search, and direct bulk orders.",
     businessContext: "A local street food business in Delhi NCR needed to expand beyond foot traffic by enabling local customers to browse snacks, request bulk office catering, and find map directions.",
@@ -105,7 +105,7 @@ const projectsData = [
     gridClass: "medium-standard",
     url: "https://karishmakumaritk-cpu.github.io/Selon-templet-1/",
     ctaText: "VIEW LIVE WEBSITE →",
-    image: "images/lumiere_salon_concept_1788341026422.jpg",
+    image: "src/assets/images/lumiere_salon_concept_1788341026422.jpg",
     conceptType: "Premium Salon & Beauty Studio Website",
     shortDesc: "Delivered beauty studio website crafted for hair stylists, makeup artists, and aesthetic clinics featuring editorial art direction and interactive booking.",
     businessContext: "Salons lose premium appointments when relying exclusively on social media DMs without a structured rate card or instant booking channel.",
@@ -134,7 +134,7 @@ const projectsData = [
     gridClass: "wide-landscape",
     url: "https://karishmakumaritk-cpu.github.io/majestic-estates/",
     ctaText: "VIEW LIVE WEBSITE →",
-    image: "images/majestic_realestate_concept_1788341065851.jpg",
+    image: "src/assets/images/majestic_realestate_concept_1788341065851.jpg",
     conceptType: "Real Estate & Property Showcase Website",
     shortDesc: "Delivered real estate showcase platform built for property consultants and developers in Delhi NCR to showcase residential and commercial listings.",
     businessContext: "Property brokers need high-credibility web presentation to capture high-intent property buyers and rental inquiries.",
@@ -272,11 +272,14 @@ function renderProjects(filter = "all") {
       });
 
   const base = getBasePath();
-  const imgPrefix = base ? `${base}/` : '/';
 
   container.innerHTML = filtered.map((p, index) => {
-    const imgSrc = p.image 
-      ? (p.image.startsWith('images/') ? imgPrefix + p.image : (p.image.startsWith('/') ? p.image : '/' + p.image))
+    const imgSrc = p.image
+      ? (() => {
+          if (p.image.startsWith('http://') || p.image.startsWith('https://') || p.image.startsWith('data:')) return p.image;
+          const assetPath = p.image.replace(/^\.?\//, '');
+          return `${base ? `${base}/` : '/'}${assetPath}`;
+        })()
       : null;
 
     const isIronVault = p.id === "ironvault-fitness";
@@ -2199,12 +2202,12 @@ function initCommandPalette() {
   const results = document.getElementById('cmd-results');
 
   const commands = [
-    { title: "Selected Work", desc: "View 7 verified portfolio projects & case studies", action: () => { jumpTo('#work'); } },
-    { title: "System Architecture", desc: "Interactive 6-stage automation pipeline", action: () => { jumpTo('#services'); } },
-    { title: "AI Search & GEO Visibility", desc: "AEO, GEO, LLMO, AISO & E-E-A-T methodologies", action: () => { jumpTo('#ai-search'); } },
-    { title: "Services & Pricing Architecture", desc: "Verified packages starting ₹2,999", action: () => { jumpTo('#pricing'); } },
-    { title: "About Karishma Kumari", desc: "AI Automation Architect profile & ventures", action: () => { jumpTo('#about'); } },
-    { title: "Start a Project", desc: "Inquire for custom website or AI automation", action: () => { jumpTo('#contact'); } },
+    { title: "Selected Work", desc: "View 7 verified portfolio projects & case studies", action: () => { jumpTo('/work'); } },
+    { title: "System Architecture", desc: "Interactive 6-stage automation pipeline", action: () => { jumpTo('/capabilities'); } },
+    { title: "AI Search & GEO Visibility", desc: "AEO, GEO, LLMO, AISO & E-E-A-T methodologies", action: () => { jumpTo('/ai-search'); } },
+    { title: "Services & Pricing Architecture", desc: "Verified packages starting ₹2,999", action: () => { jumpTo('/pricing'); } },
+    { title: "About Karishma Kumari", desc: "AI Automation Architect profile & ventures", action: () => { jumpTo('/about'); } },
+    { title: "Start a Project", desc: "Inquire for custom website or AI automation", action: () => { jumpTo('/contact'); } },
     { title: "Open MIRAVIKA (D2C Store)", desc: "Live consumer e-commerce venture", action: () => { window.open('https://miravika.com/', '_blank'); } },
     { title: "Open Vision AI Studio", desc: "Team AI Automation platform (velision.in)", action: () => { window.open('https://velision.in/', '_blank'); } },
     { title: "Open Buildy Tools", desc: "Free AI Excel automation utility", action: () => { window.open('https://buildy-tools.lovable.app', '_blank'); } },
@@ -2243,11 +2246,31 @@ function initCommandPalette() {
     });
   }
 
-  function jumpTo(selector) {
+  function jumpTo(target) {
     closeCommandPalette();
-    const target = document.querySelector(selector);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+
+    if (target && target.startsWith('/')) {
+      navigateTo(target);
+      return;
+    }
+
+    const realTarget = document.querySelector(target);
+    if (realTarget) {
+      realTarget.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    if (target === '#services' || target === '#about' || target === '#work' || target === '#pricing' || target === '#contact' || target === '#ai-search' || target === '#process') {
+      const routeMap = {
+        '#services': '/capabilities',
+        '#about': '/about',
+        '#work': '/work',
+        '#pricing': '/pricing',
+        '#contact': '/contact',
+        '#ai-search': '/ai-search',
+        '#process': '/process'
+      };
+      navigateTo(routeMap[target]);
     }
   }
 
@@ -2354,7 +2377,7 @@ function showEasterEggToast() {
             <span>DISCOVER</span> → <span>DESIGN</span> → <span>BUILD</span> → <span>AUTOMATE</span> → <span>DEPLOY</span>
           </div>
           <div class="k-banner-actions">
-            <button onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'}); this.closest('.k-easter-egg-banner').classList.remove('active');" class="btn-primary-sm">VIEW PIPELINE</button>
+            <button onclick="const route='/capabilities'; if (window.location.pathname !== route) { window.location.href = route; } else { document.querySelector('#process')?.scrollIntoView({behavior:'smooth'}); } this.closest('.k-easter-egg-banner').classList.remove('active');" class="btn-primary-sm">VIEW PIPELINE</button>
             <button onclick="this.closest('.k-easter-egg-banner').classList.remove('active');" class="btn-ghost-sm">DISMISS</button>
           </div>
         </div>
@@ -2382,7 +2405,9 @@ function initHiddenArchitectureView() {
         const pipeline = document.querySelector('.systems-map-container') || target;
         pipeline.classList.add('highlight-pulse');
         setTimeout(() => pipeline.classList.remove('highlight-pulse'), 3000);
+        return;
       }
+      navigateTo('/capabilities');
     });
   }
 }
@@ -2432,22 +2457,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const storyStage = document.getElementById('story-sticky-stage');
 
   if (story && storyStage) {
-    const characters = Array.from(
-      story.querySelectorAll('.story-character-frame')
-    );
-
-    const environments = Array.from(
-      story.querySelectorAll('.story-environment')
-    );
-
+    const video = document.getElementById('cinematic-scroll-video');
     const storyCorners = Array.from(
       story.querySelectorAll('.story-interface-corner')
     );
-
     const storyCodes = Array.from(
       story.querySelectorAll('.story-interface-code')
     );
-
     const chapters = Array.from(
       story.querySelectorAll('.story-chapter')
     );
@@ -2456,162 +2472,100 @@ document.addEventListener('DOMContentLoaded', () => {
     const kicker = document.getElementById('story-kicker');
     const title = document.getElementById('story-title');
     const description = document.getElementById('story-description');
+    const progressFill = document.getElementById('story-progress-fill');
+    const progressValue = document.getElementById('story-progress-value');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const progressFill =
-      document.getElementById('story-progress-fill');
-
-    const progressValue =
-      document.getElementById('story-progress-value');
-
-    /*
-     * Six supplied visual keyframes.
-     *
-     * The important difference from the previous engine:
-     * these are not six isolated "scenes".
-     * They are points on one continuous film timeline.
-     */
     const timeline = [
       {
-        key: 'IDEA',
         at: 0.00,
-        character: 0,
-        environment: 0,
-        title: 'IDEA<br><span>TO SYSTEM.</span>',
-        description:
-          'Every product starts as a problem worth solving.',
-        x: -5,
-        y: 3,
-        scale: 0.96,
-        rotate: -1.5
-      },
-      {
-        key: 'BUILD',
-        at: 0.18,
-        character: 1,
-        environment: 0,
-        title: 'TURNING<br><span>IDEAS REAL.</span>',
-        description:
-          'Structure, interface and experience built around the outcome.',
-        x: 7,
-        y: 0,
-        scale: 1.00,
-        rotate: 1
-      },
-      {
-        key: 'CODE',
-        at: 0.36,
-        character: 2,
-        environment: 0,
-        title: 'CODE<br><span>THAT MOVES.</span>',
-        description:
-          'Interfaces become working systems — responsive, adaptive and alive.',
-        x: -7,
-        y: -1,
-        scale: 1.035,
-        rotate: -1
-      },
-      {
-        key: 'AUTOMATE',
-        at: 0.54,
-        character: 3,
-        environment: 1,
-        title: 'MAKE IT<br><span>RUN.</span>',
-        description:
-          'AI agents and automated workflows remove repetitive work.',
-        x: 7,
-        y: -2,
-        scale: 1.055,
-        rotate: 1
-      },
-      {
-        key: 'SHIP',
-        at: 0.72,
-        character: 4,
-        environment: 2,
-        title: 'BUILD.<br><span>SHIP.</span>',
-        description:
-          'From prototype to production — the system becomes usable.',
-        x: -6,
-        y: -1,
-        scale: 1.07,
-        rotate: -1
-      },
-      {
-        key: 'FOUNDER',
-        at: 0.88,
-        character: 5,
-        environment: 2,
-        title: 'BUILD<br><span>WHAT MOVES.</span>',
-        description:
-          'Products, businesses and digital systems built with intention.',
+        kicker: '01 / INTELLIGENCE',
+        title: 'INTELLIGENCE',
+        description: 'Precision-built systems designed to think, act and move with intention.',
         x: 0,
         y: 0,
         scale: 1.00,
-        rotate: 0
+        opacity: 1
+      },
+      {
+        at: 0.18,
+        kicker: '02 / AUTOMATION',
+        title: 'AUTOMATION',
+        description: 'Operational flow that moves from trigger to action without friction.',
+        x: -1,
+        y: -2,
+        scale: 1.02,
+        opacity: 1
+      },
+      {
+        at: 0.35,
+        kicker: '03 / SYSTEMS',
+        title: 'SYSTEMS',
+        description: 'The architecture behind the product, the process and the growth engine.',
+        x: 4,
+        y: 4,
+        scale: 1.04,
+        opacity: 1
+      },
+      {
+        at: 0.53,
+        kicker: '04 / WORKFLOWS',
+        title: 'WORKFLOWS',
+        description: 'Connected operations that scale, respond and adapt as the business evolves.',
+        x: -3,
+        y: 1,
+        scale: 1.06,
+        opacity: 1
+      },
+      {
+        at: 0.72,
+        kicker: '05 / AI AGENTS',
+        title: 'AI AGENTS',
+        description: 'A high-trust layer of action, decision support and execution across the stack.',
+        x: 3,
+        y: -1,
+        scale: 1.08,
+        opacity: 1
+      },
+      {
+        at: 0.88,
+        kicker: '06 / VISION AI STUDIO',
+        title: 'VISION<br><span>AI STUDIO</span>',
+        description: 'Built to turn strategic vision into elegant systems, products and momentum.',
+        x: 0,
+        y: 0,
+        scale: 1.10,
+        opacity: 1
       }
     ];
 
-    const clamp = (v, min = 0, max = 1) =>
-      Math.min(max, Math.max(min, v));
-
+    const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
     const ease = (v) => {
-      const t = clamp(v);
-      return t * t * (3 - 2 * t);
+      const x = clamp(v);
+      return x * x * (3 - 2 * x);
     };
 
-    const lerp = (a, b, t) =>
-      a + (b - a) * t;
-
-    const wrap = (v) => {
-      if (v < 0) return 0;
-      if (v > 1) return 1;
-      return v;
-    };
-
-    /*
-     * Find the two neighbouring keyframes around the current scroll.
-     * This makes the character move continuously between supplied frames.
-     */
-    const getPair = (progress) => {
-      if (progress <= timeline[0].at) {
-        return {
-          from: timeline[0],
-          to: timeline[1],
-          local: 0
-        };
-      }
-
-      for (let i = 0; i < timeline.length - 1; i += 1) {
-        const from = timeline[i];
-        const to = timeline[i + 1];
-
-        if (progress <= to.at) {
-          const local = ease(
-            (progress - from.at) /
-            Math.max(0.001, to.at - from.at)
-          );
-
-          return { from, to, local };
-        }
-      }
-
-      return {
-        from: timeline[timeline.length - 2],
-        to: timeline[timeline.length - 1],
-        local: 1
-      };
-    };
-
-    const getChapterIndex = (progress) => {
-      let index = 0;
-
+    const getActiveScene = (progress) => {
+      let activeIndex = 0;
       for (let i = 0; i < timeline.length; i += 1) {
         if (progress >= timeline[i].at) {
-          index = i;
+          activeIndex = i;
         }
       }
+      return { index: activeIndex, scene: timeline[activeIndex] };
+    };
 
-      return index;
+    const getSceneProgress = (progress, activeIndex) => {
+      const current = timeline[activeIndex];
+      const next = timeline[Math.min(activeIndex + 1, timeline.length - 1)];
+      const duration = Math.max(0.001, next.at - current.at);
+      const local = clamp((progress - current.at) / duration);
+      return {
+        current,
+        next,
+        local,
+        chapterProgress: activeIndex === timeline.length - 1 ? clamp((progress - current.at) / Math.max(0.12, 1 - current.at)) : clamp((progress - current.at) / duration)
+      };
     };
 
     const storyLayout = {
@@ -2623,402 +2577,90 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateStoryLayout = () => {
       storyLayout.width = window.innerWidth;
       storyLayout.height = window.innerHeight;
-      storyLayout.storyTravel = Math.max(
-        1,
-        story.offsetHeight - storyLayout.height
-      );
+      storyLayout.storyTravel = Math.max(1, story.offsetHeight - storyLayout.height);
+    };
+
+    const syncVideo = (progress) => {
+      if (!video) return;
+      const fallbackDuration = 36;
+      const duration = Number.isFinite(video.duration) && video.duration > 0 ? video.duration : fallbackDuration;
+      const targetTime = progress * duration;
+
+      if (video.readyState >= 1 && Math.abs(targetTime - video.currentTime) > 0.04) {
+        video.currentTime = targetTime;
+      }
+
+      if (reduceMotion) {
+        video.pause();
+      }
     };
 
     const renderStory = (progress) => {
-      progress = wrap(progress);
+      progress = clamp(progress);
+      storyStage.style.setProperty('--story-progress', progress.toFixed(4));
 
-      const pair = getPair(progress);
-      const from = pair.from;
-      const to = pair.to;
-      const t = pair.local;
-
-      const activeIndex = getChapterIndex(progress);
-      const active = timeline[activeIndex];
-
-      const cameraDrift =
-        Math.sin(progress * Math.PI * 1.7) * 1.2;
-
-      const cameraX =
-        Math.sin(progress * Math.PI * 1.5) * 1.2 +
-        cameraDrift;
-
-      const cameraY =
-        -1.4 * progress +
-        Math.cos(progress * Math.PI * 2.1) * 0.55;
-
-      const finalShotProgress =
-        ease(clamp((progress - 0.84) / 0.16));
-
-      const cameraScale =
-        1 +
-        progress * 0.025 +
-        finalShotProgress * 0.012 +
-        Math.sin(progress * Math.PI * 2.0) * 0.01;
-
-      storyStage.style.setProperty(
-        '--story-progress',
-        progress.toFixed(4)
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-y',
-        `${cameraY}vh`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-x',
-        `${cameraX}vw`
-      );
-
-      storyStage.style.setProperty(
-        '--story-camera-scale',
-        cameraScale.toFixed(4)
-      );
-
-      environments.forEach((environment, index) => {
-        const first = timeline.findIndex(
-          item => item.environment === index
-        );
-
-        if (first === -1) {
-          environment.style.opacity = '0';
-          environment.classList.remove('is-active');
-          return;
-        }
-
-        const envStart = timeline[first].at;
-        const nextEnvironmentIndex =
-          index < environments.length - 1
-            ? index + 1
-            : index;
-
-        const nextStart =
-          nextEnvironmentIndex !== index
-            ? timeline.find(
-                item => item.environment === nextEnvironmentIndex
-              )?.at
-            : null;
-
-        const motionLag =
-          Math.sin((progress + index * 0.16) * Math.PI * 2.5) * 0.9;
-
-        let opacity = 0.04;
-
-        if (progress >= envStart) {
-          opacity = 0.78;
-        }
-
-        if (
-          nextStart !== null &&
-          progress > nextStart - 0.07
-        ) {
-          const transition = ease(
-            (progress - (nextStart - 0.07)) / 0.14
-          );
-
-          opacity =
-            index === nextEnvironmentIndex
-              ? lerp(opacity, 0.82, transition)
-              : lerp(opacity, 0.04, transition);
-        }
-
-        const parallaxX =
-          cameraX +
-          motionLag * (index === 0 ? 1.5 : 2.2) +
-          (index === active.environment ? 0.4 : 0);
-
-        const parallaxY =
-          -progress * (1.2 + index * 0.6) +
-          Math.sin((progress + index) * Math.PI * 5) * 0.8;
-
-        const zoom =
-          1.06 +
-          progress * 0.05 +
-          index * 0.012 +
-          (active.environment === index ? 0.045 : 0);
-
-        environment.style.opacity =
-          String(clamp(opacity));
-
-        environment.style.transform =
-          `translate3d(${parallaxX}%, ${parallaxY}%, 0) scale(${zoom})`;
-
-        environment.style.zIndex =
-          active.environment === index ? '2' : '1';
-
-        environment.classList.toggle(
-          'is-active',
-          active.environment === index
-        );
-      });
-
-      characters.forEach((frame, index) => {
-        const fromIndex = from.character;
-        const toIndex = to.character;
-
-        let opacity = 0;
-
-        if (index === fromIndex) {
-          opacity = 1 - t;
-        }
-
-        if (index === toIndex) {
-          opacity = Math.max(opacity, t);
-        }
-
-        if (fromIndex === toIndex && index === fromIndex) {
-          opacity = 1;
-        }
-
-        if (opacity > 0) {
-          const localX =
-            lerp(from.x, to.x, t);
-
-          const localY =
-            lerp(from.y, to.y, t);
-
-          const localScale =
-            lerp(from.scale, to.scale, t);
-
-          const localRotate =
-            lerp(from.rotate, to.rotate, t);
-
-          const cinematicPush =
-            Math.sin(t * Math.PI) * 0.4;
-
-          const finalFrame =
-            progress >= 0.84 &&
-            index === timeline[timeline.length - 1].character;
-
-          const x = finalFrame
-            ? 0
-            : clamp(
-                localX +
-                Math.sin((progress + index * 0.07) * Math.PI * 2.4) * 0.7,
-                -3.2,
-                3.2
-              );
-
-          const y = finalFrame
-            ? 0
-            : clamp(
-                localY +
-                Math.cos((progress + index * 0.09) * Math.PI * 2.8) * 0.5,
-                -3.5,
-                2.5
-              );
-
-          const scale = finalFrame
-            ? 1.02
-            : clamp(
-                localScale + cinematicPush +
-                Math.sin(progress * Math.PI * 2.8) * 0.02,
-                0.96,
-                1.1
-              );
-
-          frame.style.opacity =
-            String(clamp(opacity));
-
-          frame.style.transform =
-            `translate3d(calc(-50% + ${x}vw), ` +
-            `calc(-50% + ${y}vh), 0) ` +
-            `scale(${scale}) ` +
-            `rotate(${localRotate + Math.sin(progress * Math.PI * 2.8) * 0.35}deg)`;
-
-          frame.style.zIndex =
-            String(
-              30 +
-              Math.round(opacity * 20)
-            );
-        } else {
-          frame.style.opacity = '0';
-        }
-      });
-
-      const chapterStart = active.at;
-      const next =
-        timeline[Math.min(
-          activeIndex + 1,
-          timeline.length - 1
-        )];
-
-      const chapterLength =
-        Math.max(
-          0.001,
-          next.at - chapterStart
-        );
-
-      const chapterProgress =
-        activeIndex === timeline.length - 1
-          ? clamp(
-              (progress - chapterStart) /
-              Math.max(0.12, 1 - chapterStart)
-            )
-          : clamp(
-              (progress - chapterStart) /
-              chapterLength
-            );
-
-      const textIn =
-        ease(clamp(chapterProgress / 0.20));
-
-      const textOut =
-        activeIndex === timeline.length - 1
-          ? 1
-          : 1 - ease(
-              clamp(
-                (chapterProgress - 0.78) /
-                0.22
-              )
-            );
-
-      const textOpacity =
-        Math.max(0.08, textIn * textOut);
-
-      const direction =
-        activeIndex % 2 === 0 ? -1 : 1;
-
-      const textX =
-        direction *
-        (1 - textIn) *
-        7;
-
-      const textY =
-        (1 - textIn) * 28 -
-        chapterProgress * 8;
-
-      const textScale =
-        0.97 +
-        textIn * 0.03;
+      const { index, scene } = getActiveScene(progress);
+      const { chapterProgress } = getSceneProgress(progress, index);
+      const textIn = ease(clamp(chapterProgress / 0.22));
+      const textOut = index === timeline.length - 1 ? 1 : 1 - ease(clamp((chapterProgress - 0.78) / 0.22));
+      const textOpacity = Math.max(0.12, textIn * textOut);
+      const dir = index % 2 === 0 ? -1 : 1;
+      const textX = dir * (1 - textIn) * 8;
+      const textY = (1 - textIn) * 22 - chapterProgress * 8;
 
       if (copy) {
-        copy.style.opacity =
-          String(textOpacity);
-
-        copy.style.transform =
-          `translate3d(${textX}vw, ` +
-          `calc(-50% + ${textY}px), 0) ` +
-          `scale(${textScale})`;
+        copy.style.opacity = String(textOpacity);
+        copy.style.transform = `translate3d(${textX}vw, calc(-50% + ${textY}px), 0) scale(${0.98 + textIn * 0.06})`;
       }
 
-      if (activeIndex !== lastChapterIndex) {
-        if (kicker) {
-          kicker.textContent =
-            `0${activeIndex + 1} / ${active.key}`;
-        }
-
-        if (title) {
-          title.innerHTML = active.title;
-        }
-
-        if (description) {
-          description.textContent =
-            active.description;
-        }
-
-        lastChapterIndex = activeIndex;
+      if (kicker) {
+        kicker.textContent = scene.kicker;
       }
 
-      const hudX =
-        Math.sin(progress * Math.PI * 2) * 12;
+      if (title) {
+        title.innerHTML = scene.title;
+      }
 
-      const hudY =
-        Math.cos(progress * Math.PI * 2) * 8;
+      if (description) {
+        description.textContent = scene.description;
+      }
 
-      storyStage.style.setProperty(
-        '--story-hud-x',
-        `${hudX}px`
-      );
+      const hudX = Math.sin(progress * Math.PI * 2) * 12;
+      const hudY = Math.cos(progress * Math.PI * 2) * 8;
+      storyStage.style.setProperty('--story-hud-x', `${hudX}px`);
+      storyStage.style.setProperty('--story-hud-y', `${hudY}px`);
 
-      storyStage.style.setProperty(
-        '--story-hud-y',
-        `${hudY}px`
-      );
-
-      storyCorners.forEach((corner, index) => {
-        const direction =
-          index % 2 === 0 ? 1 : -1;
-
-        corner.style.transform =
-          `translate3d(` +
-          `${hudX * direction}px, ` +
-          `${hudY * direction}px, 0)`;
+      storyCorners.forEach((corner, cornerIndex) => {
+        const direction = cornerIndex % 2 === 0 ? 1 : -1;
+        corner.style.transform = `translate3d(${hudX * direction}px, ${hudY * direction}px, 0)`;
       });
 
-      storyCodes.forEach((code, index) => {
-        const drift =
-          Math.sin(
-            progress * Math.PI * (2 + index * 0.7)
-          ) *
-          (14 + index * 5);
-
-        const rise =
-          Math.cos(
-            progress * Math.PI * 2
-          ) *
-          5;
-
-        code.style.opacity =
-          String(
-            0.20 +
-            0.42 *
-            Math.max(
-              0,
-              Math.sin(
-                (progress + index * 0.17) *
-                Math.PI
-              )
-            )
-          );
-
-        code.style.transform =
-          `translate3d(${drift}px, ${rise}px, 0)`;
+      storyCodes.forEach((code, codeIndex) => {
+        const drift = Math.sin(progress * Math.PI * (2 + codeIndex * 0.7)) * (12 + codeIndex * 5);
+        const rise = Math.cos(progress * Math.PI * 2) * 6;
+        code.style.opacity = String(0.14 + 0.42 * Math.max(0, Math.sin((progress + codeIndex * 0.17) * Math.PI)));
+        code.style.transform = `translate3d(${drift}px, ${rise}px, 0)`;
       });
 
       if (progressFill) {
-        progressFill.style.height =
-          `${progress * 100}%`;
+        progressFill.style.height = `${progress * 100}%`;
       }
 
       if (progressValue) {
-        progressValue.textContent =
-          String(
-            Math.round(progress * 100)
-          ).padStart(2, '0');
+        progressValue.textContent = String(Math.round(progress * 100)).padStart(2, '0');
       }
 
-      chapters.forEach((chapter, index) => {
-        const distance =
-          Math.abs(index - activeIndex);
-
-        const isActive = index === activeIndex;
-
-        chapter.classList.toggle(
-          'active',
-          isActive
-        );
-
-        chapter.style.opacity =
-          isActive
-            ? '1'
-            : String(
-                Math.max(
-                  0.16,
-                  0.42 - distance * 0.06
-                )
-              );
-
-        chapter.style.transform =
-          isActive
-            ? 'translateY(-3px) scale(1.04)'
-            : 'translateY(0) scale(1)';
+      chapters.forEach((chapter, chapterIndex) => {
+        const distance = Math.abs(chapterIndex - index);
+        const isActive = chapterIndex === index;
+        chapter.classList.toggle('active', isActive);
+        chapter.style.opacity = isActive ? '1' : String(Math.max(0.16, 0.42 - distance * 0.06));
+        chapter.style.transform = isActive ? 'translateY(-3px) scale(1.04)' : 'translateY(0) scale(1)';
       });
+
+      if (video) {
+        syncVideo(progress);
+      }
     };
 
     let raf = 0;
@@ -3030,28 +2672,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       raf = requestAnimationFrame(() => {
         raf = 0;
+        const rect = story.getBoundingClientRect();
+        const storyOffset = Math.max(0, Math.min(storyLayout.storyTravel, -rect.top));
+        const progress = clamp(storyOffset / storyLayout.storyTravel);
 
-        const rect =
-          story.getBoundingClientRect();
-
-        const storyOffset =
-          Math.max(
-            0,
-            Math.min(
-              storyLayout.storyTravel,
-              -rect.top
-            )
-          );
-
-        const progress =
-          clamp(
-            storyOffset / storyLayout.storyTravel
-          );
-
-        if (
-          Math.abs(progress - lastProgress) <
-          0.0001
-        ) {
+        if (Math.abs(progress - lastProgress) < 0.0002) {
           return;
         }
 
@@ -3060,30 +2685,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    characters.forEach(frame => {
-      frame.style.willChange =
-        'opacity, transform';
-    });
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+      video.muted = true;
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('preload', 'auto');
+      video.addEventListener('loadedmetadata', () => {
+        video.pause();
+        video.currentTime = 0;
+      }, { once: true });
+    }
 
-    environments.forEach(environment => {
-      environment.style.willChange =
-        'opacity, transform';
-    });
-
-    window.addEventListener(
-      'scroll',
-      requestStoryRender,
-      { passive: true }
-    );
-
-    window.addEventListener(
-      'resize',
-      () => {
-        updateStoryLayout();
-        requestStoryRender();
-      },
-      { passive: true }
-    );
+    window.addEventListener('scroll', requestStoryRender, { passive: true });
+    window.addEventListener('resize', () => {
+      updateStoryLayout();
+      requestStoryRender();
+    }, { passive: true });
 
     updateStoryLayout();
     renderStory(0);
