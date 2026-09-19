@@ -2640,19 +2640,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeIndex = getChapterIndex(progress);
       const active = timeline[activeIndex];
 
+      const cameraDrift =
+        Math.sin(progress * Math.PI * 2.2) * 1.9;
+
       const cameraX =
-        Math.sin(progress * Math.PI * 1.7) * 1.4;
+        Math.sin(progress * Math.PI * 1.7) * 1.4 +
+        cameraDrift;
 
       const cameraY =
-        progress * -2.2;
+        -2.2 * progress +
+        Math.cos(progress * Math.PI * 2.4) * 0.8;
 
       const finalShotProgress =
         ease(clamp((progress - 0.88) / 0.12));
 
       const cameraScale =
         1 +
-        progress * 0.035 +
-        finalShotProgress * 0.012;
+        progress * 0.04 +
+        finalShotProgress * 0.018 +
+        Math.sin(progress * Math.PI * 2.4) * 0.01;
 
       storyStage.style.setProperty(
         '--story-progress',
@@ -2698,6 +2704,9 @@ document.addEventListener('DOMContentLoaded', () => {
               )?.at
             : null;
 
+        const motionLag =
+          Math.sin((progress + index * 0.16) * Math.PI * 2.5) * 0.9;
+
         let opacity = 0.04;
 
         if (progress >= envStart) {
@@ -2714,22 +2723,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
           opacity =
             index === nextEnvironmentIndex
-              ? lerp(opacity, 0.78, transition)
+              ? lerp(opacity, 0.82, transition)
               : lerp(opacity, 0.04, transition);
         }
 
         const parallaxX =
           cameraX +
-          Math.sin((progress + index * 0.13) * Math.PI * 2) *
-          (index === 0 ? 1.8 : 2.4);
+          motionLag * (index === 0 ? 1.5 : 2.2) +
+          (index === active.environment ? 0.4 : 0);
 
         const parallaxY =
-          -progress * (1.4 + index * 0.5);
+          -progress * (1.2 + index * 0.6) +
+          Math.sin((progress + index) * Math.PI * 5) * 0.8;
 
         const zoom =
           1.06 +
-          progress * 0.045 +
-          index * 0.012;
+          progress * 0.05 +
+          index * 0.012 +
+          (active.environment === index ? 0.045 : 0);
 
         environment.style.opacity =
           String(clamp(opacity));
@@ -2778,7 +2789,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lerp(from.rotate, to.rotate, t);
 
           const cinematicPush =
-            Math.sin(t * Math.PI) * 0.025;
+            Math.sin(t * Math.PI) * 0.03;
 
           const finalFrame =
             progress >= 0.88 &&
@@ -2787,16 +2798,17 @@ document.addEventListener('DOMContentLoaded', () => {
           const x = finalFrame
             ? 0
             : localX +
-              Math.sin(progress * Math.PI * 2) * 0.8;
+              Math.sin((progress + index * 0.07) * Math.PI * 2.8) * 0.9;
 
           const y = finalFrame
             ? 0
             : localY +
-              Math.sin(progress * Math.PI * 3) * 0.7;
+              Math.cos((progress + index * 0.11) * Math.PI * 3.2) * 0.8;
 
           const scale = finalFrame
             ? 1
-            : localScale + cinematicPush;
+            : localScale + cinematicPush +
+              Math.sin(progress * Math.PI * 4) * 0.015;
 
           frame.style.opacity =
             String(clamp(opacity));
@@ -2805,7 +2817,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `translate3d(calc(-50% + ${x}vw), ` +
             `calc(-50% + ${y}vh), 0) ` +
             `scale(${scale}) ` +
-            `rotate(${localRotate}deg)`;
+            `rotate(${localRotate + Math.sin(progress * Math.PI * 2.8) * 0.6}deg)`;
 
           frame.style.zIndex =
             String(
