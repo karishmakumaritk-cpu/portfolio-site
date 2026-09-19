@@ -10222,7 +10222,7 @@ body::after {
 
 .cinematic-story {
   position: relative;
-  height: clamp(300vh, 340vh, 3900px);
+  height: clamp(235vh, 250vh, 3000px);
   margin: 0;
   padding: 0;
   background: #030303;
@@ -10591,7 +10591,7 @@ body::after {
 
 @media (max-width: 820px) {
   .cinematic-story {
-    height: clamp(260vh, 300vh, 3200px);
+    height: clamp(205vh, 220vh, 2600px);
   }
 
   .story-sticky-stage {
