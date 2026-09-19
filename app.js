@@ -848,6 +848,42 @@ function initHeroCatwalkInteraction() {
   let targetY = 0;
   let currentX = 0;
   let currentY = 0;
+  let rafId = 0;
+
+  function renderHeroParallax() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    if (spotlight) {
+      const spX = (currentX * 60).toFixed(2);
+      const spY = (currentY * 40).toFixed(2);
+      spotlight.style.transform = `translate(calc(-50% + ${spX}px), calc(-50% + ${spY}px))`;
+    }
+
+    if (modelWrapper) {
+      const mX = (currentX * -8).toFixed(2);
+      const mY = (currentY * -6).toFixed(2);
+      modelWrapper.style.transform = `translate3d(${mX}px, ${mY}px, 0)`;
+    }
+
+    if (textCol) {
+      const tX = (currentX * 15).toFixed(2);
+      textCol.style.transform = `translate3d(${tX}px, 0, 0)`;
+    }
+
+    const closeEnough = Math.abs(targetX - currentX) < 0.0025 && Math.abs(targetY - currentY) < 0.0025;
+    if (closeEnough) {
+      rafId = 0;
+      return;
+    }
+
+    rafId = requestAnimationFrame(renderHeroParallax);
+  }
+
+  const ensureHeroRaf = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(renderHeroParallax);
+  };
 
   hero.addEventListener('mousemove', (e) => {
     const rect = hero.getBoundingClientRect();
@@ -855,41 +891,14 @@ function initHeroCatwalkInteraction() {
     const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
     targetX = Math.max(-1, Math.min(1, x));
     targetY = Math.max(-1, Math.min(1, y));
+    ensureHeroRaf();
   });
 
   hero.addEventListener('mouseleave', () => {
     targetX = 0;
     targetY = 0;
+    ensureHeroRaf();
   });
-
-  function renderHeroParallax() {
-    currentX += (targetX - currentX) * 0.06;
-    currentY += (targetY - currentY) * 0.06;
-
-    // Spotlight transform (-60px to 60px X, -40px to 40px Y)
-    if (spotlight) {
-      const spX = (currentX * 60).toFixed(2);
-      const spY = (currentY * 40).toFixed(2);
-      spotlight.style.transform = `translate(calc(-50% + ${spX}px), calc(-50% + ${spY}px))`;
-    }
-
-    // Model transform (-8px to 8px X, -6px to 6px Y)
-    if (modelWrapper) {
-      const mX = (currentX * -8).toFixed(2);
-      const mY = (currentY * -6).toFixed(2);
-      modelWrapper.style.transform = `translate3d(${mX}px, ${mY}px, 0)`;
-    }
-
-    // Text column transform (15px to -15px X)
-    if (textCol) {
-      const tX = (currentX * 15).toFixed(2);
-      textCol.style.transform = `translate3d(${tX}px, 0, 0)`;
-    }
-
-    requestAnimationFrame(renderHeroParallax);
-  }
-
-  requestAnimationFrame(renderHeroParallax);
 }
 
 /* ==========================================================================
@@ -1255,20 +1264,30 @@ function initCustomCursor() {
   const label = document.getElementById('cursor-label');
   let mouseX = -100, mouseY = -100;
   let ringX = -100, ringY = -100;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-  }, { passive: true });
+  let rafId = 0;
 
   function renderRing() {
     ringX += (mouseX - ringX) * 0.18;
     ringY += (mouseY - ringY) * 0.18;
     ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
-    requestAnimationFrame(renderRing);
+
+    if (Math.abs(mouseX - ringX) > 0.5 || Math.abs(mouseY - ringY) > 0.5) {
+      rafId = requestAnimationFrame(renderRing);
+      return;
+    }
+
+    rafId = 0;
   }
-  requestAnimationFrame(renderRing);
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+
+    if (!rafId) {
+      rafId = requestAnimationFrame(renderRing);
+    }
+  }, { passive: true });
 
   // Attach hover triggers
   document.addEventListener('mouseover', (e) => {
@@ -1675,6 +1694,18 @@ function observeMotionElements(elements) {
   });
 }
 
+// Back-compat aliases for the legacy call sites left behind by the refactor.
+function initScrollReveals() {
+  return initScrollMotionSystem();
+}
+
+function initScrollReals() {
+  return initScrollReveals();
+}
+
+window.initScrollReveals = initScrollReveals;
+window.initScrollReals = initScrollReals;
+
 function initScrollMotionSystem() {
   const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   attachMotionClasses();
@@ -1716,6 +1747,39 @@ function initScrollMotionSystem() {
 /* ==========================================================================
    IMAGE REVEAL & INTERSECTION OBSERVER ANIMATIONS
    ========================================================================== */
+function updateScrollCharacterState() {
+  const charStage = document.getElementById('hero-model-wrapper');
+  const pCharStateLabel = document.getElementById('p-char-state-label');
+  const stateLabel = document.getElementById('char-state-label');
+  const scrollMax = Math.max(1, document.body.scrollHeight - window.innerHeight);
+  const pct = (window.scrollY / scrollMax) * 100;
+
+  let currentState = 'STATE 01 — PROFESSIONAL';
+  if (pct < 20) {
+    currentState = 'STATE 01 — PROFESSIONAL';
+  } else if (pct < 45) {
+    currentState = 'STATE 02 — DEVELOPER';
+  } else if (pct < 70) {
+    currentState = 'STATE 03 — AI / AUTOMATION';
+  } else if (pct < 85) {
+    currentState = 'STATE 04 — FOUNDER';
+  } else {
+    currentState = 'STATE 05 — DIRECT STANCE';
+  }
+
+  if (pCharStateLabel) {
+    pCharStateLabel.textContent = currentState;
+  }
+
+  if (stateLabel && (!charStage || !charStage.matches(':hover'))) {
+    stateLabel.textContent = currentState;
+  }
+}
+
+window.addEventListener('scroll', updateScrollCharacterState, { passive: true });
+window.addEventListener('resize', updateScrollCharacterState, { passive: true });
+updateScrollCharacterState();
+
 function initImageAnimations() {
   const images = document.querySelectorAll('.hero-photo, .project-img-cover, .about-photo, img[loading="lazy"]');
   
@@ -2376,6 +2440,18 @@ document.addEventListener('DOMContentLoaded', () => {
       story.querySelectorAll('.story-environment')
     );
 
+    const storyCorners = Array.from(
+      story.querySelectorAll('.story-interface-corner')
+    );
+
+    const storyCodes = Array.from(
+      story.querySelectorAll('.story-interface-code')
+    );
+
+    const chapters = Array.from(
+      story.querySelectorAll('.story-chapter')
+    );
+
     const copy = document.getElementById('story-copy');
     const kicker = document.getElementById('story-kicker');
     const title = document.getElementById('story-title');
@@ -2386,9 +2462,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const progressValue =
       document.getElementById('story-progress-value');
-
-    const chapters =
-      Array.from(story.querySelectorAll('.story-chapter'));
 
     /*
      * Six supplied visual keyframes.
@@ -2541,6 +2614,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return index;
     };
 
+    const storyLayout = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      storyTravel: 1
+    };
+
+    const updateStoryLayout = () => {
+      storyLayout.width = window.innerWidth;
+      storyLayout.height = window.innerHeight;
+      storyLayout.storyTravel = Math.max(
+        1,
+        story.offsetHeight - storyLayout.height
+      );
+    };
+
     const renderStory = (progress) => {
       progress = wrap(progress);
 
@@ -2552,14 +2640,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeIndex = getChapterIndex(progress);
       const active = timeline[activeIndex];
 
-      /*
-       * ---------------------------------------------------------------------
-       * CAMERA
-       * ---------------------------------------------------------------------
-       *
-       * The whole environment drifts continuously while each individual
-       * environment also gets its own parallax movement.
-       */
       const cameraX =
         Math.sin(progress * Math.PI * 1.7) * 1.4;
 
@@ -2594,15 +2674,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cameraScale.toFixed(4)
       );
 
-      /*
-       * ---------------------------------------------------------------------
-       * ENVIRONMENT FILM
-       * ---------------------------------------------------------------------
-       *
-       * Current environment is always visible.
-       * The next environment starts entering BEFORE the chapter changes,
-       * creating a film-like environment transition instead of a black cut.
-       */
       environments.forEach((environment, index) => {
         const first = timeline.findIndex(
           item => item.environment === index
@@ -2610,11 +2681,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (first === -1) {
           environment.style.opacity = '0';
+          environment.classList.remove('is-active');
           return;
         }
 
         const envStart = timeline[first].at;
-
         const nextEnvironmentIndex =
           index < environments.length - 1
             ? index + 1
@@ -2666,26 +2737,15 @@ document.addEventListener('DOMContentLoaded', () => {
         environment.style.transform =
           `translate3d(${parallaxX}%, ${parallaxY}%, 0) scale(${zoom})`;
 
-        const brightness =
-          0.40 +
-          (active.environment === index ? 0.10 : 0);
-
-        environment.style.filter =
-          `brightness(${brightness}) contrast(1.07) saturate(.78)`;
-
         environment.style.zIndex =
           active.environment === index ? '2' : '1';
+
+        environment.classList.toggle(
+          'is-active',
+          active.environment === index
+        );
       });
 
-      /*
-       * ---------------------------------------------------------------------
-       * CHARACTER FILM
-       * ---------------------------------------------------------------------
-       *
-       * Both neighbouring supplied frames overlap.
-       * This prevents black gaps and makes the sequence feel like a single
-       * moving subject.
-       */
       characters.forEach((frame, index) => {
         const fromIndex = from.character;
         const toIndex = to.character;
@@ -2704,10 +2764,6 @@ document.addEventListener('DOMContentLoaded', () => {
           opacity = 1;
         }
 
-        /*
-         * Slight depth/camera movement is continuous even while the supplied
-         * artwork changes. This is intentionally subtle; no body-part faking.
-         */
         if (opacity > 0) {
           const localX =
             lerp(from.x, to.x, t);
@@ -2721,10 +2777,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const localRotate =
             lerp(from.rotate, to.rotate, t);
 
-          /*
-           * Film-camera movement:
-           * small forward push + lateral sweep.
-           */
           const cinematicPush =
             Math.sin(t * Math.PI) * 0.025;
 
@@ -2732,12 +2784,6 @@ document.addEventListener('DOMContentLoaded', () => {
             progress >= 0.88 &&
             index === timeline[timeline.length - 1].character;
 
-          /*
-           * FINAL SHOT:
-           * Stop the camera drift completely. The supplied final character
-           * artwork stays centered and fills the cinematic viewport until
-           * the story physically hands off to the footer.
-           */
           const x = finalFrame
             ? 0
             : localX +
@@ -2771,17 +2817,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      /*
-       * ---------------------------------------------------------------------
-       * TYPOGRAPHY
-       * ---------------------------------------------------------------------
-       *
-       * Text has its own choreography, independent from the character.
-       * It slides, lifts and subtly scales while the character/environment
-       * continue moving underneath.
-       */
       const chapterStart = active.at;
-
       const next =
         timeline[Math.min(
           activeIndex + 1,
@@ -2847,25 +2883,24 @@ document.addEventListener('DOMContentLoaded', () => {
           `scale(${textScale})`;
       }
 
-      if (kicker) {
-        kicker.textContent =
-          `0${activeIndex + 1} / ${active.key}`;
+      if (activeIndex !== lastChapterIndex) {
+        if (kicker) {
+          kicker.textContent =
+            `0${activeIndex + 1} / ${active.key}`;
+        }
+
+        if (title) {
+          title.innerHTML = active.title;
+        }
+
+        if (description) {
+          description.textContent =
+            active.description;
+        }
+
+        lastChapterIndex = activeIndex;
       }
 
-      if (title) {
-        title.innerHTML = active.title;
-      }
-
-      if (description) {
-        description.textContent =
-          active.description;
-      }
-
-      /*
-       * ---------------------------------------------------------------------
-       * HUD MOTION
-       * ---------------------------------------------------------------------
-       */
       const hudX =
         Math.sin(progress * Math.PI * 2) * 12;
 
@@ -2882,10 +2917,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `${hudY}px`
       );
 
-      const corners =
-        story.querySelectorAll('.story-interface-corner');
-
-      corners.forEach((corner, index) => {
+      storyCorners.forEach((corner, index) => {
         const direction =
           index % 2 === 0 ? 1 : -1;
 
@@ -2895,10 +2927,7 @@ document.addEventListener('DOMContentLoaded', () => {
           `${hudY * direction}px, 0)`;
       });
 
-      const interfaceCodes =
-        story.querySelectorAll('.story-interface-code');
-
-      interfaceCodes.forEach((code, index) => {
+      storyCodes.forEach((code, index) => {
         const drift =
           Math.sin(
             progress * Math.PI * (2 + index * 0.7)
@@ -2928,11 +2957,6 @@ document.addEventListener('DOMContentLoaded', () => {
           `translate3d(${drift}px, ${rise}px, 0)`;
       });
 
-      /*
-       * ---------------------------------------------------------------------
-       * PROGRESS / CHAPTERS
-       * ---------------------------------------------------------------------
-       */
       if (progressFill) {
         progressFill.style.height =
           `${progress * 100}%`;
@@ -2949,13 +2973,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const distance =
           Math.abs(index - activeIndex);
 
+        const isActive = index === activeIndex;
+
         chapter.classList.toggle(
           'active',
-          index === activeIndex
+          isActive
         );
 
         chapter.style.opacity =
-          index === activeIndex
+          isActive
             ? '1'
             : String(
                 Math.max(
@@ -2965,7 +2991,7 @@ document.addEventListener('DOMContentLoaded', () => {
               );
 
         chapter.style.transform =
-          index === activeIndex
+          isActive
             ? 'translateY(-3px) scale(1.04)'
             : 'translateY(0) scale(1)';
       });
@@ -2973,6 +2999,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let raf = 0;
     let lastProgress = -1;
+    let lastChapterIndex = -1;
 
     const requestStoryRender = () => {
       if (raf) return;
@@ -2983,36 +3010,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect =
           story.getBoundingClientRect();
 
-        /*
-         * The sticky stage occupies exactly one viewport.
-         * Map the ENTIRE remaining story travel to the cinematic timeline,
-         * so the final frame is the visual state immediately before the
-         * story's physical bottom and therefore immediately before footer.
-         */
-        const storyTravel =
-          Math.max(
-            1,
-            story.offsetHeight -
-            window.innerHeight
-          );
-
         const storyOffset =
           Math.max(
             0,
             Math.min(
-              storyTravel,
+              storyLayout.storyTravel,
               -rect.top
             )
           );
 
         const progress =
           clamp(
-            storyOffset / storyTravel
+            storyOffset / storyLayout.storyTravel
           );
 
-        /*
-         * Skip duplicate frames, but never throttle scroll itself.
-         */
         if (
           Math.abs(progress - lastProgress) <
           0.0001
@@ -3021,7 +3032,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         lastProgress = progress;
-
         renderStory(progress);
       });
     };
@@ -3033,7 +3043,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     environments.forEach(environment => {
       environment.style.willChange =
-        'opacity, transform, filter';
+        'opacity, transform';
     });
 
     window.addEventListener(
@@ -3044,9 +3054,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener(
       'resize',
-      requestStoryRender
+      () => {
+        updateStoryLayout();
+        requestStoryRender();
+      },
+      { passive: true }
     );
 
+    updateStoryLayout();
     renderStory(0);
     requestStoryRender();
   }
@@ -3059,22 +3074,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cursorDot && cursorRing) {
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
+    let cursorRafId = 0;
+
+    const renderCursor = () => {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      cursorRing.style.left = `${ringX}px`;
+      cursorRing.style.top = `${ringY}px`;
+
+      if (Math.abs(mouseX - ringX) > 0.5 || Math.abs(mouseY - ringY) > 0.5) {
+        cursorRafId = requestAnimationFrame(renderCursor);
+        return;
+      }
+
+      cursorRafId = 0;
+    };
 
     window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       cursorDot.style.left = `${mouseX}px`;
       cursorDot.style.top = `${mouseY}px`;
-    });
 
-    function renderCursor() {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      cursorRing.style.left = `${ringX}px`;
-      cursorRing.style.top = `${ringY}px`;
-      requestAnimationFrame(renderCursor);
-    }
-    renderCursor();
+      if (!cursorRafId) {
+        cursorRafId = requestAnimationFrame(renderCursor);
+      }
+    }, { passive: true });
 
     // Contextual Hover Labels
     document.addEventListener('mouseover', (e) => {

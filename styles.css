@@ -10205,8 +10205,12 @@ body::after {
   transform-origin: center center;
   filter: brightness(.42) contrast(1.06) saturate(.78);
   backface-visibility: hidden;
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
   transition: none;
+}
+
+.story-environment.is-active {
+  filter: brightness(.72) contrast(1.12) saturate(.92);
 }
 
 .story-env-a {
